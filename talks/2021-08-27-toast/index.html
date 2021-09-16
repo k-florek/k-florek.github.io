@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Preparing for Bioinformatics in the Cloud</title>
+
+    <link rel="stylesheet" href="../reveal.js-4.1.2/dist/reset.css">
+    <link rel="stylesheet" href="../reveal.js-4.1.2/dist/reveal.css">
+    <link rel="stylesheet" href="../reveal.js-4.1.2/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../reveal.js-4.1.2/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h2>Preparing for Bioinformatics in the Cloud</h2><br>
+          <p>Wisconsin State Laboratory of Hygiene</br>
+            Kelsey Florek, PhD, MPH</br>
+            August 27, 2021</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> www.k-florek.net/talks
+          </div>
+          <img style="width: 25%;display:block;float:left;" src="../resources/images/wslh_logo_white.png">
+        </section>
+
+        <section>
+          <h3>From an AWS Perspective</h3>
+          <img style="width:30%" src="images/aws-logo.png">
+        </section>
+
+        <section>
+          <h3>... As a Service</h3>
+          <img style="width:90%" src="images/as_service.png">
+        </section>
+
+        <section>
+          <h3>... As a Service</h3>
+          <img style="width:80%" src="images/stackscale.jpg">
+        </section>
+
+        <section>
+          <h3>How infrastructure as a service works</h3>
+          <div style="float:left;width:50%;margin-top:150px">
+            <p><h4>Virtual Private Cloud (VPC):</h4> An secure, isolated, private virtual network dedicated to your cloud account. Provides isolation between different cloud users where your resources are not shared with other users.</p>
+          </div>
+          <div style="float:right;width:50%">
+            <image style="width:80%" src="images/vpc.png">
+          </div>
+        </section>
+
+        <section>
+          <h3>Cloud infrastructure can be used in lots of ways</h3>
+          <h4>(you only pay for you what you use)</h4>
+          <ul>
+            <li class="fragment">Storage only solution</li>
+            <li class="fragment">Connect to VPC resources through secure internet tunnels</li>
+            <li class="fragment">Connect to VPC through a VPN or directly connect VPC to your on-prem network</li>
+            <li class="fragment">Create permanent instances (virtual computers) that run indefinitely</li>
+            <li class="fragment">Create/destroy instances on demand (AWS spot)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Utilizing bioinformatics workflows with AWS</h3>
+          <div style="float:left;width:50%;margin-top:150px">
+            <ul>
+              <li><a href="https://aws.amazon.com/government-education/cromwell-on-aws/">Cromwell on AWS</a></li>
+              <li><a href="https://aws.amazon.com/quickstart/biotech-blueprint/nextflow/">Nextflow on AWS</a></li>
+              <li><a href="https://aws-quickstart.s3.amazonaws.com/quickstart-nextflow/doc/nextflow-on-the-aws-cloud.pdf">AWS Nextflow Deployment Guide</a></li>
+            </ul>
+          </div>
+          <div style="float:right;width:50%">
+            <img style="width:80%" src="images/batch_jobs.png">
+          </div>
+        </section>
+
+        <section data-background-iframe="../resources/gradient.html">
+          <h3 style="color: white">The hard part:</br></br>
+            Setting up a cloud infrastructure...</h3>
+        </section>
+
+        <section>
+          <h3>Setting it all up yourself</h3>
+          <a href="http://www.staphb.org/resources/nextflow_aws/">StaPH-B Nextflow AWS Batch Tutorial</a>
+          <img style="width:45%" src="images/tutorial.png">
+        </section>
+
+        <section>
+          <h3>AWS Nextflow Quickstart</h3>
+          <img src="images/nextflow_quick.png">
+          <div class="citation">
+            <a href="https://aws.amazon.com/quickstart/biotech-blueprint/nextflow/">AWS Nextflow Quickstart</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>AWS Illumina Dragon Quickstart</h3>
+          <img src="images/dragon_quick.png">
+          <div class="citation">
+            <a href="https://aws.amazon.com/quickstart/architecture/illumina-dragen/">AWS Illumina Dragon Quickstart</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Moving up the pyramid</h3>
+          <img style="width:80%" src="images/stackscale.jpg">
+        </section>
+
+        <section>
+          <h3>Cloud can offer more than infrastructure</h3>
+          <ul>
+            <li><b>AWS Lambda</b>: serverless functions (FaaS)</li>
+            <li><b>AWS RDS</b>: SQL database</li>
+            <li><b>AWS DynamoDB</b>: non-relational (NoSQL) database</li>
+            <li><b>AWS SageMaker</b>: machine learning model development environment</li>
+            <li><b>AWS Redshift</b>: petabyte-scale data warehouse service</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Example AWS PaaS use case</h3>
+          <img style="width:70%" src="images/dashboard.png">
+          <div class="citation">
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WI SARS-CoV-2 Dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Tips for implementing a cloud service</h3>
+          <ul>
+            <li class="fragment">Find IT allies</li>
+            <li class="fragment">Evaluate costing (persistent, on-demand, spot)</li>
+            <li class="fragment">Take advantage of low-cost options</li>
+            <li class="fragment">Plan a monitoring approach (billing, budgets, alarms)</li>
+            <li class="fragment">Consider data backups</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="../reveal.js-4.1.2/dist/reveal.js"></script>
+    <script src="../reveal.js-4.1.2/plugin/notes/notes.js"></script>
+    <script src="../reveal.js-4.1.2/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js-4.1.2/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 960,
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>

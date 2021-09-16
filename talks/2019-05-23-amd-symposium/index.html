@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang='en'>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Kelsey Florek">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-151344274-1');
+		</script>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2019 AMD Symposium</title>
+
+		<link rel="stylesheet" href="../resources/css/reveal.css">
+		<link rel="stylesheet" href="../resources/css/theme/f_talks.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../resources/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../resources/css/pdf.css' : '../resources/css/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="#000000">
+					<h2>A 20,000 league view of Bioinformatics</h2><br>
+					<h4>Kelsey Florek, MPH, PhD</br>
+						2019 AMD Symposium</br>
+						May 23, 2019
+					</h4>
+					<br>
+					<img style="width: 25%;display:inline-block;float:left;" src="images/logo_white_txt.png">
+					<div style="position:absolute;width: 100%;text-align:center;"><h5>Slides available at:<br> www.k-florek.net/talks</h5></div>
+				</section>
+
+				<section>
+					<h2><a href="https://staph-b.github.io/midwest-region/">https://staph-b.github.io/midwest-region/</a></h2>
+				</section>
+
+				<section>
+					<h2>Bioinformatics: An interdisciplinary field that develops methods and software tools for understanding biological data.</h2>
+				</section>
+
+				<section>
+					<h2>What does the data look like</h2>
+				</section>
+
+				<section data-background-image="images/ngs_clusters.png">
+				</section>
+
+				<section  data-background-image="images/ngs_clusters.png" data-transition="slide-in fade-out">
+					<pre><h3>
+						<code data-trim data-noescape>
+							@M03478:141:000000000-C5B4D:1:1101:25956:10945 1:N:0:1
+							TTCCGTATTCATGCAACCTATGATGAAAGTATTAGTCGGTTACTCAATGTATTTGAGCGC
+							+
+							ABBBBCFFFFFFGGGGGGGGGG5GHHHHHGGHHHHHHGGGGFHHHHHHHHHHHHHFGHGG
+						</code></h3>
+					</pre>
+				</section>
+
+				<section data-transition="fade-in slide-out">
+					<pre><h3>
+						<code data-trim data-noescape>
+							@M03478:141:000000000-C5B4D:1:1101:25956:10945 1:N:0:1
+							TTCCGTATTCATGCAACCTATGATGAAAGTATTAGTCGGTTACTCAATGTATTTGAGCGC
+							+
+							ABBBBCFFFFFFGGGGGGGGGG5GHHHHHGGHHHHHHGGGGFHHHHHHHHHHHHHFGHGG
+						</code></h3>
+					</pre>
+
+					<div class="fragment">
+						<ul>
+						  <li><strong>M03478</strong> - the unique instrument name</li>
+						  <li><strong>141</strong> - the run id</li>
+						  <li><strong>000000000-C5B4D</strong> - flowcell id</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>Phred Score</h3>
+					<ul>
+					  <li>10: 	1 in 10 	90%</li>
+					  <li>20: 	1 in 100 	99%</li>
+					  <li>30: 	1 in 1000 	99.9%</li>
+					  <li>40: 	1 in 10,000 	99.99%</li>
+					  <li>50: 	1 in 100,000 	99.999%</li>
+					  <li>60: 	1 in 1,000,000 	99.9999%</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>what can you do with fastq / read data</h3>
+				</section>
+
+				<section>
+					<h3>k-mers: all the possible substrings of length k</h3>
+					<div class="fragment">
+						<img style="min-width:800px" src="images/k-mer.png">
+					</div>
+				</section>
+
+				<section>
+					<img style="width:80%" src="images/kmer_plot.png">
+					<div class="citation">
+						<a href="https://kat.readthedocs.io">https://kat.readthedocs.io</a>
+					</div>
+				</section>
+
+				<section data-background-iframe="../resources/gradient.html">
+					<h3 style="color:white">
+						basic analysis pipeline</h3>
+						<h3 style="color:white">
+						<ul>
+							<li>quality trimming</li>
+							<li>assembly
+								<ul>
+									<li><i>de novo</i> assembly</li>
+									<li>reference mapping</li>
+								</ul>
+							</li>
+							<li>antibiotic resistance detection</li>
+						</ul>
+					</h3>
+				</section>
+
+				<section>
+					<h3>ensuring quality reads</h3>
+					<pre><h3>
+						<code data-trim data-noescape>
+							@M03478:141:000000000-C5B4D:1:1101:25956:10945 1:N:0:1
+							TTCCGTATTCATGCAACCTATGATGAAAGTATTAGTCGGTTACTCAATGTATTTGAGCGC
+							+
+							ABBBBCFFFFFFGGGGGGGGGG5GHHHHHGGHHHHHHGGGGFHHHHHHHHHHHHHFGHGG
+						</code></h3>
+					</pre>
+					<ul>
+						<li class="fragment">remove sequencing adapters</li>
+						<li class="fragment">trim when quality drops</li>
+						<li class="fragment">specify a minimum length</li>
+						<li class="fragment">scan for contamination</li>
+					</ul>
+				</section>
+
+				<section data-background-iframe="../resources/gradient.html">
+					<h3 style="color:white">
+						basic analysis pipeline</h3>
+						<h3 style="color:white">
+						<ul>
+							<li><strike>quality trimming</strike></li>
+							<li>assembly
+								<ul>
+									<li><i>de novo</i> assembly</li>
+									<li>reference mapping</li>
+								</ul>
+							</li>
+							<li>antibiotic resistance detection</li>
+						</ul>
+					</h3>
+				</section>
+
+				<section>
+					<h3><i>de novo</i> assembly: assembly of read data without the use of a reference sequence</h3>
+					<h3 class="fragment">de Brujin graph: a directed graph representing overlaps between sequences of symbols</h3>
+				</section>
+
+				<section>
+					<h3>de Brujin graphs</h3>
+					<p>cingi sequen sfun encin cing isfu</p>
+					<p class="fragment"><b>all 4-mers: </b><font color="red">cing</font> ingi sequ eque quen sfun enci ncin <font color="red">cing</font> gisf isfu</p>
+					<p class="fragment"><b>unique 4-mers: </b>cing ingi sequ eque quen sfun enci ncin gisf isfu</p>
+					<p class="fragment"><b>assembly graph:</b></br><img src="images/sequencingisfun.png"></p>
+					<p class="fragment"><img src="images/red_sequencingisfun.png"></p>
+					<p class="fragment">sequencingisfun</p>
+				</section>
+
+				<section>
+					<h3>difficult de Brujin graph</h3>
+					<p>missis ssissi ssippi</p>
+					<p class="fragment"><b>all 4-mers:</b> miss issi ssis ssis siss issi ssip sipp ippi</p>
+					<p class="fragment"><b>uniqe 4-mers:</b> miss issi ssis siss ssip sipp ippi</p>
+					<p class="fragment"><b>assembly graph:</b></br><img src="images/mississippi.png"></p>
+					<p class="fragment">mississippi or mississississippi</p>
+				</section>
+
+				<section>
+					<h3>choosing k</h3>
+					<div style="display:inline-block; float:left; width:50%">
+						<ul>
+							<li>low k <ul>
+								<li>more connections</li>
+								<li>higher chance of repeats</li>
+								<li>higher coverage</li>
+							</ul></li>
+						</ul>
+					</div>
+					<div style="display:inline-block; float:right; width:50%">
+						<ul>
+							<li>high k <ul>
+								<li>less connections</li>
+								<li>higher chance of resolving repeats</li>
+								<li>lower coverage</li>
+							</ul></li>
+						</ul>
+					</div>
+					<div class="fragment">
+						<img src="images/choose.jpg">
+					</div>
+				</section>
+
+				<section>
+					<h3>storing genome assemblies </br>(the .fasta file)</h3>
+					<div style="margin:auto;width:50%">
+					<p style="text-align:left"></br>
+						>A/Hong_Kong/4801/2014_NP</br>
+						gttaataatcactcactgagtgacatcaaagtcatggcgt</br>
+						cccaaggcaccaaacggtcttatgaacagatggaaactga</br>
+						tggagatcgccagaatgcaactgagattagggcatccgtc</br>
+						gggaagatgattgatggaattgggagattctacatccaaa</br>
+					</p></div>
+				</section>
+
+				<section>
+					<h3>reference mapping: a method of mapping the reads to a reference sequence</h3>
+				</section>
+
+				<section>
+					<img style="width:100%" src="images/read_mapping.png">
+				</section>
+
+				<section>
+					<h3>storing read mapping </br>(the .sam file)</h3>
+					<ul>
+						<li>read name / reference name</li>
+						<li>position read maps to on the reference sequence</li>
+						<li>sequence read and quality information</li>
+						<li>many others..</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>storing the read mappings in a binary format </br>(the .bam file)</h3>
+					<p>provides a faster access to data and tends to use less memory</p>
+					<div class="fragment"><img src="images/binary_file.png">
+					</div>
+				</section>
+
+				<section>
+					<h3>compression</h3>
+					<ul>
+						<li class="fragment">gzip</li>
+						<li class="fragment">repetitions in the data are replaced by references to the data</li>
+						<li class="fragment">repetitions in the data are replaced by references to &lt;7,8&gt;</li>
+						<li class="fragment">replaces more frequent characters with variable length encoding</li>
+						<li class="fragment">T : 01010100 ----> T : 11</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>compression matters</h3>
+					<ul>
+						<li>Uncompressed: <ul>
+							<li><b>E coli</b> both set of reads ~900MB</li>
+							<li><b>E coli</b> sequencing run (16 isolates) ~20GB</li>
+						</ul></li>
+
+						<li>Compressed: <ul>
+						  <li><b>E coli</b> both set of reads ~200MB</li>
+						  <li><b>E coli</b> sequencing run (16 isolates) ~4GB</li>
+						</ul></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>moving data</h3>
+					<div style="text-align:left">
+					<p>data moves across the internet in 1,500 byte packets</p>
+					<ul>
+						<li>ftp</li>
+						<li>http</li>
+						<li>sftp</li>
+						<li>https</li>
+					</ul>
+					</div>
+				</section>
+
+				<section data-background-iframe="../resources/gradient.html">
+						<h3 style="color:white">
+							basic analysis pipeline</h3>
+							<h3 style="color:white">
+							<ul>
+								<li><strike>quality trimming</strike></li>
+								<li>assembly
+									<ul>
+										<li><strike><i>de novo</i> assembly</strike></li>
+										<li><strike>reference mapping</strike></li>
+									</ul>
+								</li>
+								<li>antibiotic resistance detection</li>
+							</ul>
+						</h3>
+				</section>
+
+				<section>
+					<h3>using the data to find resistance mechanisms</h3>
+					<ul>
+						<li class="fragment">database <ul>
+							<li class="fragment">multifasta</li>
+							<li class="fragment">SQL</li>
+						</ul></li>
+						<li class="fragment">search for patterns</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>NCBI BLAST (basic local alignment search tool)</h3>
+					<p>BLAST finds similar sequences by locating short matches between sequences</p>
+					<p>after the first match BLAST begins to make local alignments</p>
+				</section>
+
+				<section>
+					<div style="text-align:left">
+					<p>location: 4377811 - 4378944</p>
+					<p>gene name: Escherichia_coli_ampC</p>
+					<p>coverage: 100</p>
+					<p>identity: 100</p>
+					<p>database: card</p>
+					<p>description: A class C ampC beta-lactamase (cephalosporinase) enzyme described in Escherichia coli shown clinically to confer resistance to penicillin-like and cephalosporin-class antibiotics.</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>review</h3>
+					<ul>
+						<li class="fragment">quality control / trimming of reads</li>
+						<li class="fragment">assembly
+							<ul>
+								<li class="fragment"><i>de novo</i></li>
+								<li class="fragment">reference mapping</li>
+							</ul></li>
+						<li class="fragment">AR detection using BLAST</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>review</h3>
+						<ul>
+							<li class="fragment">sequencing data storage</li>
+							<li class="fragment">data compression</li>
+							<li class="fragment">transferring data across networks</li>
+						</ul>
+				</section>
+
+				<section>
+					<h3>applied Linux virtual course </h3>
+					<div style="text-align:left">
+					<h2><a href="https://forms.gle/oKSB5KFKcv5DX4k57">https://forms.gle/oKSB5KFKcv5DX4k57</a></h2>
+					<p>Course Dates: June 10th - June 14th, 2019</p>
+					<p>Length: 2hr sessions Monday, Wednesday and Friday; Office hours on Tuesday and Thursday</p>
+					</br>
+					<p><a href="mailto:kelsey.florek@slh.wisc.edu">kelsey.florek@slh.wisc.edu</a></p>
+					</div>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../resources/js/head.min.js"></script>
+		<script src="../resources/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: false,
+				controls: false,
+				center: true,
+				progress: true,
+				slideNumber: true,
+				touch: true,
+				viewDistance: 4,
+
+
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 960,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.05,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.1,
+				maxScale: 5,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../resources/plugin/markdown.js' },
+					{ src: '../resources/plugin/notes/notes.js', async: true },
+					{ src: '../resources/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

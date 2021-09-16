@@ -1,0 +1,40 @@
+---
+layout: default
+title: k-florek.net
+description: Connecting biology, computer science, and public health.
+featured_image: /images/site/pose1.png
+---
+
+<section class="blog single" style="padding:0px;">
+
+	<div class="wrap">
+
+		{% for post in paginator.posts %}
+
+			<h2 style="padding-top:50px; font-size:45px">{{ post.title }}</h2>
+			{{ post.content }}
+
+		{% endfor %}
+
+	</div>
+
+</section>
+
+{% if paginator.total_pages > 1 %}
+
+<section class="pagination">
+
+	{% if paginator.previous_page %}
+	<div class="pagination__prev">
+		<a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button button--large"><i class="fa fa-angle-left" aria-hidden="true"></i> <span>Newer Posts</span></a>
+	</div>
+	{% endif %}
+	{% if paginator.next_page %}
+	<div class="pagination__next">
+		<a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button button--large"><span>Older Posts</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+	</div>
+	{% endif %}
+
+</section>
+
+{% endif %}

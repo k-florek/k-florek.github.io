@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang='en'>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>2021 IAFP Advanced Molecular Analytics PDG</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../resources/css/reveal.css">
+    <link rel="stylesheet" href="../resources/css/theme/wslh_talks.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../resources/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../resources/css/pdf.css' : '../resources/css/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h2>Tracking the spread of SARS-CoV-2 variants in Wisconsin</h2><br>
+          <h5>Wisconsin State Laboratory of Hygiene</br>
+            Kelsey Florek, PhD, MPH</br>
+            June 24, 2021
+          </h5>
+          <br>
+
+          <div style="position:absolute;width: 100%;text-align:center;"><h6>Slides live at:<br> www.k-florek.net/talks</h6></div>
+          <img style="width: 25%;display:block;float:left;" src="../resources/images/wslh_logo_white.png">
+        </section>
+
+        <section>
+          <img style="width: 80%" src="images/nature-gisaid.png">
+          <div class="citation" style="background:white;background: rgba(255,255,255, 0.4)">
+            <a href="https://www.nature.com/articles/d41586-021-01069-w"><i>nature</i></a>
+          </div>
+        </section>
+
+        <section>
+          <iframe style="width: 100%; height: 500px" data-src="https://artic.network/" data-preload></iframe>
+          <div class="citation" style="background:white;background: rgba(255,255,255, 0.4)">
+            <a href="https://artic.network/">ARTIC Network</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Sequencing has become a key tool in understanding the transmission dynamics of disease outbreaks</h3>
+          <ul>
+            <li>2014-2016 West African Ebola Outbreak <a href="https://www.nature.com/articles/nature16996">Quick et al.</a></li>
+            <li>2015-2016 Americas Zika Outbreak <a href="https://www.nature.com/articles/nature22401">Faria et al.</a></li>
+            <li>African and South American Yellow Fever <a href="https://science.sciencemag.org/content/361/6405/894">Faria et al.</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <img style="width: 75%;"src="images/wi-cases-seq.png">
+          <div class="citation" style="background:white;background: rgba(255,255,255, 0.4)">
+            <a href="https://www.nytimes.com/interactive/2021/us/wisconsin-covid-cases.html">top: The New York Times WI Case Counts</a></br>
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">bottom: WI SARS-CoV-2 Genomic Dashboard</a>
+          </div>
+        </section>
+
+        <section data-background-iframe="../resources/gradient.html">
+          <h3 style="color: white">SARS-CoV-2 Sequencing Approach</h3>
+        </section>
+
+        <section>
+          <h3>ARTIC Tiled Amplicon Sequencing Approach</h3>
+          <img src="images/image7.png">
+          <div class="citation" style="background:white;background: rgba(255,255,255, 0.4)">
+            <a href="https://artic.network/ncov-2019">ARTIC Network</a></br>
+            <a href="https://dx.doi.org/10.17504/protocols.io.bfefjjbn">Illumina Protocol</a></br>
+            <a href="https://www.protocols.io/view/ncov-2019-sequencing-protocol-v3-locost-bh42j8ye">ONT Protocol</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Where we started in 2020</h3>
+          <div style="float: left; width: 50%">
+            <h4>Illumina MiSeq</h4>
+            <img src="images/image8.png">
+          </div>
+          <div style="float: right; width: 50%">
+            <h4>Oxford Nanopore MinION</h4>
+            <img src="images/image9.jpeg">
+          </div>
+        </section>
+
+        <section>
+          <h3>Where we are in 2021</h3>
+          <div style="float: left; width: 50%">
+            <h4>Illumina NextSeq 2000</h4>
+            <img src="images/nextseq2000.jpg">
+          </div>
+          <div style="float: right; width: 50%">
+            <h4>Oxford Nanopore GridION</h4>
+            <img src="images/gridion.jpg">
+          </div>
+        </section>
+
+        <section>
+          <h3>SARS-CoV-2 Sequence Analysis</h3>
+          <img style="width:100%" src="images/sc2-workflow.png">
+          <div class="citation" style="background:white;background: rgba(255,255,255, 0.4)">
+            <a href="https://github.com/StaPH-B/staphb_toolkit">StaPH-B Toolkit</a></br>
+            <a href="https://github.com/UPHL-BioNGS/Cecret">Cecret</a></br>
+            <a href="https://github.com/theiagen/public_health_viral_genomics">Theiagen Workflows</a>
+          </div>
+        </section>
+
+        <section data-background-iframe="../resources/gradient.html">
+          <h3 style="color: white">Generating actionable data visualizations from complex genomics data.</h3>
+        </section>
+
+        <section>
+          <ul>
+            <li>What is the current total of SARS-CoV-2 sequences?</li>
+            <li>How many sequences are being generated each week?</li>
+            <li>What proportion of sequences are variants of concern?</li>
+            <li>How many B.1.1.7s are there?</li>
+            <li>How many variants of concern are in my health jurisdiction?</li>
+            <li>What about X,Y, or Z variant?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Wisconsin SARS-CoV-2 Genomic Dashboard</h3>
+          <img src="images/dashboard.png">
+          <a href="https://dataportal.slh.wisc.edu/sc2dashboard">https://dataportal.slh.wisc.edu/sc2dashboard</a>
+        </section>
+
+        <section>
+          <h3>Cumulative SARS-CoV-2 Sequences in WI</h3>
+          <img src="images/cumulative-seqs.png">
+          <div class="citation" style="background:white;background: rgba(255,255,255, 0.4)">
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WI SARS-CoV-2 Genomic Dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>SARS-CoV-2 Sequences by WI County</h3>
+          <img src="images/countyseq.png">
+          <div class="citation" style="background:white;background: rgba(255,255,255, 0.4)">
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WI SARS-CoV-2 Genomic Dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>SARS-CoV-2 Variants in WI</h3>
+          <img src="images/variant_proportions.png">
+          <div class="citation" style="background:white;background: rgba(255,255,255, 0.4)">
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WI SARS-CoV-2 Genomic Dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Regional distribution of SARS-CoV-2 Variants</h3>
+          <img src="images/regional-var.png">
+          <div class="citation" style="background:white;background: rgba(255,255,255, 0.4)">
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WI SARS-CoV-2 Genomic Dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Summary</h3>
+          <ul>
+            <li>SARS-CoV-2 genomics is a powerful tool that can help us better understand the pandemic</li>
+            <li>WSLH has increased sequencing capacity to address outbreaks and provide surveillance</li>
+            <li>Continuing development of data infrastructure</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div class="close" style="width:50%;float:left;">
+            <ul>
+              <li>Wisconsin State Laboratory of Hygiene
+                <ul>
+                  <li>Abigail Shockey</li>
+                  <li>Sara Wagner</li>
+                  <li>Alicia Mooney</li>
+                  <li>Mike Mamerow</li>
+                  <li>Rich Griesser</li>
+                  <li>Tonya Danz</li>
+                  <li>Erika Hanson</li>
+                  <li>Tracy Heidke</li>
+                  <li>Tim Davis</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div style="width:50%;float:right;">
+            <ul>
+              <li>Special Thanks
+                <ul style="list-style-type: none;">
+                  <li><a href="https://www.aphl.org/"><img style="width:35%" src="https://www.aphl.org/_catalogs/masterpage/APHL/img/aphl-logo.png"></a></li>
+                  <li><a href="http://www.staphb.org/"><img style="width:30%" src="https://avatars.githubusercontent.com/u/42878449?s=200&v=4"></a></li>
+                  <li><a href="https://www.cdc.gov/"><img style="width:100%" src="images/cdc.png"></a>
+                  </li>
+            </ul>
+          </div>
+
+        </section>
+
+
+      </div>
+    </div>
+
+    <script src="../resources/js/head.min.js"></script>
+    <script src="../resources/js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 960,
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: '../resources/plugin/markdown.js' },
+          { src: '../resources/plugin/notes/notes.js', async: true },
+          { src: '../resources/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

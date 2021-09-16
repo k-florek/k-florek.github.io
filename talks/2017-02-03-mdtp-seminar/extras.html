@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang='en'>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Kelsey Florek">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>MDTP Seminar</title>
+
+		<link rel="stylesheet" href="../resources/css/reveal.css">
+		<link rel="stylesheet" href="../resources/css/theme/f_talks.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../resources/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../resources/css/pdf.css' : '../resources/css/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#000000">
+					<h2>Building a better understanding of seasonal influenza vaccine responses.</h2><br>
+					<h4>Kelsey Florek</br>
+						MDTP Seminar</br>
+						03 Feb 2017</br>
+					</h4>
+					</br>
+					<h5>Slides available at:<br> www.nflorek.net/talks</h5>
+				</section>
+
+				<section data-background-image="images/H3N2_struct.png">
+			    </section>
+
+				<section data-background-image="images/H3N2_glycans.png">
+			    </section>
+
+				<section>
+				<h3>influenza vaccine recommendations around the world</h3>
+				<div style="display:inline;float:left;max-width:300px;padding:10px;">
+					<img style="height:100px" src="images/who-logo.jpg">
+					<ul>
+						<li>pregnant women</li>
+						<li>children aged 6-59 months</li>
+						<li>elderly</li>
+						<li>individuals with chronic medical conditions</li>
+						<li>health-care workers</li>
+					</ul>
+				</div>
+				<div style="display:inline;float:left;max-width:300px;padding:10px;">
+					<img style="height:75px;padding-top:10px;padding-bottom:20px;" src="images/acip-logo.png">
+					<h4 style="text-align:left;">Routine annual influenza vaccination is recommended for all persons aged ≥6 months who do not have contraindications.</h4>
+				</div>
+				<div style="display:inline;float:left;max-width:300px;padding:10px;">
+					<img style="height:75px;padding-top:10px;padding-bottom:20px;" src="images/NHS-logo.png">
+					<ul>
+						<li>pregnant women</li>
+						<li>65 years or older</li>
+						<li>certain medical conditions</li>
+						<li>long-term care facility</li>
+					</ul>
+				</div>
+				<div class="citation">
+					<a href="http://www.who.int/influenza/vaccines/use/en/">WHO</a></br>
+					<a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6505a1.htm">ACIP</a></br>
+					<a href="http://www.nhs.uk/Conditions/vaccinations/Pages/who-should-have-flu-vaccine.aspx">NHS</a>
+				</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="../resources/js/head.min.js"></script>
+		<script src="../resources/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: false,
+				controls: false,
+				center: true,
+				progress: true,
+				slideNumber: true,
+				touch: true,
+				viewDistance: 4,
+
+
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 960,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.05,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.1,
+				maxScale: 5,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../resources/plugin/markdown.js' },
+					{ src: '../resources/plugin/notes/notes.js', async: true },
+					{ src: '../resources/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang='en'>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Kelsey Florek">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-151344274-1');
+		</script>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2019 AMD 2-Day</title>
+
+		<link rel="stylesheet" href="../resources/css/reveal.css">
+		<link rel="stylesheet" href="../resources/css/theme/f_talks.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../resources/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../resources/css/pdf.css' : '../resources/css/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="#000000">
+					<h2>Outbreak of highly resistant <i>A. baumannii</i> in Wisconsin care facilities: an in-depth genetic characterization</h2><br>
+					<h4>Kelsey Florek, MPH, PhD</br>
+						2019 AMD 2-Day</br>
+						September 23, 2019
+					</h4>
+					<br>
+					<img class="plain" style="width: 25%;display:inline-block;float:left;" src="images/logo_white_txt.png">
+					<div style="position:absolute;width: 100%;text-align:center;"><h5>Slides live from:<br> www.k-florek.net/talks</h5></div>
+				</section>
+
+				<section data-background-iframe="../resources/gradient.html">
+					<h2 style="color:white">
+						Overview</h2><br>
+						<h3 style="color:white">
+						<ul>
+							<li>Inital Case</li>
+							<li>Outbreak Investigation</li>
+							<li>Genetic Characterization</li>
+						</ul>
+					</h3>
+				</section>
+
+				<section>
+					<h3>September 2018</h3>
+					<div style="width:50%;float:left;">
+						<ul>
+							<li class="fragment">Patient at facility A with a lower respiratory infection 3 months after a heart transplant</li>
+							<li class="fragment">Respiratory cultures revealed a carbapenem resistant <i>A. baumannii</i></li>
+							<li class="fragment">Treatment:<ul>
+								<li style="margin-bottom:0px">Polymixin-B</li>
+								<li style="margin-bottom:0px">Meropenem</li>
+								<li style="margin-bottom:0px">Colistin</li>
+								<li style="margin-bottom:0px">Cefiderocol as compassionate treatment</li>
+							</ul></li>
+
+						</ul>
+					</div>
+					<div style="width:50%;float:right;">
+						<ul>
+							<li class="fragment">Patient passed away, unclear if cause was sepsis</li>
+							<li class="fragment">5 additional patients from Facility A had sputum cultures that were positive for carbapenem resistant <i>A. baumannii</i></li>
+							<li class="fragment">Wisconsin State Laboratory of Hygiene</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>Determining relatedness</h2>
+				</section>
+
+				<section>
+					<h3>Antimicrobial susceptibility</h3>
+					<font size="5">
+					<div style="width:50%;float:left;">
+						<ul>
+							<li>Amikacin: <font color="red">Resistant</font></li>
+							<li>Aztreonam: <font color="red">Resistant</font></li>
+							<li>Cefepime: <font color="red">Resistant</font></li>
+							<li>Cefotaxime: <font color="red">Resistant</font></li>
+							<li>Ceftazidime: <font color="red">Resistant</font></li>
+							<li>Ciprofloxacin: <font color="red">Resistant</font></li>
+							<li>Colistin: <font color="blue">Susceptible</font></li>
+							<li>Doripenem: <font color="red">Resistant</font></li>
+							<li>Doxycycline: <font color="red">Resistant</font></li>
+							<li>Gentamicin: <font color="red">Resistant</font></li>
+						</ul>
+					</div>
+					<div style="width:50%;float:right;">
+						<ul>
+							<li>Imipenem: <font color="red">Resistant</font></li>
+							<li>Levofloxacin: <font color="red">Resistant</font></li>
+							<li>Meropenem: <font color="red">Resistant</font></li>
+							<li>Minocycline: <font color="orange">Intermediate</font></li>
+							<li>Piperacillin-tazobactam: <font color="red">Resistant</font></li>
+							<li>Polymyxin-B: <font color="blue">Susceptible</font></li>
+							<li>Ticarcillin-clavulanate: <font color="red">Resistant</font></li>
+							<li>Tobramycin: <font color="red">Resistant</font></li>
+							<li>Trimethoprim-sulfamethoxazole: <font color="red">Resistant</font></li>
+						</ul>
+					</div>
+					</font>
+				</section>
+
+				<section>
+					<h3>Outbreak isolates are OXA-72</h3>
+					<img style="width:80%" src="images/orig5.png">
+				</section>
+
+				<section data-transition="slide-in fade-out">
+					<h2>Case Definitions</h2>
+					<ul>
+						<li class="fragment"><h3>Probable</h3><ul>
+							<li>Carbapenem resistant <i>A. baumannii</i> clinical isolate with outbreak AST profile</li>
+						</ul>
+						<li class="fragment"><h3>Confirmed</h3><ul>
+							<li>Carbapenem resistant <i>A. baumannii</i> clinical isolate genetically clustering with other outbreak isolates and harboring the OXA-24/40-like β-lactamase OXA-72</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section data-transition="fade-in slide-out">
+					<h2>Case Definitions</h2>
+					<ul>
+						<li><h3>Probable (n=43)</h3><ul>
+							<li>Carbapenem resistant <i>A. baumannii</i> clinical isolate with outbreak AST profile</li>
+						</ul>
+						<li><h3>Confirmed (n=22)</h3><ul>
+							<li>Carbapenem resistant <i>A. baumannii</i> clinical isolate genetically clustering with other outbreak isolates and harboring the OXA-24/40-like β-lactamase OXA-72</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3 style="margin-bottom:0">OXA-72 isolates cluster together</h3>
+					<img style="width:90%;margin-top:0px" src="images/tree_all.png">
+				</section>
+
+				<section  data-transition="fade-in fade-out">
+					<h3 style="margin-bottom:0">OXA-72 isolates cluster together</h3>
+					<img style="width:85%" src="images/snp_heatmap.png">
+				</section>
+
+				<section data-background-color="#333333" data-background-image="images/network_epi.png" data-background-size="contain">
+				</section>
+
+				<section data-background-color="#333333" data-background-image="images/network.png" data-background-size="contain">
+				</section>
+
+				<section data-transition="fade-in fade-out">
+					<h3 style="margin-bottom:0">OXA-72 plasmid</h3>
+					<img style="width:55%" src="images/plasmid_map.png">
+					<div class="citation">
+						<a href="https://www.ncbi.nlm.nih.gov/pubmed/23258313">Povilonis et al. (2013) J Antimicrob Chemother</a>
+					</div>
+				</section>
+
+				<section data-background-image="images/tree_plasmid.png" data-background-size="contain">
+				</section>
+
+				<section>
+					<h2>10 Second Synopsis</h2>
+					<ul>
+						<li>Highly resistant <i>A. baumannii</i>'s are a real threat</li>
+						<li>Sequencing was the only way to distinguish relatedness and OXA mechanism</li>
+						<li>Long reads useful in resolving mechanism location and transferability</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Acknowledgements</h2>
+					<div class="citation">
+						<a href="https://github.com/hakimel/reveal.js">HTML Presentation Framework</a>
+					</div>
+
+					<div style="float: left; width: 50%">
+						<h5>
+						<ul>
+							<li>Wisconsin State Laboratory of Hygiene
+								<ul>
+									<li>Abigail Shockey</li>
+									<li>Allen Bateman</li>
+									<li>Sara Wagner</li>
+								</ul></li>
+							<li>Wisconsin Department of Public Health
+								<ul>
+									<li>Megan Lasure</li>
+									<li>Lina Elbadawi</li>
+								</ul></li>
+							<li>Froedtert and The Medical College of Wisconsin
+								<ul>
+									<li>L Silvia Munoz-Price</li>
+								</ul></li>
+						</ul>
+						</h5>
+					</div>
+
+					<div style="float: right; width: 50%">
+						<h4>
+						special thanks to:
+							<ul style="list-style-type: none;">
+								<li><img style="width:60%" src="images/staphb.png"></li>
+								<li><img style="width:30%" src="images/aphl.png"></li>
+								<li><img style="width:30%" src="images/cdc.png"><br>Office of Molecular Detection</li>
+							</ul>
+						</h4>
+					</div>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../resources/js/head.min.js"></script>
+		<script src="../resources/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: false,
+				controls: false,
+				center: true,
+				progress: true,
+				slideNumber: true,
+				touch: true,
+				viewDistance: 4,
+
+
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 960,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.05,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.1,
+				maxScale: 5,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../resources/plugin/markdown.js' },
+					{ src: '../resources/plugin/notes/notes.js', async: true },
+					{ src: '../resources/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

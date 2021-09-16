@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang='en'>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Kelsey Florek">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-151344274-1');
+		</script>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2019 WGS</title>
+
+		<link rel="stylesheet" href="../resources/css/reveal.css">
+		<link rel="stylesheet" href="../resources/css/theme/f_talks.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../resources/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../resources/css/pdf.css' : '../resources/css/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="#000000">
+					<h2>Applications and use of whole genome sequencing in outbreak investigations.</h2><br>
+					<h4>Kelsey Florek, MPH, PhD</br>
+						November 21, 2019
+					</h4>
+					<br>
+					<img class="plain" style="width: 25%;display:inline-block;float:left;" src="images/logo_white_txt.png">
+					<div style="position:absolute;width: 100%;text-align:center;"><h5>Slides live from:<br> www.k-florek.net/talks</h5></div>
+				</section>
+
+				<section data-transition="slide-in fade-out">
+					<h3>Sequencing has changed how we determine microbial relatedness</h3>
+					<img style="width:90%;margin-top:0px" src="images/pfge-1.png">
+				</section>
+
+				<section data-transition="fade-in fade-out">
+					<h3>Sequencing has changed how we determine microbial relatedness</h3>
+					<img style="width:90%;margin-top:0px" src="images/pfge-2.png">
+				</section>
+
+				<section data-transition="fade-in slide-out">
+					<h3>Sequencing has changed how we determine microbial relatedness</h3>
+					<img style="width:90%;margin-top:0px" src="images/pfge-3.png">
+				</section>
+
+				<section data-transition="slide-in fade-out">
+					<h3>Sequencing has changed how we determine microbial relatedness</h3>
+					<img style="width:90%;margin-top:0px" src="images/pfgevwgs-1.png">
+				</section>
+
+				<section data-transition="fade-in slide-out">
+					<h3>Sequencing has changed how we determine microbial relatedness</h3>
+					<img style="width:90%;margin-top:0px" src="images/pfgevwgs-2.png">
+				</section>
+
+				<section>
+					<h3>Advances in Sequencing</h3>
+					<img style="width:90%;margin-top:0px" src="images/costpermb_2019.jpg">
+				</section>
+
+				<section>
+					<h3>Sanger Sequencing</h3>
+					<img style="width:90%;margin-top:0px" src="images/sanger.png">
+				</section>
+
+				<section>
+					<h3>Sanger Sequencing</h3>
+					<div style="width:50%;float:left;">
+						<img style="width:90%;margin-top:0px" src="images/sanger.png">
+					</div>
+					<div style="width:50%;float:right;">
+						<ul>
+							<li>max length: 800bp - 1000bp </li>
+							<li>throughput: 4 - 32 sequences per run</li>
+							<li>cost: $10 per 1000bp</li>
+						</ul>
+					</div>
+				</section>
+
+				<section data-background-iframe="../resources/gradient.html">
+					<h3 style="color:white">Next-Generation Sequencing</h3>
+					<p style="color:white">Massively parallel sequencing technology that greatly increases the throughput of genomic sequencing.</p>
+				</section>
+
+				<section>
+					<h3>Illumina Sequencing</h3>
+					<img style="width:90%;margin-top:0px" src="images/illumina_process.png">
+				</section>
+
+				<section>
+					<img style="width:90%;margin-top:0px" src="images/flow_cell.gif">
+				</section>
+
+				<section>
+					<h3>Illumina Sequencing</h3>
+					<div style="width:50%;float:left;">
+						<img style="width:90%;margin-top:0px" src="images/flow_cell.gif">
+					</div>
+					<div style="width:50%;float:right;">
+						<ul>
+							<li>max length: 2 x 300bp </li>
+							<li>throughput: 25 million sequences per run</li>
+							<li>cost: $0.0005 per 1000bp</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>Increases in data requires advanced analyses</h3>
+					<ul>
+						<li class="fragment">15 Giga Bases generated per MiSeq run</li>
+						<li class="fragment">40,000 - 150,000 words in a novel</li>
+						<li class="fragment">average word length in English is 4.79</li>
+						<li class="fragment">one sequencing run would generate 3,296 novels with 95,000 words each</li>
+				</section>
+
+				<section>
+					<h3>Bioinformatics</h3>
+					<img style="width:70%;margin-top:0px" src="images/bioinfomatics_venn_diagram.png">
+				</section>
+
+				<section data-background-iframe="../resources/gradient.html">
+					<h3 style="color:white">What is Whole Genome Sequencing (WGS)?</h3>
+					<h3 style="color:white">How is it used and what can we gain from using it?</h3>
+				</section>
+
+				<section>
+					<h3>Shotgun sequencing approach</h3>
+					<img style="width:100%;margin-top:0px" src="images/shotgun_sequencing.jpg">
+				</section>
+
+				<section>
+					<h3>Shotgun sequencing approach</h3>
+					<img style="width:100%;margin-top:0px" src="images/mapped_align.png">
+				</section>
+
+				<section>
+					<h3>To infer bacterial relationships from sequence data we have to consider the effects of evolution.</h3>
+				</section>
+
+				<section>
+					<img style="width:100%;margin-top:0px" src="images/evolution.png">
+				</section>
+
+				<section>
+					<img style="width:100%;margin-top:0px" src="images/phylogenetic_tree.png">
+				</section>
+
+				<section>
+					<h3>There are several approaches to measure the relatedness of isolates</h3>
+					<ul>
+						<li class="fragment">Single Nucleotide Polymorphisms or SNPs</li>
+						<li class="fragment">MLST</li>
+						<li class="fragment">wgMLST</li>
+						<li class="fragment">Core-genome Relatedness</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Single Nucleotide Polymorphisms</h3>
+					<img style="width:100%;margin-top:0px" src="images/snps.png">
+				</section>
+
+				<section>
+					<h3>Single Nucleotide Polymorphisms</h3>
+					<img style="width:70%;margin-top:0px" src="images/snp_heatmap.png">
+				</section>
+
+				<section>
+					<h3>Multi-locus Sequence Typing or MLST</h3>
+					<img style="width:100%;margin-top:0px" src="images/mlst.png">
+				</section>
+
+				<section>
+					<h3>whole genome MLST or wgMLST</h3>
+					<img style="width:100%;margin-top:0px" src="images/pan-genome.png">
+				</section>
+
+				<section>
+					<h3>whole genome MLST or wgMLST</h3>
+					<img style="width:100%;margin-top:0px" src="images/cdc_mlst.png">
+				</section>
+
+				<section>
+					<h3>core-genome comparisons</h3>
+					<img style="width:100%;margin-top:0px" src="images/cg_tree.png">
+				</section>
+
+				<section>
+					<h3>Moving beyond WGS</h3>
+					<img style="width:100%;margin-top:0px" src="images/env_meta.jpg">
+				</section>
+
+				<section>
+					<h2>Questions?</h2>
+					<div class="citation">
+						<a href="https://github.com/hakimel/reveal.js">HTML Presentation Framework</a>
+					</div>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../resources/js/head.min.js"></script>
+		<script src="../resources/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: false,
+				controls: false,
+				center: true,
+				progress: true,
+				slideNumber: true,
+				touch: true,
+				viewDistance: 6,
+
+
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 960,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.05,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.1,
+				maxScale: 5,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../resources/plugin/markdown.js' },
+					{ src: '../resources/plugin/notes/notes.js', async: true },
+					{ src: '../resources/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

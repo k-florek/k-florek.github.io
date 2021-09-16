@@ -1,0 +1,5 @@
+---
+title: 'Seasonal influenza vaccines promote protective responses against historical strains.'
+subtitle: '2016 MPH Defense'
+slide_url: '/talks/2016-12-02-mph-defense/index.html'
+---
