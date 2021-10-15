@@ -16,7 +16,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>SARS-CoV-2 Genomics</title>
+    <title>WSLH SARS-CoV-2 Genomics</title>
 
     <link rel="stylesheet" href="../reveal.js-4.1.2/dist/reset.css">
     <link rel="stylesheet" href="../reveal.js-4.1.2/dist/reveal.css">
@@ -31,7 +31,7 @@
       <div class="slides">
 
         <section>
-          <h2>Understanding SARS-CoV-2 genomics and the growing need for real-time data.</h2><br>
+          <h2>SARS-CoV-2 genomics and the growing need for real-time data.</h2><br>
           <p>Wisconsin State Laboratory of Hygiene</br>
             Kelsey Florek, PhD, MPH</br>
             October 15, 2021</br></br>
@@ -95,8 +95,7 @@
           <ul>
             <li class="fragment">Likely in the midst of a global Delta selective sweep.</li>
             <li class="fragment">The Delta lineage may be following a similar pattern to influenza H1N1pdm with a host adaptation phase followed by a sustained antigenic drift.</li>
-            <li class="fragment">SARS-CoV-2 Genomic surveillance is crucial to support vaccine updates as Delta continues to evolve.</li>
-            <li class="fragment">Genomic surveillance will be needed to monitor for the emergence of mutations that convey vaccine/antiviral breakthroughs, increased transmission, or increased virulence.</li>
+            <li class="fragment">Continued genomic surveillance will be needed to monitor for the emergence of mutations that convey vaccine/antiviral breakthroughs, increased transmission, or increased virulence.</li>
           <ul>
         </section>
 
@@ -137,18 +136,10 @@
             <image style="width:100%" src="images/geo_cases_sequenced.png">
           </div>
           <div class="citation">
-            <a href="https://dataportal.slh.wisc.edu/">WSLH SARS-CoV-2 Dashboard</a>
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WSLH SARS-CoV-2 Dashboard</a>
           </div>
         </section>
 
-<!--
-        How do we generate date quickly?
-        How do we analyze data quickly?
-        How do we report data quickly?
-        Turning Sequence data into actionable data for the public?
-          Now?
-          In the future? (Towards a data warehouse)
--->
         <section>
           <h3>Sequencing Data Generation</h3>
           <image style="width:100%" src="images/sc2_seq_workflow.png">
@@ -167,16 +158,36 @@
           </ul>
         </section>
 
-        <section>
-          <iframe data-src="https://dataportal.slh.wisc.edu" width="900" height="400"></iframe>
+        <section backgroundTransition: 'none-in none-out' data-background-iframe="https://dataportal.slh.wisc.edu/sc2dashboard"
+          data-background-interactive>
         </section>
 
         <section>
-          <h3>Dashboard data use</h3>
+          <h3>Dashboard Data Infrastructure</h3>
           <img style="width:70%" src="images/dashboard.png">
           <div class="citation">
             <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WI SARS-CoV-2 Dashboard</a>
           </div>
+        </section>
+
+        <section>
+          <h3>Dashboard Data Infrastructure</h3>
+          <ul>
+            <li style="color:#7564ff">Uses an accessible data analytics language R.</li>
+            <li style='color:#f30039'>Somewhat limited in design and implementation.</li>
+            <li style="color:#7564ff">Completely automated!</li>
+            <li style='color:#f30039'>Dependent entirely on publicly available data served through 3rd parties.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Building a Genomics Data Warehouse</h3>
+          <p>Central repositories of integrated data from one or more disparate sources used for reporting and data analysis.<p>
+          <image style="width:100%" src="images/WSLH_Sequencing_Data_Warehouse.png">
+        </section>
+
+        <section data-background-iframe="../resources/paperjs/viruses.html">
+          <h3 style="color: black">Questions?</h3>
         </section>
 
       </div>
