@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Containerization - COVID-19</title>
+
+    <link rel="stylesheet" href="../reveal.js-4.1.2/dist/reset.css">
+    <link rel="stylesheet" href="../reveal.js-4.1.2/dist/reveal.css">
+    <link rel="stylesheet" href="../reveal.js-4.1.2/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../reveal.js-4.1.2/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h2>Containerization: the silent hero of the COVID-19 variant surveillance effort.</h2><br>
+          <p>
+            Kelsey Florek, PhD, MPH</br>
+            Senior Genomics and Data Scientist</br>
+            Wisconsin State Laboratory of Hygiene</br>
+            December 9, 2021</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> www.k-florek.net/talks
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:30px" src="../resources/images/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <image style="width:25%;display:block;float:right;margin-right:30px" src="images/staphb-logo-circ.png">
+          </div>
+        </section>
+
+        <section>
+          <image style="width:70%" src="images/bioinformatics-data-science-venn-diagrams.png">
+          <div class="citation">
+            <a href="https://omgenomics.com/what-is-bioinformatics/">OMGenomics</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>What is StaPH-B?</h3>
+          <div style="float:left;width:30%">
+            <image style="width:60%" src="images/staphb-logo-circ.png">
+          </div>
+          <div style="float:right;width:70%">
+            <ul>
+              <li style="margin-bottom:20px"><b>Sta</b>te <b>P</b>ublic <b>H</b>ealth <b>B</b>ioinformatics</li>
+              <li class="fragment" style="margin-bottom:20px">Provide training and resources for applied bioinformatics</li>
+              <li class="fragment" style="margin-bottom:20px">Support construction and maintenance of bioinformatics infrastructure in state Public Health Laboratories</li>
+              <li class="fragment" style="margin-bottom:20px">Partner with Centers for Disease Control and Prevention and the Association of Public Health Laboratories</li>
+            </ul>
+          </div>
+          <div class="citation">
+            <a href="https://staphb.org">staphb.org</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Barriers to Bioinformatics in Public Health Laboratories</h3>
+          <ul>
+            <li class="fragment" style="margin-bottom:20px">vast landscape of compute infrastructure
+              <ul>
+                <li>on-premise servers/workstations</li>
+                <li>high performance compute cluster</li>
+                <li>public cloud</li>
+                <li>none</li>
+              </ul></li>
+            <li class="fragment" style="margin-bottom:20px">limited experience working with open source software</li>
+            <li class="fragment" style="margin-bottom:20px">laboratory IT support limited to typical desktop support</li>
+          </ul>
+        </section>
+
+        <section>
+          <image style="width:70%" src="images/horizontal-logo-monochromatic-white.png">
+        </section>
+
+        <section>
+          <h3>staphb docker image project</h3>
+        </section>
+
+        <section>
+          <h3>what the project hosts</h3>
+        </section>
+
+        <section>
+          <h3>what the project does for tool developers</h3>
+        </section>
+
+        <section>
+          <h3>cecret</h3>
+        </section>
+
+        <section>
+          <h3>titan</h3>
+        </section>
+
+        <section>
+          <h3>direct effect on the covid-19 pandemic</h3>
+        </section>
+
+        <section>
+          <h3>pulls before and after</h3>
+        </section>
+
+        <section>
+          <h3>pangolin</h3>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="../reveal.js-4.1.2/dist/reveal.js"></script>
+    <script src="../reveal.js-4.1.2/plugin/notes/notes.js"></script>
+    <script src="../reveal.js-4.1.2/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js-4.1.2/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
