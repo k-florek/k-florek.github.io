@@ -8,6 +8,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   z-index: 100;
   font-size: 0.45em !important; }
 
+  .aligned {
+    display: flex;
+    align-items: center;
+    
+  }
+
 .title {
   color: #fff !important;
   font-weight: 400 !important; }

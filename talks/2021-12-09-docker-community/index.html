@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../reveal.js-4.1.2/dist/reveal.css">
     <link rel="stylesheet" href="../reveal.js-4.1.2/dist/theme/f_theme.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="../reveal.js-4.1.2/plugin/highlight/monokai.css">
@@ -41,6 +42,9 @@
 
           <div style="position:absolute;width: 100%;text-align:center;">
             Slides live at:<br> www.k-florek.net/talks
+          </br>
+          </br>
+          <i class="fab fa-twitter"></i><a href='https://twitter.com/kelsey_florek'>@kelsey_florek</a>
           </div>
           </br>
 
@@ -93,45 +97,111 @@
         </section>
 
         <section>
-          <image style="width:70%" src="images/horizontal-logo-monochromatic-white.png">
+          <image style="width:60%" src="images/horizontal-logo-monochromatic-white.png">
+        </section>
+
+        <section>
+          <div style="float:left;width:75%">
+            <image style="width:25%" src="images/github.png">
+            <h3 style="color:#0969da">StaPH-B/docker-builds</h3>
+            <image style="width:70%" src="images/docker-builds.png">
+          </div>
+          <div style="float:right;width:25%">
+            <div class="aligned" style="margin-left: -100px;margin-top:100px">
+              <image style="width:140px;border-radius: 50%;box-shadow:2px 2px 5px black" src="images/Curtis_Kapsak.jpg">
+              <span style="margin-left:30px;text-align:left">Curtis Kapsak</br><i class="fab fa-twitter"></i><a href='https://twitter.com/curtiskapsak' style=''>@curtiskapsak</a></span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 style="color:#0969da">StaPH-B/docker-builds</h3>
           <ul>
-            <li>docker enables:
-              <ul>
-                <li>highly portable tools that work across a variety of compute environments</li>
-                <li>packaging solution to open source software that often have extensive dependencies</li>
-                <li>
+            <li>Dockerfiles >90 different open source bioinformatic analysis tools</li>
+            <li>Data QC</li>
+            <li>Genome Assembly</li>
+            <li>Annotation</li>
+            <li>Classification</li>
+          </ul>
+        </section>
+
+        <section data-background-iframe="../resources/gradient.html">
+          <h2 style="color: white">SARS-CoV-2 Variant Surveillance</h2>
         </section>
 
         <section>
-          <h3>staphb docker image project</h3>
+          <image style="width:100%;margin-top:-10px" src="images/seq_process.png">
+          <pre style="margin-top:-20px;font-size:0.9em">
+            <code  class="fragment" data-trim data-noescape>
+              @M03478:141:000000000-C5B4D:1:1101:25956:10945 1:N:0:1
+              TTCCGTATTCATGCAACCTATGATGAAAGTATTAGTCGGTTACTCAATGTATTTGAGCGC
+              +
+              ABBBBCFFFFFFGGGGGGGGGG5GHHHHHGGHHHHHHGGGGFHHHHHHHHHHHHHFGHGG
+            </code>
+          </pre>
+        </section>
+
+        <section data-background="#0969da">
+          <h3 style="color:white">UPHL-BioNGS/Cecret</h3>
+          <div style="float:left;width:70%">
+            <image style="width:100%;box-shadow:2px 2px 5px black" src="images/cecret_dag.png">
+          </div>
+          <div style="float:right;width:30%">
+            <image style="width:100%;box-shadow:2px 2px 5px black" src="images/cecret.jpeg">
+            <div class="aligned" style="margin-top:30px">
+              <image style="width:140px;border-radius: 50%;box-shadow:2px 2px 5px black" src="images/Erin_Young.jpeg">
+              <span style="color:white;margin-left:30px;">Dr. Erin Young</br><i class="fab fa-twitter"></i><a href='https://twitter.com/erinyoun' style='color:white'>@erinyoun</a></span>
+            </div>
+          </div>
+          <div class="citation">
+            <a style="color:white" href="https://github.com/UPHL-BioNGS/Cecret">UPHL-BioNGS/Cecret</a>
+          </div>
+        </section>
+
+        <section data-background="#0969da">
+          <h3 style="color:white">theiagen/public_health_viral_genomics</h3>
+          <div style="float:left;width:70%">
+            <image style="width:75%;box-shadow:2px 2px 5px black;background-color:white" src="images/Titan_Illumina_PE.png"></br>Titan Illumina PE
+          </div>
+          <div style="float:right;width:30%;">
+            <div class="aligned" style="margin-left: -80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="images/Kevin_Libuit.jpg">
+              <span style="color:white;margin-left:30px;text-align:left">Kevin Libuit</br><i class="fab fa-twitter"></i><a href='https://twitter.com/kevinlibuit' style='color:white'>@kevinlibuit</a></span>
+            </div>
+            <div class="aligned" style="margin-left: -80px">
+              <image style="width:140px;border-radius: 50%;box-shadow:2px 2px 5px black" src="images/Robert_Petit_III.png">
+              <span style="color:white;margin-left:30px;text-align:left">Dr. Robert Petit III</br><i class="fab fa-twitter"></i><a href='https://twitter.com/rpetit3' style='color:white'>@rpetit3</a></span>
+            </div>
+            <div class="aligned" style="margin-left: -80px">
+              <image style="width:140px;border-radius: 50%;box-shadow:2px 2px 5px black" src="images/Frank_Ambrosio.jpg">
+              <span style="color:white;margin-left:30px;text-align:left">Frank Ambrosio</br><i class="fab fa-twitter"></i><a href='https://twitter.com/frankambrosio3' style='color:white'>@frankambrosio3</a></span>
+            </div>
+          </div>
+          <div class="citation">
+            <a style="color:white" href="https://github.com/theiagen/public_health_viral_genomics">theiagen/public_health_viral_genomics</a>
+          </div>
         </section>
 
         <section>
-          <h3>what the project hosts</h3>
+          <image style="width:85%" src="images/210308_pulls.jpeg">
+            <div class="citation">
+              <a href="https://twitter.com/CurtisKapsak/status/1450574125542645760">@curtiskapsak</a>
+            </div>
         </section>
 
         <section>
-          <h3>what the project does for tool developers</h3>
+          <image style="width:85%" src="images/211019_pulls.png">
+            <div class="citation">
+              <a href="https://twitter.com/CurtisKapsak/status/1450574125542645760">@curtiskapsak</a>
+            </div>
+        </section>
+
+        <section data-background-iframe="../resources/gradient.html">
+          <h2 style="color: white">Keeping up with SARS-CoV-2 Evolution</h2>
         </section>
 
         <section>
-          <h3>cecret</h3>
-        </section>
-
-        <section>
-          <h3>titan</h3>
-        </section>
-
-        <section>
-          <h3>direct effect on the covid-19 pandemic</h3>
-        </section>
-
-        <section>
-          <h3>pulls before and after</h3>
-        </section>
-
-        <section>
-          <h3>pangolin</h3>
+          <h3>2 mutations per month in the 29,903 base genome</h3>
         </section>
 
       </div>
