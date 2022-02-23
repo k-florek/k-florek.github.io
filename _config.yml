@@ -6,6 +6,7 @@ collections:
     permalink: /blog/:slug:output_ext
   talks:
   publications:
+  unlistedtalks:
 
 defaults:
   -
