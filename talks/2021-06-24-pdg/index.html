@@ -24,18 +24,18 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../resources/css/reveal.css">
-    <link rel="stylesheet" href="../resources/css/theme/wslh_talks.css">
+    <link rel="stylesheet" href="/resources/restalks/css/reveal.css">
+    <link rel="stylesheet" href="/resources/restalks/css/theme/wslh_talks.css">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../resources/css/zenburn.css">
+    <link rel="stylesheet" href="/resources/restalks/css/zenburn.css">
 
     <!-- Printing and PDF exports -->
     <script>
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../resources/css/pdf.css' : '../resources/css/paper.css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/resources/restalks/css/pdf.css' : '/resources/restalks/css/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
   </head>
@@ -53,7 +53,7 @@
           <br>
 
           <div style="position:absolute;width: 100%;text-align:center;"><h6>Slides live at:<br> www.k-florek.net/talks</h6></div>
-          <img style="width: 25%;display:block;float:left;" src="../resources/images/wslh_logo_white.png">
+          <img style="width: 25%;display:block;float:left;" src="/resources/restalks/images/wslh_logo_white.png">
         </section>
 
         <section>
@@ -87,7 +87,7 @@
           </div>
         </section>
 
-        <section data-background-iframe="../resources/gradient.html">
+        <section data-background-iframe="/resources/restalks/gradient.html">
           <h3 style="color: white">SARS-CoV-2 Sequencing Approach</h3>
         </section>
 
@@ -135,7 +135,7 @@
           </div>
         </section>
 
-        <section data-background-iframe="../resources/gradient.html">
+        <section data-background-iframe="/resources/restalks/gradient.html">
           <h3 style="color: white">Generating actionable data visualizations from complex genomics data.</h3>
         </section>
 
@@ -233,8 +233,8 @@
       </div>
     </div>
 
-    <script src="../resources/js/head.min.js"></script>
-    <script src="../resources/js/reveal.js"></script>
+    <script src="/resources/restalks/js/head.min.js"></script>
+    <script src="/resources/restalks/js/reveal.js"></script>
 
     <script>
       // More info https://github.com/hakimel/reveal.js#configuration
@@ -263,9 +263,9 @@
 
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
-          { src: '../resources/plugin/markdown.js' },
-          { src: '../resources/plugin/notes/notes.js', async: true },
-          { src: '../resources/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+          { src: '/resources/restalks/plugin/markdown.js' },
+          { src: '/resources/restalks/plugin/notes/notes.js', async: true },
+          { src: '/resources/restalks/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
       });
     </script>

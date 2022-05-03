@@ -22,18 +22,18 @@
 
 		<title>2019 WGS</title>
 
-		<link rel="stylesheet" href="../resources/css/reveal.css">
-		<link rel="stylesheet" href="../resources/css/theme/f_talks.css">
+		<link rel="stylesheet" href="/resources/restalks/css/reveal.css">
+		<link rel="stylesheet" href="/resources/restalks/css/theme/f_talks.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../resources/css/zenburn.css">
+		<link rel="stylesheet" href="/resources/restalks/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../resources/css/pdf.css' : '../resources/css/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/resources/restalks/css/pdf.css' : '/resources/restalks/css/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
@@ -101,7 +101,7 @@
 					</div>
 				</section>
 
-				<section data-background-iframe="../resources/gradient.html">
+				<section data-background-iframe="/resources/restalks/gradient.html">
 					<h3 style="color:white">Next-Generation Sequencing</h3>
 					<p style="color:white">Massively parallel sequencing technology that greatly increases the throughput of genomic sequencing.</p>
 				</section>
@@ -143,7 +143,7 @@
 					<img style="width:70%;margin-top:0px" src="images/bioinfomatics_venn_diagram.png">
 				</section>
 
-				<section data-background-iframe="../resources/gradient.html">
+				<section data-background-iframe="/resources/restalks/gradient.html">
 					<h3 style="color:white">What is Whole Genome Sequencing (WGS)?</h3>
 					<h3 style="color:white">How is it used and what can we gain from using it?</h3>
 				</section>
@@ -225,8 +225,8 @@
 			</div>
 		</div>
 
-		<script src="../resources/js/head.min.js"></script>
-		<script src="../resources/js/reveal.js"></script>
+		<script src="/resources/restalks/js/head.min.js"></script>
+		<script src="/resources/restalks/js/reveal.js"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -255,9 +255,9 @@
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: '../resources/plugin/markdown.js' },
-					{ src: '../resources/plugin/notes/notes.js', async: true },
-					{ src: '../resources/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: '/resources/restalks/plugin/markdown.js' },
+					{ src: '/resources/restalks/plugin/notes/notes.js', async: true },
+					{ src: '/resources/restalks/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
