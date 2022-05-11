@@ -50,6 +50,10 @@ ul li {
   padding-bottom: 15px;
 }
 
+ol li {
+  padding-bottom: 15px;
+}
+
 .no-padding ul li {
   padding-bottom: 0px;
 }
