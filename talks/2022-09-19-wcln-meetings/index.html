@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>2022 WCLN</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Pop Rocks</h2>
+          <h3>
+            <span style="color:#F46C6C">T</span><span style="color:#F4856C">h</span><span style="color:#F49D6C">e</span> <span style="color:#F4B66C">E</span><span style="color:#F4CF6C">x</span><span style="color:#F4E86C">p</span><span style="color:#E8F46C">l</span><span style="color:#CFF46C">o</span><span style="color:#B6F46C">s</span><span style="color:#9DF46C">i</span><span style="color:#85F46C">v</span><span style="color:#6CF46C">e</span> <span style="color:#6CF485">P</span><span style="color:#6CF49D">o</span><span style="color:#6CF4B6">t</span><span style="color:#6CF4CF">e</span><span style="color:#6CF4E8">n</span><span style="color:#6CE8F4">t</span><span style="color:#6CCFF4">i</span><span style="color:#6CB6F4">a</span><span style="color:#6C9DF4">l</span> <span style="color:#6C85F4">o</span><span style="color:#6C6CF4">f</span> <span style="color:#856CF4">S</span><span style="color:#9D6CF4">e</span><span style="color:#B66CF4">q</span><span style="color:#CF6CF4">u</span><span style="color:#E86CF4">e</span><span style="color:#F46CE8">n</span><span style="color:#F46CCF">c</span><span style="color:#F46CB6">i</span><span style="color:#F46C9D">n</span><span style="color:#F46C85">g</span>
+          </h3><br>
+          <p>
+            Kelsey Florek, PhD, MPH</br>
+            Senior Genomics and Data Scientist</br>
+            Wisconsin State Laboratory of Hygiene</br>
+            September, 2022</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> www.k-florek.net/talks
+          </br>
+          </br>
+          <i class="fab fa-twitter"></i><a href='https://twitter.com/kelsey_florek'>@kelsey_florek</a>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:30px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+        </section>
+
+        <!---
+          Advances in sequencing
+          - pulsefield vs sequencing
+          - sanger vs nextgen
+            - amount of data generated from nextgen
+            - what bioinformatics does
+          nextgen sequencing
+            - classification
+              - pcr vs mlst vs wgmlst
+            - gene detection
+              - resistance genes
+              - virulence factors
+            - phenotypic prediction
+              - predicting AST
+              - predicting mutational effects
+          nextgen sequencing and public health
+            - genomic surveillance
+            - outbreak investigation, cluster detection
+            - Data Lake
+          nextgen sequencing and clinical testing
+            - pathogen detection
+            - resistance gene detection
+        -->
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Advances in Genomic Characterization</h2>
+        </section>
+
+        <section>
+          <h3>PFGE - Traditional Genotyping</h3>
+          <img style="width:90%;margin-top:0px" src="images/pfge.png">
+        </section>
+
+        <section>
+          <h3>Increasing the resolution of genomic information</h3>
+          <img style="width:90%;margin-top:0px" src="images/pfgevwgs.png">
+        </section>
+
+        <section>
+          <h3>Where we have been and where we are going</h3>
+          <div style="width:50%;float:left;" class="fragment">
+            <p>Sanger Sequencing</p>
+            <img style="width:90%;margin-top:0px" src="images/sanger.png">
+          </div>
+          <div style="width:50%;float:right;"  class="fragment">
+            <p>Next Generation Sequencing (Illumina)</p>
+            <img style="width:90%;margin-top:0px" src="images/flow_cell.gif">
+          </div>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h3>Increases in data requires advanced analyses (MiSeq)</h3>
+          <ul>
+            <li class="fragment">15,000,000,000 ATGC's generated per sequencing run</li>
+            <li class="fragment">40,000 - 150,000 words in a novel</li>
+            <li class="fragment">average word length in English is 4.79</li>
+            <li class="fragment">one sequencing run would generate <b>32,963</b> novels with 95,000 words each</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>Increases in data requires advanced analyses (Nextseq 2000)</h3>
+          <ul>
+            <li>360,000,000,000 ATGC's generated per sequencing run</li>
+            <li>40,000 - 150,000 words in a novel</li>
+            <li>average word length in English is 4.79</li>
+            <li>one sequencing run would generate <b>791,121</b> novels with 95,000 words each</li>
+          </ul>
+        </section>
+
+        <section>
+          <img style="width:60%;margin-top:0px" src="images/bioinfomatics.png">
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Application of Next Generation Sequencing</h2>
+        </section>
+
+        <section>
+          <h3>Bacterial Genomic Classification - Multi Locus Sequence Typing</h3>
+          <img style="width:90%;margin-top:0px" src="images/mlst.png">
+        </section>
+
+        <section>
+          <h3>Bacterial Genetic Makeup</h3>
+          <img style="width:70%;margin-top:0px" src="images/pan-genome.png">
+        </section>
+
+        <section>
+          <h3>Viral Genomic Classification</h3>
+          <img style="width:70%;margin-top:0px" src="images/pango_designations.png">
+          <div class="citation">
+            <a href="https://www.pango.network/">https://www.pango.network/</a>
+          </div>
+        </section>
+
+
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Next Generation Sequencing in Public Health</h2>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Next Generation Sequencing in Clinical Testing</h2>
+        </section>
+
+        
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            </br>
+            </br>
+            <ul>
+              <li>WSLH Viral Sequencing Group
+                <ul>
+                  <li>Tim Davis</li>
+                  <li>Rich Griesser</li>
+                  <li>Kyley Guenther</li>
+                  <li>Erika Hanson</li>
+                </ul>
+              </li>
+              <li>Special Thanks
+                <ul>
+                  <li>Erika Hanson</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/paperjs/viruses.html">
+          <h2 style="color: black">Questions?</h2>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
