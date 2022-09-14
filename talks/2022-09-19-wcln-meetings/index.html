@@ -32,9 +32,9 @@
       <div class="slides">
         <section>
           <h2>Pop Rocks</h2>
-          <h3>
+          <h2>
             <span style="color:#F46C6C">T</span><span style="color:#F4856C">h</span><span style="color:#F49D6C">e</span> <span style="color:#F4B66C">E</span><span style="color:#F4CF6C">x</span><span style="color:#F4E86C">p</span><span style="color:#E8F46C">l</span><span style="color:#CFF46C">o</span><span style="color:#B6F46C">s</span><span style="color:#9DF46C">i</span><span style="color:#85F46C">v</span><span style="color:#6CF46C">e</span> <span style="color:#6CF485">P</span><span style="color:#6CF49D">o</span><span style="color:#6CF4B6">t</span><span style="color:#6CF4CF">e</span><span style="color:#6CF4E8">n</span><span style="color:#6CE8F4">t</span><span style="color:#6CCFF4">i</span><span style="color:#6CB6F4">a</span><span style="color:#6C9DF4">l</span> <span style="color:#6C85F4">o</span><span style="color:#6C6CF4">f</span> <span style="color:#856CF4">S</span><span style="color:#9D6CF4">e</span><span style="color:#B66CF4">q</span><span style="color:#CF6CF4">u</span><span style="color:#E86CF4">e</span><span style="color:#F46CE8">n</span><span style="color:#F46CCF">c</span><span style="color:#F46CB6">i</span><span style="color:#F46C9D">n</span><span style="color:#F46C85">g</span>
-          </h3><br>
+          </h2><br>
           <p>
             Kelsey Florek, PhD, MPH</br>
             Senior Genomics and Data Scientist</br>
@@ -52,6 +52,9 @@
 
           <div style="float:left;width:50%">
             <img style="width: 40%;display:block;float:left;margin-top:30px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <img style="width: 40%;display:block;float:right;margin-top:10px; margin-right:30px" src="images/poprocks.png">
           </div>
         </section>
 
@@ -103,6 +106,10 @@
             <p>Next Generation Sequencing (Illumina)</p>
             <img style="width:90%;margin-top:0px" src="images/flow_cell.gif">
           </div>
+        </section>
+
+        <section>
+          <img style="width:90%;margin-top:0px" src="images/seq_process.png">
         </section>
 
         <section data-transition="slide-in fade-out">
@@ -163,9 +170,11 @@
 
         <section>
           <h3>Phenotypic Prediction - Antimicrobial Susceptibility Test</h3>
-          Image of AST predictions from ARES Genetics
+          <img style="width:75%" src="images/ares-genetics.png">
+          <div class="citation">
+            <a href="https://www.opgen.com/ares/">ares genetics</a>
+          </div>
         </section>
-
 
         <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
           <h2 style="color: white">Next Generation Sequencing in Public Health</h2>
@@ -173,33 +182,91 @@
 
         <section>
           <h3>Pathogen Genomic Surveillance</h3>
-          <iframe height="725" width="100%" frameborder="no" scrolling="no" src="https://wslhdatacloud.net/variants"><p>Your browser does not support iframes.</p></iframe>
+          <iframe height="725" width="800" frameborder="no" scrolling="no" src="https://wslhdatacloud.net/variants"><p>Your browser does not support iframes.</p></iframe>
         </section>
 
         <section>
           <h3>Outbreak Investigations</h3>
-          iframe showing COVID data
+          <iframe src="ar_report_example.html" height="400" width="800" title="Iframe Example"><p>Your browser does not support iframes.</p></iframe>
         </section>
 
         <section>
-          <h3>Data Lake</h3>
+          <h3>Managing a growing data infrastructure</h3>
+          <img style="width:45%" src="images/Genomic_Data_Lake.png">
         </section>
 
         <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
-          <h2 style="color: white">Next Generation Sequencing in Clinical Testing</h2>
+          <h2 style="color: white">Next Generation Sequencing and Diagnostic Testing</h2>
         </section>
 
         <section>
-          <h3>Pathogen Detection</h3>
-          Charles Chu Story
+          <h3>EUA Approved Illumina COVIDSeq Test</h3>
+          <img style="width:60%" src="images/covid-seq.png">
+          <div class="citation">
+            <a href="https://www.illumina.com/products/by-type/ivd-products/covidseq.html">Illumina COVIDSeq</a>
+          </div>
         </section>
 
         <section>
-          <h3>Cancer Genetics</h3>
+          <h3>Metagenomic Pathogen Detection</h3>
+          <img style="width:60%;box-shadow:2px 2px 5px black" src="images/chiu_nature_med.png">
+          <div class="citation">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/33169017/">Gu et al. <i>Nat Med.</i> 2021</a>
+          </div>
         </section>
 
         <section>
-          <h3>Resistance Gene Detection</h3>
+          <h3>Metagenomic Pathogen Detection</h3>
+          <div style="width:50%;float:left;">
+            <img style="width:60%;box-shadow:2px 2px 5px black" src="images/chiu_nature_med.png">
+          </div>
+          <div style="width:50%;float:right;">
+          <ul>
+            <li class="fragment">Illumina
+              <ul>
+                <li>Bacteria: 79% Sensitivity, 91% Specificity</li>
+                <li>Fungi: 91% Sensitivity, 89% Specificity</li>
+              </ul>
+            </li>
+            <li class="fragment">Oxford Nanopore
+              <ul>
+                <li>Bacteria: 75% Sensitivity, 81% Specificity</li>
+                <li>Fungi: 91% Sensitivity, 100% Specificity</li>
+              </ul>
+            </li>
+            <li class="fragment">Case Series of 12 culture/PCR-negative patients with infectious diagnosis; 7 were mNGS positive</li>
+            <li class="fragment">Real time analysis enabled by Oxford Nanopore enabled pathogen identification in median of 50 minutes and a 6 hour sample to answer time </li>
+          </ul>
+          </div>
+          <div class="citation">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/33169017/">Gu et al. <i>Nat Med.</i> 2021</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Metagenomic Pathogen Detection</h3>
+          <img style="width:20%" src="images/karius.png"><br>
+          <img style="width:65%" src="images/karius-test.png">
+          <div class="citation">
+            <a href="https://kariusdx.com/">https://kariusdx.com/</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Metagenomic Pathogen Detection</h3>
+          <img style="width:20%" src="images/idbydna.png"><br>
+          <img style="width:95%" src="images/idbydna-test.png">
+          <div class="citation">
+            <a href="https://idbydna.com/">https://idbydna.com/</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Diagnosis of Antimicrobial Resistance in Tuberculosis</h3>
+          <img style="width:65%" src="images/tb.jpg">
+          <div class="citation">
+            <a href="https://doi.org/10.1016/j.clinmicnews.2021.12.001">Rowlinson and Musser <i>Clinical Microbiology Newsletter</i> 2022</a>
+          </div>
         </section>
         
         <section>
@@ -215,28 +282,20 @@
             </div>
           </div>
           <div style="width:50%;float:right;">
-            </br>
-            </br>
-            <ul>
-              <li>WSLH Viral Sequencing Group
-                <ul>
-                  <li>Tim Davis</li>
-                  <li>Rich Griesser</li>
-                  <li>Kyley Guenther</li>
-                  <li>Erika Hanson</li>
-                </ul>
-              </li>
-              <li>Special Thanks
-                <ul>
-                  <li>Erika Hanson</li>
-                </ul>
-              </li>
-            </ul>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/porg.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
           </div>
 
           <div class="citation">
             <a href="https://revealjs.com/">Reveal.JS</a>
           </div>
+        </section>
+
+        <section>
+          <h2>Gourmet Pop Rocks</h2>
+          <iframe width="800" height="500" src="https://www.youtube.com/embed/lkOzch781t8" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
         <section data-background-iframe="/resources/restalks/paperjs/viruses.html">
