@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>2022 AWS Research Day</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Applying Cloud Technology to Public Health Infectious Disease</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH</br>
+            Senior Genomics and Data Scientist</br>
+            Wisconsin State Laboratory of Hygiene</br>
+            December, 2022</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a>
+          </br>
+          </br>
+          <i class="fab fa-twitter"></i><a href='https://twitter.com/kelsey_florek'>@kelsey_florek</a>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:30px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+        </section>
+
+        <!---
+          Public Health Infectious Disease Genomics
+            - Pathogen Surveillance
+            - Emerging Variants
+            - Resistance
+            - Outbreak Investigation/Detection
+            - Disease Trends
+          Next Generation Sequencing
+            - How sequencing works
+            - Bioinformatics
+            - Data types
+            - Results and Vizualizations
+          Cloud Approaches to Bioinformatics
+            - Data Lake
+            - Workflow and Compute Capacity
+            - AWS Omics
+        -->
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Applying Genomics to Public Health Infectious Diseases</h2>
+        </section>
+
+        <section>
+          <h3>Pathogen Surveillance</h3>
+          <div style="width:50%;float:left;">
+            <h4>SARS-CoV-2 Wastewater</h4>
+            <iframe height="725" width="800" frameborder="no" scrolling="no" src="https://sc2ww.slhcddcloud.org/wwMap/"><p>Your browser does not support iframes.</p></iframe>
+          </div>
+          <div style="width:50%;float:right;">
+            <h4>SARS-CoV-2 Clinical</h4>
+            <iframe height="725" width="800" frameborder="no" scrolling="no" src="https://data.slhcddcloud.org/varGeo/"><p>Your browser does not support iframes.</p></iframe>
+          </div>
+          <div class="citation">
+            <a href="https://dataportal.slh.wisc.edu/">https://dataportal.slh.wisc.edu/</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Resistance Detection</h3>
+          <img style="width:45%" src="images/oxa72.png">
+        </section>
+
+        <section>
+          <h3>Outbreak Investigations</h3>
+          <iframe src="ar_report_example.html" height="400" width="100%" frameborder="no"><p>Your browser does not support iframes.</p></iframe>
+        </section>
+
+        <section>
+          <h3>Evaluating Pathogen Trends</h3>
+          <iframe height="725" width="800" frameborder="no" scrolling="no" src="https://data.slhcddcloud.org/variants"><p>Your browser does not support iframes.</p></iframe>
+          <div class="citation">
+            <a href="https://dataportal.slh.wisc.edu/">https://dataportal.slh.wisc.edu/</a>
+          </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Next Generation Sequencing</h2>
+        </section>
+
+        <section>
+          <h3>What is Next Generation Sequencing?</h3>
+          <div style="width:50%;float:left;" class="fragment">
+            <p>Sanger Sequencing</p>
+            <img style="width:50%;margin-top:0px" src="images/sanger_gel.png">
+          </div>
+          <div style="width:50%;float:right;"  class="fragment">
+            <p>Next Generation Sequencing (Illumina)</p>
+            <img style="width:90%;margin-top:0px" src="images/flow_cell.gif">
+          </div>
+          <div class="citation">
+            <a href="https://doi.org/10.3109/10409237909105423">Gillian M. Air & Heinz Schaller (1979) Rapid DNA Sequence Analysis,<br><i>CRC Critical Reviews in Biochemistry</i>, 6:1, 1-33</a>
+          </div>
+        </section>
+
+        <section>
+          <img style="width:90%;margin-top:0px" src="images/seq_process.png">
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h3>Increases in data requires advanced analyses (MiSeq)</h3>
+          <ul>
+            <li class="fragment">15,000,000,000 ATGC's generated per sequencing run</li>
+            <li class="fragment">40,000 - 150,000 words in a novel</li>
+            <li class="fragment">average word length in English is 4.79</li>
+            <li class="fragment">one sequencing run would generate <b>32,963</b> novels with 95,000 words each</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>Increases in data requires advanced analyses (Nextseq 2000)</h3>
+          <ul>
+            <li>360,000,000,000 ATGC's generated per sequencing run</li>
+            <li>40,000 - 150,000 words in a novel</li>
+            <li>average word length in English is 4.79</li>
+            <li>one sequencing run would generate <b>791,121</b> novels with 95,000 words each</li>
+          </ul>
+        </section>
+
+        <section>
+          <img style="width:60%;margin-top:0px" src="images/bioinfomatics.png">
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Cloud Approaches to Bioinformatics</h2>
+        </section>
+
+        <section>
+          <h3>Managing a growing data infrastructure</h3>
+          <img style="width:45%" src="images/Genomic_Data_Lake.png">
+        </section>
+        
+        <section>
+          <h3>Sequencing Data Infrastructure</h3>
+          <img style="width:65%" src="images/addams_diagram_v3-Restricted VPC.png">
+        </section>
+
+        <section>
+          <h3>Sequencing Analysis Infrastructure</h3>
+          <img style="width:75%" src="images/addams_diagram_v3-Limited VPC.png">
+        </section>
+
+        <section>
+          <h3>Easy Genomics</h3>
+          <img style="width:75%;box-shadow:2px 2px 5px black;background-color:white" src="images/easy_genomics.png">
+          <div class="citation">
+            <a href="https://seqera.io/blog/accelerating-analytics-with-easy-genomics-wisconsin-state-laboratory/">seqera.io/blog</a><br>
+            <a href="https://aws.amazon.com/blogs/industries/easy-genomics-solution-for-public-health-labs/#:~:text=Easy%20Genomics%20is%20designed%20for,Upload%20single%20or%20multiple%20samples">aws.amazon.com/blog</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+          </div>
+
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
