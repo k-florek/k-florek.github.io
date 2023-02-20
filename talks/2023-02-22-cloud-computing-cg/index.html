@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - Cloud Computing CG</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Enhancing Public Health Infectious Disease Genomics through Cloud Computing</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH</br>
+            Senior Genomics and Data Scientist</br>
+            Wisconsin State Laboratory of Hygiene</br>
+            February 22, 2023</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a>
+          </br>
+          </br>
+          <span class="fab fa-mastodon"></span><a href='https://mstdn.science/@kflorek'>@kflorek@mstdn.science</a><br>
+          <span class="fab fa-twitter"></span><a href='https://twitter.com/kelsey_florek'>@kelsey_florek</a>
+          
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:30px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+        </section>
+
+        <!---
+          Next Generation Sequencing
+            - How sequencing works
+            - Bioinformatics
+            - Data types
+            - Results and Vizualizations
+          Public Health Infectious Disease Genomics
+            - Pathogen Surveillance
+            - Emerging Variants
+            - Resistance
+            - Outbreak Investigation/Detection
+            - Disease Trends
+          Cloud Approaches to Bioinformatics
+            - Data Lake
+            - Workflow and Compute Capacity
+            - AWS Omics
+        -->
+
+        <section>
+          <h2>Supported By</h2>
+          <img style="width:25%;vertical-align: middle;" src="images/AWS-DDI.png"><span style="vertical-align: middle;"><h3><a href="https://aws.amazon.com/blogs/publicsector/aws-diagnostic-development-initiative-nonprofits-cloud-research-combat-covid-19/">AWS Diagnostic Development Initiative (DDI)</a></h3></span>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Next Generation Sequencing</h2>
+        </section>
+
+        <section>
+          <h3>What is Next Generation Sequencing?</h3>
+          <div style="width:50%;float:left;" class="fragment">
+            <p>Sanger Sequencing</p>
+            <img style="width:50%;margin-top:0px" src="images/sanger_gel.png">
+          </div>
+          <div style="width:50%;float:right;"  class="fragment">
+            <p>Next Generation Sequencing (Illumina)</p>
+            <img style="width:90%;margin-top:0px" src="images/flow_cell.gif">
+          </div>
+          <div class="citation">
+            <a href="https://doi.org/10.3109/10409237909105423">Gillian M. Air & Heinz Schaller (1979) Rapid DNA Sequence Analysis,<br><i>CRC Critical Reviews in Biochemistry</i>, 6:1, 1-33</a>
+          </div>
+        </section>
+
+        <section>
+          <img style="width:90%;margin-top:0px" src="images/seq_process.png">
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h3>Increases in data requires advanced analyses (MiSeq)</h3>
+          <ul>
+            <li class="fragment">15,000,000,000 ATGC's generated per sequencing run</li>
+            <li class="fragment">40,000 - 150,000 words in a novel</li>
+            <li class="fragment">average word length in English is 4.79</li>
+            <li class="fragment">one sequencing run would generate <b>32,963</b> novels with 95,000 words each</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>Increases in data requires advanced analyses (Nextseq 2000)</h3>
+          <ul>
+            <li>360,000,000,000 ATGC's generated per sequencing run</li>
+            <li>40,000 - 150,000 words in a novel</li>
+            <li>average word length in English is 4.79</li>
+            <li>one sequencing run would generate <b>791,121</b> novels with 95,000 words each</li>
+          </ul>
+        </section>
+
+        <section>
+          <img style="width:60%;margin-top:0px" src="images/bioinfomatics.png">
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Genomics and Public Health Infectious Diseases</h2>
+        </section>
+
+        <section>
+          <h4>Public Health Aspects of Infectious Disease</h4>
+          <div style="width:50%;float:left">
+            <ul class="fragment">
+              <li>Pathogen Surveillance
+                <ul>
+                  <li>pathogen trends</li>
+                  <li>priority setting</li>
+                  <li>early warning system</li>
+                </ul>
+                </li>
+            </ul>
+          </div>
+          <div style="width:50%;float:left">
+            <ul class="fragment">
+              <li>Outbreak Investigations
+                <ul>
+                  <li>source identification</li>
+                  <li>risk assessments</li>
+                  <li>prevent spread</li>
+                </ul>
+                </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Pathogen Surveillance: SARS-CoV-2</h3>
+          <div style="width:50%;float:left;">
+            <h4>SARS-CoV-2 Wastewater</h4>
+            <iframe height="725" width="800" frameborder="no" scrolling="no" src="https://sc2ww.slhcddcloud.org/wwMap/"><p>Your browser does not support iframes.</p></iframe>
+          </div>
+          <div style="width:50%;float:right;">
+            <h4>SARS-CoV-2 Clinical</h4>
+            <iframe height="725" width="800" frameborder="no" scrolling="no" src="https://data.slhcddcloud.org/varGeo/"><p>Your browser does not support iframes.</p></iframe>
+          </div>
+          <div class="citation">
+            <a href="https://dataportal.slh.wisc.edu/">https://dataportal.slh.wisc.edu/</a>
+          </div>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h3>SARS-CoV-2 Variant Waves in WI</h3>
+          <img style="width:100%" src="images/sc2_variants.png">
+          <div class="citation">
+            <a href="https://dataportal.slh.wisc.edu/">https://dataportal.slh.wisc.edu/</a>
+          </div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>SARS-CoV-2 Variant Waves in WI</h3>
+          <img style="width:100%" src="images/sc2_variants_cases.png">
+          <div class="citation">
+            <a href="https://www.dhs.wisconsin.gov/covid-19/data.htm">https://www.dhs.wisconsin.gov/covid-19</a><br>
+            <a href="https://dataportal.slh.wisc.edu/">https://dataportal.slh.wisc.edu/</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Outbreak Investigation:<br> Drug Resistant <i>Acinetobacter baumannii</i></h3>
+        </section>
+
+        <section>
+          <img style="width:80%" src="images/crab.png">
+          <div class="citation">
+            <a href="https://www.cdc.gov/drugresistance/biggest-threats.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fdrugresistance%2Fbiggest_threats.html">2019 AR Threats Report - CDC</a>
+          </div>
+        </section>
+
+        <section>
+					<h3>Outbreak Initial Case</h3>
+					<div style="width:50%;float:left;">
+						<ul>
+							<li class="fragment">Patient at facility A with a lower respiratory infection 3 months after a heart transplant</li>
+							<li class="fragment">Respiratory cultures revealed a carbapenem resistant <i>A. baumannii</i></li>
+							<li class="fragment">Treatment:<ul>
+								<li style="margin-bottom:0px">Polymixin-B</li>
+								<li style="margin-bottom:0px">Meropenem</li>
+								<li style="margin-bottom:0px">Colistin</li>
+								<li style="margin-bottom:0px">Cefiderocol as compassionate treatment</li>
+							</ul></li>
+
+						</ul>
+					</div>
+					<div style="width:50%;float:right;">
+						<ul>
+							<li class="fragment">Patient passed away, unclear if cause was sepsis</li>
+							<li class="fragment">5 additional patients from Facility A had sputum cultures that were positive for carbapenem resistant <i>A. baumannii</i></li>
+							<li class="fragment">Wisconsin State Laboratory of Hygiene</li>
+						</ul>
+					</div>
+				</section>
+
+        <section>
+					<h3>Antimicrobial susceptibility</h3>
+					<font size="5">
+					<div style="width:50%;float:left;">
+						<ul>
+							<li>Amikacin: <font color="red">Resistant</font></li>
+							<li>Aztreonam: <font color="red">Resistant</font></li>
+							<li>Cefepime: <font color="red">Resistant</font></li>
+							<li>Cefotaxime: <font color="red">Resistant</font></li>
+							<li>Ceftazidime: <font color="red">Resistant</font></li>
+							<li>Ciprofloxacin: <font color="red">Resistant</font></li>
+							<li>Colistin: <font color="blue">Susceptible</font></li>
+							<li>Doripenem: <font color="red">Resistant</font></li>
+							<li>Doxycycline: <font color="red">Resistant</font></li>
+							<li>Gentamicin: <font color="red">Resistant</font></li>
+						</ul>
+					</div>
+					<div style="width:50%;float:right;">
+						<ul>
+							<li>Imipenem: <font color="red">Resistant</font></li>
+							<li>Levofloxacin: <font color="red">Resistant</font></li>
+							<li>Meropenem: <font color="red">Resistant</font></li>
+							<li>Minocycline: <font color="orange">Intermediate</font></li>
+							<li>Piperacillin-tazobactam: <font color="red">Resistant</font></li>
+							<li>Polymyxin-B: <font color="blue">Susceptible</font></li>
+							<li>Ticarcillin-clavulanate: <font color="red">Resistant</font></li>
+							<li>Tobramycin: <font color="red">Resistant</font></li>
+							<li>Trimethoprim-sulfamethoxazole: <font color="red">Resistant</font></li>
+						</ul>
+					</div>
+					</font>
+				</section>
+
+        <section data-transition="slide-in fade-out">
+					<h2>Case Definitions</h2>
+					<ul>
+						<li class="fragment"><h3>Probable</h3><ul>
+							<li>Carbapenem resistant <i>A. baumannii</i> clinical isolate with outbreak AST profile</li>
+						</ul>
+						<li class="fragment"><h3>Confirmed</h3><ul>
+							<li>Carbapenem resistant <i>A. baumannii</i> clinical isolate genetically clustering with other outbreak isolates and harboring the OXA-24/40-like β-lactamase OXA-72</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section data-transition="fade-in slide-out">
+					<h2>Case Definitions</h2>
+					<ul>
+						<li><h3>Probable (n=43)</h3><ul>
+							<li>Carbapenem resistant <i>A. baumannii</i> clinical isolate with outbreak AST profile</li>
+						</ul>
+						<li><h3>Confirmed (n=22)</h3><ul>
+							<li>Carbapenem resistant <i>A. baumannii</i> clinical isolate genetically clustering with other outbreak isolates and harboring the OXA-24/40-like β-lactamase OXA-72</li>
+						</ul>
+					</ul>
+				</section>
+
+        <section data-background-color="#333333" data-background-image="images/network_epi.png" data-background-size="contain">
+				</section>
+
+				<section data-background-color="#333333" data-background-image="images/network.png" data-background-size="contain">
+				</section>
+
+        <section>
+          <h3>Summary</h3>
+          <ul>
+            <li class="fragment">Next Generation Genomic Data is already large and growing with new technology</li>
+            <li class="fragment">Critical reductions in time to result with genomic data to better inform public health policy and interventions</li>
+            <li class="fragment">Infrastructure needs flexibility to adapt to changes in demand with the potential for high demand</li>
+            <li class="fragment">Genomic data is a unique data type that doesn't fit with typical data solutions</li>
+          </ul>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Cloud Approaches to Bioinformatics</h2>
+        </section>
+
+        <section>
+          <h3>Managing a growing data infrastructure</h3>
+          <img style="width:45%" src="images/Genomic_Data_Lake.png">
+        </section>
+
+        <section>
+          <h3>Bioinformatics Workflow</h3>
+          <img style="width:100%" src="images/Spriggan.png">
+        </section>
+
+        <section data-background-color="#333333" data-background-image="images/nextflow.jpg" data-background-size="contain">
+        </section>
+
+        <section>
+          <h3>Sequencing Analysis Infrastructure</h3>
+          <img style="width:75%" src="images/addams_diagram_v3-Limited VPC.png">
+        </section>
+
+        <section>
+          <h3>Sequencing Analysis Infrastructure</h3>
+          <img style="width:100%" src="images/analysis_run.png">
+        </section>
+
+        <section>
+          <h3><a href="https://dataportal.slh.wisc.edu/">https://dataportal.slh.wisc.edu/</a></h3>
+          <iframe height="725" width="800" frameborder="yes" scrolling="yes" src="https://dataportal.slh.wisc.edu/"><p>Your browser does not support iframes.</p></iframe>
+        </section>
+
+        <section>
+          <h3>Easy Genomics</h3>
+          <img style="width:75%;box-shadow:2px 2px 5px black;background-color:white" src="images/easy_genomics.png">
+          <div class="citation">
+            <a href="https://seqera.io/blog/accelerating-analytics-with-easy-genomics-wisconsin-state-laboratory/">seqera.io/blog</a><br>
+            <a href="https://aws.amazon.com/blogs/industries/easy-genomics-solution-for-public-health-labs/#:~:text=Easy%20Genomics%20is%20designed%20for,Upload%20single%20or%20multiple%20samples">aws.amazon.com/blog</a>
+          </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Whats next?</h3>
+          <h3 style="color: white" class="fragment">Pathogen Genomic Data Needs Context!</h3>
+          <h3 style="color: white" class="fragment">Connect data systems across Public Health<br> enabling near realtime insights on infectious diseases</h3>
+        </section>
+
+        <section>
+          <h3>Sequencing Data Infrastructure</h3>
+          <img style="width:65%" src="images/addams_diagram_v3-Restricted VPC.png">
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+            <h4>Special Thanks</h4>
+            <ul>
+              <li><a href="https://kb.wisc.edu/page.php?id=109785">UW-Madison Public Cloud Team</a></li>
+              <li><a href="https://it.wisc.edu/about/division-of-information-technology/enterprise-information-security-services/office-of-cybersecurity/">UW-Madison Office of Cybersecurity</a></li>
+            </ul>
+          </div>
+
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
