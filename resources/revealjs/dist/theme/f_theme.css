@@ -14,7 +14,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --r-main-font: "Roboto", sans-serif;
   --r-main-font-size: 32px;
   --r-main-font-weight: 300;
-  --r-main-color: #6C7A89;
+  --r-main-color: #444; /* old color: #6C7A89 */
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: "Roboto", sans-serif;
