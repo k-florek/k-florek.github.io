@@ -46,6 +46,20 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 }
 
+.impact {
+  color:	#c5050c !important;
+}
+
+.left {
+  width:50%;
+  float:left;
+}
+
+.right {
+  width:50%;
+  float:right;
+}
+
 ul li {
   padding-bottom: 15px;
 }
