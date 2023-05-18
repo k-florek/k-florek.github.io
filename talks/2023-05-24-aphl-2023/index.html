@@ -83,15 +83,19 @@
         </section>
 
         <section>
-          Diagram showing the flow of sequence data from the sequencers back to EPIC
+          <img style="width:70%" src="images/data_path.png">
         </section>
 
         <section>
-          Diagram showing the AWS infrastructure (ANALYSIS)
+          <img style="width:70%" src="images/addams_diagram-Analysis_Environment.drawio.png">
+          <div style="float:right;width:50%">
+            <img style="width: 10%;position:fixed;display:block;right:10%" src="/images/site/talks_qr_b.png">
+          </div>
         </section>
 
         <section>
-          Diagram showing the AWS infrastructure (Secure Data)
+          <img style="width:70%" src="images/addams_diagram-Secure_Environment.drawio.png">
+          <img style="width: 10%;position:fixed;display:block;right:10%;bottom:-70px" src="/images/site/talks_qr_b.png">
         </section>
 
         <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
@@ -104,24 +108,27 @@
         </section>
 
         <section>
+          <h3>Iterative development</h3>
+          TODO: add SDLC image  
+        </section>
+
+        <section>
+          <h3>Stages of Development</h3>
+          <ol>
+            <li class="fragment">Running Nextflow Workflows</li>
+            <li class="fragment">Data ETL / Dashboards / Insights</li>
+            <li class="fragment">End to End Automation</li>
+            <li class="fragment">Data Integration across Public Health Partners</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>AWS Learning Curve</h3>
+          TODO: create curve plot
           AWS learning curve
           getting the infrastructure up for running nextflow analyses is fairly easy
           shifting towards custom infrastructure (IaC)
           access controls, data management, security compliance, logging and notifications etc... (harder)
-        </section>
-
-        <section>
-          stages of implementation
-            starting from just running workflows
-            building data workflows
-            adding automation
-            linking data
-        </section>
-
-        <section>
-          challenges
-          IAM
-          configurations for various services
         </section>
 
         <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
@@ -140,18 +147,22 @@
             <li class="fragment">Workflow Versioning</li>
             <li class="fragment">Software Versioning</li>
           </ol>
-          add inverted pyramid
+          TODO: add inverted pyramid
         </section>
 
         <section>
           <h3>CAP Compliance</h3>
-          list high level items that CAP outlines
+          TODO: list high level items that CAP outlines
         </section>
 
         <section>
-          <h3>HIPAA Compliance</h3>
-          aws and HIPAA
-          list of services hipaa approved
+          <h3>HIPAA Eligibility</h3>
+          <p><b>></b> 140 AWS Services are HIPAA Eligible (<a href="https://aws.amazon.com/compliance/hipaa-eligible-services-reference/">List of Eligible AWS Services</a>)</p>
+          <p>HIPAA compliance is <b>not</b> about the platform or service but about how it is used</p>
+          <p class="fragment"><i>"In order to meet the HIPAA requirements applicable to our operating model, AWS aligns our HIPAA risk management program with FedRAMP and NIST 800-53, which are higher security standards that map to the HIPAA Security Rule."</i></p>
+          <div class="citation">
+            <a href="https://aws.amazon.com/compliance/hipaa-compliance/">AWS HIPAA</a>
+          </div>
         </section>
 
         <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
