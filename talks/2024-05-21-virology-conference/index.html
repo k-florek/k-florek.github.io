@@ -1,0 +1,398 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - WSLH Data Modernization</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Data Modernization: Improving the usefulness of genomic data</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH<br>
+            Senior Genomics and Data Scientist<br>
+            Wisconsin State Laboratory of Hygiene<br>
+            May 21, 2024<br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a>
+          
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:20px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <img style="width: 20%;display:block;float:right;margin-top:60px" src="/images/site/talks_qr_b.png">
+          </div>
+        </section>
+
+        <!---
+          The Need
+            - pre-pandemic sequencing to post-pandemic sequencing
+              - expansion of capacity
+              - expansion of sequencing targets
+            - Data Storage
+            - Data Analytics
+          The Plan
+            - Workflow standardization
+            - Analytical Infrastructure
+            - Data Lake
+            - Data Portal
+            - COG-UK Approach
+          The Result
+            - Easy Genomics
+        -->
+
+        <section>
+          <h2>Supported By</h2>
+          <img style="width:25%;vertical-align: middle;" src="images/AWS-DDI.png"><span style="vertical-align: middle;"><h3><a href="https://aws.amazon.com/blogs/publicsector/aws-diagnostic-development-initiative-nonprofits-cloud-research-combat-covid-19/">AWS Diagnostic Development Initiative (DDI)</a></h3></span>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <ol>
+            <li><b>Necessities of Next Generation Sequencing Capacity Building</b></li>
+            <li>Blueprints for an NGS Data Solution</li>
+            <li>Simplifying Genomics for Public Health Partners</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Expanding Genomic Sequencing Capacity</h3>
+          <div class="left">
+            <h4 class="impact">Pre SARS-CoV-2 Pandemic</h4>
+            <ul>
+              <li>4x Illumina MiSeq</li>
+              <li>1x ONT MinION</li>
+            </ul>
+          </div>
+          <div class="fragment right">
+            <h4 class="impact">Post SARS-CoV-2 Pandemic</h4>
+            <ul>
+              <li>4x Illumina MiSeq</li>
+              <li>2x NextSeq 2000</li>
+              <li>1x ONT GridION</li>
+              <li>1x Eppendorf epMotion</li>
+              <li>1x Tecan Fluent 780 NGS Dream Prep</li>
+            </ul>
+          </div>
+          <div class="fragment" style="clear:both">
+            <h3>Over 900% increase in sequencing data generation capacity</h3>
+          </div>
+
+          
+          
+        </section>
+
+        <section>
+          <h3>NGS Data Storage</h3>
+          <img style="width:75%;box-shadow:2px 2px 5px black;background-color:white" src="images/seqData.png">
+        </section>
+
+        <section>
+          <h3>Improvements in Analytical Approaches</h3>
+          <div style="width:50%;float:left;">
+            <h4>Old Approach</h4>
+            <ul>
+              <li>Entirely Python Based</li>
+              <li>Limited logging and fault tolerance</li>
+              <li>Required installing complicated and often conflicting dependencies</li>
+            </ul>
+          </div>
+
+          <div class='fragment' style="width:50%;float:right;">
+            <h4>New Approach</h4>
+            <ul>
+              <li>Nextflow - Nf-Core Based</li>
+              <li>Containerized Steps</li>
+              <li>Detailed Logging</li>
+              <li>Compatible with a variety of Cloud and HPC environments</li>
+              <li>Supports a high degree of job parallelization and horizontal scalability</li>
+            </ul>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <ol>
+            <li><s>Necessities of Next Generation Sequencing Capacity Building</s></li>
+            <li><b>Blueprints for an NGS Data Solution</b></li>
+            <li>Simplifying Genomics for Public Health Partners</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>COVID-19 Genomics UK (COG-UK) CLIMB-COVID</h3>
+          <img style="width:60%;box-shadow:2px 2px 5px black;background-color:white" src="images/climb-covid.png">
+          <div class="citation">
+            <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02395-y">Nicholls et al. 2021 <i>Genome Biology</i></a><br>
+            <a href="https://www.youtube.com/watch?v=4WrjnCghMis">StaPH-B Monthly Webinar Oct 2021</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>COVID-19 Genomics UK (COG-UK) CLIMB-COVID</h3>
+          <img style="width:35%" src="images/climb-covid-diagram.png">
+          <div class="citation">
+            <a href=https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02395-y">Nicholls et al. 2021 <i>Genome Biology</i></a><br>
+            <a href="https://www.youtube.com/watch?v=4WrjnCghMis">StaPH-B Monthly Webinar Oct 2021</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Bioinformatics analytical infrastructure</h3>
+          <ul>
+            <li>Highly scalable and capable of managing burst data</li>
+            <li>Highly reliable and fault tolerant</li>
+            <li>Cost effective</li>
+            <li>Adaptable to changing needs</li>
+            <li>Detailed logging and traceability</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Connecting Data Across Siloed Systems</h3>
+          <img style="width:70%" src="images/WSLH_ngs_idea.png">
+        </section>
+
+        <section>
+          <h3>WSLH Bioinformatics Analytical Infrastructure</h3>
+          <img style="width:60%" src="images/aws-infra-nextflow.png">
+        </section>
+
+        <section>
+          <h3><img style="width:5%;vertical-align: middle;" src="images/aws_batch.png"> AWS Batch</h3>
+          <p>AWS Batch automatically provisions compute resources and optimizes the workload distribution based on the quantity and scale of the workloads.</p>
+        </section>
+
+        <section>
+          <h3><img style="width:5%;vertical-align: middle;" src="images/aws_batch.png"> AWS Batch</h3>
+          <img style="width:70%" src="images/aws_batch_jobs.png">
+        </section>
+
+        <section>
+          <img style="width:40%" src="images/nf-tower.svg">
+          <p>Nextflow Tower is an intuitive centralized command post that enables data analysis at scale. With Tower, users can easily launch, manage, and monitor scalable Nextflow data analysis pipelines and compute environments on-premises or across the cloud providers of their choice.</p>
+          <div class="citation">
+            <a href="https://seqera.io/tower/">Seqera Labs - Nextflow Tower</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Nextflow Tower - Dashboard</h3>
+          <img style="width:60%" src="images/tower_runs.png">
+          <div class="citation">
+            <a href="https://seqera.io/tower/">Seqera Labs - Nextflow Tower</a>
+          </div>
+        </section>
+        
+        <section>
+          <h3>Nextflow Tower - Monitor</h3>
+          <img style="width:50%" src="images/tower_monitor.png">
+          <div class="citation">
+            <a href="https://seqera.io/tower/">Seqera Labs - Nextflow Tower</a>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <ol>
+            <li><s>Necessities of Next Generation Sequencing Capacity Building</s></li>
+            <li><s>Blueprints for an NGS Data Solution</s></li>
+            <li><b>Simplifying Genomics for Public Health Partners</b></li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Need for a centralized resource</h3>
+          <h4>AMD Bioinformatics Regional Resource - Midwest Region</h4>
+          <div class="left">
+            <img style="width:100%" src="images/amd_wfd.png">
+          </div>
+          <div class="right">
+            <br>
+            <br>
+            <h4>Ad-hoc Analytical Support</h4>
+            <h4>Provision of Computational Resources</h4>
+          </div>
+          <div class="citation">
+            <a href="https://www.cdc.gov/amd/investments/maps.html">CDC AMD Workforce Development</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Need for a centralized resource</h3>
+          <h4>SARS-CoV-2 Genomic Surveillance</h4>
+          <img style="width:50%" src="images/sc2_map.png">
+          <div class="citation">
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WSLH SARS-CoV-2 Dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Easy Genomics Partnership</h3>
+          <img style="width:80%" src="images/eg_partnership.png">
+        </section>
+
+        <section>
+          <h3>Easy Genomics - Minimal Viable Product</h3>
+          <ul>
+            <li>Simplify the process of launching and monitoring workflows</li>
+            <li>Provide the ability for users to upload sequence data through the web browser</li>
+            <li>Allow users to download analysis results through the web browser</li>
+            <li>User/Lab separation</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Easy Genomics - Sequence Data Upload</h3>
+          <img style="width:55%" src="images/eg_upload.png">
+        </section>
+
+        <section>
+          <h3>Easy Genomics - Launch</h3>
+          <img style="width:55%" src="images/eg_launch_01.png">
+        </section>
+
+        <section>
+          <h3>Easy Genomics - Launch</h3>
+          <img style="width:55%" src="images/eg_launch_02.png">
+        </section>
+
+        <section>
+          <h3>Easy Genomics - Monitor</h3>
+          <img style="width:55%" src="images/eg_run_01.png">
+        </section>
+
+        <section>
+          <h3>Easy Genomics - Monitor</h3>
+          <img style="width:55%" src="images/eg_run_02.png">
+        </section>
+
+        <section>
+          <h3>Easy Genomics</h3>
+          <img src="images/eg_diagram.png">
+          <div class="citation">
+            <a href="https://aws.amazon.com/blogs/industries/easy-genomics-solution-for-public-health-labs/">AWS Blog - Easy Genomics Solution for Public Health Labs</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Deploying Easy Genomics - Infrastructure as code (IaC)</h3>
+          <div class="left fragment">
+            <h4>AWS CloudFormation</h4>
+            <img src="images/cloudFormation.png">
+          </div>
+          <div class="right fragment">
+            <h4>Terraform</h4>
+            <img src="images/terraform.png"
+          </div>
+        </section>
+
+        <section data-background="#0969da" style="color:white">
+          <h3>Easy Genomics - Development Roadmap</h3>
+          <ul>
+            <li class="fragment">2023 Q2 - Finish Testing of Minimal Viable Product</li>
+            <li class="fragment">2023 Q2 - Delivery of feature complete version (Open Source on GitHub)</li>
+            <li class="fragment">2023 Q3 - Start v2 Development 
+              <ul>
+                <li>Expanding backend integrations</li>
+                <li>Additional Features to Streamline the User Experience</li>
+                <li>Expanding Feature set to include additional feedback on workflow traceability and performance</li>
+              </ul></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+            <h4>Special Thanks</h4>
+            <ul>
+              <li><a href="https://kb.wisc.edu/page.php?id=109785">UW-Madison Public Cloud Team</a></li>
+              <li><a href="https://it.wisc.edu/about/division-of-information-technology/enterprise-information-security-services/office-of-cybersecurity/">UW-Madison Office of Cybersecurity</a></li>
+            </ul>
+          </div>
+
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
