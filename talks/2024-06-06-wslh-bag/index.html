@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <script src=/resources/google_analytics.js></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - WSLH Brown Bag</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Advancing Data Strategies for Tracking Infectious Diseases</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH</br>
+            Senior Genomics and Data Scientist</br>
+            Wisconsin State Laboratory of Hygiene</br>
+            June 6, 2024</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a>
+          
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:30px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <img style="width: 30%;display:block;float:right;margin-top:20px" src="qr.svg">
+          </div>
+        </section>
+
+        <!---
+        ·         Developing new tools and strategies to enhance genomic data driven insights
+        ·         Building genomic data analytics capacity through advanced data workflows automation, and new cloud-based resources
+        ·         Contributing to a national bioinformatics strategy across public health laboratories in the U.S.
+        
+          Next Generation Sequencing for Pathogen Surveillance
+            - How sequencing works
+            - Bioinformatics
+            - Data 
+            - Results and Vizualizations
+            - Genomic Epidemiology
+            - Lab and Epi data integration
+          Cloud Approaches to Bioinformatics
+            - Data Lake
+            - Workflow and Compute Capacity
+            - Accessibility through Easy Genomics
+            - CDC National Bioinformatics Platform
+        -->
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Next Generation Sequencing for Infectious Disease Surveillance</h2>
+        </section>
+
+        <section>
+          <h3>What is Next Generation Sequencing?</h3>
+          <div style="width:50%;float:left;" class="fragment">
+            <p>Sanger Sequencing</p>
+            <img style="width:40%;margin-top:0px" src="images/sanger_gel.png">
+          </div>
+          <div style="width:50%;float:right;"  class="fragment">
+            <p>Next Generation Sequencing (Illumina)</p>
+            <img style="width:90%;margin-top:0px" src="images/flow_cell.gif">
+          </div>
+          <div class="citation">
+            <a href="https://doi.org/10.3109/10409237909105423">Gillian M. Air & Heinz Schaller (1979) Rapid DNA Sequence Analysis,<br><i>CRC Critical Reviews in Biochemistry</i>, 6:1, 1-33</a>
+          </div>
+        </section>
+
+        <section>
+          <img style="width:90%;margin-top:0px" src="images/seq_process.png">
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>Increases in data requires advanced analyses (Nextseq 2000)</h3>
+          <ul>
+            <li>360,000,000,000 ATGC's generated per sequencing run</li>
+            <li>40,000 - 150,000 words in a novel</li>
+            <li>average word length in English is 4.79</li>
+            <li>one sequencing run would generate <b>791,121</b> novels with 95,000 words each</li>
+          </ul>
+        </section>
+
+        <section>
+          <img style="width:60%;margin-top:0px" src="images/bioinfomatics.png">
+        </section>
+
+        <section>
+          <h3>Anatomy of a Bioinformatics Workflow</h3>
+          <div style="width:60%;float:left;">
+            <img style="margin-top:0px" src="images/dryad_workflow_3.0.1.png">
+          </div>
+          <div style="width:40%;float:right;font-size: 0.5em;">
+            <pre><code class="language-java" data-trim data-noescape>
+              include { SAMPLESHEET_CHECK } from '../../modules/local/samplesheet_check'
+
+              workflow INPUT_CHECK {
+                  take:
+                  samplesheet // file: /path/to/samplesheet.csv
+              
+                  main:
+                  SAMPLESHEET_CHECK ( samplesheet )
+                      .csv
+                      .splitCsv ( header:true, sep:',' )
+                      .map { create_fasta_channel(it) }
+                      .set { reads }
+              
+                  emit:
+                  // channel: [ val(meta), [ path_to_reads ] ]
+                  reads
+                  // channel: [ samplesheet.valid.csv ]                   
+                  csv = SAMPLESHEET_CHECK.out.csv
+                  // channel: [ versions.yml ]
+                  versions = SAMPLESHEET_CHECK.out.versions 
+              }
+              
+              // Function to get list of [ meta, [ fasta ] ]
+              def create_fasta_channel(LinkedHashMap row) {
+                  // create meta map
+                  def meta = [:]
+                      meta.id         = row.sample
+              
+                  def fasta_meta = []
+              
+                  if (!file(row.fasta).exists()) {
+                      exit 1
+                  } else {
+                      fasta_meta = [ meta, [ file(row.fasta) ] ]
+                  }
+              
+                  return fasta_meta
+              }        
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <div style="width:50%;float:left;">
+            <h3>Sequencing Reads</h3>
+            <pre><code style="font-size:0.5em;" class="language-yaml" data-trim data-noescape>
+              @M05192:295:000000000-K6N36:1:1101:9502:1212 1:N:0:NAGCGCTC+NCGTAAGA
+              GCGTTACATGAGGCTTATACTGAAACATTGCCTAATCCCGCCCGGTGGAAAGCTAAAAANTCCTNTGAACTGCNGGGCTATTCAGAAGNNNN
+              +
+              CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGFF@@FGGGGGGGGGGGGGGDGGGGFG#:C@F#:@FGGGGG#:C@FFFGGGAFGF?####
+              @M05192:295:000000000-K6N36:1:1101:13064:1213 1:N:0:NAGCGCTC+NCGTAAGA
+              TAGTGGCACTGTTTGACCATCAGCAACGCATTGGTGAACTGATGCCGGAGCGGCGTTTTNACNANGCACGTCGNCAGCAAATGATGGANNNNNNNNNNNN
+              +
+              CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG#:D#:#6CFGGGGG#:DFGGGFGG??FGG############
+              @M05192:295:000000000-K6N36:1:1101:18301:1216 1:N:0:NAGCGCTC+NCGTAAGA
+              GCCCGGTGGTGTAATTTGCGCCCTCCGAACAAAGCCACGCCACCAGGCTGGCAATCTCANACNTNGCGCCAAANCGCCGCAGAGGAATNNNNNNNN
+              +
+              CCCCCGGGGGFGGGGGGGGGGCFCGGGGGGGGGFGGGGGDGGEGGFGGGGGGGGGGGGF#:C#:#::@D@7FE#6CC#FGGGGCFGFE########
+              @M05192:295:000000000-K6N36:1:1102:8809:23354 1:N:0:TAGCGCTC+GCGTAAGA
+              GTGTTATTTGCGTGTCGCGGGCATTATGGCGGAGTACTCTCAGCCTGACGATATGATGGTGGTTTCCGCCGCCGGTAGCACCACTAACCAGTTGAT
+              +
+              CCC#CFGGFGGDECG9@FFGGGGFGG#,,C7::@F@FFGFFGGGGGGFGEEF@C,9EA9C@BBFGEF>FGECFGGF+F#C##BDFGFFFFE,??9,
+              @M05192:295:000000000-K6N36:1:1102:12222:23342 1:N:0:TAGCGCTC+GCGTAAGA
+              AAGCTAACCGATGCGGATAATGCCGCCGATGGCATTTTTTTCCCCGCCCTTGAGCAAAATATGATGGGTGCGGTGTTAATTAACGAAAATGATGAAGT
+              +
+              CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGCFGGGGGGGGGGGGFGCEFGGGGGGGGGGGGGGEF
+              @M05192:295:000000000-K6N36:1:1102:17996:23344 1:N:0:TAGCGCTC+GCGTAAGA
+              GAGCAGGATAAAACCTACAAAATTACAGTTCTGCATACCAATGATCATCATGGGCATTTTTGGCGCAATGAATATGGCGAATATGGTCTGGCG
+              +
+              CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGDGGGGGGGGGGGGGGGGGGFGGGGGG
+            </code></pre>
+          </div>
+          <div style="width:50%;float:right;" class="fragment">
+            <h3>Phylogenetic Tree</h3>
+            <div id="exampleTree" style="width:90%;height:500px;" class="plotly html-widget"></div>
+            <script type="application/json" data-for="exampleTree">{"x":{"data":[{"x":[0.0089864719,0.0089872194,null,0.0089864719,0.0089906767,null,0.0089791074,0.008982158,null,0.0089791074,0.0090111998,null,0.0090033962,0.0090111998,null,0.0089040662,0.008943715,null,0.0090033962,0.0090058556,null,0,0,null,0,0.0089765195,null,0.0089765195,0.0089791074,null,0.0089765195,0.0089864719,null,0,0.0089040662,null,0.0089040662,0.0090033962],"y":[6,6,null,7,7,null,4,4,null,5,5,null,2,2,null,1,1,null,3,3,null,3.625,3.625,null,5.5,5.5,null,4.5,4.5,null,6.5,6.5,null,1.75,1.75,null,2.5,2.5],"text":"","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.0089864719,0.0089864719,null,0.0089864719,0.0089864719,null,0.0089791074,0.0089791074,null,0.0089791074,0.0089791074,null,0.0090033962,0.0090033962,null,0.0089040662,0.0089040662,null,0.0090033962,0.0090033962,null,0,0,null,0,0,null,0.0089765195,0.0089765195,null,0.0089765195,0.0089765195,null,0,0,null,0.0089040662,0.0089040662],"y":[6.5,6,null,6.5,7,null,4.5,4,null,4.5,5,null,2.5,2,null,1.75,1,null,2.5,3,null,3.625,3.625,null,3.625,5.5,null,5.5,4.5,null,5.5,6.5,null,3.625,1.75,null,1.75,2.5],"text":"","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.0090111998,0.008943715,0.0090058556],"y":[2,1,3],"text":["S01","S04","S05"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"OXA-24","legendgroup":"OXA-24","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.0089872194,0.0089906767,0.008982158,0.0090111998],"y":[6,7,4,5],"text":["S02","S03","S06","S07"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"OXA-72","legendgroup":"OXA-72","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":13.8812785388128,"l":10.958904109589},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.00045055999,0.00946175979],"tickmode":"array","ticktext":["0.0000","0.0025","0.0050","0.0075"],"tickvals":[0,0.0025,0.005,0.0075],"categoryorder":"array","categoryarray":["0.0000","0.0025","0.0050","0.0075"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":false,"tickfont":{"color":null,"family":null,"size":0},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,7.6],"tickmode":"array","ticktext":["2","4","6"],"tickvals":[2,4,6],"categoryorder":"array","categoryarray":["2","4","6"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":false,"tickfont":{"color":null,"family":null,"size":0},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"45570f0da78":{"x":{},"y":{},"node":{},"parent":{},"type":"scatter"},"45575f8edf1":{"x":{},"y":{},"node":{},"parent":{}},"45520a62abd":{"x":{},"y":{},"colour":{},"label":{},"text":{}}},"cur_data":"45570f0da78","visdat":{"45570f0da78":["function (y) ","x"],"45575f8edf1":["function (y) ","x"],"45520a62abd":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+          </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da" style="color:white;">
+          <h3>Public Health Application of <br>Infectious Disease Genomics</h3>
+          <div style="width:50%;float:left">
+            <ul class="fragment">
+              <li>Pathogen Surveillance
+                <ul>
+                  <li>trends</li>
+                  <li>prioritization and risk assessment</li>
+                  <li>early warning system</li>
+                </ul>
+                </li>
+            </ul>
+          </div>
+          <div style="width:50%;float:left">
+            <ul class="fragment">
+              <li>Outbreak Response
+                <ul>
+                  <li>source tracking</li>
+                  <li>containment</li>
+                  <li>risk assessment</li>
+                </ul>
+                </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Application of Genomic Data to Outbreaks</h3>
+          <img style="width:50%;" src="images/distinguishing_cases.png">
+          <div class="citation">
+            <a href="https://alliblk.github.io/genepi-book/">An applied genomic epidemiological handbook</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Application of Genomic Data to Surveillance</h3>
+          <img style="width:50%;" src="images/frequency_changes.png">
+          <div class="citation">
+            <a href="https://alliblk.github.io/genepi-book/">An applied genomic epidemiological handbook</a>
+          </div>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h3>SARS-CoV-2 Variant Waves in WI</h3>
+          <img style="width:100%" src="images/sc2_variants.png">
+          <div class="citation">
+            <a href="https://dataportal.slh.wisc.edu/">https://dataportal.slh.wisc.edu/</a>
+          </div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>SARS-CoV-2 Variant Waves in WI</h3>
+          <img style="width:100%" src="images/sc2_variants_cases.png">
+          <div class="citation">
+            <a href="https://www.dhs.wisconsin.gov/covid-19/data.htm">https://www.dhs.wisconsin.gov/covid-19</a><br>
+            <a href="https://dataportal.slh.wisc.edu/">https://dataportal.slh.wisc.edu/</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Genomics provides contextual details</h3>
+          <iframe loading="lazy" height="700" width="75%" frameborder="no" scrolling="no" src="https://sc2.slhcddcloud.org/varGeo"><p>Your browser does not support iframes.</p></iframe>
+        </section>
+
+        <section>
+          <h3>Pathogen Surveillance: SARS-CoV-2</h3>
+          <div style="width:50%;float:left;">
+            <h4>SARS-CoV-2 Wastewater</h4>
+            <iframe height="700" width="800" frameborder="no" scrolling="no" src="https://sc2ww.slhcddcloud.org/wwMap/"><p>Your browser does not support iframes.</p></iframe>
+          </div>
+          <div style="width:50%;float:right;">
+            <h4>SARS-CoV-2 Clinical</h4>
+            <iframe height="700" width="800" frameborder="no" scrolling="no" src="https://sc2.slhcddcloud.org/varGeo/"><p>Your browser does not support iframes.</p></iframe>
+          </div>
+        </section>
+
+
+
+
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Cloud Approaches to Bioinformatics</h2>
+        </section>
+
+        <section>
+          <h3>Managing a growing data infrastructure</h3>
+          <img style="width:45%" src="images/Genomic_Data_Lake.png">
+        </section>
+
+        <section>
+          <h3>Bioinformatics Workflow</h3>
+          <img style="width:90%" src="images/Spriggan.png">
+          <div class="citation">
+            <a href="https://github.com/wslh-bio/spriggan">Spriggan Workflow</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Nextflow</h3>
+          <img style="width:90%" src="images/nextflow_process.png">
+          <div class="citation">
+            <a href="https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow/index.html">https://carpentries-incubator.github.io/</a>
+          </div>
+        </section>
+
+        <section data-background-color="#333333" data-background-image="images/nextflow.jpg" data-background-size="contain">
+        </section>
+
+        <section>
+          <h3>Sequencing Analysis Infrastructure</h3>
+          <img style="width:75%" src="images/addams_diagram_v3-Limited VPC.png">
+        </section>
+
+        <section>
+          <h3>Sequencing Analysis Infrastructure</h3>
+          <img style="width:100%" src="images/analysis_run.png">
+        </section>
+
+        <section>
+          <iframe height="625" width="800" frameborder="yes" scrolling="yes" src="https://dataportal.slh.wisc.edu/"><p>Your browser does not support iframes.</p></iframe>
+          <h3><a href="https://dataportal.slh.wisc.edu/">https://dataportal.slh.wisc.edu/</a></h3>
+        </section>
+
+        <section>
+          <h3>Easy Genomics</h3>
+          <img style="width:75%;box-shadow:2px 2px 5px black;background-color:white" src="images/easy_genomics.png">
+          <div class="citation">
+            <a href="https://seqera.io/blog/accelerating-analytics-with-easy-genomics-wisconsin-state-laboratory/">seqera.io/blog</a><br>
+            <a href="https://aws.amazon.com/blogs/industries/easy-genomics-solution-for-public-health-labs/#:~:text=Easy%20Genomics%20is%20designed%20for,Upload%20single%20or%20multiple%20samples">aws.amazon.com/blog</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Easy Genomics</h3>
+          <img style="width:65%;box-shadow:2px 2px 5px black;background-color:white" src="images/eg_launch.png">
+          <div class="citation">
+            <a href="https://seqera.io/blog/accelerating-analytics-with-easy-genomics-wisconsin-state-laboratory/">seqera.io/blog</a><br>
+            <a href="https://aws.amazon.com/blogs/industries/easy-genomics-solution-for-public-health-labs/#:~:text=Easy%20Genomics%20is%20designed%20for,Upload%20single%20or%20multiple%20samples">aws.amazon.com/blog</a>
+          </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Whats next?</h3>
+          <h3 style="color: white" class="fragment">Pathogen Genomic Data Needs Context!</h3>
+          <h3 style="color: white" class="fragment">Connect data systems across Public Health<br> enabling near realtime insights on infectious diseases</h3>
+        </section>
+
+        <section>
+          <h3>Sequencing Data Infrastructure</h3>
+          <img style="width:55%" src="images/addams_diagram_v3-Restricted VPC.png">
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+            <h4>Special Thanks</h4>
+            <ul>
+              <li><a href="https://kb.wisc.edu/page.php?id=109785">UW-Madison Public Cloud Team</a></li>
+              <li><a href="https://it.wisc.edu/about/division-of-information-technology/enterprise-information-security-services/office-of-cybersecurity/">UW-Madison Office of Cybersecurity</a></li>
+            </ul>
+          </div>
+
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script src="/resources/restalks/jquery/jquery-3.7.1.slim.min.js"></script>
+    <script src="/resources/restalks/plotly/plotly-basic.min.js"></script>
+    <script src="/resources/restalks/plotly/crosstalk.min.js"></script>
+    <script src="/resources/restalks/plotly/htmlwidgets.js"></script>
+    <script src="/resources/restalks/plotly/htmlPlots.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
