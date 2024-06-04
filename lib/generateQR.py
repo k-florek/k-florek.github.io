@@ -7,7 +7,10 @@ from qrcode.image.styles.moduledrawers.svg import SvgPathCircleDrawer
 
 
 path = sys.argv[1]
+
 cwd = os.getcwd()
+
+#qrData = path
 
 try:
     path = os.path.abspath(path)
