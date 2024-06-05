@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <script src=/resources/google_analytics.js></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - CAPE</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Strategies for Modernizing Public Health Genomic Data Approaches</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH</br>
+            Senior Genomics and Data Scientist</br>
+            Wisconsin State Laboratory of Hygiene</br>
+            June 5, 2024</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a>
+          
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:30px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <img style="width: 30%;display:block;float:right;margin-top:20px" src="qr.svg">
+          </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da" style="color:white;">
+          <h3>Public Health Application of <br>Infectious Disease Genomics</h3>
+          <div style="width:50%;float:left">
+            <ul class="fragment">
+              <li>Pathogen Surveillance
+                <ul>
+                  <li>trends</li>
+                  <li>prioritization and risk assessment</li>
+                  <li>early warning system</li>
+                </ul>
+                </li>
+            </ul>
+          </div>
+          <div style="width:50%;float:left">
+            <ul class="fragment">
+              <li>Outbreak Response
+                <ul>
+                  <li>source tracking</li>
+                  <li>containment</li>
+                  <li>risk assessment</li>
+                </ul>
+                </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Application of Genomic Data to Outbreaks</h3>
+          <img style="width:50%;" src="images/distinguishing_cases.png">
+          <div class="citation">
+            <a href="https://alliblk.github.io/genepi-book/">An applied genomic epidemiological handbook</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Application of Genomic Data to Surveillance</h3>
+          <img style="width:50%;" src="images/frequency_changes.png">
+          <div class="citation">
+            <a href="https://alliblk.github.io/genepi-book/">An applied genomic epidemiological handbook</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Pathogen Surveillance: SARS-CoV-2</h3>
+          <div style="width:50%;float:left;">
+            <h4>SARS-CoV-2 Wastewater</h4>
+            <iframe height="700" width="800" frameborder="no" scrolling="no" src="https://sc2ww.slhcddcloud.org/wwMap/"><p>Your browser does not support iframes.</p></iframe>
+          </div>
+          <div style="width:50%;float:right;">
+            <h4>SARS-CoV-2 Clinical</h4>
+            <iframe height="700" width="800" frameborder="no" scrolling="no" src="https://sc2.slhcddcloud.org/varGeo/"><p>Your browser does not support iframes.</p></iframe>
+          </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Advancing Genomics in the Cloud</h2>
+        </section>
+
+        <section>
+          <div style="width:40%;float:left;padding-top:6em">
+            <h2>What is the cloud?</h2>
+          </div>
+          <div style="width:60%;float:right;">
+            <img src="images/cloud-computing.png">
+          </div>
+        </section>
+
+        <section>
+          <h3>Cloud Data Strategies</h3>
+          <img style="width:75%" src="images/data_comparison.png">
+        </section>
+
+        <section>
+          <h3>Genomic Data Lake</h3>
+          <img style="width:45%" src="images/Genomic_Data_Lake.png">
+        </section>
+
+        <section>
+          <h3>Anatomy of a Bioinformatics Workflow</h3>
+          <div style="width:60%;float:left;">
+            <img style="margin-top:0px" src="images/dryad_workflow_3.0.1.png">
+          </div>
+          <div style="width:40%;float:right;font-size: 0.5em;">
+            <pre><code class="language-java" data-trim data-noescape>
+              include { SAMPLESHEET_CHECK } from '../../modules/local/samplesheet_check'
+
+              workflow INPUT_CHECK {
+                  take:
+                  samplesheet // file: /path/to/samplesheet.csv
+              
+                  main:
+                  SAMPLESHEET_CHECK ( samplesheet )
+                      .csv
+                      .splitCsv ( header:true, sep:',' )
+                      .map { create_fasta_channel(it) }
+                      .set { reads }
+              
+                  emit:
+                  // channel: [ val(meta), [ path_to_reads ] ]
+                  reads
+                  // channel: [ samplesheet.valid.csv ]                   
+                  csv = SAMPLESHEET_CHECK.out.csv
+                  // channel: [ versions.yml ]
+                  versions = SAMPLESHEET_CHECK.out.versions 
+              }
+              
+              // Function to get list of [ meta, [ fasta ] ]
+              def create_fasta_channel(LinkedHashMap row) {
+                  // create meta map
+                  def meta = [:]
+                      meta.id         = row.sample
+              
+                  def fasta_meta = []
+              
+                  if (!file(row.fasta).exists()) {
+                      exit 1
+                  } else {
+                      fasta_meta = [ meta, [ file(row.fasta) ] ]
+                  }
+              
+                  return fasta_meta
+              }        
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h3>Genomic Data Cloud Infrastructure</h3>
+          <img style="width:60%" src="images/aws-infra-nextflow.png">
+        </section>
+
+        <section>
+          <h3>Monitoring Data Workflows with Nextflow Tower</h3>
+          <img style="width:75%" src="images/tower_runs.png">
+        </section>
+
+        <section>
+          <h3>Monitoring Data Workflows with Nextflow Tower</h3>
+          <img style="width:60%" src="images/tower_monitor.png">
+        </section>
+
+        <section>
+          <h3>WSLH Data Portal Infrastructure</h3>
+          <img style="width:60%" src="images/aws-infra-public-data-portal.png">
+        </section>
+
+        <section>
+          <h3>AWS Glue and MapReduce</h3>
+          <ul>
+            <li><b>Map</b>: input data is first split into smaller blocks, then each block is assigned to a separate worker node and processed in parallel</li>
+            <li><b>Shuffle</b>: worker nodes redistribute data such that all data belonging to a group located on the same worker node</li>
+            <li><b>Reduce</b>: if needed worker nodes then process each group of output data, in parallel</li>
+          </ul>
+        </section>
+          
+        <section>
+          <h3>AWS Glue and MapReduce</h3>
+          <img src="images/mapReduceExample.png">
+        </section>
+
+        <section>
+          <h3>Query Data in the Data Lake</h3>
+          <img style="width:75%" src="images/athena_query.png">
+        </section>
+
+        <section>
+          <iframe height="625" width="800" frameborder="yes" scrolling="yes" src="https://dataportal.slh.wisc.edu/"><p>Your browser does not support iframes.</p></iframe>
+          <div style="right:0px; bottom: -100px" class="citation">
+            <a href="https://dataportal.slh.wisc.edu/"><div style="text-align: justify; width: 200px; margin:0px"><img style="margin-bottom:-15px;" src="images/qr-wslh-dataportal.svg">dataportal.slh.wisc.edu</div></a>
+          </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <h2 style="color: white">Next Steps in Genomic Data Integration</h2>
+        </section>
+
+        <section>
+          <img src="images/microreact_logo.png"><br>
+          <img src="images/microreact.png">
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/tb_photo.png">
+              <span style="margin-left:30px;text-align:left">Thomas Blader</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/eg_photo.png">
+              <span style="margin-left:30px;text-align:left">Eva Gunawan, MS</br></span>
+            </div>
+            <h4>Special Thanks</h4>
+            <ul>
+              <li><a href="https://kb.wisc.edu/page.php?id=109785">UW-Madison Public Cloud Team</a></li>
+              <li><a href="https://it.wisc.edu/about/division-of-information-technology/enterprise-information-security-services/office-of-cybersecurity/">UW-Madison Office of Cybersecurity</a></li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script src="/resources/restalks/jquery/jquery-3.7.1.slim.min.js"></script>
+    <script src="/resources/restalks/plotly/plotly-basic.min.js"></script>
+    <script src="/resources/restalks/plotly/crosstalk.min.js"></script>
+    <script src="/resources/restalks/plotly/htmlwidgets.js"></script>
+    <script src="/resources/restalks/plotly/htmlPlots.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
