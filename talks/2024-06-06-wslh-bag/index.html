@@ -264,11 +264,6 @@
         </section>
 
         <section>
-          <h3>Genomics provides contextual details</h3>
-          <iframe loading="lazy" height="700" width="75%" frameborder="no" scrolling="no" src="https://sc2.slhcddcloud.org/varGeo"><p>Your browser does not support iframes.</p></iframe>
-        </section>
-
-        <section>
           <h3>Pathogen Surveillance: SARS-CoV-2</h3>
           <div style="width:50%;float:left;">
             <h4>SARS-CoV-2 Wastewater</h4>
@@ -321,6 +316,20 @@
         <section>
           <h3>WSLH Data Portal Infrastructure</h3>
           <img style="width:60%" src="images/aws-infra-public-data-portal.png">
+        </section>
+
+        <section>
+          <h3>AWS Glue and MapReduce</h3>
+          <ul>
+            <li><b>Map</b>: input data is first split into smaller blocks, then each block is assigned to a separate worker node and processed in parallel</li>
+            <li><b>Shuffle</b>: worker nodes redistribute data such that all data belonging to a group located on the same worker node</li>
+            <li><b>Reduce</b>: if needed worker nodes then process each group of output data, in parallel</li>
+          </ul>
+        </section>
+          
+        <section>
+          <h3>AWS Glue and MapReduce</h3>
+          <img src="images/mapReduceExample.png">
         </section>
 
         <section>
