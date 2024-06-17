@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <script src=/resources/google_analytics.js></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - TITLE</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="/resources/restalks/qrcode/qrcode.js"></script>
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>TITLE</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH<br>
+            Senior Genomics and Data Scientist<br>
+            Wisconsin State Laboratory of Hygiene<br>
+            DATE<br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a>
+          
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:20px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <div id="qrcode"></div>
+              <script type="text/javascript">
+                var urlString = window.location.href;
+                urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                  text: urlString,
+                  width: 128,
+                  height: 128,
+                  colorDark : "#2a76dd",
+                  colorLight : "#ffffff",
+                  correctLevel : QRCode.CorrectLevel.Q,
+                  imgCSSStyle : "float:right; padding-top:20px;"
+                });
+              </script>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+
+        </section>
+
+        <section>
+          <div style="width:50%;float:left;">
+          </div>
+
+          <div style="width:50%;float:right;">
+          </div>
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/tb_photo.png">
+              <span style="margin-left:30px;text-align:left">Thomas Blader</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/eg_photo.png">
+              <span style="margin-left:30px;text-align:left">Eva Gunawan, MS</br></span>
+            </div>
+            <h4>Special Thanks</h4>
+            <ul>
+              <li><a href="https://kb.wisc.edu/page.php?id=109785">UW-Madison Public Cloud Team</a></li>
+              <li><a href="https://it.wisc.edu/about/division-of-information-technology/enterprise-information-security-services/office-of-cybersecurity/">UW-Madison Office of Cybersecurity</a></li>
+            </ul>
+          </div>
+
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
