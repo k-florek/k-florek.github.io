@@ -2,24 +2,20 @@
 
 import os,sys
 import qrcode
+import argparse
 import qrcode.image.svg
-from qrcode.image.styles.moduledrawers.svg import SvgPathCircleDrawer
+from qrcode.image.styles.moduledrawers.svg import SvgPathCircleDrawer, SvgPathSquareDrawer
 
 
-path = sys.argv[1]
+parser = argparse.ArgumentParser(description=f"",usage="generateQR.py",add_help=True)
+parser.add_argument("url", help="URL to encode in the QR Code")
+parser.add_argument("output_path", help="QR Code svg output path and name")
 
-cwd = os.getcwd()
+args = parser.parse_args()
 
-#qrData = path
+qrData = args.url
 
-try:
-    path = os.path.abspath(path)
-    path = path.split('k-florek.github.io')[1]
-except IndexError:
-    print("Error: Please provide a path within the project.")
-    sys.exit(1)
-
-qrData = 'https://k-florek.net'+path
+outPath = args.output_path
 
 qr = qrcode.QRCode(
     version=None,
@@ -39,6 +35,6 @@ imgFactory.QR_PATH_STYLE = {
 #imgFactory.background="#000000"
 img = qr.make_image(
     image_factory=imgFactory, 
-    module_drawer=SvgPathCircleDrawer()
+    module_drawer=SvgPathSquareDrawer()
 )
-img.save(os.path.join(cwd,"qr.svg"))
+img.save(outPath)
