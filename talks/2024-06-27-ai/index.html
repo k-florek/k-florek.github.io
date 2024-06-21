@@ -44,19 +44,19 @@
           </div>
           <div style="float:right;width:50%">
             <div id="qrcode"></div>
-              <script type="text/javascript">
-                var urlString = window.location.href;
-                urlString = urlString.substring(0, urlString.lastIndexOf("/"));
-                var qrcode = new QRCode(document.getElementById("qrcode"), {
-                  text: urlString,
-                  width: 128,
-                  height: 128,
-                  colorDark : "#2a76dd",
-                  colorLight : "#ffffff",
-                  correctLevel : QRCode.CorrectLevel.Q,
-                  imgCSSStyle : "float:right; padding-top:20px;"
-                });
-              </script>
+            <script type="text/javascript">
+              var urlString = window.location.href;
+              urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+              var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: urlString,
+                width: 128,
+                height: 128,
+                colorDark : "#2a76dd",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.Q,
+                imgCSSStyle : "float:right; padding-top:20px;"
+              });
+            </script>
           </div>
         </section>
 
@@ -149,10 +149,6 @@
               <li>trained on massive datasets of existing content</li>
             </ul>
           </div>
-        </section>
-
-        <section>
-          <h3>AI in Public Health</h3>
         </section>
 
         <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
@@ -310,19 +306,90 @@
         </section>
 
         <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
-          <h2>Applications of AI in Public Health</h2>
+          <h2>AI/ML in Public Health</h2>
         </section>
 
         <section>
-          <h3>SARS-CoV-2 Lineage</h3>
+          <h3>Applying AI in public health</h3>
+          <ul>
+            <li>Disease Forecasting</li>
+            <li>Risk Prediction</li>
+            <li>Health Diagnosis</li>
+            <li>Spatial Modeling</li>
+            <li>Surveillance</li>
+            <li>Modeling</li>
+          </uL>
+          <div class="citation">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10637620/">Olawade et al. 2023 <i>Front Public Health</i></a>
+          </div>
         </section>
 
         <section>
-          <h3>EDS-HAT</h3>
+          <h3>SARS-CoV-2 Lineage - Pangolin</h3>
+          <div style="width:50%;float:left;">
+            <img style="width:30%" src="images/pangolin_logo.svg">
+            <ul>
+              <li>Multinomial Logistic Regression (pangolin 2.0)</li>
+              <li>Decision Trees (pangolin 2.0 and 3.0)</li>
+              <li>Random Forests (pangolin 4.0)</li>
+            </ul>
+          </div>
+          <div style="width:50%;float:right;">
+            <img style="width:100%" src="images/pangolin-lineages.png">           
+          </div>
+          <div class="citation">
+            <a href="https://cov-lineages.org/resources/pangolin.html">Pangolin</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Antimicrobial Susceptibility Genotypic Prediction</h3>
+          <div style="width:50%;float:left;padding-top: 100px;">
+            <p>"Using phenotypic AST profiles as the reference, error designation and accuracy statistics were performed for 
+              152 bacterial-drug combinations with an overall categorical agreement of 80.9% and very major, major, and minor 
+              error rates of 3.8%, 23.3%, and 11.8%, respectively."</p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img style="width:75%" src="images/ast_prediction.png">
+          </div>
+        </section>
+
+        <section>
+          <h3>Enhanced Detection System for Healthcare-Associated Transmission (EDS-HAT)</h3>
+          <div style="width:50%;float:left;">
+            <p>Combination of WGS surveillance and ML of electronic health records to identify outbreaks and transmission routes.</p>
+            <p class="fragment"><b>"EDS-HAT could have prevented 25 (lower bound) to 63 (upper bound) transmissions. Moreover, 3.1–8.0 fewer 30-day attributable readmissions and 1.6–3.3 fewer deaths would have occurred had EDS-HAT been running in real time."</b></p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img style="width:75%" src="images/eds-hat.jpg">
+          </div>
+          <div class="citation">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9427134/">Sundermann et al. 2022 <i>Clin Infect Dis</i></a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Generative AI in healthcare</h3>
+          https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309
+          https://www.nature.com/articles/s41586-023-06160-y#Sec7
         </section>
 
         <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
           <h2>Challenges and Considerations of AI</h2>
+        </section>
+
+        <section>
+          <h3>Reaching the limit - AI hallucinations</h3>
+          <div style="width:50%;float:left;">
+            <img style="width:60%" src="images/Hallucinating-with-AI-1200x960.png">
+          </div>
+          <div style="width:50%;float:right; padding-top:50px">
+            <p><b>AI hallucination</b> - a phenomenon where a large language model perceives a pattern that is nonexistent to human observers resulting in outputs that are nonsensical or inaccurate.</p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Enhancing Accuracy and Reliability with RAG</h3>
         </section>
 
         <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
