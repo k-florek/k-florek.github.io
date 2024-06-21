@@ -44,19 +44,19 @@
           </div>
           <div style="float:right;width:50%">
             <div id="qrcode"></div>
-              <script type="text/javascript">
-                var urlString = window.location.href;
-                urlString = urlString.substring(0, urlString.lastIndexOf("/"));
-                var qrcode = new QRCode(document.getElementById("qrcode"), {
-                  text: urlString,
-                  width: 128,
-                  height: 128,
-                  colorDark : "#2a76dd",
-                  colorLight : "#ffffff",
-                  correctLevel : QRCode.CorrectLevel.Q,
-                  imgCSSStyle : "float:right; padding-top:20px;"
-                });
-              </script>
+            <script type="text/javascript">
+              var urlString = window.location.href;
+              urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+              var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: urlString,
+                width: 128,
+                height: 128,
+                colorDark : "#2a76dd",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.Q,
+                imgCSSStyle : "float:right; padding-top:20px;"
+              });
+            </script>
           </div>
         </section>
 
