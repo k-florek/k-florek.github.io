@@ -60,42 +60,6 @@
           </div>
         </section>
 
-        <!--
-          1. Intro to AI/ML and generative AI
-            - what they are
-            - where generative ai fits
-            - public health context
-          2. Background Concepts
-            - what are LLMs and NLP
-            - types of AI/ML models
-              - Regession Linear/Logistic
-              - Decision Tree
-              - KNN
-              - Random Forest
-              - XGBoost
-              - Deep Learning
-                - Neural Networks
-                - 
-          3. Applications in Public Health
-          4. Best Practices for utilization
-            - Data Privacy and Security
-            - Bias and fairness
-            - Ethics
-            - Training data quality
-            - Model evaluation
-            - Transparency
-          5. Challenges
-            - Complexity deploying/using/interpriting 
-            - Data Silos
-          6. Conclusions
-            - Key takeaways
-            - How to keep informed
-            - Responsible use and ethical adoption
-
-          7. Additional Materials
-            - https://www.nnlm.gov/guides/opencourse/generativeai
-        -->
-
         <section style="color: white" data-background="#0969da">
           <h3>
             <ol>
@@ -370,8 +334,30 @@
 
         <section>
           <h3>Generative AI in healthcare</h3>
-          https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309
-          https://www.nature.com/articles/s41586-023-06160-y#Sec7
+          <div style="width:50%;float:left;">
+            <ul>
+              <li>cross-sectional study of 195 randomly drawn patient questions from Reddit’s r/AskDocs</li>
+              <li>compared physician’s and chatbot’s responses to patient’s questions asked publicly on Reddit’s r/AskDocs</li>
+              <li>chatbot responses were preferred over physician responses and rated significantly higher for both quality and empathy</li>
+            </ul>
+          </div>
+          <div style="width:50%;float:right;">
+            <ul>
+              <li>NYUTron - an LLM trained on clinical language and fine-tuned across a wide range of clinical and operational predictive tasks
+                <ul>
+                  <li>30-day all-cause readmission prediction</li>
+                  <li>in-hospital mortality prediction</li>
+                  <li>comorbidity index prediction</li>
+                  <li>length of stay prediction</li>
+                  <li>insurance denial prediction</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="citation">
+            <a href="https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309">Ayers et al. 2023 <i>JAMA Intern Med.</i></a><br>
+            <a href="https://www.nature.com/articles/s41586-023-06160-y">Yao Yiang et al. 2023 <i>Nature</i></a>
+          </div>
         </section>
 
         <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
@@ -380,16 +366,44 @@
 
         <section>
           <h3>Reaching the limit - AI hallucinations</h3>
-          <div style="width:50%;float:left;">
+          <div style="width:50%;float:left;padding-top:100px">
             <img style="width:60%" src="images/Hallucinating-with-AI-1200x960.png">
           </div>
-          <div style="width:50%;float:right; padding-top:50px">
+          <div style="width:50%;float:right;">
             <p><b>AI hallucination</b> - a phenomenon where a large language model perceives a pattern that is nonexistent to human observers resulting in outputs that are nonsensical or inaccurate.</p>
+            <ul class="fragment">
+              <li>LLM Hallucinations
+                <ul>
+                  <li>False Facts - confidently state incorrect information</li>
+                  <li>Imaginary Scenarios - entirely fabricated stories or events</li>
+                  <li>Nonsense/Incoherence - output that doesn't follow any logical flow or grammatical rules</li>
+                </ul>
+            </ul>
           </div>
         </section>
 
         <section>
           <h3>Enhancing Accuracy and Reliability with RAG</h3>
+          <p><b>Retrieval-augmented generation (RAG)</b> - enhances accuracy and reliability of generative AI models by linking AI services to external resources.</p>
+          <img style="width:50%" src="images/Using-RAG-on-PCs.jpg">
+          <div class="citation">
+            <a href="https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/">What Is Retrieval-Augmented Generation, aka RAG?</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Gartner hype cycle</h3>
+          <img style="width:50%" src="images/Gartner_Hype_Cycle.svg.png">
+          <div class="citation">
+            <a href="https://en.wikipedia.org/wiki/Gartner_hype_cycle">Gartner hype cycle</a>
+          </div>
+        </section>
+
+        <section>
+          <img style="width:50%" src="images/2023-gartner-hype-cycle-for-emerging-technologies.png">
+          <div class="citation">
+            <a href="https://www.gartner.com/en/articles/what-s-new-in-the-2023-gartner-hype-cycle-for-emerging-technologies">What’s New in the 2023 Gartner Hype Cycle for Emerging Technologies</a>
+          </div>
         </section>
 
         <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
@@ -398,10 +412,30 @@
 
         <section  style="color: white" data-background="#0969da">
           <h3>Key Points</h3>
+          <div class="fragment" style="width:50%;float:left;">
+            <ul>
+              <li style="padding-bottom: 25px;">AI/ML - broad field with lots of different models and training approaches</li>
+              <li style="padding-bottom: 25px;">many practical applications from operations -> research</li>
+              <li style="padding-bottom: 25px;">rapidly moving field with many advancements</li>
+            </ul>
+          </div>
+
+          <div class="fragment" style="width:50%;float:right;">
+            <ul>
+              <li style="padding-bottom: 25px;">ongoing ethical and legal concerns</li>
+              <li style="padding-bottom: 25px;">robust and generalizable models require patient data from multiple centers but privacy a data security remains critical</li>
+              <li style="padding-bottom: 25px;">lack of transparency in AI-based systems</li>              
+            </ul>
+          </div>
+          
         </section>
 
-        <section  style="color: white" data-background="#0969da">
-          <h3>How to stay informed</h3>
+        <section>
+          <h3>Questions</h3>
+          <iframe height="600" width="800" src="robot.html"></iframe>
+          <div class="citation">
+            <a href="https://threejs.org/examples/webgl_animation_skinning_morph.html">threejs.org</a>
+          </div>
         </section>
 
       </div>
