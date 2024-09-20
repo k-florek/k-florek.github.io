@@ -67,8 +67,8 @@
 
         <section>
           <div class="r-stack">
-            <div>
-              <div style="width:50%;float:left;">
+            <div class="columncontainer">
+              <div>
                 <h3>Bioinformatics Software/Workflows</h3>
                 <ul>
                   <li>Developed by a researcher or student</li>
@@ -79,7 +79,7 @@
                 </ul>
               </div>
 
-              <div class="fragment" style="width:50%;float:right;">
+              <div class="fragment">
                 <h3>Testing Laboratory Requirements</h3>
                 <ul>
                   <li>Validation/Verification</li>
@@ -100,29 +100,191 @@
           </div>
         </section>
 
-        <section>
+        <section data-auto-animate>
           <h3>Advantages of Workflow Management Languages</h3>
-          <p>Unifying towards a set of common criteria</p>
+          <p>Unifying toward a set of common approaches</p>
+          <div class="columncontainer">
+            <div>
+              <h4>Nextflow</h4>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Channels/Processes</li>
+                <li class="fragment" data-fragment-index="2">Workflow Logs/Process Logs/Trace File/Execution Report</li>
+                <li class="fragment" data-fragment-index="3">Task Caching</li>
+                <li class="fragment" data-fragment-index="4">Job isolation with Containers</li>
+                <li class="fragment" data-fragment-index="5">Compatibility with range of HPC and Cloud platforms</li>
+              </ul>
+            </div>
+            <div>
+              <h4>WDL (Cromwell)</h4>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Task</li>
+                <li class="fragment" data-fragment-index="2">Workflow Logs/Call Logs</li>
+                <li class="fragment" data-fragment-index="3">Call Caching/Checkpoint Files</li>
+                <li class="fragment" data-fragment-index="4">Job isolation with Containers</li>
+                <li class="fragment" data-fragment-index="5">Compatibility with range of HPC and Cloud platforms</li>
+              </ul>
+            </div>
+            <div>
+              <h4>SnakeMake</h4>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Rule</li>
+                <li class="fragment" data-fragment-index="2">Rule Logs/Reports</li>
+                <li class="fragment" data-fragment-index="3">Between Workflow Caching</li>
+                <li class="fragment" data-fragment-index="4">Job isolation with Containers</li>
+                <li class="fragment" data-fragment-index="5">Limited compatibility with Cloud platforms</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-          <div class="column">
-            <h4>Nextflow</h4>
+        <section data-auto-animate>
+          <h3>Advantages of Workflow Management Languages</h3>
+          <p>Unifying toward a set of common approaches</p>
+          <div class="columncontainer">
+            <div>
+              <h4>Nextflow</h4>
+              <ul>
+                <li style="color:white">Channels/Processes</li>
+                <li style="color:blueviolet">Workflow Logs/Process Logs/Trace File/Execution Report</li>
+                <li style="color:blueviolet">Task Caching</li>
+                <li style="color:blueviolet">Job isolation with Containers</li>
+                <li style="color:white">Compatibility with range of HPC and Cloud platforms</li>
+              </ul>
+            </div>
+            <div>
+              <h4>WDL (Cromwell)</h4>
+              <ul>
+                <li style="color:white">Task</li>
+                <li style="color:blueviolet">Workflow Logs/Call Logs</li>
+                <li style="color:blueviolet">Call Caching/Checkpoint Files</li>
+                <li style="color:blueviolet">Job isolation with Containers</li>
+                <li style="color:white">Compatibility with range of HPC and Cloud platforms</li>
+              </ul>
+            </div>
+            <div>
+              <h4>SnakeMake</h4>
+              <ul>
+                <li style="color:white">Rule</li>
+                <li style="color:blueviolet">Rule Logs/Reports</li>
+                <li style="color:blueviolet">Between Workflow Caching</li>
+                <li style="color:blueviolet">Job isolation with Containers</li>
+                <li style="color:white">Limited compatibility with Cloud platforms</li>
+              </ul>
+            </div>
           </div>
-          <div class="column">
-            <h4>WDL</h4>
-          </div>
-          <div class="column">
-            <h4>SnakeMake</h4>
-          </div>
+        </section>
 
+        <section  data-auto-animate>
+          <h3>Addressing Regulatory Requirements - from a CAP perspective</h3>
+          figure representing the foundation of infrastructure and the software/workflows sitting on top
+        </section>
+
+        <section data-auto-animate>
+          <h3>Addressing Regulatory Requirements - from a CAP perspective</h3>
+          <h4>Infrastructure</h4>
+          <div class="columncontainer">
+            <div class="fragment">
+              <ul>
+                <li>Encrypted Electronic Data Transfer</li>
+                <li>Data Transfer Integrity Check</li>
+                <li>Data Backups</li>
+                <li>Storage practices and retention times</li>            
+              </ul>
+            </div>
+            <div class="fragment">
+              <ul>
+                <li>System Authentication/Activity Logs</li>
+                <li>Change Management Process (users or infrastructure)</li>
+                <li>Continuity of Operations Plan</li>
+                <li>Disaster Recovery Testing Records</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Addressing Regulatory Requirements - from a CAP perspective</h3>
+          <h4>Infrastructure</h4>
+
+          <div class="columncontainer">
+            <div>
+              <ul>
+                <li style="color:blueviolet">Encrypted Electronic Data Transfer</li>
+                <li style="color:blueviolet">Data Transfer Integrity Check</li>
+                <li>Data Backups</li>
+                <li>Storage practices and retention times</li>            
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>System Authentication/Activity Logs</li>
+                <li>Change Management Process (users or infrastructure)</li>
+                <li>Continuity of Operations Plan</li>
+                <li>Disaster Recovery Testing Records</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Addressing Regulatory Requirements - from a CAP perspective</h3>
+          <h4>Workflows/Software</h4>
+
+          <div class="columncontainer">
+            <div class="fragment">
+              <ul>
+                <li>Software/Workflow Version</li>
+                <li>Source code versioning system</li>
+                <li>Unit Tests, Pos/Neg Tests, Integration Tests</li>
+                <li>Records of monitoring software updates</li>
+              </ul>
+            </div>
+
+            <div class="fragment">
+              <ul>
+                <li>Data Provenance tracking through the procedure</li>
+                <li>Controls, Metrics, QC</li>
+                <li>Input Files/Output Files/Databases</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Addressing Regulatory Requirements - from a CAP perspective</h3>
+          <h4>Workflows/Software</h4>
+
+          <div class="columncontainer">
+            <div>
+              <ul>
+                <li style="color:blueviolet">Software/Workflow Version</li>
+                <li style="color:blueviolet">Source code versioning system</li>
+                <li style="color:blueviolet">Unit Tests, Pos/Neg Tests, Integration Tests</li>
+                <li>Records of monitoring software updates</li>
+              </ul>
+            </div>
+
+            <div>
+              <ul>
+                <li style="color:blueviolet">Data Provenance tracking through the procedure</li>
+                <li>Controls, Metrics, QC</li>
+                <li style="color:blueviolet">Input Files/Output Files/Databases</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section>
-          <h3>Comparison of regulatory requirements and workflow attributes</h3>
+          <h3>What is the role of a bioinformatician?</h3>
+          <p><b>Testing personnel</b> - Individuals responsible for performing laboratory assays and reporting laboratory results</p>
+          <p><b>Test system</b> - The process that includes pre-analytic, analytic, and post-analytic steps used to produce a
+            test result or set of results. A test system may be manual, automated, multi-channel or single-use and can
+            include reagents, components, equipment and/or instruments required to produce results. A test system may
+            encompass multiple identical analyzers or devices. Different test systems may be used for the same analyte.</p>
         </section>
 
         <section>
-          <h3>What is the role of a bioinformatician</h3>
-          testing vs non-testing -> automation
+          <h3>What is the role of a bioinformatician?</h3>
         </section>
 
         <section>
