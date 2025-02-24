@@ -37,6 +37,9 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --r-selection-color: #fff;
 }
 
+/********************************
+Custom Elements
+********************************/
 .citation {
   position: absolute;
   bottom: 0;
@@ -70,13 +73,17 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 ul li {
   padding-bottom: 15px;
-}
+} 
 
 ol li {
   padding-bottom: 15px;
 }
 
-.no-padding ul li {
+ul.no-padding li {
+  padding-bottom: 0px;
+}
+
+ol.no-padding li {
   padding-bottom: 0px;
 }
 
@@ -89,6 +96,85 @@ ol li {
 .no-bullets {
     list-style-type: none !important;
 }
+
+/************************************
+Timeline
+************************************/
+.timeline {
+  position: relative;
+  min-height: 100vh;
+  &:before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:50%;
+    height:100%;
+    transform:translateX(-50%);
+    width:4px;
+    background-color:#444;
+  }
+  .entries {
+    width:calc(100% - 80px);
+    max-width:800px;
+    margin:auto;
+    position: relative;
+    left:-5px;
+    .entry {
+      width:calc(50% - 80px);
+      float:left; 
+      padding:20px;
+      clear:both;
+      text-align:right;
+      &:not(:first-child) {
+        margin-top:-60px;
+      }
+      .title {
+        font-size: 0.9em;
+        margin-bottom:12px;
+        position: relative;
+        color: var(--r-heading-color);
+        &:before {
+          content: '';
+          position: absolute;
+          width:8px;
+          height:8px;
+          border:4px solid #444;
+          background-color:#fff;
+          border-radius:100%;
+          top:50%;
+          transform:translateY(-50%);
+          right:-73px;
+          z-index:1000;
+        }
+        &.big:before {
+          width:24px;
+          height:24px;
+          transform:translate(8px,-50%);
+        }
+      }
+      .content {
+        color: var(--r-main-color);
+        font-size: 0.7em;
+      }
+      &:nth-child(2n) {
+        text-align:left;
+        float:right;
+        .title {
+          &:before {
+            left:-63px;
+          }
+          &.big:before {
+            transform:translate(-8px,-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**************************************
+Reveal Stuff
+**************************************/
 
 .reveal-viewport {
   background: #fff;
