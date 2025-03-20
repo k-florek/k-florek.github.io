@@ -53,6 +53,7 @@ social_settings:
   spotify_url: ''
   bandcamp_url: ''
   linkedin_url: 'https://www.linkedin.com/in/kelseyflorek/'
+  bluesky_url: 'https://bsky.app/profile/k-florek.net'
 
 color_settings:
   background_color: '#ffffff'
