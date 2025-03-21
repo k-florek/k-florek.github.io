@@ -34,7 +34,7 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h2>Applications of NGS Data</h2>
+          <h2>Applications and advancement of NGS Data</h2>
           <br>
           <p>
             Kelsey Florek, PhD, MPH<br>
@@ -100,20 +100,147 @@
         -->
 
         <section>
-          
+          <div style="position: relative; text-align: center; color: white; background:black;">
+            <img style="opacity: 0.4;" src="images/dresden.jpg">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+              <h2 style="color:white">How does a Diagnostic Test compare to a Surveillance Test in Public Health?</h2>
+            </div>
+          </div>
         </section>
 
-        <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
-
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient_limit_magenta.html" data-background="#0969da">
+          <div class="columncontainer">
+            <div><h2>What is the primary goal<br> of an<br> NGS Diagnostic Test?</h2></div>
+            <div><h2>What is the primary goal<br> of an<br> NGS Surveillance Test?</h2></div>
+          </div>
+          <br>
+          <h2 class="fragment">How do they overlap?</h2>
         </section>
 
         <section>
-          <div style="width:50%;float:left;">
-          </div>
-
-          <div style="width:50%;float:right;">
+          <h3>Using Genomic Data to inform Surveillance</h3>
+          <img style="width:50%;" src="images/frequency_changes.png">
+          <div class="citation">
+            <a href="https://alliblk.github.io/genepi-book/">An applied genomic epidemiological handbook</a>
           </div>
         </section>
+
+        <section>
+          <h3>Using Genomic Data to inform Outbreaks</h3>
+          <img style="width:50%;" src="images/distinguishing_cases.png">
+          <div class="citation">
+            <a href="https://alliblk.github.io/genepi-book/">An applied genomic epidemiological handbook</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Carbapenem-Resistant <i>Acinetobacter baumannii</i> Outbreak</h3>
+          <div class="columncontainer">
+            <div class="columncontainer" style="font-size: small;">
+              <div style="min-width: fit-content;">
+                <ul>
+                  <li>Amikacin: <font color="red">Resistant</font></li>
+                  <li>Aztreonam: <font color="red">Resistant</font></li>
+                  <li>Cefepime: <font color="red">Resistant</font></li>
+                  <li>Cefotaxime: <font color="red">Resistant</font></li>
+                  <li>Ceftazidime: <font color="red">Resistant</font></li>
+                  <li>Ciprofloxacin: <font color="red">Resistant</font></li>
+                  <li>Colistin: <font color="blue">Susceptible</font></li>
+                  <li>Doripenem: <font color="red">Resistant</font></li>
+                  <li>Doxycycline: <font color="red">Resistant</font></li>
+                  <li>Gentamicin: <font color="red">Resistant</font></li>
+                </ul>
+              </div>
+              <div style="min-width: fit-content;">
+                <ul>
+                  <li>Imipenem: <font color="red">Resistant</font></li>
+                  <li>Levofloxacin: <font color="red">Resistant</font></li>
+                  <li>Meropenem: <font color="red">Resistant</font></li>
+                  <li>Minocycline: <font color="orange">Intermediate</font></li>
+                  <li>Piperacillin-tazobactam: <font color="red">Resistant</font></li>
+                  <li>Polymyxin-B: <font color="blue">Susceptible</font></li>
+                  <li>Ticarcillin-clavulanate: <font color="red">Resistant</font></li>
+                  <li>Tobramycin: <font color="red">Resistant</font></li>
+                  <li>Trimethoprim-sulfamethoxazole: <font color="red">Resistant</font></li>
+                </ul>
+              </div>
+            </div>
+            <div style="width:75%">
+              <div style="position: relative;">
+                <img src="images/tree_plasmid.png">
+                <div class="fragment fade-out" style="background-color: white; position: absolute; top: 0; right: 0; width: 59%; height: 100%"> </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Carbapenem-Resistant <i>Acinetobacter baumannii</i> Outbreak</h3>
+          <img src="images/network.png">
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>How does NGS bring value to Laboratories and Public Health?</h2>
+        </section>
+
+        <section>
+          <h3>Surveillance Example: National Influenza Surveillance Reference Centers</h3>
+          <div class="columncontainer">
+            <div><img src="images/NIRC.jpg"></div>
+            <div style="font-size:0.9em; width:fit-content;">
+              <p><i>APHL and CDC developed the Influenza Virologic Surveillance Right Size Roadmap to systematically define the rationale, vital capabilities, and optimal "right size" for influenza virologic surveillance. The Roadmap can help states determine the optimal amount of laboratory testing to meet national surveillance goals with confidence that the data provides an accurate picture of what is really happening within the US.</i></p>
+            </div>
+          </div>
+
+          <div class="citation">
+            <a href="https://www.aphl.org/programs/infectious_disease/influenza/Pages/default.aspx">APHL Influenza</a>
+          </div>
+        </section>
+
+        <section>
+          <div class="aligned" style="margin-left: 80px">
+            <img src="images/Pneumococcus.png">
+            <h3>Diagnostic Example:<br><i>Streptococcus pneumoniae</i> serotyping</h3>
+          </div>
+          
+          <div class="columncontainer">
+            <div>
+              <b><p style="text-align: left;">Real-time PCR Approach:</p></b>
+              <ul>
+                <li>48 real-time PCR assays in 12 quadriplex reactions</li>
+                <li>allows for detection of 64 serotypes as individual serotypes or small serogroups</li>
+              </ul>
+            </div>
+
+            <div class="fragment">
+              <b><p style="text-align: left;">WGS Approach:</p></b>
+              <ul>
+                <li>allows for detection of 631 serotypes and genetic variants</li>
+                <li>full genomic resolution allows the additional detection of AMR and virulence factor genes</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Where is the untapped potential of NGS data?</h2>
+        </section>
+
+        <section>
+          <h3>Enhanced Detection System for Healthcare-Associated Transmission (EDS-HAT)</h3>
+          <div style="width:50%;float:left;">
+            <p>Combination of WGS surveillance and ML of electronic health records to identify outbreaks and transmission routes.</p>
+            <p class="fragment"><b>"EDS-HAT could have prevented 25 (lower bound) to 63 (upper bound) transmissions. Moreover, 3.1–8.0 fewer 30-day attributable readmissions and 1.6–3.3 fewer deaths would have occurred had EDS-HAT been running in real time."</b></p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img style="width:75%" src="images/eds-hat.jpg">
+          </div>
+          <div class="citation">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9427134/">Sundermann et al. 2022 <i>Clin Infect Dis</i></a>
+          </div>
+        </section>
+
+        
 
         <section>
           <h3>Acknowledgments</h3>
@@ -159,7 +286,15 @@
     <script src="/resources/revealjs/plugin/notes/notes.js"></script>
     <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
     <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+
+    <!-- Chalkboard & Custom Controls Plugin -->
+    <script src="/resources/revealjs/plugin/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="/resources/revealjs/plugin/customcontrols/style.css">
+    <script src="/resources/revealjs/plugin/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="/resources/revealjs/plugin/chalkboard/style.css">
+
     <script>
+      const pen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>';
       // More info about initialization & config:
       // - https://revealjs.com/initialization/
       // - https://revealjs.com/config/
@@ -185,8 +320,29 @@
         minScale: 0.1,
         maxScale: 5,
 
+        customcontrols: {
+          controls: [
+            //{ icon: '<i class="fa fa-pen-square"></i>',
+            //  title: 'Toggle chalkboard (B)',
+            //  action: 'RevealChalkboard.toggleChalkboard();'
+            //},
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
+        chalkboard: {
+          boardmarkers : [
+                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'}
+          ],
+        },
+
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls  ]
       });
     </script>
   </body>
