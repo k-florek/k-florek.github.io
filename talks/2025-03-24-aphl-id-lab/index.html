@@ -79,24 +79,6 @@
           Session Objectives:
             • Discussion how sequencing data is utilized in public health and clinical laboratories
             • Discussion of current and emerging bioinformatics, data analytics and data visualization tools and uses.
-
-          
-          "An autobiography on finding my way in using genomic data."
-          Outline:
-            - Diagnostics vs Surveillance 
-              - What is the difference and what purposes do they serve
-              - Genomic Epi Intro
-
-            - Application of NGS in public health
-              - How does NGS bring value to public health
-              - Where is the un-tapped potential
-            
-            - Genomic Sequencing as an academic pursuit
-              - Chasing variants in wastewater
-              - HCV GHOST
-              - Metagenomics
-          
-            - 
         -->
 
         <section>
@@ -307,10 +289,193 @@
         </section>
         
         <section style="color: white" data-background-iframe="/resources/restalks/gradient_limit_magenta.html" data-background="#0969da">
-          <h2>The Genomic Surveillance Toolbox</h2>
+          <h2>Genomic Surveillance: Bioinformatics</h2>
         </section>
 
-        
+        <section>
+          <img style="width:50%" src="images/binfo_structure.png">
+        </section>
+
+        <section>
+          <h3>Bioinformatics Tools and Workflows</h3>
+
+          <div class="r-stack">
+            <div class="columncontainer">
+              <div>
+                <h3>Bioinformatics Software/Workflows</h3>
+                <ul>
+                  <li>Developed by a researcher or student</li>
+                  <li>Software updates slow or non-existent</li>
+                  <li>Limited documentation</li>
+                  <li>Limited scope or applicability</li>
+                  <li>Suboptimal resource usage</li>
+                </ul>
+              </div>
+
+              <div class="fragment">
+                <h3>Testing Laboratory Requirements</h3>
+                <ul>
+                  <li>Validation/Verification</li>
+                  <li>Consistency: algorithms and databases</li>
+                  <li>Audit trails: data & system</li>
+                  <li>Integration with LIS</li>
+                  <li>QA/QC/QI</li>
+                  <li>Data security</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section>
+          <h3>Workflow Management Languages</h3>
+          <div class="columncontainer">
+            <div>
+              <h4>Nextflow</h4>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Channels/Processes</li>
+                <li class="fragment" data-fragment-index="2">Workflow Logs/Process Logs/Trace File/Execution Report</li>
+                <li class="fragment" data-fragment-index="3">Task Caching</li>
+                <li class="fragment" data-fragment-index="4">Job isolation with Containers</li>
+                <li class="fragment" data-fragment-index="5">Compatibility with range of HPC and Cloud platforms</li>
+              </ul>
+            </div>
+            <div>
+              <h4>WDL (Cromwell)</h4>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Task</li>
+                <li class="fragment" data-fragment-index="2">Workflow Logs/Call Logs</li>
+                <li class="fragment" data-fragment-index="3">Call Caching/Checkpoint Files</li>
+                <li class="fragment" data-fragment-index="4">Job isolation with Containers</li>
+                <li class="fragment" data-fragment-index="5">Compatibility with range of HPC and Cloud platforms</li>
+              </ul>
+            </div>
+            <div>
+              <h4>SnakeMake</h4>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Rule</li>
+                <li class="fragment" data-fragment-index="2">Rule Logs/Reports</li>
+                <li class="fragment" data-fragment-index="3">Between Workflow Caching</li>
+                <li class="fragment" data-fragment-index="4">Job isolation with Containers</li>
+                <li class="fragment" data-fragment-index="5">Limited compatibility with Cloud platforms</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Galaxy</h3>
+          <img style="width:75%" src="images/Galaxy.png">
+          <div class="citation">
+            <a href="https://usegalaxy.org/">usegalaxy.org</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Workflow Execution Service (WES)</h3>
+          <ul>
+            <li><a href="https://terra.bio/"><b>Terra:</b> WDL Workflows</a></li>
+            <li><a href="https://seqera.io/"><b>Seqera Platform:</b> Nextflow Workflows</a></li>
+            <li><a href="https://www.cloudgene.io/"><b>Cloudgene:</b> Nextflow Workflows</a></li>
+            <li><a href="https://github.com/sapporo-wes"><b>Sapporo:</b> CWL, Nextflow, WDL, Snakemake</a></li>
+            <li><a href="https://www.easygenomics.org/"><b>Easy Genomics:</b> CWL, Nextflow, WDL</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Infrastructure</h3>
+          <img src="images/On-premises-vs-Cloud.jpg">          
+        </section>
+
+        <section>
+          <img style="width:70%" src="images/aws_databases.png">
+        </section>
+
+        <section>
+          <h3>WSLH Nextflow Infrastructure</h3>
+          <img style="width:60%" src="images/aws-infra-nextflow.png">
+          <div class="citation">
+            <a href="https://github.com/wslh-bio/aws-infra-nextflow">github.com/wslh-bio/aws-infra-nextflow</a>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Genomic Surveillance: Data visualization</h2>
+        </section>
+
+        <section>
+          <h3>DIY Data Viz: R</h3>
+          <ul>
+            <li><a href="https://ggplot2.tidyverse.org/"><b>ggplot2:</b> highly versatile plotting library</a></li>
+            <li><a href="https://plotly.com/r/"><b>plotly:</b> interactive plotting library can be used in R or python</a></li>
+            <li><a href="https://guangchuangyu.github.io/software/ggtree/"><b>ggtree:</b> extension of ggplot2 for phylogenetic trees</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>WSLH AR Report Generator</h3>
+          <div>
+            <iframe src="ar_report_html_example.html" width="80%" height="550px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://github.com/wslh-bio/ar_report_generator">github.com/wslh-bio/ar_report_generator</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>WSLH Data Portal</h3>
+          <div>
+            <iframe src="https://dataportal.slh.wisc.edu/" width="80%" height="500px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://github.com/wslh-data/sc2-data-dashboard">github.com/wslh-data/sc2-data-dashboard</a><br>
+            <a href="https://github.com/wslh-data/sc2-wastewater-data-dashboard">github.com/wslh-data/sc2-wastewater-data-dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Nextstrain</h3>
+          <div>
+            <iframe src="https://nextstrain.org/ncov/gisaid/global/6m" width="80%" height="500px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://nextstrain.org/">nextstrain.org</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>MicrobeTrace</h3>
+          <div>
+            <iframe src="https://microbetrace.cdc.gov/MicrobeTrace/" width="80%" height="500px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://microbetrace.cdc.gov/MicrobeTrace/">microbetrace.cdc.gov/MicrobeTrace</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Microreact</h3>
+          <div>
+            <iframe src="https://microreact.org/project/N1TRn11L" width="80%" height="500px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://microreact.org/">microreact.org</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>AusTrakka</h3>
+          <img style="width:75%" src="images/austrakka.png">
+          <div class="citation">
+            <a href="https://www.nature.com/articles/s41467-022-28529-9">Hoang et al. <i>Nature Communications</i> 2022</a>
+          </div>
+        </section>
 
         <section>
           <h3>Acknowledgments</h3>
@@ -338,12 +503,10 @@
               <span style="margin-left:30px;text-align:left">Eva Gunawan, MS</br></span>
             </div>
             <h4>Special Thanks</h4>
-            <ul>
-              <li><a href="https://kb.wisc.edu/page.php?id=109785">UW-Madison Public Cloud Team</a></li>
-              <li><a href="https://it.wisc.edu/about/division-of-information-technology/enterprise-information-security-services/office-of-cybersecurity/">UW-Madison Office of Cybersecurity</a></li>
-            </ul>
+            <img style="width: 15%;margin: 10px;" src="https://www.deptagency.com/wp-content/uploads/2024/09/dept-logo.svg"><br>
+            <img style="width: 15%;margin: 10px;" src="https://www.aphl.org/_catalogs/masterpage/APHL/img/aphl-logo.png">
           </div>
-
+          <br>
           <div class="citation">
             <a href="https://revealjs.com/">Reveal.JS</a>
           </div>
@@ -377,6 +540,7 @@
         slideNumber: true,
         touch: true,
         viewDistance: 6,
+        preloadIframes: true,
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
