@@ -11,9 +11,6 @@
     --color-02: #eef0f2ff;
     --color-01: #fafaffff;
 
-    --glass-01: hsl(259, 13%, 28%);
-    --glass-02: hsl(252, 9%, 22%);
-
     --fs-xs: 0.75em;   /* ~12px */
     --fs-sm: 0.875em;  /* ~14px */
     --fs-base: 1em;    /* 16px (base) */
@@ -113,7 +110,7 @@ a:hover {
 .nav-bar {
   position:fixed;
   top: 10;
-  margin-left: auto;
+  margin-inline: auto;
   width: 50%;
   height: 48px;
   display: flex;
