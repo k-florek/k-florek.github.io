@@ -60,6 +60,41 @@ Custom Elements
   color:	#c5050c !important;
 }
 
+.cards {
+  gap: 15px;
+}
+
+.cards .card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+  background-color: var(--r-link-color);
+}
+
+.cards .card p.tip {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.cards .card p.second-text {
+  font-size: .7em;
+}
+
+.cards .card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+
 /*ToDo GET RID OF SHIT NO RAP CITY*/
 .left {
   width:50%;
