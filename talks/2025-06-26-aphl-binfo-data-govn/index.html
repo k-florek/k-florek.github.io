@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <script src=/resources/google_analytics.js></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - Data Governance Frameworks</title>
+
+    <!-- Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" integrity="sha384-Jx4lvM3f1foL3gcKtEZPpp/IOxYaIOJ+KQRq3vP7Towpgy4bjb6wo5QK5VRtnpLh" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/brands.js" integrity="sha384-wRU6vtIpkIdXnWzp+Hq7CNH527PHkmlZz1n7ITVY0YhEPUcSlz2voGAQfVb3d9xe" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/fontawesome.js" integrity="sha384-dCcP+1ToHaZKWNvVqy4+4ekZYXP73UfD3KsBQ0xg54c0+R0I6zsewwjQiM3JUwg+" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+
+    <!-- Custom QR Code Generator -->
+    <script src="/resources/restalks/qrcode/qrcode.js"></script>
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Data Governance Frameworks for Bioinformatics</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH<br>
+            Senior Genomics and Data Scientist<br>
+            Wisconsin State Laboratory of Hygiene<br>
+            March 24, 2025<br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a><br><br>
+            <a href="https://bsky.app/profile/k-florek.net"><span class="fa-brands fa-bluesky"></span>@k-florek.net</a>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:20px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <div id="qrcode"></div>
+            <script type="text/javascript">
+              var urlString = window.location.href;
+              urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+              var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: urlString,
+                width: 128,
+                height: 128,
+                colorDark : "#2a76dd",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.Q,
+                imgCSSStyle : "float:right; padding-top:20px;"
+              });
+            </script>
+          </div>
+        </section>
+
+        <!--
+        Participants will learn about data governance frameworks highlighting the challenges of managing genomic and health data, and some of the strategies
+        implemented by other laboratories
+
+          1. Introduction
+            Welcome & Objectives
+              Understand key concepts of data governance
+              Explore challenges in genomic and health data management
+              Learn strategies and frameworks used in public health and research labs
+            Why Data Governance Matters
+              Trust, quality, compliance, reproducibility
+              Relevance to bioinformatics and public health
+
+          2. What is Data Governance?
+            Definition & Core Components
+              Data stewardship
+              Data quality
+              Metadata management
+              Security & privacy
+              Compliance & policy
+              Data lifecycle management
+            Common Frameworks:
+              FAIR Principles (Findable, Accessible, Interoperable, Reusable)
+              GA4GH frameworks
+
+          3. Genomic and Health Data: Unique Governance Challenges
+            Volume and Velocity
+              High-throughput sequencing
+              Multi-modal datasets
+            Data Sensitivity
+              Personal and identifiable health information (PHI)
+              Genetic privacy concerns
+            Interoperability and Standardization
+              Different data formats (VCF, BAM, HL7 FHIR)
+              Integration across systems and institutions
+            Ethical and Legal Considerations
+              Consent and secondary use
+              Regulatory requirements (e.g., HIPAA, GDPR, CLIA)
+
+          4. Real-World Strategies and Solutions
+            Case Study 1: Public Health Lab Genomic Data
+              Challenges with outbreak surveillance data
+              Role-based access and audit trails
+              Use of data dictionaries and versioning tools
+
+            Case Study 2: Research Collaboration Network
+              Multi-institutional data sharing agreements
+              Use of controlled vocabularies and common ontologies
+
+            Case Study 3: Implementing FAIR Principles
+              Tools for metadata enrichment
+              Publishing pipelines and APIs
+
+          5. Roles and Responsibilities in Data Governance
+            Key Roles
+              Data Stewards
+              Bioinformaticians
+              IT and Security Leads
+              Compliance Officers
+            Establishing Governance Committees
+              Purpose and operation
+              Stakeholder inclusion
+
+          6. Tools and Technologies
+            Governance Tools
+              Data cataloging (e.g., Amundsen, DataHub)
+              Access control and audit systems
+              Workflow tracking and provenance tools (e.g., CWL, WDL, Nextflow metadata)
+            Integration with Lab Infrastructure
+              Cloud and hybrid storage considerations
+              Secure data transfer mechanisms
+          
+          7. Building a Culture of Data Stewardship
+            Training and Onboarding
+              Integrating governance into lab training programs
+            Policies and Standard Operating Procedures (SOPs)
+              Version control, naming conventions, retention policies
+            Incentivizing Best Practices
+              Recognition, reproducibility, and funding
+
+          8. Group Discussion 
+            What governance challenges are you currently facing?
+            How can data governance improve collaboration in your work?
+
+          9. Final Thoughts & Resources
+            Key Takeaways
+            Governance is not just compliance—it's foundational to good science
+            Effective governance requires collaboration and culture change
+            Resources and Further Reading
+
+        -->
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>Objectives</h1>
+          <ul>
+            <li>Understand the core concepts of data governance</li>
+            <li>Explore the challenges in genomic data management</li>
+            <li>Identify the strategies and frameworks used in research and public health</li>
+            <li>Why Data Governance matters and its relevance to public health bioinformatics</li>
+          </ul>
+        </section>
+
+        <section data-background="#0969da">
+          <h1>What is Data Governance?</h1>
+        </section>
+
+        <section>
+          <h2>What is Data Governance</h2>
+          <div class="columncontainer">
+            <div><img style="width:75%" src="images/oreilly-data-governance.jpg"></div>
+            <div><p class="fragment" style="padding-top: 20%;">"<i>A data management function to ensure the quality, integrity, security, and usability of the data collected by an organization</i>"</p> <p class="fragment" style="padding-top: 10%;">"<i>The purpose of data governance is to build trust in data</i>"</p></div>
+          </div>
+          <div class="citation">
+            <a href="https://isbnsearch.org/isbn/9781492063490">Data Governance: The Definitive Guide: People, Processes, and Tools to Operationalize Data Trustworthiness</a>
+          </div>
+        </section>
+
+        <section>
+          <h2>Core Components</h2>
+          <div class="columncontainer cards">
+            <div class="card">
+              <h3 style="color:white">Discoverability</h3>
+              <ul>
+                <li>Metadata Management</li>
+                <li>Data Quality</li>
+                <li>Classification and access control</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="color:white">Security</h3>
+              <ul>
+                <li>Data Privacy</li>
+                <li>Data Security</li>
+                <li>Classification and access control</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="color:white">Accountability</h3>
+              <ul>
+                <li>Data Lineage</li>
+                <li>Auditing and Assessments</li>
+                <li>Compliance</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Discoverability</h2>
+            <div style="display:grid; justify-items: start; text-align: left">
+              <p><b>Data Inventory and Cataloging:</b> identify and list all data sources, capturing details including data type, location, owner, access list/tags, and usage</p>
+              <p><span class="fragment"><b>Metadata:</b></span><span class="fragment"> data that provides information about other data</span></p>
+              <ul class="fragment">
+                <li>Technical: filename, size, creation date, modified date, location, lineage</li>
+                <li>Business: sample id, patient name, facility location</li>
+                <li>Administrative: security classification, access permissions, audit and change logs</li>
+                <li>Descriptive: keywords associated with data, geographic association of data, outbreak id</li>
+              </ul>
+            </div>
+        </section>
+
+        <section>
+          <h2>Security</h2>
+          <ul>
+            <li class="fragment">Why is data privacy important?</li>
+            <li class="fragment">Why is data security important?</li>
+            <li class="fragment">How do you maintain access control?</li>
+            <li class="fragment">Who determines the security classification of data? (Public, Internal, Sensitive, Restricted)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Accountability</h2>
+          <div style="display:grid; justify-items: start; text-align: left">
+            <p><b>Data Owners and Stewards:</b> who is responsible for the management of the data, who uses the data, who ensures compliance</p>
+            <p><b>Data Provenance:</b><span class="fragment"> a comprehensive historical record that details the data's origins, modifications, and usage. Can you answer questions like: </span></p>
+            <ul class="fragment">
+              <li>Where did this data come from?</li>
+              <li>how did it get here?</li>
+            </ul>
+            <p class="fragment"><b>Data Audits:</b> conduct review of data to ensure accuracy, consistency, and security</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Data Governance Frameworks</h2>
+          <div class="fragment">
+            <h3>FAIR Principles (Findable, Accessible, Interoperable, Reusable)</h3>
+            <iframe src="https://docs.google.com/gview?url=https://www.nature.com/articles/sdata201618.pdf&embedded=true" style="width:718px; height:700px;" frameborder="0"></iframe>
+          </div>
+        </section>
+
+        <section>
+          <h2>Data Governance Frameworks</h2>
+          <h3><a href="https://www.ga4gh.org/our-products/">Global Alliance for Genomics & Health (GA4GH)</a></h3>
+        </section>
+
+        <section>
+          <h2>Data Governance Frameworks</h2>
+          <h3>Public Health Alliance for Genomic Epidemiology (PHA4GE)</h3>
+           <iframe src="https://pha4ge.org/ethics-data-governance/" style="width:718px; height:700px;" frameborder="0"></iframe>
+        </section>
+        
+<!--
+        3. Genomic and Health Data: Unique Governance Challenges
+            Volume and Velocity
+              High-throughput sequencing
+              Multi-modal datasets
+            Data Sensitivity
+              Personal and identifiable health information (PHI)
+              Genetic privacy concerns
+            Interoperability and Standardization
+              Different data formats (VCF, BAM, HL7 FHIR)
+              Integration across systems and institutions
+            Ethical and Legal Considerations
+              Consent and secondary use
+              Regulatory requirements (e.g., HIPAA, GDPR, CLIA)
+-->
+        <section data-background="#0969da">
+          <h1>Genomic data presents unique governance challenges</h1>
+        </section>
+
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+
+    <!-- Chalkboard & Custom Controls Plugin -->
+    <script src="/resources/revealjs/plugin/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="/resources/revealjs/plugin/customcontrols/style.css">
+    <script src="/resources/revealjs/plugin/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="/resources/revealjs/plugin/chalkboard/style.css">
+
+    <script>
+      const pen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>';
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        preloadIframes: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        customcontrols: {
+          controls: [
+            //{ icon: '<i class="fa fa-pen-square"></i>',
+            //  title: 'Toggle chalkboard (B)',
+            //  action: 'RevealChalkboard.toggleChalkboard();'
+            //},
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
+        chalkboard: {
+          boardmarkers : [
+                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'}
+          ],
+        },
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls  ]
+      });
+    </script>
+  </body>
+</html>
