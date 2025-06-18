@@ -56,6 +56,10 @@ Custom Elements
   gap:5%;
 }
 
+.strikethrough {
+  text-decoration: line-through;
+}
+
 .impact {
   color:	#c5050c !important;
 }
@@ -74,7 +78,7 @@ Custom Elements
   color: white;
   cursor: pointer;
   transition: 400ms;
-  background-color: var(--r-link-color);
+  background-color: #0969da;
 }
 
 .cards .card p.tip {

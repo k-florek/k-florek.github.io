@@ -273,21 +273,6 @@
            <iframe src="https://pha4ge.org/ethics-data-governance/" style="width:718px; height:700px;" frameborder="0"></iframe>
         </section>
         
-<!--
-        3. Genomic and Health Data: Unique Governance Challenges
-            Volume and Velocity
-              High-throughput sequencing
-              Multi-modal datasets
-            Data Sensitivity
-              Personal and identifiable health information (PHI)
-              Genetic privacy concerns
-            Interoperability and Standardization
-              Different data formats (VCF, BAM, HL7 FHIR)
-              Integration across systems and institutions
-            Ethical and Legal Considerations
-              Consent and secondary use
-              Regulatory requirements (e.g., HIPAA, GDPR, CLIA)
--->
         <section data-background="#0969da">
           <h1>Genomic data presents unique governance challenges</h1>
         </section>
@@ -320,12 +305,179 @@
         </section>
         
         <section>
-          <h3>Genomic data is multi-modal</h3>
+          <h2>Genomic data is multi-modal</h2>
           <p>There are a numerous data formats and many incompatibilities</p>
-          
+          <img style="width:45%;" src="images/binfo_formats.jpg">
         </section>
 
+        <section>
+          <h2>Protected Health Information (PHI)</h2>
+          <h3>18 Identifiers</h3>
+          <div class="columncontainer">
+            <div>
+              <ul>
+                <li>Name</li>
+                <li>Address</li>
+                <li>Dates related to an individual</li>
+                <li>Telephone Numbers</li>
+                <li>Fax Numbers</li>
+                <li>Email Address</li>
+                <li>Social Security Number</li>
+                <li>Medical Record Number</li>
+                <li>Health plan beneficiary number</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Account Number</li>
+                <li>Certificate or license number</li>
+                <li>Vehicle identifiers and serial numbers, including license plate</li>
+                <li>Device identifiers and serial numbers</li>
+                <li>Web URL</li>
+                <li>IP Address</li>
+                <li>Finger or voice print</li>
+                <li>Photographic image</li>
+                <li>Any characteristic that could identify the individual</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
+        <section>
+          <h2>Protected Health Information (PHI)</h2>
+          <p>Is genomic data PHI?</p>
+          <div class="fragment">
+            <img style="width:50%; box-shadow:2px 2px 5px black"  src="images/genetic_reidentification.png">
+            <p><i>"We have shown that it is possible to infer a genotypic barcode specific to an individual on the basis of RNA profiling data from that individual."</i></p>
+            <p><i>"To determine whether a given subject was enrolled in the HCC studies, we would only need to genotype roughly 1,000 SNP markers and apply the methods described herein."</i></p>
+            <div class="citation"><a href="https://www.nature.com/articles/ng.2248">Schadt, Woo, Hao <i>Nature Genetics</i> 2012</a></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Interoperability</h2>
+          <div class="fragment">
+            <h3>HL7 FHIR</h3>
+            <img style="width:50%; box-shadow:2px 2px 5px black" src="images/hl7fhir_genomics.png">
+            <p><i>"it was observed that sequencing data may often need reanalysis... new resource instances can easily be linked to existing ones thanks to FHIR's JSON/XML-based architecture and RESTful application program interface (API)</i></p>
+            <div class="citation"><a href="https://www.nature.com/articles/s41525-020-0115-6">Alterovitz et al. <i>npj Genomic Medicine</i> 2020</a></div>
+          </div>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h2>Ethical and Legal Requirements</h2>
+          <p><b>Secondary Use of Genomic Data:</b> uses of data that are directed to purposes other than patient care</p>
+          <img width="75%" src="images/hhs_reg_requirements.png">
+          <div class="citation"><a href="https://www.hhs.gov/sites/default/files/abcs-of-104-understanding-exemption-categories-slides.pdf">HHS Slides on Exemption Categories</a></div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h2>Ethical and Legal Requirements</h2>
+          <p><b>Secondary Use of Genomic Data:</b> uses of data that are directed to purposes other than patient care</p>
+          <img width="75%" src="images/hhs_exemptions.png">
+          <div class="citation"><a href="https://www.hhs.gov/sites/default/files/abcs-of-104-understanding-exemption-categories-slides.pdf">HHS Slides on Exemption Categories</a></div>
+        </section>
+
+        <section data-background="#0969da">
+          <h1>Who is responsible in Data Governance?</h1>
+        </section>
+
+        <section>
+          <h2>Key Roles in Data Governance</h2>
+          <ul>
+            <li class="fragment"><b>Data Stewards:</b> responsible for ensuring the quality and fitness for purpose of the organization's data assets, including metadata</li>
+            <li class="fragment"><b>Compliance Officers:</b> ensures an organization adheres to legal, regulatory, and ethical standards</li>
+            <li class="fragment"><b>Data Owner:</b> the individual or group responsible for the accuracy, integrity, and use of data within an organization</li>
+            <li class="fragment"><b>Bioinformatician:</b> develops and runs complex analyses on the data</li>
+            <li class="fragment"><b>IT and Security Leads:</b> responsible for infrastructure and framework that ensures integrity of an organization's data</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Governance Committees</h2>
+          <div style="display:grid; justify-items: start; text-align: left">            
+            <p><b>Responsibilities:</b> ensure data quality and security, develop guidelines for classification, ensure compliance, define access and sharing protocols, promote integration and interoperability, lifecycle management, risk management.</p>
+  
+            <p><b>Functions:</b> establish policies and frameworks, training and awareness, audits</p>
+  
+            <p><b>Best Practices:</b> define clear ownership, strong leadership support, interdepartmental collaboration, continuous improvement</p>
+            <p><b>Challenges:</b> cultural resistance, changing compliance requirements, balancing access and privacy, data complexity</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Organization Size and Data Governance</h2>
+          <p class="fragment">Small organizations/teams -> fewer people interacting with less data -> simplified access strategies</p>
+          <p class="fragment">Larger organizations/teams -> more people interacting with larger data -> complicated access strategies</p>
+        </section>
+
+<!--        
+                  6. Tools and Technologies
+
+            Integration with Lab Infrastructure
+              Cloud and hybrid storage considerations
+              Secure data transfer mechanisms
+      -->
+        <section data-background="#0969da">
+          <h1>Tools that support genomic Data Governance</h1>
+        </section>
+
+        <section>
+          <h2>Data Cataloging</h2>
+          <div class="columncontainer" style="align-items: center;">
+            <div style="width:50%;" >
+              <img src="images/Data_Catalog_Dictionary.png">
+            </div>
+            <div>
+              <ul>
+                <li class="fragment" id="excel">Excel</li>
+                <li class="fragment">Cloudera</li>
+                <li class="fragment">AWS Glue</li>
+                <li class="fragment">Azure Data Catalog</li>
+                <li class="fragment">Google Cloud Data Catalog</li>
+                <li class="fragment">Data Hub</li>
+                <li class="fragment">Amundsen</li>
+              </ul>
+              <script>
+                // Get the element you want to add the strikethrough to
+                const myElement = document.getElementById('excel'); // Replace 'myElementId' with the actual ID of your element
+
+                // Add a click event listener
+                myElement.addEventListener('click', function() {
+                  // Toggle the 'strikethrough' class on the element
+                  myElement.classList.toggle('strikethrough');
+                });
+              </script>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Access Control and Audits</h2>
+          <p>AWS Cloudtrail / Google Cloud Audit Logs / Azure Audit Logs</p>
+          <img src="images/cloudtrail.png">
+        </section>
+
+        <section>
+          <h2>Data Provenance/Lineage</h2>
+          <div class="columncontainer fragment">
+            <div style="width:50%">
+              <h4>Terra/WDL</h4>
+              <img src="images/terraShowProvenance.png">
+            </div>
+            <div>
+              <h4>Nextflow</h4>
+              <iframe style="width:600px;height:400px;" src="https://www.nextflow.io/docs/latest/data-lineage.html"></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Integrations with Laboratory Infrastructure</h2>
+          <ul>
+            
+          </ul>
+        </section>
 
       </div>
     </div>
@@ -365,7 +517,7 @@
         // Factor of the display size that should remain empty around the content
         margin: 0.05,
 
-        // Bounds for smallest/largest possible scale to apply to content
+        // Bounds for smallest/largest possible scale to apply to contenthhs_reg_requirements.png
         minScale: 0.1,
         maxScale: 5,
 
