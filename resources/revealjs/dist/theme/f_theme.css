@@ -52,6 +52,7 @@ Custom Elements
 .columncontainer {
   display:flex;
   justify-content: space-around;
+  align-items: center;
   flex-wrap:nowrap;
   gap:5%;
 }

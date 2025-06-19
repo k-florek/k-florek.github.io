@@ -270,7 +270,7 @@
         <section>
           <h2>Data Governance Frameworks</h2>
           <h3>Public Health Alliance for Genomic Epidemiology (PHA4GE)</h3>
-           <iframe src="https://pha4ge.org/ethics-data-governance/" style="width:718px; height:700px;" frameborder="0"></iframe>
+           <iframe src="https://pha4ge.org/ethics-data-governance/" style="width:700px; height:500px;" frameborder="0"></iframe>
         </section>
         
         <section data-background="#0969da">
@@ -314,7 +314,7 @@
           <h2>Protected Health Information (PHI)</h2>
           <h3>18 Identifiers</h3>
           <div class="columncontainer">
-            <div>
+            <div style="width: 50%;">
               <ul>
                 <li>Name</li>
                 <li>Address</li>
@@ -409,22 +409,16 @@
           <h2>Organization Size and Data Governance</h2>
           <p class="fragment">Small organizations/teams -> fewer people interacting with less data -> simplified access strategies</p>
           <p class="fragment">Larger organizations/teams -> more people interacting with larger data -> complicated access strategies</p>
+          <p class="fragment">Size alone is not responsible for complexity -> research institutions are complex web of smaller departments and labs</p>
         </section>
 
-<!--        
-                  6. Tools and Technologies
-
-            Integration with Lab Infrastructure
-              Cloud and hybrid storage considerations
-              Secure data transfer mechanisms
-      -->
         <section data-background="#0969da">
           <h1>Tools that support genomic Data Governance</h1>
         </section>
 
         <section>
           <h2>Data Cataloging</h2>
-          <div class="columncontainer" style="align-items: center;">
+          <div class="columncontainer">
             <div style="width:50%;" >
               <img src="images/Data_Catalog_Dictionary.png">
             </div>
@@ -472,11 +466,79 @@
           </div>
         </section>
 
-        <section>
+        <section data-transition="slide-in fade-out">
           <h2>Integrations with Laboratory Infrastructure</h2>
-          <ul>
-            
-          </ul>
+          <h3>Storage Solutions: data categories/lifecycles</h3>
+          <div class="columncontainer">
+            <div style="width:75%;">
+              <ul>
+                <li>Raw Data Files</li>
+                <li>Temporary Intermediate Files</li>
+                <li>Outputs</li>
+                <li>Axillary Data</li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/exabytes.png">
+            </div>
+          </div>
+          <div class="citation"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4494865/">Stephens et al. <i>PLoS Biology</i> 2015</a></div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h2>Laboratory Infrastructure</h2>
+          <h3>Storage Solutions: data categories/lifecycles</h3>
+          <div class="columncontainer">
+            <div style="width:75%;">
+              <ul>
+                <li><b>Cold data</b> - long term storage, infrequently accessed</li>
+                <li><b>Warm data</b> - medium term storage, accessible but not needed frequently</li>
+                <li><b>Hot data</b> - short term storage, immediately accessible and fast</li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/exabytes.png">
+            </div>
+          </div>
+          <div class="citation"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4494865/">Stephens et al. <i>PLoS Biology</i> 2015</a></div>
+        </section>
+
+        <section>
+          <h2>Wisconsin Storage Infrastructure Example</h2>
+          <div class="columncontainer">
+            <div >
+              <img src="images/storage_server.jpg">
+            </div>
+            <div>
+              <ul style="padding-top:5%;">
+                <li>Cold Storage: Backups using AWS S3 Glacier (GitHub,FastQ,Results)</li>
+                <li>Warm Storage: On-premises >400TB Storage Area Network (SAN) using Shingled Magnetic Recording (SMR) (FastQ, Projects)</li>
+                <li>Hot Storage: On-premises 30TB Storage Area Network (SAN) using high-speed hard drives and AWS S3 (FastQ, Databases, Results, Intermediate Files)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Secure Transfer</h2>
+          <h3>When should encryption be used?</h3>
+          <img class="fragment" style="width: 50%;" src="images/encrypt.png">
+        </section>
+<!--
+                  7. Building a Culture of Data Stewardship
+            Training and Onboarding
+              Integrating governance into lab training programs
+            Policies and Standard Operating Procedures (SOPs)
+              Version control, naming conventions, retention policies
+            Incentivizing Best Practices
+              Recognition, reproducibility, and funding
+      -->
+        <section data-background="#0969da">
+          <h1>Developing a culture around data stewardship</h1>
+        </section>
+
+        <section>
+          
         </section>
 
       </div>
