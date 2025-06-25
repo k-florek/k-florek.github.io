@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="/resources/restalks/qrcode/qrcode.js"></script>
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
@@ -45,6 +46,22 @@
               <h3 style="color:white">Scenario B</h3>
               <p>The lab was able to start using cloud resources at the start of the year and you arrive at work one morning to find that the monthly costs are 1,000s of dollars more expensive than expected. After an investigation you discover a workflow job on a GPU instance never exited and has been running for weeks.</p>
             </div>
+          </div>
+              <div style="float:right;width:50%">
+            <div id="qrcode"></div>
+            <script type="text/javascript">
+              var urlString = window.location.href;
+              urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+              var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: urlString,
+                width: 128,
+                height: 128,
+                colorDark : "#2a76dd",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.Q,
+                imgCSSStyle : "float:right; padding-top:20px;"
+              });
+            </script>
           </div>
         </section>
 
