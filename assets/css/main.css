@@ -2,15 +2,12 @@
   Define Variables
 */
 :root {
-    --color-08: #FFA630ff;
-    --color-07: #006d77ff;
-    --color-06: #83c5beff;
-    --color-05: #1c1c1cff;
-    --color-04: #daddd8ff;
-    --color-03: #ecebe4ff;
-    --color-02: #eef0f2ff;
-    --color-01: #fafaffff;
-
+    --light: #fdf0d5ff;
+    --dark: #003049ff;
+    --accent01: #669bbcff;
+    --accent02: #c1121fff;
+    --accent03: #780000ff;
+    
     --fs-xs: 0.75em;   /* ~12px */
     --fs-sm: 0.875em;  /* ~14px */
     --fs-base: 1em;    /* 16px (base) */
@@ -19,6 +16,7 @@
     --fs-xl: 1.953em;  /* ~31px */
     --fs-2xl: 2.441em; /* ~39px */
     --fs-3xl: 3.052em; /* ~49px */
+    --fs-title: 6em;
 }
 
 
@@ -62,17 +60,31 @@
   font-style: normal;
 }
 
-
-html {
-  background-color: var(--color-02);
-
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
 }
 
 body {
-  color: var(--color-05);
+  width: 100%;
+  min-height: 100%;
+  padding: clamp(.5rem, 3vw, 2rem);
   font-family: 'QuattrocentoSans', sans-serif;
-  margin: auto;
-  width: 50%;
+  font-size: var(--fs-base);
+  color: var(--light);
+  background-color: var(--dark);
+}
+
+body.home{
+  display: grid;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 
@@ -100,11 +112,23 @@ small {
   Links
 */
 a {
-  color: var(--color-07);
+  color: var(--accent01);
 }
 
 a:hover {
-  color: var(--color-08);
+  color: var(--accent02);
+}
+
+/*
+  Header
+*/
+.splash-main {
+  border: 3px solid var(--light);
+  padding: 2rem 9.5vw;
+  border-radius: .7rem;
+  display: grid;
+  align-content: center;
+  font-size: var(--fs-title);
 }
 
 .nav-bar {
