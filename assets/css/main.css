@@ -147,7 +147,6 @@ a:hover {
 
 .link-set a {
   text-decoration: none;
-  flex: 1;
   text-align: center;
 }
 
@@ -183,7 +182,7 @@ a:hover {
 /*
   Content Organization
 */
-.columncontainer {
+.column-container {
   display:flex;
   justify-content: space-around;
   align-items:center;
@@ -191,28 +190,43 @@ a:hover {
   gap:5%;
 }
 
-.nav-bar {
-  position:fixed;
-  top: 10;
-  margin-inline: auto;
-  width: 50%;
-  height: 48px;
+.content-container {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
   align-items: center;
 }
 
-.nav-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.content-items {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.content-images {
+  display: block;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+/*
+  Navigation
+*/
+
+.nav-bar {
+  position: fixed;
+  top: 10;
+  margin-inline: auto;
+  height: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95vw;
 }
 
 .glass {
-  --border-width: 1px;
+  --border-width: 3px;
   border-radius: 1rem;
-  background: hsl(from var(--color-02) h s l / 0.25);
+  background: hsl(from var(--light) h s l / 0.25);
   backdrop-filter: blur(12px);
 }
 
@@ -223,7 +237,7 @@ a:hover {
   inset: 0;
   border-radius: inherit;
   border: var(--border-width) solid transparent;
-  background: linear-gradient(hsl(from var(--color-03) h s l / 0.60), hsl(from var(--color-03) h s l / 0.80)) border-box;
+  background: linear-gradient(hsl(from var(--dark) h s l / 0.60), hsl(from var(--dark) h s l / 0.80)) border-box;
   mask: linear-gradient(black, black) border-box,
     linear-gradient(black, black) padding-box;
   mask-composite: subtract;
