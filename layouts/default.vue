@@ -2,7 +2,7 @@
     <div style="padding-top: 25px">
         <NavMenu />
     </div>
-    <main style="padding-top: 48px">
+    <main style="padding-top: 150px">
         <slot />
     </main>
 </template>
