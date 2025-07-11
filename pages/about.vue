@@ -9,7 +9,7 @@
             <p>My work frequently involves close collaboration with the <a href="https://www.aphl.org/">Association of Public Health Laboratories (APHL)</a> and the <a href="https://www.cdc.gov/">Centers for Disease Control and Prevention</a> <a href="https://www.cdc.gov/amd/index.html">Office of Advanced Molecular Detection (OAMD)</a> to develop pathways towards enhancing the public health workforce and improving access to data insights. I also serve as a steering committee member of <a href="http://www.staphb.org/">StaPH-B</a> a consortium of public health bioinformaticians committed to addressing the barriers affecting genomics in state public health laboratories.</p>
             <br>
             <p>In my spare time I enjoy creative ventures such as watercolor painting, photography, and board games along with active hobbies like backpacking and roller skating.</p>
-            <img width=50% class="content-images" :src="sandhillCrane" alt="Watercolor painting of a sandhill crane">
+            <div class="frame"><img class="art" :src="sandhillCrane" alt="Watercolor painting of a sandhill crane"></div>
         </div>
     </div>
 </template>
