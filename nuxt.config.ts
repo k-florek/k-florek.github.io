@@ -9,5 +9,6 @@ export default defineNuxtConfig({
   ],
   plugins: [
     '~/plugins/fontawesome.js'
-  ]
+  ],
+  modules: ['@nuxt/content']
 })
