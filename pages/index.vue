@@ -1,5 +1,5 @@
 <template>
-    <div class="columncontainer" style="align-items:start;">
+    <div class="column-container" style="align-items:start;">
         <div>
             <img class="profile-pic" src="assets/images/florek_hs_small_2024.png">
         </div>
@@ -21,7 +21,7 @@
     </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 definePageMeta({ layout: 'main' })
 
 useHead({
