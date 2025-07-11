@@ -90,6 +90,11 @@ body.home{
     box-sizing: border-box;
 }
 
+hr {
+  height: 3px;
+  border:none;
+  background-color: var(--dark);
+}
 
 /* 
   Font Sizes
@@ -146,6 +151,7 @@ a:hover {
 }
 
 .link-set a {
+  color: var(--color-05);
   text-decoration: none;
   text-align: center;
 }
@@ -237,7 +243,10 @@ a:hover {
   inset: 0;
   border-radius: inherit;
   border: var(--border-width) solid transparent;
-  background: linear-gradient(hsl(from var(--dark) h s l / 0.60), hsl(from var(--dark) h s l / 0.80)) border-box;
+  /** More Glass Like Border 
+    background: linear-gradient(hsl(from var(--dark) h s l / 0.40), hsl(from var(--dark) h s l / 0.80)) border-box; 
+  */
+  background: var(--dark);
   mask: linear-gradient(black, black) border-box,
     linear-gradient(black, black) padding-box;
   mask-composite: subtract;
