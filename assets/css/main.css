@@ -2,12 +2,15 @@
   Define Variables
 */
 :root {
-    --light: #fdf0d5ff;
-    --dark: #003049ff;
-    --accent01: #669bbcff;
-    --accent02: #c1121fff;
-    --accent03: #780000ff;
-    
+    --light: #F5F5F5;
+    --dark: #1A1A1A;
+
+    --color-01: #ede7d9ff;
+    --color-02: #d5a021ff;
+    --color-03: #3e92ccff;
+    --color-04: #003049ff;
+    --color-05: #680e4bff;
+        
     --fs-xs: 0.75em;   /* ~12px */
     --fs-sm: 0.875em;  /* ~14px */
     --fs-base: 1em;    /* 16px (base) */
@@ -75,8 +78,8 @@ body {
   padding: clamp(.5rem, 3vw, 2rem);
   font-family: 'QuattrocentoSans', sans-serif;
   font-size: var(--fs-base);
-  color: var(--light);
-  background-color: var(--dark);
+  color: var(--dark);
+  background-color: var(--light);
 }
 
 body.home{
@@ -92,11 +95,25 @@ body.home{
   Font Sizes
 */
 h1 {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-title);
+  text-indent: -0.1em;
 }
 
 h2 {
+  font-size: var(--fs-3xl);
+  text-indent: -0.06em;
+}
+
+h3 {
+  font-size: var(--fs-2xl);
+}
+
+h4 {
   font-size: var(--fs-xl);
+}
+
+h5 {
+  font-size: var(--fs-lg);
 }
 
 p {
@@ -112,23 +129,66 @@ small {
   Links
 */
 a {
-  color: var(--accent01);
+  color: var(--color-03);
+  text-decoration: none;
 }
 
 a:hover {
-  color: var(--accent02);
+  color: var(--color-03);
+  text-decoration: none;
+}
+
+.link-set {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.link-set a {
+  text-decoration: none;
+  flex: 1;
+  text-align: center;
+}
+
+.link-social a {
+  color: var(--dark);
+}
+
+.link-social a:hover {
+  color: var(--color-02);
 }
 
 /*
   Header
 */
 .splash-main {
-  border: 3px solid var(--light);
+  border: 3px solid var(--dark);
   padding: 2rem 9.5vw;
   border-radius: .7rem;
   display: grid;
   align-content: center;
-  font-size: var(--fs-title);
+  min-height: calc(100vh - 4rem);
+}
+
+/*
+  Images
+*/
+.profile-pic {
+  width:150px;
+  border-radius:50%;
+  box-shadow:2px 2px 5px var(--dark);
+}
+
+/*
+  Content Organization
+*/
+.columncontainer {
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:5%;
 }
 
 .nav-bar {
