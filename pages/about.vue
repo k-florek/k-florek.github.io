@@ -1,10 +1,7 @@
 <template>
     <div class='content-container'>
         <div class='content-items'>
-            <h2>about: a scientist with a passion for health</h2>
-            <hr>
-            <br>
-            <br>
+            <div class='content-title'>about: a scientist with a passion for health</div>
             <p>With a lifelong fascination for infectious diseases and an interest in public health, I have directed my career towards a passion of developing new ways to unravel complex biological questions. I am currently a Senior Genomics and Data Scientist at the <a href="http://www.slh.wisc.edu/">Wisconsin State Laboratory of Hygiene (WSLH)</a> where I lead a team of incredibly talented and dedicated public health data scientists. My work involves a combination microbiology, bioinformatics, statistics, and software development and I spend most of my time applying novel computational methodologies and building genomics and data analytics capacity leveraging emerging cloud-based technology both within the WSLH and the greater public health community.</p>
             <img width=50% class="content-images" :src="sc2Tree" alt="SARS-CoV-2 Phylogenetic Tree" />
             <p>A few notable projects that I have led include an easy to use web-based platform for performing bioinformatic workflows <a href="https://www.easygenomics.org/">Easy Genomics</a>, a repository of containerized applications <a href="https://github.com/StaPH-B/docker-builds">StaPH-B Docker Builds</a>; a toolkit of software and workflows for public health bioinformaticians <a href="https://github.com/StaPH-B/staphb_toolkit">StaPH-B ToolKit</a>; and a dashboard for displaying SARS-CoV-2 genomic surveillance in Wisconsin <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WI SARS-CoV-2 Genomic Dashboard</a>. You can find most of my work on my personal github <a href="https://github.com/k-florek/"><FontAwesomeIcon :icon="['fab', 'github']" /> k-florek</a> or our lab's github <a href="https://github.com/wslh-bio"><FontAwesomeIcon :icon="['fab', 'github']" /> wslh-bio</a> or <a href="https://github.com/wslh-data"><FontAwesomeIcon :icon="['fab', 'github']" /> wslh-data</a>. These projects are built using technologies including AWS, Terraform, Nextflow, Python, R, Bash, Nodejs, Docker, and include a variety of genomics, machine learning, and evolutionary biology tools.</p>
