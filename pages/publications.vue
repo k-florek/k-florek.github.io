@@ -2,18 +2,8 @@
   <div class='content-container'>
     <div class='content-items'>
       <div class='content-title'>publications</div>
-      <div
-        v-for="publication in publications"
-        :key="publication.title"
-        class="card"
-      >
-      
-        <NuxtLink :to="publication.url">
-          <div>
-            <h3>{{ publication.title }}</h3>
-            <p><i>{{ publication.journal}}</i> {{ publication.j_info }}</p>
-          </div>
-        </NuxtLink>
+      <div v-for="publication in publications" :key="publication.title">
+        <Card :card=publication />
       </div>
     </div>
   </div>

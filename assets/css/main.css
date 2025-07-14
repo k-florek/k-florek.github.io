@@ -10,6 +10,7 @@
     --color-03: #3e92ccff;
     --color-04: #003049ff;
     --color-05: #680e4bff;
+    --color-blend-03-05: #53508C;
         
     --fs-xs: 0.75em;   /* ~12px */
     --fs-sm: 0.875em;  /* ~14px */
@@ -76,7 +77,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   padding: clamp(.5rem, 3vw, 2rem);
   font-family: 'QuattrocentoSans', sans-serif;
   font-size: var(--fs-base);
@@ -297,18 +298,36 @@ a:hover {
   color: var(--dark);
 }
 
+@property --glow-deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 144deg;
+}
+
+@keyframes glow {
+  100% {
+    --glow-deg: 450deg;
+  }
+}
+
 .card::before {
   content: "";
   position: absolute;
   z-index: -1;
   inset: 0;
 
-  background-image: linear-gradient(144deg, var(--color-05), #5b42f3 50%, var(--color-03));
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background: linear-gradient(var(--glow-deg), var(--color-05), var(--color-blend-03-05) 50%, var(--color-03));
+  box-shadow: rgba(83,80,140, 0.2) 0 15px 30px -5px;
 
   margin: calc(-1 * var(--border-width));
   border-radius: calc(var(--border-radius) + var(--border-width));
 }
+
+/* Potential animation on hover
+.card:hover {
+  animation: glow 5s infinite linear;
+} */
+
 
 
 /*
