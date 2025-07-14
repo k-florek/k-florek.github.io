@@ -1,0 +1,332 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - AMD Days 2023</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Easy Genomics:<br> Is it really that easy?</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH</br>
+            Senior Genomics and Data Scientist</br>
+            Wisconsin State Laboratory of Hygiene</br>
+            September 13, 2023</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a>
+          </br>
+          </br>
+          <span class="fab fa-linkedin"></span><a href='https://www.linkedin.com/in/kelseyflorek/'>/kelseyflorek</a><br>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:20px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <img style="width: 20%;display:block;float:right;margin-top:60px" src="/images/site/talks_qr_b.png">
+          </div>
+        </section>
+
+        <!---
+          1. What is Easy Genomics
+            - what it is
+            - how it started
+            - the goals behind the project
+          2. The technical frame work
+            - AWS infrastructure
+            - Nextflow Tower
+          3. AWS Health Omics
+            - what it is 
+            - current PoC
+            - future road map
+          4. Demo
+        -->
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <ol>
+            <li><b>What is Easy Genomics</b></li>
+            <li>Easy Genomics: Minimal Viable Product (MVP)</li>
+            <li>AWS HealthOmics</li>
+            <li>Demo</li>
+          </ol>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h3>
+            <svg width="35px" preserveAspectRatio="xMidYMid meet" viewBox="0 0 195 194" fill="none" xmlns="http://www.w3.org/2000/svg" id="svg-1676358774_507">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M97.5 171.998c37.46-.244 68.401-27.952 73.699-63.998H113V87h59.339c-4.76-35.724-34.667-63.498-71.339-64.941h-7C57.328 23.5 27.42 51.276 22.66 87H82v21H23.8c5.299 36.046 36.24 63.754 73.7 63.998ZM35.41 22.058C13.788 39.849 0 66.815 0 97c0 53.572 43.428 97 97 97l.5-.001.5.001c53.572 0 97-43.428 97-97 0-30.186-13.788-57.151-35.41-74.941H195V0H0v22.059h35.41Z" fill="#5524E0"></path>
+            </svg>
+            Easy Genomics
+          </h3>
+          <img style="width:70%" src="images/easy_genomics_01.png">
+          <div class="citation">
+            <a href="https://www.easygenomics.org/">easygenomics.org</a>
+          </div>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <h3>
+            <svg width="35px" preserveAspectRatio="xMidYMid meet" viewBox="0 0 195 194" fill="none" xmlns="http://www.w3.org/2000/svg" id="svg-1676358774_507">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M97.5 171.998c37.46-.244 68.401-27.952 73.699-63.998H113V87h59.339c-4.76-35.724-34.667-63.498-71.339-64.941h-7C57.328 23.5 27.42 51.276 22.66 87H82v21H23.8c5.299 36.046 36.24 63.754 73.7 63.998ZM35.41 22.058C13.788 39.849 0 66.815 0 97c0 53.572 43.428 97 97 97l.5-.001.5.001c53.572 0 97-43.428 97-97 0-30.186-13.788-57.151-35.41-74.941H195V0H0v22.059h35.41Z" fill="#5524E0"></path>
+            </svg>
+            Easy Genomics
+          </h3>
+          <img style="width:70%" src="images/easy_genomics_02.png">
+          <div class="citation">
+            <a href="https://www.easygenomics.org/">easygenomics.org</a>
+          </div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>
+            <svg width="35px" preserveAspectRatio="xMidYMid meet" viewBox="0 0 195 194" fill="none" xmlns="http://www.w3.org/2000/svg" id="svg-1676358774_507">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M97.5 171.998c37.46-.244 68.401-27.952 73.699-63.998H113V87h59.339c-4.76-35.724-34.667-63.498-71.339-64.941h-7C57.328 23.5 27.42 51.276 22.66 87H82v21H23.8c5.299 36.046 36.24 63.754 73.7 63.998ZM35.41 22.058C13.788 39.849 0 66.815 0 97c0 53.572 43.428 97 97 97l.5-.001.5.001c53.572 0 97-43.428 97-97 0-30.186-13.788-57.151-35.41-74.941H195V0H0v22.059h35.41Z" fill="#5524E0"></path>
+            </svg>
+            Easy Genomics
+          </h3>
+          <img style="width:70%" src="images/easy_genomics_partners.png">
+          <div class="citation">
+            <a href="https://www.easygenomics.org/">easygenomics.org</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>
+            <svg width="35px" preserveAspectRatio="xMidYMid meet" viewBox="0 0 195 194" fill="none" xmlns="http://www.w3.org/2000/svg" id="svg-1676358774_507">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M97.5 171.998c37.46-.244 68.401-27.952 73.699-63.998H113V87h59.339c-4.76-35.724-34.667-63.498-71.339-64.941h-7C57.328 23.5 27.42 51.276 22.66 87H82v21H23.8c5.299 36.046 36.24 63.754 73.7 63.998ZM35.41 22.058C13.788 39.849 0 66.815 0 97c0 53.572 43.428 97 97 97l.5-.001.5.001c53.572 0 97-43.428 97-97 0-30.186-13.788-57.151-35.41-74.941H195V0H0v22.059h35.41Z" fill="#5524E0"></path>
+            </svg>
+            Easy Genomics
+          </h3>
+          <ul>
+            <li style="list-style-type: none;">The Needs:
+            <ul>
+              <li class="fragment">User accounts and authentication</li>
+              <li class="fragment">Simple process for uploading and/or submitting genomic sequencing data for analysis</li>
+              <li class="fragment">Allow users to select and easily configure analyses</li>
+              <li class="fragment">Access to analytical workflow status and results</li>
+            </ul></li>
+          </ul>
+          <div class="citation">
+            <a href="https://www.easygenomics.org/">easygenomics.org</a>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <ol>
+            <li><s>What is Easy Genomics</s></li>
+            <li><b>Easy Genomics: Minimal Viable Product (MVP)</b></li>
+            <li>AWS HealthOmics</li>
+            <li>Demo</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>
+            <svg width="35px" preserveAspectRatio="xMidYMid meet" viewBox="0 0 195 194" fill="none" xmlns="http://www.w3.org/2000/svg" id="svg-1676358774_507">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M97.5 171.998c37.46-.244 68.401-27.952 73.699-63.998H113V87h59.339c-4.76-35.724-34.667-63.498-71.339-64.941h-7C57.328 23.5 27.42 51.276 22.66 87H82v21H23.8c5.299 36.046 36.24 63.754 73.7 63.998ZM35.41 22.058C13.788 39.849 0 66.815 0 97c0 53.572 43.428 97 97 97l.5-.001.5.001c53.572 0 97-43.428 97-97 0-30.186-13.788-57.151-35.41-74.941H195V0H0v22.059h35.41Z" fill="#5524E0"></path>
+            </svg>
+            Easy Genomics
+          </h3>
+          <img width="75%" src="images/High-Level-Architecture-of-the-Easy-Genomics-Solution.png">
+          <div class="citation">
+            <a href="https://aws.amazon.com/blogs/industries/easy-genomics-solution-for-public-health-labs/">Easy Genomics Solution for Public Health Labs</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>
+            Easy Genomics - Minimal Viable Product (MVP)
+          </h3>
+          <ul>
+            <li class="fragment">3 user types: super admin, lab admin, user</li>
+            <li class="fragment">supports multiple "labs" with separate workflows and users</li>
+            <li class="fragment">enables data submission through web interface into AWS S3 and automated samplesheet generation</li>
+            <li class="fragment">runs analytical workflows through Nextflow Tower API</li>
+          </ul>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <ol>
+            <li><s>What is Easy Genomics</s></li>
+            <li><s>Easy Genomics: Minimal Viable Product (MVP)</s></li>
+            <li><b>AWS HealthOmics</b></li>
+            <li>Demo</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>AWS HealthOmics</h3>
+          <img src="images/aws_healthomics.png">
+          <div class="citation">
+            <a href="https://aws.amazon.com/healthomics/">AWS HealthOmics</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>AWS HealthOmics</h3>
+          <ul>
+            <li class="fragment"><font color="blue">removes the need to configure and manage complex cloud infrastructure involving AWS Batch / EC2</font></li>
+            <li class="fragment"><font color="blue">provides tailored storage for sequence and variant data</font></li>
+            <li class="fragment"><font color="blue">supports Nextflow & WDL workflows</font></li>
+            <li class="fragment"><font color="red">requires staging workflow containers and data</font></li>
+            <li class="fragment"><font color="red">challenging workflow configuration</font></li>
+            <li class="fragment"><font color="blue">accessible through API</font></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Easy Genomics - AWS HealthOmics: Proof of Concept (PoC)</h3>
+          <div style="width:50%;float:left;">
+            <p>Develop an open sourced solution powered by AWS’ HealthOmics, that will provide an
+easy-to-use, web-based interface that will facilitate access to key genomic sequencing
+pipelines for all lab technicians, with limited training and no technical skills.</p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img src="images/sprints.png"
+          </div>
+        </section>
+
+        <section>
+          <h3>Easy Genomics - AWS HealthOmics: Development Roadmap</h3>
+        </section>
+
+        <section data-background-image="images/timeline.png" data-background-position="center" data-background-size="55vh">
+        </section>
+
+        <section>
+          <h3>Easy Genomics - Open Source and Community Driven</h3>
+          <img src="images/community.png">
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/restalks/gradient.html" data-background="#0969da">
+          <ol>
+            <li><s>What is Easy Genomics</s></li>
+            <li><s>Easy Genomics: Minimal Viable Product (MVP)</s></li>
+            <li><s>AWS HealthOmics</s></li>
+            <li><b>Demo</b></li>
+          </ol>
+        </section>
+
+        <section>
+          <section>
+            <h1><a>Demo</a></h1>
+          </section>
+          <section><img style="width:55vh" src="images/eg_demo/demo_0.png"></section>
+          <section><img style="width:55vh" src="images/eg_demo/demo_1.png"></section>
+          <section><img style="width:55vh" src="images/eg_demo/demo_2.png"></section>
+          <section><img style="width:55vh" src="images/eg_demo/demo_3.png"></section>
+          <section><img style="width:55vh" src="images/eg_demo/demo_4.png"></section>
+          <section><img style="width:40vh" src="images/eg_demo/demo_5.png"></section>
+          <section><img style="width:40vh" src="images/eg_demo/demo_6.png"></section>
+          <section><img style="width:55vh" src="images/eg_demo/demo_7.png"></section>
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:100px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:100px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:100px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <h4>Special Thanks</h4>
+            <div style="width:50%;float:left">
+              <ul>
+                <li style="list-style-type: none;"><img style="width:50%; margin-left: 25%" src="images/dept.png"></li>
+              </ul>
+            </div>
+            <div style="width:50%;float:right;">
+              <ul>
+                <li style="list-style-type: none;"><a href="https://www.aphl.org/"><img style="width:50%;margin-left: 25%; margin-top:15%" src="images/aphl-logo.png"></a></li>
+              </ul>
+            </div>
+            <ul>
+              <li style="list-style-type: none;padding-bottom: 0px;"></li>
+              <li>Dr. Dawn Heisey-Grove, MPH PhD <br> Public Health Analytics Leader, AWS</li>
+              <li><a href="https://kb.wisc.edu/page.php?id=109785">UW-Madison Public Cloud Team</a></li>
+              <li><a href="https://it.wisc.edu/about/division-of-information-technology/enterprise-information-security-services/office-of-cybersecurity/">UW-Madison Office of Cybersecurity</a></li>
+            </ul>
+          </div>
+
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>

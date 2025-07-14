@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>WSLH SARS-CoV-2 Genomics</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h2>SARS-CoV-2 genomics and the growing need for real-time data.</h2><br>
+          <p>Wisconsin State Laboratory of Hygiene</br>
+            Kelsey Florek, PhD, MPH</br>
+            October 15, 2021</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> www.k-florek.net/talks
+          </div>
+          <img style="width: 25%;display:block;float:left;" src="/resources/restalks/images/wslh_logo_white.png">
+        </section>
+
+        <section>
+          <img style="width:70%" src="images/nextstrain_global.png">
+          <div class="citation">
+            <a href="https://nextstrain.org/ncov/gisaid/global">NextStrain.org Global SARS-CoV-2</a>
+          </div>
+        </section>
+
+        <section>
+          <img style="width:100%" src="images/nextstrain-wi.png">
+          <div class="citation">
+            <a href="https://nextstrain.org/groups/spheres/ncov/wisconsin">NextStrain.org Wisconsin SARS-CoV-2</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Effects of Mutations</h3>
+          <ul>
+            <li class="fragment"><b>Synonymous Mutation</b> - </br>A DNA/RNA mutation that <b>does not</b> change the encoded protein sequence.</li>
+            <li class="fragment"><b>Non-Synonymous Mutation</b> - </br>A DNA/RNA mutation that <b>does</b> change the encoded protein sequence, potentially resulting in a change in structure or function.</li>
+          </ul>
+          <hr style="background-color:#000000;border-width:0;color:#000000;height:2px;line-height:0;text-align:left;width:50%;">
+          <p class="fragment">Comparing non-synonymous mutations to synonymous mutations helps us examine the balance of neutral mutations to beneficial mutations and infer selection.</p>
+        </section>
+
+        <section>
+          <h3>Positive Selection vs Purifying Selection</h3>
+          <ul>
+            <li class="fragment"><b>Positive Selection</b> - </br>promotes the spread of beneficial alleles; dN/dS > 1</li>
+            <li class="fragment"><b>Purifying Selection</b> - </br>hinders the spread of deleterious alleles; dN/dS < 1</li>
+            <li class="fragment"><b>Influenza H3N2 HA</b> - </br>example of adaptive viral protein: dN/dS 0.37</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Rapid adaptive mutations in Spike protein</h3>
+          <div style="float:left;width:40%">
+            <img style="width:100%" src="images/SARS-CoV-2_Structure.jpg">
+          </div>
+          <div style="float:right;width:60%">
+            <image style="width:100%" src="images/dnds_sites.png">
+          </div>
+          <div class="citation">
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK554776/">Features, Evaluation, and Treatment of Coronavirus (COVID-19)</a></br>
+            <a href="https://doi.org/10.1101/2021.09.11.459844">Kistler, Huddleston, and Bedford (2021) bioRxiv</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>What this could mean</h3>
+          <p class="fragment"><b>Hypothesis 1: </b></br>A new selective pressure is acting on SARS-CoV-2 resulting in the appearance of new mutations.</p>
+          <p class="fragment"><b>Hypothesis 2: </b></br>Mutations have altered the spike protein making it more permissive to additional mutations.</p>
+          <hr style="background-color:#000000;border-width:0;color:#000000;height:2px;line-height:0;text-align:left;width:50%;">
+          <p class="fragment">"The potential antigenic impact of adaptive S1 mutations, which are accruing at pace over 4 times that of influenza H3N2, suggests that it may become necessary to update the SARS-CoV-2 vaccine strain given the virus’s demonstrated propensity for adaptive change."</p>
+          <div class="citation">
+            <a href="https://doi.org/10.1101/2021.09.11.459844">Kistler, Huddleston, and Bedford (2021) bioRxiv</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>The Takeaways</h3>
+          <ul>
+            <li class="fragment">Likely in the midst of a global Delta selective sweep.</li>
+            <li class="fragment">The Delta lineage may be following a similar pattern to influenza H1N1pdm with a host adaptation phase followed by a sustained antigenic drift.</li>
+            <li class="fragment">Continued genomic surveillance will be needed to monitor for the emergence of mutations that convey vaccine/antiviral breakthroughs, increased transmission, or increased virulence.</li>
+          <ul>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html">
+          <h3 style="color: white">SARS-CoV-2 Surveillance Genomics at WSLH</h3>
+        </section>
+
+        <section>
+          <h3>SARS-CoV-2 Sequencing is a collaborative effort</h3>
+          <image style="width:80%" src="images/spheres-covid.png">
+          <p>>1,250 members across Federal Agencies, State and Local Public Health Labs, Academic Institutions,
+            Corporations, and Non-Profit Laboratories
+        </section>
+
+        <section>
+          <h3>SARS-CoV-2 Sequencing is a collaborative effort</h3>
+          <div style="float:left;width:50%">
+            <ul class="no-bullets">
+              <li><image style="width:60%" src="images/site_logos/avrl.png"></li>
+              <li><image style="width:60%" src="images/site_logos/gmf.png"></li>
+              <li><image style="width:60%" src="images/site_logos/mhd3.png"></li>
+            </ul>
+          </div>
+          <div style="float:right;width:50%">
+            <ul class="no-bullets">
+              <li><image style="width:80%" src="images/site_logos/mcri.png"></li>
+              <li><image style="width:60%" src="images/site_logos/mcw.svg"></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>SARS-CoV-2 Cases Sequenced</h3>
+          <div style="float:left;width:80%">
+            <image style="width:100%" src="images/cumulative_seqs.png">
+          </div>
+          <div style="float:right;width:20%">
+            <image style="width:100%" src="images/geo_cases_sequenced.png">
+          </div>
+          <div class="citation">
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WSLH SARS-CoV-2 Dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Sequencing Data Generation</h3>
+          <image style="width:100%" src="images/sc2_seq_workflow.png">
+        </section>
+
+        <section>
+          <h3>Digesting Complex Data for Public Use</h3>
+          <ul>
+            <li class="fragment">Phylogenetic trees are useless...
+            <ul>
+              <li class="fragment">How many have we sequenced?</li>
+              <li class="fragment">Where is the XYZ variant?</li>
+              <li class="fragment">How many sequences are XYZ variant?</li>
+            </ul></li>
+            <li class="fragment">Near real-time summary data!</li>
+          </ul>
+        </section>
+
+        <section backgroundTransition: 'none-in none-out' data-background-iframe="https://dataportal.slh.wisc.edu/sc2dashboard"
+          data-background-interactive>
+        </section>
+
+        <section>
+          <h3>Dashboard Data Infrastructure</h3>
+          <img style="width:70%" src="images/dashboard.png">
+          <div class="citation">
+            <a href="https://dataportal.slh.wisc.edu/sc2dashboard">WI SARS-CoV-2 Dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Dashboard Data Infrastructure</h3>
+          <ul>
+            <li style="color:#7564ff">Uses an accessible data analytics language R.</li>
+            <li style='color:#f30039'>Somewhat limited in design and implementation.</li>
+            <li style="color:#7564ff">Completely automated!</li>
+            <li style='color:#f30039'>Dependent entirely on publicly available data served through 3rd parties.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Building a Genomics Data Warehouse</h3>
+          <p>Central repositories of integrated data from one or more disparate sources used for reporting and data analysis.<p>
+          <image style="width:100%" src="images/WSLH_Sequencing_Data_Warehouse.png">
+        </section>
+
+        <section data-background-iframe="/resources/restalks/paperjs/viruses.html">
+          <h3 style="color: black">Questions?</h3>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 960,
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>

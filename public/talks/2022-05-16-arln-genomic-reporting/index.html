@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ARLN Genomic Reporting</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h2>Preparing for a future of genomic data driven infectious disease prevention</h2><br>
+          <p>
+            Kelsey Florek, PhD, MPH</br>
+            Senior Genomics and Data Scientist</br>
+            Wisconsin State Laboratory of Hygiene</br>
+            May 16, 2022</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> www.k-florek.net/talks
+          </br>
+          </br>
+          <i class="fab fa-twitter"></i><a href='https://twitter.com/kelsey_florek'>@kelsey_florek</a>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:30px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+        </section>
+
+<!--
+    1. The need to break down data silos
+    2. Building in an uncertain future (DMI, AMD Platform, etc..)
+    3. Mission statement
+    4. Strategic Plan
+    5. Technology to get us there
+      a. Clarity LIMS
+      b. Data Lake
+    6. Navigating the Challenges
+      a. small steps while keeping a greater vision
+      b. start building a data workforce
+-->
+
+        <section data-background-iframe="/resources/restalks/gradient.html">
+          <h2 style="color: white">Preventing the spread of Antimicrobial Resistance mechanisms requires a data driven approach that applies prevention strategies with precision.</h2>
+        </section>
+
+        <section>
+          <h3>Applying Genomic data to combat Antimicrobial Resistance:</h3>
+          <ol>
+            <li class="fragment"><b>Outbreak Investigations:</b> WGS can be utilized to establish directionality of transmission guiding prevention strategies</li>
+            <li class="fragment"><b>Contact Tracing:</b> WGS can identify secondary cases and support efforts to prevent further spread</li>
+            <li class="fragment"><b>Risk Assessment:</b> WGS and long read plasmid characterization can provide insight into assessing the risk of a mechanism</li>
+            <li class="fragment"><b>Surveillance:</b> Clinical and Environmental samples can provide insight into the presence of resistance mechanism and provide the ability to track patients or facilities over time</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Genomic data alone is ineffective</h3>
+          <p><b>Precision Public Health:</b></br>"delivering the right intervention to the right population at the right time"</br></br> - precision approachs for infectious diseases require an integrated approach connecting genomic, epidemiological, clinical, environmental, and sample data
+          </p>
+          <div class="citation">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/33119581/">Khoury et al. 2020 <span style="font-style:italic">Plos Medicine</span></a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Public Health is a series of Data Silos</h3>
+          <image style="width:80%" src="/talks/2022-05-16-arln-genomic-reporting/images/data_silos.png">
+        </section>
+
+        <section>
+          <h3>Data integration is a Public Health Issue</h3>
+          <ul>
+            <li><b>CDC Data Modernization Initiative</b> - "Move from siloed and brittle public health data systems to connected, resilient, adaptable, and sustainable ‘response-ready’ systems"</li>
+            <li><b>AMD Platform</b> - national bioinformatics platform aiming to build capacity and integrate genomic analytical workflows</li>
+          </ul>
+          <p class="fragment">Anything we build @WSLH needs to be flexible and accommodate an uncertain future.</p>
+
+            <div class="citation">
+              <a href="https://www.cdc.gov/about/advisory-committee-director/pdf/acdmeeting_2.1.2022.pdf">Advisory Committee to the Director (CDC) Feb 2022</a>
+            </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html">
+          <h2 style="color: white;font-style:italic">Build an infrastructure to support a genomic data ecosystem that provides actionable public health data for targeted interventions.</h2>
+        </section>
+
+        <section data-transition="fade-out">
+          <h3>Application of Cloud Technologies towards a genomic data ecosystem</h3>
+          <div style="float:left;width:50%">
+          </br>
+          </br>
+            <ul>
+              <li>Advantages to Cloud:
+                <ul>
+                  <li>On-demand Pay for Usage Model</li>
+                  <li>Extreme Scalability</li>
+                  <li>High Availability</li>
+                  <li>Cost Efficient Storage and Compute</li>
+                  <li>Serverless approaches to data infrastructure</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div style="float:right;width:50%" class="fragment">
+            <image style="width:80%" src="/talks/2022-05-16-arln-genomic-reporting/images/Genomic_Data_Lake.png">
+          </div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>What is a data lake?</h3>
+          <p>centralized repository designed to store, process, and secure large amounts of structured and unstructured data at any scale</p>
+          </br>
+          </br>
+          <div style="float:left;width:50%">
+            <ul>
+              <li class="fragment">Data Lakes retain all data</li>
+              <li class="fragment">Support all data types</li>
+              <li class="fragment">Adapt easily to changes</li>
+              <li class="fragment">Require data scientists to navigate</li>
+              <li class="fragment">Require proper management to prevent swamp</li>
+            </ul>
+          </div>
+
+          <div style="float:right;width:50%">
+            <image style="width:80%" src="/talks/2022-05-16-arln-genomic-reporting/images/Genomic_Data_Lake.png">
+          </div>
+        </section>
+
+        <section>
+          <h3>Data Lake Architecture</h3>
+            <image style="width:60%" src="/talks/2022-05-16-arln-genomic-reporting/images/data_lake_layers.png">
+        </section>
+
+        <section data-background-image="/talks/2022-05-16-arln-genomic-reporting/images/wslh_datalake_v2.png" data-background-size="contain">
+        </section>
+
+        <section>
+          <h3>Key Features of the cloud based architecture</h3>
+          <ul>
+            <li>flexibility to accommodate an uncertain future
+            <ul>
+              <li>capable of a variety of APIs to connect with future CDC platforms</li>
+              <li>greater functionality if CDC follows industry standards for APIs</li>
+            </ul></li>
+            <li>high degree of scalability to meet demand</li>
+            <li>combines data with bioinformatic analytics</li>
+            <li>access to new machine learning and predictive technologies</li>
+            <li>cost efficient data storage and analytics</li>
+          </ul>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html">
+          <h2 style="color: white">Navigating Challenges</h2>
+        </section>
+
+        <section>
+          <h3>Project Scope</h3>
+          <div style="float:left;width:50%">
+          </br>
+            <ul>
+              <li><b>Agile Development process:</b> iterative development focused on an early delivery of an adaptive resource</li>
+              <li><b>Adaptive Strategy:</b> cloud based approach that is highly flexible to meet the needs of a changing landscape</li>
+              <li><b>Initial Focus:</b> platform designed to meet needs of SARS-CoV-2 while laying foundation for other activities</li>
+            </ul>
+          </div>
+
+          <div style="float:right;width:50%">
+            <image style="width:100%" src="/talks/2022-05-16-arln-genomic-reporting/images/agile_waterfall.jpg">
+          </div>
+        </section>
+
+        <section>
+          <h3>Security, Compliance, and Data Governance</h3>
+          <div style="float:right;width:50%">
+            </br>
+            </br>
+            </br>
+            <ul>
+              <li><b>Data Security:</b> all data encrypted in rest and in transit, user access can be controlled down to row / column / cell level</li>
+              <li><b>Compliance:</b> UW-Madison Cybersecurity Risk Assessment</li>
+              <li><b>Data Ownership:</b> all partners submitting data will be informed and consulted on data usage</li>
+            </ul>
+          </div>
+
+          <div style="float:left;width:50%">
+            <image style="width:90%" src="/talks/2022-05-16-arln-genomic-reporting/images/Data-Governance.png">
+          </div>
+        </section>
+
+        <section>
+          <h3>Workforce Development</h3>
+          <ul>
+            <li><b>Cloud Technology Training:</b> AWS training through University, knowledge sharing, self-taught</li>
+            <li><b>Database Activities:</b> SQL training, hiring expertise, in house experience</li>
+            <li><b>Visualization and Reports:</b> self-taught, knowledge sharing</li>
+            <li><b>Project Management Resources:</b> virtual training sessions</li>
+          </ul>
+        </section>
+
+        <section data-background="#0969da" style="color:white">
+          <h3>Summary</h3>
+          <ul>
+            <li>There is a massive need to update the technologies and approaches applied to data in public health.</li>
+            <li>The national strategy for genomic data and public health is murky.</li>
+            <li>Cloud technologies provide an avenue for developing flexible data platforms for managing data and developing new data strategies.</li>
+            <li>Public Health Laboratories are facing a workforce challenge.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="/images/site/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            </br>
+            </br>
+            <ul>
+              <li>Special Thanks
+                <ul>
+                  <li>Nikki Marchan</li>
+                </ul>
+              </li>
+            </ul>
+            <div class="aligned">
+              <a href="https://www.aphl.org/"><img style="width:40%" src="https://www.aphl.org/_catalogs/masterpage/APHL/img/aphl-logo.png"></a>
+            </div>
+          </div>
+
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>

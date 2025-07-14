@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - APHL 2024</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <img style="width:35%" src="images/ai_ph.jpeg">
+          <h2>AI-Powered Public Health:<br> How Labs Can Prepare for the Road Ahead</h2>
+          <div class="citation">
+            <a href="https://copilot.microsoft.com/">Microsoft Copilot: DALL-E 3</a>
+          </div>
+        </section>
+
+        <!--
+          1. AI / Machine Learning / Deep Learning
+          2. Neural Networks
+          3. Natural Language Processing (NLP)
+          4. Large Language Models
+          4. Transformers and the future
+        -->
+
+        <section data-transition="slide-in fade-out">
+          <div style="width:50%;float:left;margin-top: 10%;">
+            <h3>Artificial Intelligence</h3>
+            <p>Software that allows machines or computer systems to perceive their environment and use learning and intelligence to achieve a defined goal.</p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img src="images/ai-ml-graphic-01.png">
+          </div>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <div style="width:50%;float:left;margin-top: 10%;">
+            <h3>Machine Learning</h3>
+            <p>An area in artificial intelligence with a focus on statistical algorithms that can learn from data and generalize to unseen data.</p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img src="images/ai-ml-graphic-02.png">
+          </div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <div style="width:50%;float:left;margin-top: 10%;">
+            <h3>Deep Learning</h3>
+            <p>A subset of machine learning methods that are based on neural networks, with deep implying multiple layers.</p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img src="images/ai-ml-graphic-03.png">
+          </div>
+        </section>
+
+        <section>
+          <h3>Artificial Neural Networks</h3>
+          <p>A machine learning model inspired by the structure and function of biological neural networks.</p>
+          <img style="width:50%" src="images/ann.png">
+        </section>
+
+        <section>
+          <div style="width:50%;float:left;">
+            <img src="images/gpt.jpg">
+          </div>
+          <div style="width:50%;float:right;margin-top: 10%;">
+            <h3>Large Language Model (LLM)</h3>
+            <p>A model that has been trained on a massive amount of text data to mimic human language patterns and structures.</p>
+          </div>
+        </section>
+
+        <section>
+          <div style="width:50%;float:left;margin-top: 10%;">
+            <h3>Transformers</h3>
+            <p>A type of neural network architecture that is well equipped for tasks that consist of sequences of data. Most commonly a sentence.</p>
+            <p class="fragment"><b>GPT-4</b>: <b>G</b>enerative <b>P</b>re-trained <b>T</b>ransformer - 4</p>
+          </div>
+          <div style="width:50%;float:right;margin-bottom: 10%;">
+            <img style="width:75%;box-shadow:2px 2px 5px black;background-color:white" src="images/google_paper.png">
+          </div>
+          <div class="citation">
+            <a href="https://arxiv.org/abs/1706.03762">Vaswani, A. et al. 2017. “Attention Is All You Need.“ arXiv:1706.03762</a><br>
+            <a href="https://towardsdatascience.com/de-coded-transformers-explained-in-plain-english-877814ba6429">Towards Data Science - De-coded: Transformers explained in plain English</a>
+          </div>
+        </section>
+
+        
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>

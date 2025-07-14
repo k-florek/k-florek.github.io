@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151344274-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Containerization - COVID-19</title>
+
+    <link rel="stylesheet" href="/resources/revealjs/dist/reset.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="/resources/revealjs/dist/theme/f_theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/resources/revealjs/plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h2>Containerization: the silent hero of the COVID-19 variant surveillance effort.</h2><br>
+          <p>
+            Kelsey Florek, PhD, MPH</br>
+            Senior Genomics and Data Scientist</br>
+            Wisconsin State Laboratory of Hygiene</br>
+            December 9, 2021</br></br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> www.k-florek.net/talks
+          </br>
+          </br>
+          <i class="fab fa-twitter"></i><a href='https://twitter.com/kelsey_florek'>@kelsey_florek</a>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:30px" src="/resources/restalks/images/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <image style="width:25%;display:block;float:right;margin-right:30px" src="images/staphb-logo-circ.png">
+          </div>
+        </section>
+
+        <section>
+          <h3>Bioinformatics</h3>
+          <image style="width:40%" src="images/bioinformatics.png">
+        </section>
+
+        <section>
+          <h3>Barriers to Bioinformatics in Public Health Laboratories</h3>
+          <ul>
+            <li class="fragment" style="margin-bottom:20px">vast landscape of compute infrastructure
+              <ul>
+                <li>on-premise servers/workstations</li>
+                <li>high performance compute cluster</li>
+                <li>public cloud</li>
+                <li>none</li>
+              </ul></li>
+            <li class="fragment" style="margin-bottom:20px">limited experience working with open source software</li>
+            <li class="fragment" style="margin-bottom:20px">limited informatics support beyond desktop/network</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>What is StaPH-B?</h3>
+          <div style="float:left;width:30%">
+            <image style="width:60%" src="images/staphb-logo-circ.png">
+          </div>
+          <div style="float:right;width:70%">
+            <ul>
+              <li style="margin-bottom:20px"><b>Sta</b>te <b>P</b>ublic <b>H</b>ealth <b>B</b>ioinformatics</li>
+              <li class="fragment" style="margin-bottom:20px">provide training and resources for applied bioinformatics</li>
+              <li class="fragment" style="margin-bottom:20px">support construction and maintenance of bioinformatics infrastructure in state Public Health laboratories</li>
+              <li class="fragment" style="margin-bottom:20px">partner with Centers for Disease Control and Prevention and the Association of Public Health Laboratories</li>
+            </ul>
+          </div>
+          <div class="citation">
+            <a href="https://staphb.org">staphb.org</a>
+          </div>
+        </section>
+
+        <section>
+          <div style="float:left;width:75%">
+            <image style="width:25%" src="images/github.png">
+            <h3 style="color:#0969da">StaPH-B/docker-builds</h3>
+            <image style="width:70%" src="images/docker-builds.png">
+          </div>
+          <div style="float:right;width:25%">
+            <div class="aligned" style="margin-left: -100px;margin-top:100px">
+              <image style="width:140px;border-radius: 50%;box-shadow:2px 2px 5px black" src="images/Curtis_Kapsak.jpg">
+              <span style="margin-left:30px;text-align:left">Curtis Kapsak</br><i class="fab fa-twitter"></i><a href='https://twitter.com/curtiskapsak' style=''>@curtiskapsak</a></span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 style="color:#0969da">StaPH-B/docker-builds</h3>
+          <ul>
+            <li>Dockerfiles >90 different open source bioinformatic analysis tools</li>
+            <li>Data QC</li>
+            <li>Genome Assembly</li>
+            <li>Annotation</li>
+            <li>Classification</li>
+          </ul>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html">
+          <h2 style="color: white">SARS-CoV-2 Variant Surveillance</h2>
+        </section>
+
+        <section>
+          <image style="width:100%;margin-top:-10px" src="images/seq_process.png">
+        </section>
+
+        <section data-background="#0969da">
+          <h3 style="color:white">UPHL-BioNGS/Cecret</h3>
+          <div style="float:left;width:70%">
+            <image style="width:100%;box-shadow:2px 2px 5px black" src="images/cecret_dag.png">
+          </div>
+          <div style="float:right;width:30%">
+            <image style="width:100%;box-shadow:2px 2px 5px black" src="images/cecret.jpeg">
+            <div class="aligned" style="margin-top:30px">
+              <image style="width:140px;border-radius: 50%;box-shadow:2px 2px 5px black" src="images/Erin_Young.jpeg">
+              <span style="color:white;margin-left:30px;">Dr. Erin Young</br><i class="fab fa-twitter"></i><a href='https://twitter.com/erinyoun' style='color:white'>@erinyoun</a></span>
+            </div>
+          </div>
+          <div class="citation">
+            <a style="color:white" href="https://github.com/UPHL-BioNGS/Cecret">UPHL-BioNGS/Cecret</a>
+          </div>
+        </section>
+
+        <section data-background="#0969da">
+          <h3 style="color:white">Theiagen/public_health_viral_genomics</h3>
+          <div style="float:left;width:70%">
+            <image style="width:75%;box-shadow:2px 2px 5px black;background-color:white" src="images/Titan_Illumina_PE.png"></br>Titan Illumina PE
+          </div>
+          <div style="float:right;width:30%;">
+            <div class="aligned" style="margin-left: -80px">
+              <image style="width:140px;border-radius:50%;box-shadow:2px 2px 5px black" src="images/Kevin_Libuit.jpg">
+              <span style="color:white;margin-left:30px;text-align:left">Kevin Libuit</br><i class="fab fa-twitter"></i><a href='https://twitter.com/kevinlibuit' style='color:white'>@kevinlibuit</a></span>
+            </div>
+            <div class="aligned" style="margin-left: -80px">
+              <image style="width:140px;border-radius: 50%;box-shadow:2px 2px 5px black" src="images/Robert_Petit_III.png">
+              <span style="color:white;margin-left:30px;text-align:left">Dr. Robert Petit III</br><i class="fab fa-twitter"></i><a href='https://twitter.com/rpetit3' style='color:white'>@rpetit3</a></span>
+            </div>
+            <div class="aligned" style="margin-left: -80px">
+              <image style="width:140px;border-radius: 50%;box-shadow:2px 2px 5px black" src="images/Frank_Ambrosio.jpg">
+              <span style="color:white;margin-left:30px;text-align:left">Frank Ambrosio</br><i class="fab fa-twitter"></i><a href='https://twitter.com/frankambrosio3' style='color:white'>@frankambrosio3</a></span>
+            </div>
+          </div>
+          <div class="citation">
+            <a style="color:white" href="https://github.com/theiagen/public_health_viral_genomics">theiagen/public_health_viral_genomics</a>
+          </div>
+        </section>
+
+        <section>
+          <image style="width:85%" src="images/210308_pulls.jpeg">
+            <div class="citation">
+              <a href="https://twitter.com/CurtisKapsak/status/1450574125542645760">@curtiskapsak</a>
+            </div>
+        </section>
+
+        <section>
+          <image style="width:85%" src="images/211019_pulls.png">
+            <div class="citation">
+              <a href="https://twitter.com/CurtisKapsak/status/1450574125542645760">@curtiskapsak</a>
+            </div>
+        </section>
+
+        <section data-background-iframe="/resources/restalks/gradient.html">
+          <h2 style="color: white">Keeping up with SARS-CoV-2 Evolution</h2>
+        </section>
+
+        <section>
+          <h3 style="margin-bottom:0px">2 mutations per month in the 29,903 base genome</h3>
+          <image style="width:50%;margin-top:0px" src="images/nextstrain_omicron.png">
+          <div class="citation">
+            <a href="https://nextstrain.org/ncov/gisaid/global?d=tree&l=unrooted&p=full">NextStrain.org</a>
+          </div>
+        </section>
+
+        <section>
+          <div style="float:left;width:25%">
+            <h3>Pangolin</h3>
+            <image style="width:100%" src="images/pangolin.png">
+          </div>
+          <div style="float:right;width:75%">
+            <image style="width:80%" src="images/pango_tree.png">
+          </div>
+          <div class="citation">
+            <a href="https://www.pango.network/">pango.network</a></br>
+            <a href="https://github.com/cov-lineages/pangolin">cov-lineages/pangolin</a>
+          </div>
+        </section>
+
+        <section>
+          <div style="float:left;width:25%">
+            <h3>Pangolin</h3>
+            <image style="width:100%" src="images/pangolin.png">
+          </div>
+          <div style="float:right;width:75%">
+            <image style="width:80%" src="images/pangolin_update.png">
+          </div>
+          <div class="citation">
+            <a href="https://twitter.com/CurtisKapsak">@curtiskapsak</a></br>
+            <a href="https://www.pango.network/">pango.network</a></br>
+            <a href="https://github.com/cov-lineages/pangolin">cov-lineages/pangolin</a>
+          </div>
+        </section>
+
+        <section data-background="#0969da" style="color:white">
+          <h3>The Takeaways</h3>
+          <ul>
+            <li class="fragment" style="margin-bottom:20px">Containerization <i class="fab fa-docker"></i> solves many problems in Bioinformatics
+              <ul>
+                <li>Distribution of open source software</li>
+                <li>Repeatability</li>
+                <li>Simplifying development of workflows</li>
+              </ul></li>
+            <li class="fragment" style="margin-bottom:20px">Infectious disease surveillance and research is built on open source</li>
+            <li class="fragment" style="margin-bottom:20px">Containerization has been instrumental throughout this pandemic allowing a wide range of laboratories to contribute global surveillance effort</li>
+          </ul>
+        </section>
+
+        <section>
+          <a href="https://www.aphl.org/fellowships/Pages/Bioinformatics.aspx"><image style="width:65%" src="images/aphl_fellowship.png"></a>
+          <div class="citation">
+            <a href="https://www.aphl.org/fellowships/Pages/Bioinformatics.aspx">APHL</a></br>
+          </div>
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div class="close" style="width:50%;float:left;">
+            <ul style="font-size:0.5em" class="no-padding">
+              <li style="list-style-type: none;"><a href="http://www.staphb.org/"><img style="width:75%" src="https://avatars.githubusercontent.com/u/42878449?s=200&v=4"></a>
+                <ul>
+                  <li><a href="https://github.com/kapsakcj">@kapsakcj</a></li>
+                  <li><a href="https://github.com/garfinjm">@garfinjm</a></li>
+                  <li><a href="https://github.com/kevinlibuit">@kevinlibuit</a></li>
+                  <li><a href="https://github.com/erinyoung">@erinyoung</a></li>
+                  <li><a href="https://github.com/lskatz">@lskatz</a></li>
+                  <li><a href="https://github.com/stjacqrm">@stjacqrm</a></li>
+                  <li><a href="https://github.com/AbigailShockey">@AbigailShockey</a></li>
+                  <li><a href="https://github.com/andersgs">@andersgs</a></li>
+                  <li><a href="https://github.com/logan-fink">@logan-fink</a></li>
+                  <li><a href="https://github.com/tgallagh">@tgallagh</a></li>
+                  <li>Kelly Oakeson</li>
+                  <li><a href="https://github.com/joacjo">@joacjo</a></li>
+                  <li><a href="https://github.com/joacjo">@rpetit3</a></li>
+                  <li><a href="https://github.com/jvhagey">@jvhagey</a></li>
+                  <li><a href="https://github.com/Antonia-Chalka">@Antonia-Chalka</a></li>
+                  <li><a href="https://github.com/MillironX">@MillironX</a></li>
+                  <li><a href="https://github.com/frankambrosio3">@frankambrosio3</a></li>
+                  <li><a href="https://github.com/HNHalstead">@HNHalstead</a></li>
+                  <li><a href="https://github.com/fanninpm">@fanninpm</a></li>
+                  <li><a href="https://github.com/DOH-HNH0303">@DOH-HNH0303</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div style="width:50%;float:right;">
+            <ul>
+              <li>Special Thanks
+                <ul>
+                  <li>Eva Bojorges</li>
+                  <li>Aurélien Suarez</li>
+                </ul>
+              </li>
+            </ul>
+            <div class="aligned">
+              <a href="https://www.aphl.org/"><img style="width:40%" src="https://www.aphl.org/_catalogs/masterpage/APHL/img/aphl-logo.png"></a>
+            </div>
+            <div class="aligned">
+              <a href="https://www.cdc.gov/coronavirus/2019-ncov/variants/spheres.html"><img style="width:60%" src="images/spheres-covid.png"></a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/resources/revealjs/dist/reveal.js"></script>
+    <script src="/resources/revealjs/plugin/notes/notes.js"></script>
+    <script src="/resources/revealjs/plugin/markdown/markdown.js"></script>
+    <script src="/resources/revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>

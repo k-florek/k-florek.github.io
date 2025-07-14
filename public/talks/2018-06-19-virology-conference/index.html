@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang='en'>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Kelsey Florek">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151344274-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-151344274-1');
+		</script>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2018 Virology</title>
+
+		<link rel="stylesheet" href="/resources/restalks/css/reveal.css">
+		<link rel="stylesheet" href="/resources/restalks/css/theme/f_talks.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="/resources/restalks/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/resources/restalks/css/pdf.css' : '/resources/restalks/css/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="#000000">
+					<h2>The ATGCs of whole genome sequencing for Public Health</h2><br>
+					<h4>Kelsey Florek, MPH, PhD</br>
+						2018 Wisconsin Virology Conference</br>
+						June 19, 2018
+					</h4>
+					<br>
+					<img style="width: 25%;float:left;" src="images/logo_white_txt.png">
+					<br>
+					<br>
+					<div style="position:absolute;width: 100%;text-align:center;"><h5>Slides available at:<br> www.k-florek.net/talks</h5></div>
+				</section>
+
+				<section data-background="#5BA6A7">
+					<h2 style="color: white">How sequencing is performed</h2></br>
+					<h2 style="color: white">How information is analyzed</h2></br>
+					<h2 style="color: white">How sequencing informs Public Health</h2>
+				</section>
+
+				<section>
+					<h3>Discovery of DNA</h3>
+					<img style="width: 25%;float:left;" src="images/miescher.jpg">
+					<div style="float:right;width:75%;">
+					<ul>
+						<li style="margin-bottom: 20px">1869 - Johann Friedrich Miescher discovered 'nuclein'</li>
+						<li>"...entire family of such phosphorus-containing substances, which differ slightly from one another, will reveal itself, and that this family of nuclein bodies will prove tantamount in importance to proteins."
+							<ul>
+								<li><h5>Miescher F (1871c) Ueber die cheische Zusammensetzung der Eiterzellen. Medicinsich-chemische Untersuchungen 4:441-460</h5></li>
+							</ul></li>
+						<li style="margin-bottom: 20px">150 years later...</li>
+					</ul>
+				</div>
+					<div class="citation">
+						<a href="https://www.ncbi.nlm.nih.gov/pubmed/17901982">Dahm,R. Hum Genet 2008</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Sanger's method of sequencing</h3>
+					<h5>1977 - Frederick Sanger: dideoxy chain-termination method</h5>
+					<img style="width:75%" src="images/sanger_method.png">
+				</section>
+
+				<section>
+					<h3>Sanger's method of sequencing</h3>
+					<h5>1977 - Frederick Sanger: dideoxy chain-termination method</h5>
+					<img style="width:75%" src="images/sanger_fluro.png">
+				</section>
+
+				<section>
+					<h3>Sanger's method of sequencing</h3>
+					<h5>1977 - Frederick Sanger: dideoxy chain-termination method</h5>
+					<ul>
+						<li style="margin-bottom:20px">limited to ~800bp for each sequence</li>
+						<li style="margin-bottom:20px">high per base-pair cost</li>
+						<li style="margin-bottom:20px">time consuming</li>
+						<li style="margin-bottom:20px">gold standard for accuracy</li>
+				</section>
+
+				<section>
+					<img src="images/hgp.jpg">
+					<div class="citation">
+						<a href="https://www.nature.com/news/human-genome-project-twenty-five-years-of-big-biology-1.18436">Human Genome Project: Twenty-five years of big biology, Nature News</a>
+					</div>
+				</section>
+
+				<section>
+					<div style='width:100%'class='stretch'>
+					<img style="stretch" src="images/costpermb_2017.jpg">
+				</div>
+				</section>
+
+				<section data-background="#4C90C0">
+					<h2 style="color:white">Generating Sequence information</h2>
+				</section>
+
+				<section>
+					<div style="width:50%;display:inline-block;float:left;">
+						<ul>
+							<li style="margin-bottom:20px"><h2>short read</h2></li>
+								<ul>
+									<li style="margin-bottom:20px">300bp max</li>
+									<li style="margin-bottom:20px">millions of reads</li>
+									<li style="margin-bottom:20px">99.9999% accuracy</li>
+									<li style="margin-bottom:20px">low cost per sample</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div style="width:50%;display:inline-block;float:right;">
+						<ul>
+							<li style="margin-bottom:20px"><h2>long read</h2></li>
+								<ul>
+									<li style="margin-bottom:20px">2.3mb reads</li>
+									<li style="margin-bottom:20px">thousands of reads</li>
+									<li style="margin-bottom:20px">98% accuracy</li>
+									<li style="margin-bottom:20px">high cost per sample</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<img style="width:80%" src="images/illumina_process.png">
+					<div class="citation">
+						<a href="http://www.3402bioinformaticsgroup.com/service/">3402 Bioinformatics</a>
+					</div>
+				</section>
+
+				<section>
+					<img src="images/illumina_machines.png">
+					<div class="citation">
+						<a href="https://www.illumina.com/systems/sequencing-platforms/comparison-tool.html">Illumina.com</a>
+					</div>
+				</section>
+
+				<section>
+					<img style="width:80%" src="images/pac_zero.jpg">
+					<div class="citation">
+						<a href="https://www.ncbi.nlm.nih.gov/pubmed/28620037">Hill et al. Biochemical Society Transactions 2017</a>
+					</div>
+				</section>
+
+				<section>
+					<img style="width:45%" src="images/pacbio_seq.jpg">
+					<div class="citation">
+						<a href="https://www.pacb.com">www.pacb.com</a>
+					</div>
+				</section>
+
+				<section>
+					<img style="width:120%" src="images/nano-animated.gif">
+					<div class="citation">
+						<a href="https://nanoporetech.com/sites/default/files/s3/sequencing-animated.gif">nanoporetech.com</a>
+					</div>
+				</section>
+
+				<section>
+					<img style="width:70%" src="images/nanopore-product-family.jpg">
+					<div class="citation">
+						<a href="https://nanoporetech.com/">nanoporetech.com</a>
+					</div>
+				</section>
+
+				<section data-background="#4C90C0">
+					<h2 style="color:white">Analyzing sequencing data and reconstructing genomes</h2>
+				</section>
+
+				<section>
+					<h3>amplicon sequencing</h3>
+					<img src="images/amplicon_sequencing.png">
+				</section>
+
+				<section>
+					<h3>Shotgun whole-genome assembly</h3>
+					<img src="images/fragmentation.png">
+				</section>
+
+				<section>
+					<h3>Shotgun whole-genome assembly</h3>
+					<img src="images/assembly.png">
+				</section>
+
+				<section>
+					<h3>Issues with repeats and short reads</h3>
+					<img src="images/repeats_in_graph.png">
+					<div class="citation">
+						<a href="https://github.com/rrwick/Unicycler">Wick RR et al. PLoS Comput Biol 2017.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Metagenomic approaches</h3>
+					<img src="images/microbiome.jpg">
+					<div class="citation">
+						<a href="https://www.ncbi.nlm.nih.gov/pubmed/29634682">Gilbert JA et al. Nature Medicine 2018.</a>
+					</div>
+				</section>
+
+				<section data-background="#4C90C0">
+					<h2 style="color:white">The Public Health benefits of sequencing</h2>
+				</section>
+
+				<section>
+					<h3>Sequencing as a method of characterization</h3>
+					<ul>
+						<li style="margin-bottom:20px">Biochemical - characterization of metabolic pathways</li>
+						<li style="margin-bottom:20px">Physical - caracterization of proteins (MALDI-TOF)</li>
+						<li>Genetic - caracterization of genes and gene variants</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Surveillance</h3>
+					<img src="images/influenza.png">
+					<div class="citation">
+						<a href="https://nextstrain.org/flu/seasonal">nextstrain.org</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Outbreak identification</h3>
+					<img src="images/simple_outbreak.png">
+				</section>
+
+				<section>
+					<h3>Sequencing advances Public Health</h3>
+					<ul>
+						<li style="margin-bottom:20px">Offers more precise examination of organisms</li>
+						<li style="margin-bottom:20px">Streamlined work flow -> sequencing parallelizes many laboratory methods</li>
+						<li style="margin-bottom:20px">Sequencing information is valuable and easily shared leading to improvement in many areas</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Questions?</h2>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="/resources/restalks/js/head.min.js"></script>
+		<script src="/resources/restalks/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: false,
+				controls: false,
+				center: true,
+				progress: true,
+				slideNumber: true,
+				touch: true,
+				viewDistance: 4,
+
+
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 960,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.05,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.1,
+				maxScale: 5,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '/resources/restalks/plugin/markdown.js' },
+					{ src: '/resources/restalks/plugin/notes/notes.js', async: true },
+					{ src: '/resources/restalks/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
