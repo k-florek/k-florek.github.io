@@ -1,7 +1,7 @@
 <template>
   <div class='content-container'>
     <div class='content-items'>
-      <div class='content-title'>publications</div>
+      <div class='content-title'>publications: advancing science through data and discovery</div>
       <div v-for="publication in publications" :key="publication.title">
         <Card :card=publication />
       </div>

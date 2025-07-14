@@ -1,7 +1,7 @@
 <template>
   <div class='content-container'>
     <div class='content-items'>
-      <div class='content-title'>lectures</div>
+      <div class='content-title'>lectures: continuous learning in bioinformatics</div>
       <div v-for="lecture in lectures" :key="lecture.title">
         <Card :card=lecture />
       </div>

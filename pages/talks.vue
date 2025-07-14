@@ -1,7 +1,7 @@
 <template>
   <div class='content-container'>
     <div class='content-items'>
-      <div class='content-title'>talks: recent presentations</div>
+      <div class='content-title'>talks: sharing insights at the intersection of science and public health</div>
       <div v-for="talk in talks" :key="talk.title">
         <Card :card=talk />
       </div>
