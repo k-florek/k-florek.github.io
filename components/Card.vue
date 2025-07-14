@@ -25,11 +25,13 @@ defineProps<{
 }>()
 
 
-function formatDate(date: string | Date) {
+function formatDate(date: string | Date, timeZone ='UTC') {
+  console.log(date);
   return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
+    timeZone
   }).format(new Date(date))
 }
 </script>
