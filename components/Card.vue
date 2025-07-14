@@ -26,7 +26,6 @@ defineProps<{
 
 
 function formatDate(date: string | Date, timeZone ='UTC') {
-  console.log(date);
   return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'long',
