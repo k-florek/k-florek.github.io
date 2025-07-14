@@ -1,0 +1,638 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - AI</title>
+
+    <!-- Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" integrity="sha384-Jx4lvM3f1foL3gcKtEZPpp/IOxYaIOJ+KQRq3vP7Towpgy4bjb6wo5QK5VRtnpLh" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/brands.js" integrity="sha384-wRU6vtIpkIdXnWzp+Hq7CNH527PHkmlZz1n7ITVY0YhEPUcSlz2voGAQfVb3d9xe" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/fontawesome.js" integrity="sha384-dCcP+1ToHaZKWNvVqy4+4ekZYXP73UfD3KsBQ0xg54c0+R0I6zsewwjQiM3JUwg+" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/vendor/reveal/reset.css">
+    <link rel="stylesheet" href="/vendor/reveal/reveal.css">
+    <link rel="stylesheet" href="/resources/css/reveal_theme.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/vendor/reveal-plugins/highlight/monokai.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+
+    <!-- Custom QR Code Generator -->
+    <script src="/resources/js/qrcode.js"></script>
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>AI/ML In Public Health</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH<br>
+            Senior Genomics and Data Scientist<br>
+            Wisconsin State Laboratory of Hygiene<br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a>
+          
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:20px" src="/resources/images/logos/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <div id="qrcode"></div>
+            <script type="text/javascript">
+              var urlString = window.location.href;
+              urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+              var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: urlString,
+                width: 128,
+                height: 128,
+                colorDark : "#2a76dd",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.Q,
+                imgCSSStyle : "float:right; padding-top:20px;"
+              });
+            </script>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>Objectives</h1>
+          <ul>
+            <li>Explore AI, ML, and LLMs</li>
+            <li>Identify examples of AI/ML used in research and public health</li>
+            <li>Describe the issues and challenges with Generative AI</li>
+            <li>Evaluate the application of Generative AI in bioinformatics</li>
+          </ul>
+        </section>
+
+        <section style="color: white" data-background="#0969da">
+          <h3>
+            <ol>
+              <li class="fragment" style="padding-bottom:50px;">Have you ever used AI/ML/Generative AI if so, then how?</li>
+              <li class="fragment" style="padding-bottom:50px;">What concerns do you have about the usage of AI, in general or in public health?</li>
+              <li class="fragment">What benefits do you do think AI provides or could provide?</li>
+            </ol>
+          </h3>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>What is AI?</h1>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <div style="width:50%;float:left;margin-top: 10%;">
+            <h3>Artificial Intelligence</h3>
+            <p>Software that allows machines or computer systems to perceive their environment and use learning and intelligence to achieve a defined goal.</p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img src="images/ai-ml-graphic-01.png">
+          </div>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <div style="width:50%;float:left;margin-top: 10%;">
+            <h3>Machine Learning</h3>
+            <p>An area in artificial intelligence with a focus on statistical algorithms that can learn from data and generalize to unseen data.</p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img src="images/ai-ml-graphic-02.png">
+          </div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <div style="width:50%;float:left;margin-top: 10%;">
+            <h3>Deep Learning</h3>
+            <p>A subset of machine learning methods that are based on neural networks, with deep implying multiple layers.</p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img src="images/ai-ml-graphic-03.png">
+          </div>
+        </section>
+
+        <section>
+          <h3>Generative AI</h3>
+          <div style="width:50%;float:left;">
+            <img style="width:75%" src="images/gen_ai.jpg">
+          </div>
+
+          <div style="width:50%;float:right;padding-top:100px">
+            <ul>
+              <li>a subset of AI and a type of deep learning model</li>
+              <li>designed to create new and "original" content</li>
+              <li>trained on massive datasets of existing content</li>
+            </ul>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Primer - AI/ML models and approaches</h2>
+        </section>
+
+        <section>
+          <h3>Model training paradigms</h3>
+          <ul>
+            <li class="fragment" data-fragment-index="1"><b>Supervised Learning</b></li>
+            <li class="fragment" data-fragment-index="1"><b>Unsupervised Learning</b></li>
+            <li class="fragment" data-fragment-index="3">Reinforcement Learning</li>
+            <li class="fragment" data-fragment-index="3">Online Learning</li>
+            <li class="fragment" data-fragment-index="3">Batch Learning</li>
+            <li class="fragment" data-fragment-index="3">Meta-learning</li>
+            <li class="fragment" data-fragment-index="3">Semi-supervised Learning</li>
+            <li class="fragment" data-fragment-index="3">Self-supervised Learning</li>
+            <li class="fragment" data-fragment-index="3">Curriculum Learning</li>
+            <li class="fragment" data-fragment-index="3">Rule-based Learning</li>
+            <li class="fragment" data-fragment-index="3">Quantum Machine Learning</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Supervised Learning</h3>
+          <div style="width:50%;float:left;">
+            <p>A supervised machine learning approach requires labelled input and output data, allowing human oversight of the model's classification.</p>
+          </div>
+
+          <div style="width:50%;float:right;">
+            <ul>
+              <li>Regression (prediction of a continuous variable): 
+                <ul>
+                  <li>Linear Regression</li>
+                  <li>Polynomial Regression</li>
+                </ul>
+              </li>
+              <li>Classification (prediction of a categorical variable): 
+                <ul>
+                  <li>Decision Trees</li>
+                  <li>Random Forest</li>
+                  <li>Logistic Regression</li>
+                  <li>K-Nearest Neighbors</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Unsupervised Learning</h3>
+          <div style="width:50%;float:left;">
+            <p>An approach that can be used to group data when no labels are present. Typically applied to cases where the model is representative of the data to ask</p>
+          </div>
+
+          <div style="width:50%;float:right;">
+            <ul>
+              <li>Clustering: 
+                <ul>
+                  <li>K-Means</li>
+                  <li>DBSCAN</li>
+                  <li>Hierarchical Clustering</li>
+                </ul>
+              </li>
+              <li>Dimensionality Reduction: 
+                <ul>
+                  <li>Principal Component Analysis (PCA)</li>
+                  <li>Singular Value Decomposition (SVD)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Neural Networks</h3>
+          <div style="width:50%;float:left;">
+            <img style="width:75%" src="images/ann.png">
+          </div>
+
+          <div style="width:50%;float:right;padding-top:50px">
+            <p>A computational model inspired by biological neural networks, inspired by the behavior of neurons. <br><br> Can be supervised, semi-supervised, self-supervised, unsupervised.</p>
+          </div>
+        </section>
+
+        <section data-background-iframe="https://adamharley.com/nn_vis/mlp/2d.html" data-background="#0969da">
+          <div class="citation">
+            <a href="https://adamharley.com/nn_vis/mlp/2d.html">adamharley.com</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Can you figure out how it works?</h3>
+          <div style="width:50%;float:left;padding-top:50px;padding-left:75px">
+            <h3><a href="https://adamharley.com/nn_vis/mlp/2d.html">https://adamharley.com/nn_vis/mlp/2d.html</a></h3>
+          </div>
+
+          <div style="width:40%;float:left;">
+            <img src="images/ann_example.svg">
+          </div>
+        </section>
+
+        <section style="color: white" data-background="#0969da">
+          <h2>
+            <ul style="list-style-type: none;">
+              <li style="padding-bottom: 50px;" class="fragment">How well did it seem to work?</li>
+              <li style="padding-bottom: 50px;" class="fragment">Did you find any patterns between the input/hidden layers/output?</li>
+              <li class="fragment">If you can't understand how it works, can you trust or validate its answers?</li>
+            </ul>
+          </h2>
+        </section>
+
+        <section>
+          <h3>Natural Language Processing (NLP) and Deep Learning</h3>
+          <p>Deep learning using neural networks has become the dominate method of NLP, using massive volumes of text and voice to an unprecedented level of accuracy.</p>
+          <p><b>Transformers</b>: Combining the position of words and subwords (tokenization) along with dependencies and relationships between words (self-attention) allows for calculating different parts of language together.</p>
+          <div class="citation" style="bottom: -50px;">
+            <a href="https://arxiv.org/abs/1706.03762">Vaswani, A. et al. 2017. “Attention Is All You Need.“ arXiv:1706.03762</a><br>
+            <a href="https://towardsdatascience.com/de-coded-transformers-explained-in-plain-english-877814ba6429">Towards Data Science - De-coded: Transformers explained in plain English</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>A question of experience - How much training do models need?</h3>
+          <div style="width:50%;float:left;">
+            <img src="images/ai-chess.png">
+          </div>
+          <div style="width:50%;float:right;padding-top: 75px;">
+            <ul>
+              <li><b>Type of problem</b> - supervised vs unsupervised; image recognition or NLP</li>
+              <li><b>Model Complexity</b> - more layers or nodes = more training data needed</li>
+              <li><b>Data Quality and Accuracy</b> - noisy data will require more training data</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Training LLM Models</h3>
+          <div class="columncontainer">
+            <div style="width: 50%;">
+              <h3>Parameters</h3>
+              <img src="images/llm-param.png">
+            </div>
+            <div style="width: 50%;">
+              <h3>Cost</h3>
+              <img src="images/llm-cost.png">
+            </div>
+          </div>
+          <div class="citation"><a href="https://www.pymnts.com/artificial-intelligence-2/2025/ai-cheat-sheet-large-language-foundation-model-training-costs/">AI Cheat Sheet: Large Language Foundation Model Training Costs</a></div>
+        </section>
+
+        <section>
+          <h3>Enhancing Accuracy and Reliability with RAG</h3>
+          <p><b>Retrieval-augmented generation (RAG)</b> - enhances accuracy and reliability of generative AI models by linking AI services to external resources.</p>
+          <img style="width:50%" src="images/Using-RAG-on-PCs.jpg">
+          <div class="citation">
+            <a href="https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/">What Is Retrieval-Augmented Generation, aka RAG?</a>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>AI/ML applications in Public Health</h1>
+        </section>
+
+        <section>
+          <h3>Applying AI in public health</h3>
+          <ul>
+            <li>Disease Forecasting</li>
+            <li>Risk Prediction</li>
+            <li>Health Diagnosis</li>
+            <li>Spatial Modeling</li>
+            <li>Surveillance</li>
+            <li>Modeling</li>
+          </uL>
+          <div class="citation">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10637620/">Olawade et al. 2023 <i>Front Public Health</i></a>
+          </div>
+        </section>
+
+        <section>
+          <h3>SARS-CoV-2 Lineage - Pangolin</h3>
+          <div style="width:50%;float:left;">
+            <img style="width:30%" src="images/pangolin_logo.svg">
+            <ul>
+              <li>Multinomial Logistic Regression (pangolin 2.0)</li>
+              <li>Decision Trees (pangolin 2.0 and 3.0)</li>
+              <li>Random Forests (pangolin 4.0)</li>
+            </ul>
+          </div>
+          <div style="width:50%;float:right;">
+            <img style="width:100%" src="images/pangolin-lineages.png">           
+          </div>
+          <div class="citation">
+            <a href="https://cov-lineages.org/resources/pangolin.html">Pangolin</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Prediction of echinocandin resistance in Candida auris</h3>
+          <div class="columncontainer">
+            <div style="width: 50%;">
+              <img src="images/iverson_fks1_mutation_vs_resistance.png">
+            </div>
+            <div style="width: 50%;">
+              <ul>
+                <li>2,853 Candida auris isolates (AST breakpoints and FKS1 mutation data)</li>
+                <li>Models Tested: Gradient Boosting, Random Forest, SVM, and XGBoost</li>
+                <li>80/20 train-test split</li>
+                <li>Gradient Boosting frequently provided the best balance between performance metrics</li>
+                <li>Ser639Phe are highly associated with resistance, demonstrating the potential of machine learning for genomic resistance prediction</li>
+              </ul>
+            </div>
+          </div>
+          <div class="citation"><a href="https://www.linkedin.com/in/tives82/">Tom Iverson (unpublished)</a></div>
+        </section>
+
+        <section>
+          <h3>Enhanced Detection System for Healthcare-Associated Transmission (EDS-HAT)</h3>
+          <div style="width:50%;float:left;">
+            <p>Combination of WGS surveillance and ML of electronic health records to identify outbreaks and transmission routes.</p>
+            <p class="fragment"><b>"EDS-HAT could have prevented 25 (lower bound) to 63 (upper bound) transmissions. Moreover, 3.1–8.0 fewer 30-day attributable readmissions and 1.6-3.3 fewer deaths would have occurred had EDS-HAT been running in real time."</b></p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img style="width:75%" src="images/eds-hat.jpg">
+          </div>
+          <div class="citation">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9427134/">Sundermann et al. 2022 <i>Clin Infect Dis</i></a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Generative AI in healthcare</h3>
+          <div style="width:50%;float:left;">
+            <ul>
+              <li>cross-sectional study of 195 randomly drawn patient questions from Reddit’s r/AskDocs</li>
+              <li>compared physician’s and chatbot’s responses to patient’s questions asked publicly on Reddit’s r/AskDocs</li>
+              <li>chatbot responses were preferred over physician responses and rated significantly higher for both quality and empathy</li>
+            </ul>
+          </div>
+          <div style="width:50%;float:right;">
+            <ul>
+              <li>NYUTron - an LLM trained on clinical language and fine-tuned across a wide range of clinical and operational predictive tasks
+                <ul>
+                  <li>30-day all-cause readmission prediction</li>
+                  <li>in-hospital mortality prediction</li>
+                  <li>comorbidity index prediction</li>
+                  <li>length of stay prediction</li>
+                  <li>insurance denial prediction</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="citation">
+            <a href="https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309">Ayers et al. 2023 <i>JAMA Intern Med.</i></a><br>
+            <a href="https://www.nature.com/articles/s41586-023-06160-y">Yao Yiang et al. 2023 <i>Nature</i></a>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>Challenges of Generative AI</h1>
+        </section>
+
+        <section>
+          <h3>Reaching the limit - AI hallucinations</h3>
+          <div style="width:50%;float:left;padding-top:100px">
+            <img style="width:60%" src="images/Hallucinating-with-AI-1200x960.png">
+          </div>
+          <div style="width:50%;float:right;">
+            <p><b>AI hallucination</b> - a phenomenon where a large language model perceives a pattern that is nonexistent to human observers resulting in outputs that are nonsensical or inaccurate.</p>
+            <ul class="fragment">
+              <li>LLM Hallucinations
+                <ul>
+                  <li>False Facts - confidently state incorrect information</li>
+                  <li>Imaginary Scenarios - entirely fabricated stories or events</li>
+                  <li>Nonsense/Incoherence - output that doesn't follow any logical flow or grammatical rules</li>
+                </ul>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Ethical Considerations</h3>
+          <div class="columncontainer">
+            <div style="width:50%;">
+              <img src="images/ai-ethics.png">
+            </div>
+            <div style="width: 50%;">
+              <ul>
+                <li>AI systems should be under human oversight.</li>
+                <li>They need a fallback plan if something is wrong and they must be accurate, reliable, and reproducible.</li>
+                <li>They must ensure full respect for privacy and data protection.</li>
+                <li>Transparent and offer traceability.</li>
+                <li>AI systems must avoid unfair bias.</li>
+                <li>Must benefit all human beings.</li>
+                <li>Must ensure responsibility and accountability.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="citation"><a href="https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai">EU Ethics guidelines for trustworthy AI</a></div>
+        </section>
+
+        <section>
+          <h3>AI SLOP</h3>
+          <a href="https://www.youtube.com/embed/TWpg1RmzAbc?autoplay=1"><img style="width:60%" src="https://img.youtube.com/vi/TWpg1RmzAbc/hqdefault.jpg"></a>
+          <div class="citation"><a href="https://www.youtube.com/watch?v=TWpg1RmzAbc">John Oliver - Last Week Tonight</a></div>
+        </section>
+
+        <section>
+          <h3>Carbon Emissions</h3>
+          <div class="columncontainer">
+            <div style="width: 50%;">
+              <img style="box-shadow:2px 2px 5px black" src="images/ai-emssions.png">
+            </div>
+            <div style="width: 50%;">
+              <img src="images/emissions-ai-system.png">
+            </div>
+          </div>
+          <div class="citation"><a href="https://link.springer.com/article/10.1007/s11783-024-1918-y">Yu et al. <i>Front. Environ. Sci. Eng.</i> 2024</a></div>
+        </section>
+
+        <section>
+          <h2>Is AI worth the cost</h2>
+          <h3>Gartner hype cycle</h3>
+          <img style="width:50%" src="images/Gartner_Hype_Cycle.svg.png">
+          <div class="citation">
+            <a href="https://en.wikipedia.org/wiki/Gartner_hype_cycle">Gartner hype cycle</a>
+          </div>
+        </section>
+
+        <section>
+          <img style="width:75%" src="images/hype-cycle-for-emerging-technologies-2024.png">
+          <div class="citation">
+            <a href="https://www.gartner.com/en/articles/hype-cycle-for-emerging-technologies">Spotlight on 2024 Gartner Hype Cycle™ for Emerging Technologies</a>
+          </div>
+        </section>
+
+        <section>
+          <img style="width: 50%;" src="images/gizmodo_micro.png">
+          <div class="citation"><a href="https://gizmodo.com/analysts-notice-microsoft-quietly-cancelling-data-center-leases-2000567553#comments">Gizmodo</a></div>
+        </section>
+
+        <section>
+          <div class="columncontainer">
+            <div style="width: 50%;">
+              <img style="width: 75%;" src="images/klarna-1.png">
+            </div>
+            <div class="fragment" style="width: 50%;">
+              <img style="width: 75%;" src="images/klarna-2.png">
+            </div>
+          </div>
+          <div class="citation"><a href="https://www.ibtimes.co.uk/we-stopped-hiring-fintech-ceo-reveals-how-ai-replaced-hundreds-employees-year-1729557">International Business Times</a></div>
+        </section>
+
+        <section>
+          <h3>AWS $50 Million Investment</h3>
+          <img src="images/aws_50m.png">
+          <div class="citation"><a href="https://aws.amazon.com/blogs/publicsector/a-year-of-progress-aws-update-on-the-50-million-generative-ai-impact-initiative-for-public-sector/">AWS Public Sector Blog</a></div>
+        </section>
+
+        <section>
+          <h3>AWS $50 Million Investment</h3>
+          <p>"Bio-Rad Laboratories, a global leader in life sciences research and clinical diagnostics serving over 29,000 labs worldwide, developed a multilingual chatbot using AWS's Retrieval Augmented Generation technology with Amazon Bedrock. Bio-Rad indicated that this solution has reduced customer support calls by 20 percent while providing laboratories with near-instant access to critical product information, allowing them to focus on patient safety and regulatory compliance."</p>
+          <div class="citation"><a href="https://aws.amazon.com/blogs/publicsector/a-year-of-progress-aws-update-on-the-50-million-generative-ai-impact-initiative-for-public-sector/">AWS Public Sector Blog</a></div>
+        </section>
+
+        <section>
+          <div class="columncontainer">
+            <div style="width: 50%;">
+              <img src="images/newYork-Mag.png">
+            </div>
+            <div style="width: 50%;" class="fragment">
+              <p>"When I asked her how she did on the assignment, she said she got a good grade. “<i>I really like writing</i>,” she said, sounding strangely nostalgic for her high-school English class — the last time she wrote an essay unassisted. “<i>Honestly</i>,” she continued, “<i>I think there is beauty in trying to plan your essay. You learn a lot. You have to think, Oh, what can I write in this paragraph? Or What should my thesis be?</i>” But she’d rather get good grades."</p>
+            </div>
+          </div>
+          <div class="citation"><a href="https://archive.is/DzOE6">New York Magazine</a></div>
+        </section>
+
+        <section>
+          <h3>AI as a development tool</h3>
+          <img src="images/ai-coding-blog.png">
+          <div class="citation"><a href="https://fly.io/blog/youre-all-nuts/">Thomas Ptacek "My AI Skeptic Friends Are All Nuts"</a></div>
+        </section>
+
+        <section>
+          <h3>AI as a development tool</h3>
+          <p>"Kids today don't just use agents; they use asynchronous agents. They wake up, free-associate 13 different things for their LLMs to work on, make coffee, fill out a TPS report, drive to the Mars Cheese Castle, and then check their notifications. They've got 13 PRs to review. Three get tossed and re-prompted. Five of them get the same feedback a junior dev gets. And five get merged."</p>
+          <p>"“I'm sipping rocket fuel right now,” a friend tells me. “The folks on my team who aren't embracing AI? It's like they're standing still.”"</p>
+          <div class="citation"><a href="https://fly.io/blog/youre-all-nuts/">Thomas Ptacek "My AI Skeptic Friends Are All Nuts"</a></div>
+        </section>
+
+        <section>
+          <h3>Generative AI a stone soup</h3>
+          <img style="width: 40%;" class="fragment" src="images/ai-stone-soup.png">
+          <div class="citation"><a href="https://en.wikipedia.org/wiki/Stone_Soup">Stone Soup</a></div>
+        </section>
+        
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>Applying Generative AI to Bioinformatics and Public Health</h1>
+        </section>
+
+        <section data-background-color="black" data-background-image="images/vscode-copliot.gif" data-background-size="contain">
+        </section>
+
+        <section>
+          <h3>Generative AI to support NCBI Uploads</h3>
+          <a href="https://d146wqzq23xnrx.cloudfront.net"><img style="width: 70%" src="images/aws-ai-project.png"></a>
+          <div class="citation"><a href="https://aws.amazon.com/blogs/publicsector/leveraging-generative-ai-to-accelerate-public-health-genomics-data-standardization/">AWS Public Sector Blog</a></div>
+        </section>
+
+        <section>
+          <img style="width: 30%;" src="images/mrdna.jpg">
+        </section>
+
+        <section data-background="#0969da">
+          <div id="animate" style="visibility: hidden;">
+            <h1>What questions do you have?</h1>
+          </div>
+        </section>
+
+
+      </div>
+    </div>
+
+    <script src="/vendor/reveal/reveal.js"></script>
+    <script src="/vendor/reveal-plugins/notes/notes.js"></script>
+    <script src="/vendor/reveal-plugins/markdown/markdown.js"></script>
+    <script src="/vendor/reveal-plugins/highlight/highlight.js"></script>
+
+    <!-- Chalkboard & Custom Controls Plugin -->
+    <script src="/vendor/reveal-plugins/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/customcontrols/style.css">
+    <script src="/vendor/reveal-plugins/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/chalkboard/style.css">
+
+    <script>
+            Reveal.on('slidechanged', function( event ) {
+                if(Reveal.getProgress() == 1){
+                  const e = document.getElementById('animate'); // Replace 'myElementId' with the actual ID of your element
+                  setTimeout(() => {
+                    e.style.visibility = 'visible';
+                    e.classList.add('typewriter');
+                  }, 400);
+                  
+                }
+
+            } );
+    </script>
+
+    <script>
+      const pen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>';
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        preloadIframes: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to contenthhs_reg_requirements.png
+        minScale: 0.1,
+        maxScale: 5,
+
+        customcontrols: {
+          controls: [
+            //{ icon: '<i class="fa fa-pen-square"></i>',
+            //  title: 'Toggle chalkboard (B)',
+            //  action: 'RevealChalkboard.toggleChalkboard();'
+            //},
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
+        chalkboard: {
+          boardmarkers : [
+                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'}
+          ],
+        },
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls  ]
+      });
+    </script>
+  </body>
+</html>

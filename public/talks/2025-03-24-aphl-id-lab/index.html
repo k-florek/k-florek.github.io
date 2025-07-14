@@ -1,0 +1,591 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - Applications of NGS Data</title>
+
+    <!-- Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" integrity="sha384-Jx4lvM3f1foL3gcKtEZPpp/IOxYaIOJ+KQRq3vP7Towpgy4bjb6wo5QK5VRtnpLh" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/brands.js" integrity="sha384-wRU6vtIpkIdXnWzp+Hq7CNH527PHkmlZz1n7ITVY0YhEPUcSlz2voGAQfVb3d9xe" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/fontawesome.js" integrity="sha384-dCcP+1ToHaZKWNvVqy4+4ekZYXP73UfD3KsBQ0xg54c0+R0I6zsewwjQiM3JUwg+" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/vendor/reveal/reset.css">
+    <link rel="stylesheet" href="/vendor/reveal/reveal.css">
+    <link rel="stylesheet" href="/resources/css/reveal_theme.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/vendor/reveal-plugins/highlight/monokai.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+
+    <!-- Custom QR Code Generator -->
+    <script src="/resources/js/qrcode.js"></script>
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Applications and advancement of NGS Data</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH<br>
+            Senior Genomics and Data Scientist<br>
+            Wisconsin State Laboratory of Hygiene<br>
+            March 24, 2025<br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a><br><br>
+            <a href="https://bsky.app/profile/k-florek.net"><span class="fa-brands fa-bluesky"></span>@k-florek.net</a>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:20px" src="/resources/images/logos/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <div id="qrcode"></div>
+            <script type="text/javascript">
+              var urlString = window.location.href;
+              urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+              var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: urlString,
+                width: 128,
+                height: 128,
+                colorDark : "#2a76dd",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.Q,
+                imgCSSStyle : "float:right; padding-top:20px;"
+              });
+            </script>
+          </div>
+        </section>
+
+        <!--
+          Overall Objectives:
+            • Discuss how clinical and public health laboratories decide how to onboard sequencing for different use cases.
+            • Describe the metagenomics approaches and use cases currently used in pathogen genomics.
+            • Discuss how genomic epidemiology practices can be used by both public health and clinical laboratories.
+          
+          Session Objectives:
+            • Discussion how sequencing data is utilized in public health and clinical laboratories
+            • Discussion of current and emerging bioinformatics, data analytics and data visualization tools and uses.
+        -->
+
+        <section>
+          <div style="position: relative; text-align: center; color: white; background:black;">
+            <img style="opacity: 0.4;" src="images/dresden.jpg">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+              <h2 class="fragment fade-out" style="color:white;">How does a Diagnostic Test compare to a Surveillance Test in Public Health?</h2>
+            </div>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+              <h2 class="fragment" style="color:white;">How does a NGS Diagnostic Test compare to a NGS Surveillance Test in Public Health?</h2>
+            </div>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>NGS Diagnostic Testing</h1>
+        </section>
+
+        <section>
+          <div class="aligned" style="margin-left: 80px">
+            <img src="images/Pneumococcus.png">
+            <h3><i>Streptococcus pneumoniae</i> serotyping</h3>
+          </div>
+          
+          <div class="columncontainer">
+            <div>
+              <b><p style="text-align: left;">Real-time PCR Approach:</p></b>
+              <ul>
+                <li>48 real-time PCR assays in 12 quadriplex reactions</li>
+                <li>allows for detection of 64 serotypes as individual serotypes or small serogroups</li>
+              </ul>
+            </div>
+
+            <div class="fragment">
+              <b><p style="text-align: left;">WGS Approach:</p></b>
+              <ul>
+                <li>allows for detection of 631 serotypes and genetic variants</li>
+                <li>full genomic resolution allows the additional detection of AMR and virulence factor genes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="citation">
+            <a href="https://github.com/wslh-bio/SPNtypeID">github.com/wslh-bio/SPNtypeID</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Metagenomic LDT for respiratory virus detection and discovery</h3>
+          <img style="width:50%" src="images/metagenomics_chiu.png">
+          <div class="citation">
+            <a href="https://www.nature.com/articles/s41467-024-51470-y">Tan et al. <i>Nature Communications</i> 2024</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Commercial Clinical Tests</h3>
+          <a href="https://kariusdx.com/our-solution/karius-spectrum"><img src="images/karius.png"></a>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>NGS Surveillance Testing</h1>
+        </section>
+
+        <section>
+          <h3>Using Genomic Data to inform Surveillance</h3>
+          <div style="position: relative;">
+            <img style="width:50%;" src="images/frequency_changes.png">
+            <div class="fragment fade-out" style="background-color: white; position: absolute; top: 0; right: 0; margin-top: 14%; width: 100%; height: 65%"> </div>
+          </div>
+          <div class="citation">
+            <a href="https://alliblk.github.io/genepi-book/">An applied genomic epidemiological handbook</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>National Influenza Surveillance Reference Centers</h3>
+          <div class="columncontainer">
+            <div><img src="images/NIRC.jpg"></div>
+            <div style="font-size:0.9em; width:fit-content;">
+              <p><i>APHL and CDC developed the Influenza Virologic Surveillance Right Size Roadmap to systematically define the rationale, vital capabilities, and optimal "right size" for influenza virologic surveillance. The Roadmap can help states determine the optimal amount of laboratory testing to meet national surveillance goals with confidence that the data provides an accurate picture of what is really happening within the US.</i></p>
+            </div>
+          </div>
+
+          <div class="citation">
+            <a href="https://www.aphl.org/programs/infectious_disease/influenza/Pages/default.aspx">APHL Influenza</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Using Genomic Data to inform Outbreaks</h3>
+          <div style="position: relative;">
+            <img style="width:50%;" src="images/distinguishing_cases.png">
+            <div class="fragment fade-out" style="background-color: white; position: absolute; top: 0; right: 0; width: 50%; height: 100%"> </div>
+          </div>
+          <div class="citation">
+            <a href="https://alliblk.github.io/genepi-book/">An applied genomic epidemiological handbook</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Carbapenem-Resistant <i>Acinetobacter baumannii</i> Outbreak</h3>
+          <div class="columncontainer">
+            <div class="columncontainer" style="font-size: small;">
+              <div style="min-width: fit-content;">
+                <ul>
+                  <li>Amikacin: <font color="red">Resistant</font></li>
+                  <li>Aztreonam: <font color="red">Resistant</font></li>
+                  <li>Cefepime: <font color="red">Resistant</font></li>
+                  <li>Cefotaxime: <font color="red">Resistant</font></li>
+                  <li>Ceftazidime: <font color="red">Resistant</font></li>
+                  <li>Ciprofloxacin: <font color="red">Resistant</font></li>
+                  <li>Colistin: <font color="blue">Susceptible</font></li>
+                  <li>Doripenem: <font color="red">Resistant</font></li>
+                  <li>Doxycycline: <font color="red">Resistant</font></li>
+                  <li>Gentamicin: <font color="red">Resistant</font></li>
+                </ul>
+              </div>
+              <div style="min-width: fit-content;">
+                <ul>
+                  <li>Imipenem: <font color="red">Resistant</font></li>
+                  <li>Levofloxacin: <font color="red">Resistant</font></li>
+                  <li>Meropenem: <font color="red">Resistant</font></li>
+                  <li>Minocycline: <font color="orange">Intermediate</font></li>
+                  <li>Piperacillin-tazobactam: <font color="red">Resistant</font></li>
+                  <li>Polymyxin-B: <font color="blue">Susceptible</font></li>
+                  <li>Ticarcillin-clavulanate: <font color="red">Resistant</font></li>
+                  <li>Tobramycin: <font color="red">Resistant</font></li>
+                  <li>Trimethoprim-sulfamethoxazole: <font color="red">Resistant</font></li>
+                </ul>
+              </div>
+            </div>
+            <div style="width:75%">
+              <div style="position: relative;">
+                <img src="images/tree_plasmid.png">
+                <div class="fragment fade-out" style="background-color: white; position: absolute; top: 0; right: 0; width: 59%; height: 100%"> </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Carbapenem-Resistant <i>Acinetobacter baumannii</i> Outbreak</h3>
+          <img src="images/network.png">
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Considerations for Genomic Surveillance</h2>
+        </section>
+
+        <section>
+          <h3>NGS data in key aspects of genomic epidemiology</h3>
+          <div class="columncontainer">
+            <div style="width:fit-content">
+              <ol>
+                <li>Identifying Outbreaks</li>
+                <li>Determine the origin of an outbreak</li>
+                <li>Calculate epidemic parameters</li>
+                <li>Track and reconstruct transmission routes</li>
+                <li>Identify genes and genotypes associated with pathogen phenotypes of interest</li>
+              </ol>
+            </div>
+
+            <div class="fragment">
+              <ol>
+                <li>Is there an outbreak?</li>
+                <li>Where, when and how did a pathogen enter the population of interest?</li>
+                <li>How quickly is the number of infections from the pathogen growing (that is, what are the epidemic dynamics)?</li>
+                <li>How is the pathogen spreading through the population?</li>
+                <li>What genes or genotypes are associated with the pathogen’s virulence or other phenotypes of interest?</li>
+              </ol>
+            </div>
+
+          </div>
+          <div class="citation">
+            <a href="https://link.springer.com/article/10.1186/s13059-014-0538-4">Grad & Lipsitch <i>Genome Biology</i> 2014</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Value of NGS Data increases with timeliness of data and density of samples</h3>
+          <div class="columncontainer">
+            <div><img src="images/ultility_ngs.jpg"></div>
+            <div><p><i>"The utility of pathogen sequencing data is also a function of sequencing density (i.e., the proportion of cases of a disease from which genomes of relevant pathogens are sequenced and shared) and the timeliness of data sharing."</i></p></div>
+          </div>
+          <div class="fragment" style="background-color: gray;color:white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <p>"A focus on seamless integration of genomic, microbiological, clinical, and epidemiological data from across sectors is also crucial."</p>
+          </div>
+          <div class="citation">
+            <a href="https://www.frontiersin.org/journals/science/articles/10.3389/fsci.2024.1298248/full">Struelens et al. <i>Front. Sci.</i> 2024</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Enhanced Detection System for Healthcare-Associated Transmission (EDS-HAT)</h3>
+          <div style="width:50%;float:left;">
+            <p>Combination of WGS surveillance and ML of electronic health records to identify outbreaks and transmission routes.</p>
+            <p class="fragment"><b>"EDS-HAT could have prevented 25 (lower bound) to 63 (upper bound) transmissions. Moreover, 3.1–8.0 fewer 30-day attributable readmissions and 1.6–3.3 fewer deaths would have occurred had EDS-HAT been running in real time."</b></p>
+          </div>
+          <div style="width:50%;float:right;">
+            <img style="width:75%" src="images/eds-hat.jpg">
+          </div>
+          <div class="citation">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9427134/">Sundermann et al. 2022 <i>Clin Infect Dis</i></a>
+          </div>
+        </section>
+        
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Genomic Surveillance: Bioinformatics</h2>
+        </section>
+
+        <section>
+          <img style="width:50%" src="images/binfo_structure.png">
+        </section>
+
+        <section>
+          <h3>Bioinformatics Tools and Workflows</h3>
+
+          <div class="r-stack">
+            <div class="columncontainer">
+              <div>
+                <h3>Bioinformatics Software/Workflows</h3>
+                <ul>
+                  <li>Developed by a researcher or student</li>
+                  <li>Software updates slow or non-existent</li>
+                  <li>Limited documentation</li>
+                  <li>Limited scope or applicability</li>
+                  <li>Suboptimal resource usage</li>
+                </ul>
+              </div>
+
+              <div class="fragment">
+                <h3>Testing Laboratory Requirements</h3>
+                <ul>
+                  <li>Validation/Verification</li>
+                  <li>Consistency: algorithms and databases</li>
+                  <li>Audit trails: data & system</li>
+                  <li>Integration with LIS</li>
+                  <li>QA/QC/QI</li>
+                  <li>Data security</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section>
+          <h3>Workflow Management Languages</h3>
+          <div class="columncontainer">
+            <div>
+              <h4>Nextflow</h4>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Channels/Processes</li>
+                <li class="fragment" data-fragment-index="2">Workflow Logs/Process Logs/Trace File/Execution Report</li>
+                <li class="fragment" data-fragment-index="3">Task Caching</li>
+                <li class="fragment" data-fragment-index="4">Job isolation with Containers</li>
+                <li class="fragment" data-fragment-index="5">Compatibility with range of HPC and Cloud platforms</li>
+              </ul>
+            </div>
+            <div>
+              <h4>WDL (Cromwell)</h4>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Task</li>
+                <li class="fragment" data-fragment-index="2">Workflow Logs/Call Logs</li>
+                <li class="fragment" data-fragment-index="3">Call Caching/Checkpoint Files</li>
+                <li class="fragment" data-fragment-index="4">Job isolation with Containers</li>
+                <li class="fragment" data-fragment-index="5">Compatibility with range of HPC and Cloud platforms</li>
+              </ul>
+            </div>
+            <div>
+              <h4>SnakeMake</h4>
+              <ul>
+                <li class="fragment" data-fragment-index="1">Rule</li>
+                <li class="fragment" data-fragment-index="2">Rule Logs/Reports</li>
+                <li class="fragment" data-fragment-index="3">Between Workflow Caching</li>
+                <li class="fragment" data-fragment-index="4">Job isolation with Containers</li>
+                <li class="fragment" data-fragment-index="5">Limited compatibility with Cloud platforms</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Galaxy</h3>
+          <img style="width:75%" src="images/Galaxy.png">
+          <div class="citation">
+            <a href="https://usegalaxy.org/">usegalaxy.org</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Workflow Execution Service (WES)</h3>
+          <ul>
+            <li><a href="https://terra.bio/"><b>Terra:</b> WDL Workflows</a></li>
+            <li><a href="https://seqera.io/"><b>Seqera Platform:</b> Nextflow Workflows</a></li>
+            <li><a href="https://www.cloudgene.io/"><b>Cloudgene:</b> Nextflow Workflows</a></li>
+            <li><a href="https://github.com/sapporo-wes"><b>Sapporo:</b> CWL, Nextflow, WDL, Snakemake</a></li>
+            <li><a href="https://www.easygenomics.org/"><b>Easy Genomics:</b> CWL, Nextflow, WDL</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Infrastructure</h3>
+          <img src="images/On-premises-vs-Cloud.jpg">          
+        </section>
+
+        <section>
+          <img style="width:70%" src="images/aws_databases.png">
+        </section>
+
+        <section>
+          <h3>WSLH Nextflow Infrastructure</h3>
+          <img style="width:60%" src="images/aws-infra-nextflow.png">
+          <div class="citation">
+            <a href="https://github.com/wslh-bio/aws-infra-nextflow">github.com/wslh-bio/aws-infra-nextflow</a>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Genomic Surveillance: Data visualization</h2>
+        </section>
+
+        <section>
+          <h3>DIY Data Viz: R</h3>
+          <ul>
+            <li><a href="https://ggplot2.tidyverse.org/"><b>ggplot2:</b> highly versatile plotting library</a></li>
+            <li><a href="https://plotly.com/r/"><b>plotly:</b> interactive plotting library can be used in R or python</a></li>
+            <li><a href="https://guangchuangyu.github.io/software/ggtree/"><b>ggtree:</b> extension of ggplot2 for phylogenetic trees</a></li>
+            <li><a href="https://rstudio.github.io/leaflet/"><b>leaflet:</b> JavaScript library for interactive maps, has an R extension</a></li>
+            <li><a href="https://rmarkdown.rstudio.com/"><b>R Markdown:</b> notebook interface to weave narrative and plots</a></li>
+            <li><a href="https://shiny.posit.co/"><b>Shiny:</b> web-apps for R or Python</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>WSLH AR Report Generator</h3>
+          <div>
+            <iframe src="ar_report_html_example.html" width="80%" height="550px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://github.com/wslh-bio/ar_report_generator">github.com/wslh-bio/ar_report_generator</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>WSLH Data Portal</h3>
+          <div>
+            <iframe src="https://dataportal.slh.wisc.edu/" width="80%" height="500px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://github.com/wslh-data/sc2-data-dashboard">github.com/wslh-data/sc2-data-dashboard</a><br>
+            <a href="https://github.com/wslh-data/sc2-wastewater-data-dashboard">github.com/wslh-data/sc2-wastewater-data-dashboard</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Nextstrain</h3>
+          <div>
+            <iframe src="https://nextstrain.org/ncov/gisaid/global/6m" width="80%" height="500px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://nextstrain.org/">nextstrain.org</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>MicrobeTrace</h3>
+          <div>
+            <iframe src="https://microbetrace.cdc.gov/MicrobeTrace/" width="80%" height="500px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://microbetrace.cdc.gov/MicrobeTrace/">microbetrace.cdc.gov/MicrobeTrace</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Microreact</h3>
+          <div>
+            <iframe src="https://microreact.org/project/N1TRn11L" width="80%" height="500px"></iframe>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://microreact.org/">microreact.org</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>AusTrakka</h3>
+          <img style="width:75%" src="images/austrakka.png">
+          <div class="citation">
+            <a href="https://www.nature.com/articles/s41467-022-28529-9">Hoang et al. <i>Nature Communications</i> 2022</a>
+          </div>
+        </section>
+
+        <section data-background="#0969da" style="color:white">
+          <h3>Final Considerations</h3>
+          <ul>
+            <li class="fragment">How does the combination of bioinformatics software, workflows, infrastructure apply in NGS Surveillance Testing and NGS Diagnostic Testing?</li>
+            <li class="fragment">What are the most important considerations when implementing a new NGS based Diagnostic Test?</li>
+            <li class="fragment">What are the most important considerations when implementing a new NGS based Surveillance Test?</li>
+            <li class="fragment">How does the audience impact the data visualization choices and content?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/tb_photo.png">
+              <span style="margin-left:30px;text-align:left">Thomas Blader</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/eg_photo.png">
+              <span style="margin-left:30px;text-align:left">Eva Gunawan, MS</br></span>
+            </div>
+            <h4>Special Thanks</h4>
+            <img style="width: 15%;margin: 10px;" src="https://www.deptagency.com/wp-content/uploads/2024/09/dept-logo.svg"><br>
+            <img style="width: 15%;margin: 10px;" src="https://www.aphl.org/_catalogs/masterpage/APHL/img/aphl-logo.png">
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/vendor/reveal/reveal.js"></script>
+    <script src="/vendor/reveal-plugins/notes/notes.js"></script>
+    <script src="/vendor/reveal-plugins/markdown/markdown.js"></script>
+    <script src="/vendor/reveal-plugins/highlight/highlight.js"></script>
+
+    <!-- Chalkboard & Custom Controls Plugin -->
+    <script src="/vendor/reveal-plugins/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/customcontrols/style.css">
+    <script src="/vendor/reveal-plugins/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/chalkboard/style.css">
+
+    <script>
+      const pen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>';
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        preloadIframes: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        customcontrols: {
+          controls: [
+            //{ icon: '<i class="fa fa-pen-square"></i>',
+            //  title: 'Toggle chalkboard (B)',
+            //  action: 'RevealChalkboard.toggleChalkboard();'
+            //},
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
+        chalkboard: {
+          boardmarkers : [
+                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'}
+          ],
+        },
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls  ]
+      });
+    </script>
+  </body>
+</html>
