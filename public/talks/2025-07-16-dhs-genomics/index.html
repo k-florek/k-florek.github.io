@@ -1,0 +1,366 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - ID Genomics</title>
+
+    <!-- Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" integrity="sha384-Jx4lvM3f1foL3gcKtEZPpp/IOxYaIOJ+KQRq3vP7Towpgy4bjb6wo5QK5VRtnpLh" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/brands.js" integrity="sha384-wRU6vtIpkIdXnWzp+Hq7CNH527PHkmlZz1n7ITVY0YhEPUcSlz2voGAQfVb3d9xe" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/fontawesome.js" integrity="sha384-dCcP+1ToHaZKWNvVqy4+4ekZYXP73UfD3KsBQ0xg54c0+R0I6zsewwjQiM3JUwg+" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/vendor/reveal/reset.css">
+    <link rel="stylesheet" href="/vendor/reveal/reveal.css">
+    <link rel="stylesheet" href="/resources/css/reveal_theme.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/vendor/reveal-plugins/highlight/monokai.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+
+    <!-- Custom QR Code Generator -->
+    <script src="/resources/js/qrcode.js"></script>
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>WSLH CDD Infectious Disease Genomics</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH<br>
+            Senior Genomics and Data Scientist<br>
+            Wisconsin State Laboratory of Hygiene<br>
+            July 16, 2025<br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a><br><br>
+            <a href="https://bsky.app/profile/k-florek.net"><span class="fa-brands fa-bluesky"></span>@k-florek.net</a>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:20px" src="/resources/images/logos/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <div id="qrcode"></div>
+            <script type="text/javascript">
+              var urlString = window.location.href;
+              urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+              var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: urlString,
+                width: 128,
+                height: 128,
+                colorDark : "#2a76dd",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.Q,
+                imgCSSStyle : "float:right; padding-top:20px;"
+              });
+            </script>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>Objectives</h1>
+          <ul>
+            <li>Describe the function of a bioinformatic workflow</li>
+            <li>Explain the Communicable Disease Division's process for genomic data analysis</li>
+            <li>Summarize the Communicable Disease Division's data reporting planning and strategies</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Anatomy of a workflow</h3>
+          <div class="columncontainer">
+            <div style="width: 65%;">
+              <h4>Sequencing Reads</h4>
+              <pre><code style="font-size:0.5em;" class="language-yaml" data-trim data-noescape>
+                @M05192:295:000000000-K6N36:1:1101:9502:1212 1:N:0:NAGCGCTC+NCGTAAGA
+                GCGTTACATGAGGCTTATACTGAAACATTGCCTAATCCCGCCCGGTGGAAAGCTAAAAANTCCTNTGAACTGCNGGGCTATTCAGAAGNNNN
+                +
+                CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGFF@@FGGGGGGGGGGGGGGDGGGGFG#:C@F#:@FGGGGG#:C@FFFGGGAFGF?####
+                @M05192:295:000000000-K6N36:1:1101:13064:1213 1:N:0:NAGCGCTC+NCGTAAGA
+                TAGTGGCACTGTTTGACCATCAGCAACGCATTGGTGAACTGATGCCGGAGCGGCGTTTTNACNANGCACGTCGNCAGCAAATGATGGANNNNNNNNNNNN
+                +
+                CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG#:D#:#6CFGGGGG#:DFGGGFGG??FGG############
+                @M05192:295:000000000-K6N36:1:1101:18301:1216 1:N:0:NAGCGCTC+NCGTAAGA
+                GCCCGGTGGTGTAATTTGCGCCCTCCGAACAAAGCCACGCCACCAGGCTGGCAATCTCANACNTNGCGCCAAANCGCCGCAGAGGAATNNNNNNNN
+                +
+                CCCCCGGGGGFGGGGGGGGGGCFCGGGGGGGGGFGGGGGDGGEGGFGGGGGGGGGGGGF#:C#:#::@D@7FE#6CC#FGGGGCFGFE########
+                @M05192:295:000000000-K6N36:1:1102:8809:23354 1:N:0:TAGCGCTC+GCGTAAGA
+                GTGTTATTTGCGTGTCGCGGGCATTATGGCGGAGTACTCTCAGCCTGACGATATGATGGTGGTTTCCGCCGCCGGTAGCACCACTAACCAGTTGAT
+                +
+                CCC#CFGGFGGDECG9@FFGGGGFGG#,,C7::@F@FFGFFGGGGGGFGEEF@C,9EA9C@BBFGEF>FGECFGGF+F#C##BDFGFFFFE,??9,
+                @M05192:295:000000000-K6N36:1:1102:12222:23342 1:N:0:TAGCGCTC+GCGTAAGA
+                AAGCTAACCGATGCGGATAATGCCGCCGATGGCATTTTTTTCCCCGCCCTTGAGCAAAATATGATGGGTGCGGTGTTAATTAACGAAAATGATGAAGT
+                +
+                CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGCFGGGGGGGGGGGGFGCEFGGGGGGGGGGGGGGEF
+                @M05192:295:000000000-K6N36:1:1102:17996:23344 1:N:0:TAGCGCTC+GCGTAAGA
+                GAGCAGGATAAAACCTACAAAATTACAGTTCTGCATACCAATGATCATCATGGGCATTTTTGGCGCAATGAATATGGCGAATATGGTCTGGCG
+                +
+                CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGDGGGGGGGGGGGGGGGGGGFGGGGGG
+              </code></pre>
+            </div>
+            <div>
+              <h4>General Steps</h4>
+              <ul>
+                <li class="fragment">Sequencing read quality trimming and classification</li>
+                <li class="fragment">Sequencing read mapping or assembly</li>
+                <li class="fragment">Assembly quality control and classification</li>
+                <li class="fragment">Variant identification and classification</li>
+                <li class="fragment">Genome identification and classification</li>
+                <li class="fragment">Result formatting</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section data-background-image="images/nf-core-viralrecon_metro_map_illumina.png" data-background-size="contain">
+        </section>
+
+        <section data-background-image="images/spriggan.png" data-background-size="contain">
+        </section>
+
+        <section>
+          <h3>Genomic software</h3>
+          <div class="columncontainer">
+            <div style="width:30%">
+              <h4>Spriggan</h4>
+              <ul style="font-size:0.7em;">
+                <li>BBDuk</li>
+                <li>FastQC</li>
+                <li>Kraken2</li>
+                <li>BWA</li>
+                <li>NCBIAMRFinderPlus</li>
+                <li>Samtools</li>
+                <li>QUAST</li>
+                <li>MultiQC</li>
+                <li>MLST</li>
+                <li>Custom Python Scripts</li>
+                <li>Custom Bash Scripts</li>
+              </ul>
+            </div>
+            <div style="width:30%;">
+              <h4>Viralrecon</h4>
+                <ul style="font-size:0.7em;">
+                  <li>FastQC</li>
+                  <li>Fastp</li>
+                  <li>Kraken2</li>
+                  <li>Bowtie2</li>
+                  <li>iVar</li>
+                  <li>Picard</li>
+                  <li>BCFTools</li>
+                  <li>SnpEff</li>
+                  <li>SnpSift</li>
+                  <li>ASCIIGenome</li>
+                  <li>QUAST</li>
+                  <li>Pangolin</li>
+                  <li>Nextclade</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+          <h3>WSLH Bioinformatics Workflows - Nextflow</h3>
+          <img src="images/nf-channel-process_fqc.png">
+          <div class="citation"><a href="https://sateeshperi.github.io/nextflow_varcal/nextflow/">Sateesh Peri - Nextflow</a></div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>Objectives</h1>
+          <ul>
+            <li style="text-decoration: line-through;">Describe the function of a bioinformatic workflow</li>
+            <li>Explain the Communicable Disease Division's process for genomic data analysis</li>
+            <li>Summarize the Communicable Disease Division's data reporting planning and strategies</li>
+          </ul>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h3>Easy Genomics</h3>
+          <img style="width: 60%;" src="images/easy-genomics.png">
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>Easy Genomics</h3>
+          <img style="width: 70%;" src="images/easy-genomics-runs.png">
+        </section>
+
+        <section>
+          <h3>Running workflows in AWS</h3>
+          <img style="width: 70%;" src="images/aws-health-omics.jpeg">
+        </section>
+
+        <section>
+          <h3>Data in AWS</h3>
+          <img style="width: 70%;" src="images/aws-s3.png">
+        </section>
+
+        <section>
+          <h3>Querying Data in AWS</h3>
+          <img style="width: 70%;" src="images/athena_query.png">
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h1>Objectives</h1>
+          <ul>
+            <li style="text-decoration: line-through;">Describe the function of a bioinformatic workflow</li>
+            <li style="text-decoration: line-through;">Explain the Communicable Disease Division's process for genomic data analysis</li>
+            <li>Summarize the Communicable Disease Division's data reporting planning and strategies</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Building a reporting framework</h3>
+          <ul>
+            <li class="fragment">Build genomic analysis capacity <i class="fragment fa-solid fa-check"></i></li>
+            <li class="fragment">Develop post-analysis organization/cataloging <i class="fragment fa-solid fa-check"></i></li>
+            <li class="fragment">Deploy resources for reporting</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Metabase</h3>
+          <p>Lightweight framework for data dashboards and public visualizations</p>
+          <img style="width:50%" src="images/metabase-ar-ex.png">
+        </section>
+
+        <section>
+          <h3>Nextstrain</h3>
+          <p>Working with genomic relatedness</p>
+          <img style="width: 40%;" src="images/nextstrain.png">
+          <div class="citation">
+            <a href="https://nextstrain.org/ncov/gisaid/global/6m">nextstrain.org</a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Acknowledgments</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/tb_photo.png">
+              <span style="margin-left:30px;text-align:left">Thomas Blader</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/eg_photo.png">
+              <span style="margin-left:30px;text-align:left">Eva Gunawan, MS</br></span>
+            </div>
+          </div>
+          <br>
+          <div class="citation">
+            <a href="https://revealjs.com/">Reveal.JS</a>
+          </div>
+        </section>
+
+        <section data-background="#0969da">
+          <div id="animate" style="visibility: hidden;">
+            <h1>What questions do you have?</h1>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/vendor/reveal/reveal.js"></script>
+    <script src="/vendor/reveal-plugins/notes/notes.js"></script>
+    <script src="/vendor/reveal-plugins/markdown/markdown.js"></script>
+    <script src="/vendor/reveal-plugins/highlight/highlight.js"></script>
+
+    <!-- Chalkboard & Custom Controls Plugin -->
+    <script src="/vendor/reveal-plugins/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/customcontrols/style.css">
+    <script src="/vendor/reveal-plugins/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/chalkboard/style.css">
+
+    <script>
+            const slideIndex = 19;
+            Reveal.on('slidechanged', function( event ) {
+                const animationSlide = Math.floor((slideIndex / Reveal.getTotalSlides())*100)/100;
+                if(Reveal.getProgress() >= animationSlide){
+                  const e = document.getElementById('animate'); // Replace 'myElementId' with the actual ID of your element
+                  setTimeout(() => {
+                    e.style.visibility = 'visible';
+                    e.classList.add('typewriter');
+                  }, 400);
+                  
+                }
+
+            } );
+    </script>
+
+    <script>
+      const pen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>';
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        preloadIframes: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        customcontrols: {
+          controls: [
+            //{ icon: '<i class="fa fa-pen-square"></i>',
+            //  title: 'Toggle chalkboard (B)',
+            //  action: 'RevealChalkboard.toggleChalkboard();'
+            //},
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
+        chalkboard: {
+          boardmarkers : [
+                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'}
+          ],
+        },
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls  ]
+      });
+    </script>
+  </body>
+</html>
