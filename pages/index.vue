@@ -1,5 +1,5 @@
 <template>
-    <div class="column-container" style="align-items:start;">
+    <header class="splash-main home">
         <div>
             <img class="profile-pic" src="assets/images/florek_hs_small_2024.png">
         </div>
@@ -18,7 +18,7 @@
                 <a href="talks">talks</a>
             </h4>
         </div>
-    </div>
+    </header>
 </template>
 
 <script lang="ts" setup>
@@ -26,7 +26,7 @@ definePageMeta({ layout: 'main' })
 
 useHead({
     bodyAttrs: {
-        class: 'home'
+        class: ''
     }
 })
 </script>

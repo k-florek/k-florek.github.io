@@ -1,0 +1,30 @@
+/*
+  Define Variables
+*/
+:root {
+    --light: #F5F5F5;
+    --dark: #1A1A1A;
+
+    --color-01: #ede7d9ff;
+    --color-02: #d5a021ff;
+    --color-03: #3e92ccff;
+    --color-04: #003049ff;
+    --color-05: #680e4bff;
+    --color-blend-03-05: #53508C;
+    
+    --bg-color: light-dark(var(--light),var(--color-04));
+    --text-color: light-dark(var(--dark),var(--color-blend-03-05));
+
+    --fs-xs: 0.75em;   /* ~12px */
+    --fs-sm: 0.875em;  /* ~14px */
+    --fs-base: 1em;    /* 16px (base) */
+    --fs-md: 1.25em;   /* ~20px */
+    --fs-lg: 1.563em;  /* ~25px */
+    --fs-xl: 1.953em;  /* ~31px */
+    --fs-2xl: 2.441em; /* ~39px */
+    --fs-3xl: 3.052em; /* ~49px */
+    --fs-title: 6em;
+
+    --border-width: 3px;
+    --border-color: light-dark(var(--dark),var(--color-blend-03-05));
+}

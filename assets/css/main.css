@@ -1,70 +1,10 @@
-/*
-  Define Variables
-*/
-:root {
-    --light: #F5F5F5;
-    --dark: #1A1A1A;
-
-    --color-01: #ede7d9ff;
-    --color-02: #d5a021ff;
-    --color-03: #3e92ccff;
-    --color-04: #003049ff;
-    --color-05: #680e4bff;
-    --color-blend-03-05: #53508C;
-        
-    --fs-xs: 0.75em;   /* ~12px */
-    --fs-sm: 0.875em;  /* ~14px */
-    --fs-base: 1em;    /* 16px (base) */
-    --fs-md: 1.25em;   /* ~20px */
-    --fs-lg: 1.563em;  /* ~25px */
-    --fs-xl: 1.953em;  /* ~31px */
-    --fs-2xl: 2.441em; /* ~39px */
-    --fs-3xl: 3.052em; /* ~49px */
-    --fs-title: 6em;
-
-    --border-width: 3px;
-}
-
-
-/* 
-  Fonts
-*/
-@font-face {
-  font-family: 'QuattrocentoSans';
-  src: url('/fonts/Quattrocento_Sans/QuattrocentoSans-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'QuattrocentoSans';
-  src: url('/fonts/Quattrocento_Sans/QuattrocentoSans-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'QuattrocentoSans';
-  src: url('/fonts/Quattrocento_Sans/QuattrocentoSans-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'QuattrocentoSans';
-  src: url('/fonts/Quattrocento_Sans/QuattrocentoSans-BoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Quattrocento';
-  src: url('/fonts/Quattrocento/Quattrocento-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Quattrocento';
-  src: url('/fonts/Quattrocento/Quattrocento-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
+@import "fonts.css";
+@import "card.css";
+@import "navigation.css";
+@import "variables.css";
+@import "images.css";
+@import "splash-main.css";
+@import "content.css";
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
     margin: 0;
@@ -75,18 +15,27 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     vertical-align: baseline
 }
 
+html {
+    height: 100%;
+    color-scheme: light dark;
+}
+
+html[data-user-color-scheme="light"] {
+    color-scheme: light
+}
+
+html[data-user-color-scheme="dark"] {
+    color-scheme: dark
+}
+
 body {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   padding: clamp(.5rem, 3vw, 2rem);
   font-family: 'QuattrocentoSans', sans-serif;
   font-size: var(--fs-base);
   color: var(--dark);
   background-color: var(--light);
-}
-
-body.home{
-  display: grid;
 }
 
 *, *::before, *::after {
@@ -171,198 +120,3 @@ a:hover {
   color: var(--color-02);
 }
 
-/*
-  Header
-*/
-.splash-main {
-  border: 3px solid var(--dark);
-  padding: 2rem 9.5vw;
-  border-radius: .7rem;
-  display: grid;
-  align-content: center;
-  min-height: calc(100vh - 4rem);
-}
-
-/*
-  Images
-*/
-.profile-pic {
-  width:150px;
-  border-radius:50%;
-  box-shadow:2px 2px 5px var(--dark);
-}
-
-.art {
-  border:solid 2px;
-  border-bottom-color:#ffe;
-  border-left-color:#eed;
-  border-right-color:#eed;
-  border-top-color:#ccb;
-  max-height:100%;
-  max-width:100%;
-}
-.frame {
-  background-color: var(--color-01);
-  border:solid 5vmin #eee;
-  border-bottom-color:#fff;
-  border-left-color:#eee;
-  border-radius:2px;
-  border-right-color:#eee;
-  border-top-color:#ddd;
-  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
-  box-sizing:border-box;
-  display:inline-block;
-  margin:10vh 10vw;
-  padding:8vmin;
-  position:relative;
-  text-align:center;
-  &:before {
-    border-radius:2px;
-    bottom:-2vmin;
-    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
-    content:"";
-    left:-2vmin;
-    position:absolute;
-    right:-2vmin;
-    top:-2vmin;
-  }
-  &:after {
-    border-radius:2px;
-    bottom:-2.5vmin;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
-    content:"";
-    left:-2.5vmin;
-    position:absolute;
-    right:-2.5vmin;
-    top:-2.5vmin;
-  }
-}
-
-/*
-  Content Organization
-*/
-.column-container {
-  display:flex;
-  justify-content: space-around;
-  align-items:center;
-  flex-wrap:nowrap;
-  gap:5%;
-}
-
-.content-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.content-items {
-  width: 75%;
-  margin: 0 auto;
-}
-
-.content-images {
-  display: block;
-  margin: 0 auto;
-  padding: 50px;
-}
-
-.content-title {
-  font-size: var(--fs-3xl);
-  text-indent: -0.06em;
-  border-bottom: var(--border-width) solid var(--dark);
-  width: 100%;
-  padding-bottom: 15px;
-  margin-bottom: 5%;
-}
-
-/*
-  Card
-*/
-
-.card {
-  --border-radius: 1.25rem;
-
-  position: relative;
-  height: auto;
-  border-radius: var(--border-radius);
-  padding: 20px;
-  margin: 75px;
-
-  background: var(--light);
-  color: var(--dark);
-}
-
-.card a{
-  color: var(--dark);
-}
-
-@property --glow-deg {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 144deg;
-}
-
-@keyframes glow {
-  100% {
-    --glow-deg: 450deg;
-  }
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-
-  background: linear-gradient(var(--glow-deg), var(--color-05), var(--color-blend-03-05) 50%, var(--color-03));
-  box-shadow: rgba(83,80,140, 0.2) 0 15px 30px -5px;
-
-  margin: calc(-1 * var(--border-width));
-  border-radius: calc(var(--border-radius) + var(--border-width));
-}
-
-/* Potential animation on hover
-.card:hover {
-  animation: glow 5s infinite linear;
-} */
-
-
-
-/*
-  Navigation
-*/
-
-.nav-bar {
-  position: fixed;
-  top: 10;
-  margin-inline: auto;
-  height: 75px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 95vw;
-  z-index: 99;
-}
-
-.glass {
-  border-radius: 1rem;
-  background: hsl(from var(--light) h s l / 0.25);
-  backdrop-filter: blur(12px);
-}
-
-.glass::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  border-radius: inherit;
-  border: var(--border-width) solid transparent;
-  /** More Glass Like Border 
-    background: linear-gradient(hsl(from var(--dark) h s l / 0.40), hsl(from var(--dark) h s l / 0.80)) border-box; 
-  */
-  background: var(--dark);
-  mask: linear-gradient(black, black) border-box,
-    linear-gradient(black, black) padding-box;
-  mask-composite: subtract;
-}

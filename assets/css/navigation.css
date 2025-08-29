@@ -1,0 +1,36 @@
+/*
+  Navigation
+*/
+
+.nav-bar {
+  position: fixed;
+  top: 10;
+  margin-inline: auto;
+  height: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95vw;
+  z-index: 99;
+}
+
+.glass {
+  border-radius: 1rem;
+  background: hsl(from var(--light) h s l / 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  border: var(--border-width) solid transparent;
+  /** More Glass Like Border 
+    background: linear-gradient(hsl(from var(--dark) h s l / 0.40), hsl(from var(--dark) h s l / 0.80)) border-box; 
+  */
+  background: var(--dark);
+  mask: linear-gradient(black, black) border-box,
+    linear-gradient(black, black) padding-box;
+  mask-composite: subtract;
+}

@@ -1,0 +1,50 @@
+/*
+  Card
+*/
+
+.card {
+  --border-radius: 1.25rem;
+
+  position: relative;
+  height: auto;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 75px;
+
+  background: var(--light);
+  color: var(--dark);
+}
+
+.card a{
+  color: var(--dark);
+}
+
+@property --glow-deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 144deg;
+}
+
+@keyframes glow {
+  100% {
+    --glow-deg: 450deg;
+  }
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background: linear-gradient(var(--glow-deg), var(--color-05), var(--color-blend-03-05) 50%, var(--color-03));
+  box-shadow: rgba(83,80,140, 0.2) 0 15px 30px -5px;
+
+  margin: calc(-1 * var(--border-width));
+  border-radius: calc(var(--border-radius) + var(--border-width));
+}
+
+/* Potential animation on hover
+.card:hover {
+  animation: glow 5s infinite linear;
+} */

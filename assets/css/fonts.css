@@ -1,0 +1,39 @@
+/* 
+  Fonts
+*/
+@font-face {
+  font-family: 'QuattrocentoSans';
+  src: url('/fonts/Quattrocento_Sans/QuattrocentoSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'QuattrocentoSans';
+  src: url('/fonts/Quattrocento_Sans/QuattrocentoSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'QuattrocentoSans';
+  src: url('/fonts/Quattrocento_Sans/QuattrocentoSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'QuattrocentoSans';
+  src: url('/fonts/Quattrocento_Sans/QuattrocentoSans-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Quattrocento';
+  src: url('/fonts/Quattrocento/Quattrocento-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quattrocento';
+  src: url('/fonts/Quattrocento/Quattrocento-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
