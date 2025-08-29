@@ -8,8 +8,8 @@
   position: relative;
   height: auto;
   border-radius: var(--border-radius);
-  padding: 20px;
-  margin: 75px;
+  padding: clamp(12px, 4vw, 20px);
+  margin: clamp(24px, 8vw, 75px);
 
   background: var(--light);
   color: var(--dark);

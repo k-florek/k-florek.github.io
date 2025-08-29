@@ -15,15 +15,15 @@
     --bg-color: var(--light);
     --text-color: var(--dark);
 
-    --fs-xs: 0.75em;   /* ~12px */
-    --fs-sm: 0.875em;  /* ~14px */
-    --fs-base: 1em;    /* 16px (base) */
-    --fs-md: 1.25em;   /* ~20px */
-    --fs-lg: 1.563em;  /* ~25px */
-    --fs-xl: 1.953em;  /* ~31px */
-    --fs-2xl: 2.441em; /* ~39px */
-    --fs-3xl: 3.052em; /* ~49px */
-    --fs-title: 6em;
+    --fs-xs: clamp(0.65em, 1vw, 0.75em);      /* ~10.4px - 12px */
+    --fs-sm: clamp(0.75em, 1.2vw, 0.875em);   /* ~12px - 14px */
+    --fs-base: clamp(0.875em, 1.5vw, 1em);    /* ~14px - 16px */
+    --fs-md: clamp(1em, 2vw, 1.25em);         /* 16px - 20px */
+    --fs-lg: clamp(1.25em, 2.5vw, 1.563em);   /* 20px - 25px */
+    --fs-xl: clamp(1.5em, 3vw, 1.953em);      /* 24px - 31px */
+    --fs-2xl: clamp(1.75em, 4vw, 2.441em);    /* 28px - 39px */
+    --fs-3xl: clamp(2em, 5vw, 3.052em);       /* 32px - 49px */
+    --fs-title: clamp(2.5em, 10vw, 6em);      /* 40px - 96px */
 
     --border-width: 3px;
     --border-color: var(--dark);

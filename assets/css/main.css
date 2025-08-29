@@ -99,19 +99,6 @@ a:hover {
   text-decoration: none;
 }
 
-.link-set {
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-}
-
-.link-set a {
-  color: var(--color-03);
-  text-decoration: none;
-  text-align: center;
-}
-
 .link-social a {
   color: var(--dark);
 }

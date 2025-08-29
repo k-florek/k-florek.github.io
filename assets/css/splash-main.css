@@ -49,3 +49,17 @@ header.splash-main h3 {
 header.splash-main h4 {
   font-size: clamp(0.75em, 4vw, var(--fs-xl));
 }
+
+.link-set {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  gap:5%;
+}
+
+.link-set a {
+  color: var(--color-03);
+  text-decoration: none;
+  text-align: center;
+}
