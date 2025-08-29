@@ -12,8 +12,8 @@
     --color-05: #680e4bff;
     --color-blend-03-05: #53508C;
     
-    --bg-color: light-dark(var(--light),var(--color-04));
-    --text-color: light-dark(var(--dark),var(--color-blend-03-05));
+    --bg-color: var(--light);
+    --text-color: var(--dark);
 
     --fs-xs: 0.75em;   /* ~12px */
     --fs-sm: 0.875em;  /* ~14px */
@@ -26,5 +26,5 @@
     --fs-title: 6em;
 
     --border-width: 3px;
-    --border-color: light-dark(var(--dark),var(--color-blend-03-05));
+    --border-color: var(--dark);
 }
