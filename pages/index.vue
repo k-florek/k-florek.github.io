@@ -26,7 +26,7 @@ definePageMeta({ layout: 'main' })
 
 useHead({
     bodyAttrs: {
-        class: ''
+        class: 'splash-main'
     }
 })
 </script>
