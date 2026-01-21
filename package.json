@@ -5,7 +5,7 @@
   "scripts": {
     "build": "./copy-vendor-assets.sh && nuxt build",
     "dev": "./copy-vendor-assets.sh && nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "./copy-vendor-assets.sh && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
