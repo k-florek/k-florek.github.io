@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - Microbiology On Tap</title>
+
+    <!-- Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" integrity="sha384-Jx4lvM3f1foL3gcKtEZPpp/IOxYaIOJ+KQRq3vP7Towpgy4bjb6wo5QK5VRtnpLh" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/brands.js" integrity="sha384-wRU6vtIpkIdXnWzp+Hq7CNH527PHkmlZz1n7ITVY0YhEPUcSlz2voGAQfVb3d9xe" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/fontawesome.js" integrity="sha384-dCcP+1ToHaZKWNvVqy4+4ekZYXP73UfD3KsBQ0xg54c0+R0I6zsewwjQiM3JUwg+" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/vendor/reveal/reset.css">
+    <link rel="stylesheet" href="/vendor/reveal/reveal.css">
+    <link rel="stylesheet" href="/resources/css/reveal_theme.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/vendor/reveal-plugins/highlight/monokai.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+
+    <!-- Custom QR Code Generator -->
+    <script src="/resources/js/qrcode.js"></script>
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Clean Hands, Dirty Secrets:<br> The <i>Candida auris</i> Mystery</h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH<br>
+            Senior Genomics and Data Scientist<br>
+            Wisconsin State Laboratory of Hygiene<br>
+            <br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a><br><br>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:20px" src="/resources/images/logos/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <div id="qrcode"></div>
+            <script type="text/javascript">
+              var urlString = window.location.href;
+              urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+              var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: urlString,
+                width: 128,
+                height: 128,
+                colorDark : "#2a76dd",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.Q,
+                imgCSSStyle : "float:right; padding-top:20px;"
+              });
+            </script>
+          </div>
+        </section>
+
+        <!-- 
+        
+        What is the state laboratory of hygiene its history and purpose
+        
+        What I do
+
+        The emergence of C auris
+
+        https://www.cdc.gov/candida-auris/tracking-c-auris/index.html?2024=2020
+
+        The 4 clades
+
+        A new name Candidozyma?!
+
+        Why its bad
+        
+        -->
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <div class="columncontainer">
+            <div>
+              <h1><i>Candida auris</i></h1>
+              <img style="max-width: 600px;" src="images/cauris.webp">
+            </div>
+            <div>
+              <ul>
+                <li>Fungus - yeast (single cell and reproduces via budding or fission)</li>
+                <li>First discovered in 2009 in Japan</li>
+                <li>Nosocomial - infection acquired in hospitals or healthcare facilities</li>
+                <li>'colonization' - patients can have <i>C. auris</i> on their skin without having symptoms</li>
+                <li>30% to 60% mortality rate for invasive infections</li>
+              </ul>
+            </div>
+          </div>
+          
+        </section>
+
+        <section  data-transition="slide-in fade-out">
+          <div class="columncontainer">
+            <div style="width: 60%">
+              <img style="max-width: 300px;" src="images/wslh-logo.png">
+              <ul>
+                <li class="fragment">Founded 1903</li>
+                <li class="fragment">UW School of Medicine and Public Health</li>
+                <li class="fragment">rare for the state lab to be part of a university and not a state agency</li>
+                <li class="fragment">Hygiene -> Hygiea, the mythological Greek goddess of health, cleanliness and hygiene</li>
+              </ul>
+            </div>
+            <div>
+              <img style="max-width: 400px;" src="images/henry_mall.jpg">
+              <img style="max-width: 400px;" src="images/AG-Drive.jpg">
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <div class="columncontainer">
+            <div style="width: 60%">
+              <img style="max-width: 300px;" src="images/wslh-logo.png">
+              <ul>
+                <li>Clinical Testing</li>
+                <li>Environmental Testing</li>
+                <li>Occupational Health and Safety Services</li>
+                <li>Forensic Toxicology</li>
+                <li>Proficiency Testing</li>
+              </ul>
+            </div>
+            <div>
+              <img style="max-width: 400px;" src="images/henry_mall.jpg">
+              <img style="max-width: 400px;" src="images/AG-Drive.jpg">
+            </div>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <div class="columncontainer">
+            <div style="width:40%">
+              <h3>Why is <i>Candida auris</i> so deadly?</h3>
+            </div>
+            <div style="width:60%" class="fragment" data-fragment-index="1">
+              <p><b>Multidrug-resistant</b></p>
+              <ul>
+                <li>Triazoles (Fluconazole)<span class="fragment" data-fragment-index="2"> - 90% are resistant</span></li>
+                <li>Polyenes (Amphotericin B)<span class="fragment" data-fragment-index="2"> - 30% are resistant</span></li>
+                <li>Echinocandins (Micafungin)<span class="fragment" data-fragment-index="2"> - &lt;2% are resistant</span></li>
+              </ul>
+              
+            </div>
+          </div>
+          <div class="columncontainer">
+            <div style="width:40%">
+              <img src="images/candida-auris.jpg">
+            </div>
+            <div style="width:60%">
+              <p class="fragment" data-fragment-index="3">Blood stream infections (candidemia) typically occurs in patients already suffering from serious illnesses, making the disease more difficult to treat.</p>
+            </div>
+          </div>
+
+          <div class="fragment fade-up" data-fragment-index="4" style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.88); display:flex; align-items:center; justify-content:center; z-index:10;">
+            <h2 style="color:#1a1a2e; font-size:2.5em;">Where did it come from?</h2>
+          </div>
+        </section>
+
+        <section>
+          <h3>WSLH Communicable Disease Division<br> Bioinformatics Team</h3>
+          <div style="width:50%;float:left;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:90px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/as_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Abigail Shockey, PhD</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:90px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/cj_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Christopher Jossart, MPH</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:90px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/dl_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Dustin Lyfoung, MS</br></span>
+            </div>
+          </div>
+          <div style="width:50%;float:right;">
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:90px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/tb_photo.png">
+              <span style="margin-left:30px;text-align:left">Thomas Blader</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:90px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/eg_photo.png">
+              <span style="margin-left:30px;text-align:left">Eva Gunawan, MS</br></span>
+            </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:90px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/mt_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Madeline Topf, PhD</br></span>
+            </div>          
+          </div>
+          <br>
+        </section>
+
+        <section>
+          <div class="columncontainer">
+            <div style="width: 50%;">
+              <img src="images/bioinfomatics.png">
+            </div>
+            <div style="width: 50%;">
+              <img src="images/binfo_infographic.webp">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Developing an understanding of <i>Candida auris</i> emergence</h3>
+          <div style="position:relative; height:520px; width:100%;">
+            <img class="fragment" data-fragment-index="1" style="position:absolute; width:52%; box-shadow:4px 4px 12px rgba(0,0,0,0.5); background-color:white; transform:rotate(-6deg); left:5%; top:42px; z-index:1;" src="images/origin-cauris.png">
+            <img class="fragment" data-fragment-index="2" style="position:absolute; width:52%; box-shadow:4px 4px 12px rgba(0,0,0,0.5); background-color:white; transform:rotate(4deg); left:12%; top:20px; z-index:2;" src="images/cauris-emergence-2017.png">
+            <img class="fragment" data-fragment-index="3" style="position:absolute; width:52%; box-shadow:4px 4px 12px rgba(0,0,0,0.5); background-color:white; transform:rotate(-3deg); left:28%; top:60px; z-index:3;" src="images/cauris-emergence-2022.png">
+            <img class="fragment" data-fragment-index="4" style="position:absolute; width:52%; box-shadow:4px 4px 12px rgba(0,0,0,0.5); background-color:white; transform:rotate(6deg); left:43%; top:30px; z-index:4;" src="images/cauris-emergence-2024.png">
+          </div>
+          <div class="citation">
+            <a class="fragment" data-fragment-index="1" href="https://pubmed.ncbi.nlm.nih.gov/19161556/">Satoh et al. 2009 <i>Microbiol Immunol.</i></a><br>
+            <a class="fragment" data-fragment-index="2" href="https://pubmed.ncbi.nlm.nih.gov/27988485/">Lockhart et al. 2017 <i>Clinical Infectious Diseases</i></a><br>
+            <a class="fragment" data-fragment-index="3" href="https://pubmed.ncbi.nlm.nih.gov/36154919/">Spruijtenburg et al. 2022 <i>Emerg Microbes Infect.</i></a><br>
+            <a class="fragment" data-fragment-index="4" href="https://pubmed.ncbi.nlm.nih.gov/39008997/">Suphavilai et al. 2024 <i>Lancet Microbe.</i></a><br>
+          </div>
+        </section>
+
+        <section data-transition="slide-in fade-out">
+          <h3>Simultaneous Global Emergence?!</h3>
+          <div class="columncontainer">
+            <div style="width:60%">
+              <img src="images/cauis_4.svg">
+            </div>
+            <div style="width:40%">
+              <img src="images/cauris-tree-4-clades.png">
+            </div>
+          </div>
+          <div class="citation">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/39008997/">Suphavilai et al. 2024 <i>Lancet Microbe.</i></a><br>
+          </div>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <h3>Simultaneous Global Emergence?!</h3>
+          <div class="columncontainer">
+            <div style="width:60%">
+              <img src="images/cauis_5.svg">
+            </div>
+            <div style="width:40%">
+              <img src="images/cauris-tree-5-clades.png">
+            </div>
+          </div>
+          <div class="citation">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/39008997/">Suphavilai et al. 2024 <i>Lancet Microbe.</i></a><br>
+          </div>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>Simultaneous Global Emergence?!</h3>
+          <div class="columncontainer">
+            <div style="width:60%">
+              <img src="images/cauis_6.svg">
+            </div>
+            <div style="width:40%">
+              <img src="images/cauris-tree-6-clades.png">
+            </div>
+          </div>
+          <div class="citation">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/39008997/">Suphavilai et al. 2024 <i>Lancet Microbe.</i></a><br>
+          </div>
+        </section>
+
+        <section>
+          <h3><i>Candida auris</i> in the US</h3>
+          <img style="max-height:400px" src="images/cdc-cauris.png">
+          <div class="citation">
+            <a href="https://www.cdc.gov/candida-auris/tracking-c-auris/">CDC <i>Candida auris</i> Tracking Dashboard<br></a>
+          </div>
+        </section>
+
+        <section>
+          <h3>What can you do to stop the spread of <i>Candida auris</i>?</h3>
+          <a href="https://www.cdc.gov/fungal/"><img class="fragment" style="max-width: 500px;" src="images/handwashing.jpg"></a>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="/vendor/reveal/reveal.js"></script>
+    <script src="/vendor/reveal-plugins/notes/notes.js"></script>
+    <script src="/vendor/reveal-plugins/markdown/markdown.js"></script>
+    <script src="/vendor/reveal-plugins/highlight/highlight.js"></script>
+
+    <!-- Chalkboard & Custom Controls Plugin -->
+    <script src="/vendor/reveal-plugins/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/customcontrols/style.css">
+    <script src="/vendor/reveal-plugins/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/chalkboard/style.css">
+
+    <script>
+      const pen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>';
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        preloadIframes: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        customcontrols: {
+          controls: [
+            //{ icon: '<i class="fa fa-pen-square"></i>',
+            //  title: 'Toggle chalkboard (B)',
+            //  action: 'RevealChalkboard.toggleChalkboard();'
+            //},
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
+        chalkboard: {
+          boardmarkers : [
+                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'}
+          ],
+        },
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls  ]
+      });
+    </script>
+  </body>
+</html>
