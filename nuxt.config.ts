@@ -5,7 +5,7 @@ import path from 'path'
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  ssr: false,
+  ssr: true,
   css: [
     '~/assets/css/main.css',
     '@fortawesome/fontawesome-svg-core/styles.css'
@@ -13,5 +13,24 @@ export default defineNuxtConfig({
   plugins: [
     '~/plugins/fontawesome.js'
   ],
-  modules: ['@nuxt/content']
+  modules: ['@nuxt/content'],
+  vite: {
+    optimizeDeps: {
+      exclude: ['#app-manifest']
+    }
+  },
+  app: {
+    head: {
+      htmlAttrs: { lang: 'en' },
+      titleTemplate: '%s | Dr. Kelsey Florek',
+      meta: [
+        { name: 'author', content: 'Dr. Kelsey Florek' },
+        { property: 'og:site_name', content: 'Dr. Kelsey Florek' },
+        { name: 'twitter:card', content: 'summary' },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ]
+    }
+  }
 })

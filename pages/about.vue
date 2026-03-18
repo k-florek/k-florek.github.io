@@ -15,6 +15,15 @@
 </template>
 
 <script lang="ts" setup>
+    useSeoMeta({
+        title: 'About',
+        description: 'Learn about Dr. Kelsey Florek – Senior Genomics and Data Scientist at the Wisconsin State Laboratory of Hygiene, passionate about infectious diseases, bioinformatics, and public health.',
+        ogTitle: 'About | Dr. Kelsey Florek',
+        ogDescription: 'Senior Genomics and Data Scientist specializing in genomics, bioinformatics, data science, and public health at the Wisconsin State Laboratory of Hygiene.',
+        ogUrl: 'https://k-florek.net/about',
+        ogImage: 'https://k-florek.net/florek_hs_small_2024.png',
+        ogType: 'profile',
+    })
     useHead({
         bodyAttrs: {
             class: 'page'

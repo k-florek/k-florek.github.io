@@ -10,6 +10,15 @@
 </template>
 
 <script lang="ts" setup>
+useSeoMeta({
+    title: 'Talks',
+    description: 'Conference talks and presentations by Dr. Kelsey Florek on genomics, bioinformatics workflows, public health data science, and pathogen surveillance.',
+    ogTitle: 'Talks | Dr. Kelsey Florek',
+    ogDescription: 'Conference talks and presentations on genomics, bioinformatics workflows, public health data science, and pathogen surveillance.',
+    ogUrl: 'https://k-florek.net/talks',
+    ogType: 'website',
+})
+
 const { data: talks } = await useAsyncData('talks', () => {
   return queryCollection('talks')
     .order('date', 'DESC')
