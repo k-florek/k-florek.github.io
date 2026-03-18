@@ -37,14 +37,15 @@
   z-index: -1;
   inset: 0;
 
-  background: linear-gradient(var(--glow-deg), var(--color-05), var(--color-blend-03-05) 50%, var(--color-03));
+  background: var(--dark);
   box-shadow: rgba(83,80,140, 0.2) 0 15px 30px -5px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 
   margin: calc(-1 * var(--border-width));
   border-radius: calc(var(--border-radius) + var(--border-width));
 }
 
-/* Potential animation on hover
-.card:hover {
-  animation: glow 5s infinite linear;
-} */
+.card:hover::before {
+  background: var(--color-02);
+  box-shadow: hsl(from var(--color-02) h s l / 0.4) 0 15px 30px -5px;
+}
