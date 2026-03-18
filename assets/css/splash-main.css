@@ -88,10 +88,30 @@ header.splash-main h4 {
   padding: 0;
   margin: 0;
   gap:5%;
+  position: relative;
+  --ind-left: 0px;
+  --ind-width: 0px;
+  --ind-opacity: 0;
+}
+
+.link-set::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--ind-left);
+  width: var(--ind-width);
+  height: 2px;
+  background: var(--dark);
+  opacity: var(--ind-opacity);
+  transition: left 0.3s ease, width 0.3s ease, opacity 0.15s ease;
 }
 
 .link-set a {
-  color: var(--color-03);
+  color: var(--dark);
   text-decoration: none;
   text-align: center;
+}
+
+.link-set a:hover {
+  color: var(--color-02);
 }

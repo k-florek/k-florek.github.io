@@ -11,11 +11,11 @@
                 <a href="https://www.linkedin.com/in/kelseyflorek/" aria-label="LinkedIn">&emsp;<FontAwesomeIcon :icon="['fab', 'linkedin']" /></a>
                 <a href="https://bsky.app/profile/k-florek.net" aria-label="Bluesky">&emsp;<FontAwesomeIcon :icon="['fab', 'bluesky']" /></a>
             </div>
-            <div class="link-set" style="padding-top:1rem;">
-                <a href="about">about</a>
-                <a href="publications">publications</a>
-                <a href="lectures">lectures</a>
-                <a href="talks">talks</a>
+            <div class="link-set" style="padding-top:1rem;" ref="linkSet" @mouseleave="hideIndicator">
+                <a href="about" @mouseenter="moveIndicator">about</a>
+                <a href="publications" @mouseenter="moveIndicator">publications</a>
+                <a href="lectures" @mouseenter="moveIndicator">lectures</a>
+                <a href="talks" @mouseenter="moveIndicator">talks</a>
             </div>
         </div>
     </header>
@@ -23,6 +23,21 @@
 
 <script lang="ts" setup>
 definePageMeta({ layout: 'main' })
+
+const linkSet = ref<HTMLElement | null>(null)
+
+function moveIndicator(e: MouseEvent) {
+    const container = linkSet.value
+    const link = e.currentTarget as HTMLElement
+    if (!container) return
+    container.style.setProperty('--ind-left', link.offsetLeft + 'px')
+    container.style.setProperty('--ind-width', link.offsetWidth + 'px')
+    container.style.setProperty('--ind-opacity', '1')
+}
+
+function hideIndicator() {
+    linkSet.value?.style.setProperty('--ind-opacity', '0')
+}
 
 const description = 'Dr. Kelsey Florek is a Senior Genomics and Data Scientist at the Wisconsin State Laboratory of Hygiene, specializing in genomics, bioinformatics, data science, and public health.'
 
