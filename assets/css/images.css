@@ -3,9 +3,9 @@
   Images
 */
 .profile-pic {
-  width:150px;
-  border-radius:50%;
-  box-shadow:2px 2px 5px var(--dark);
+  width: 175px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px var(--dark);
 }
 
 .art {

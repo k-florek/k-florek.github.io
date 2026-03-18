@@ -32,6 +32,26 @@ header.splash-main {
 
 .splash-main.home {
   padding: 2rem 9.5vw;
+  grid-template-columns: auto 1fr;
+  column-gap: clamp(1rem, 4vw, 3rem);
+  align-items: start;
+}
+
+@media screen and (max-width: 600px) {
+  .splash-main.home {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .splash-main.home > div:first-child {
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .link-set {
+    justify-content: center;
+  }
 }
 
 
@@ -54,6 +74,11 @@ header.splash-main h3 {
 }
 
 header.splash-main h4 {
+  font-size: clamp(0.75em, 4vw, var(--fs-xl));
+}
+
+.link-social,
+.link-set {
   font-size: clamp(0.75em, 4vw, var(--fs-xl));
 }
 

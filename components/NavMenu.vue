@@ -11,7 +11,7 @@
             class="">
             {{ item.label }}
           </NuxtLink>
-          <a href="javascript:void(0);" class="icon" @click="navResponse">
+          <a href="javascript:void(0);" class="icon" aria-label="Toggle navigation" @click="navResponse">
             <FontAwesomeIcon :icon="['fa', 'bars']" />
           </a>
         </div>
