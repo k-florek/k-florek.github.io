@@ -1,7 +1,7 @@
 <template>
     <header class="splash-main home">
         <div>
-            <img class="profile-pic" src="assets/images/florek_hs_small_2024.png" alt="Profile photo of Dr. Kelsey Florek">
+            <img class="profile-pic" src="assets/images/florek_hs_2025.jpg" alt="Profile photo of Dr. Kelsey Florek">
         </div>
         <div>
             <h2>Dr. Kelsey Florek, PhD, MPH</h2>
