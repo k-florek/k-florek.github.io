@@ -16,7 +16,18 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content'],
   vite: {
     optimizeDeps: {
-      exclude: ['#app-manifest']
+      exclude: [
+        '#app-manifest',
+        'remark-gfm',
+        'remark-emoji',
+        'remark-mdc',
+        'remark-rehype',
+        'rehype-raw',
+        'parse5',
+        'unist-util-visit',
+        'unified',
+        'debug'
+      ]
     }
   },
   app: {
