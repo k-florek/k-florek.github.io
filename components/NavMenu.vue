@@ -31,6 +31,7 @@ import { navResponse } from '~/composables/navResponse'
 const menuItems = [
   { label: 'home', to: '/' },
   { label: 'about', to: '/about' },
+  { label: 'blog', to: '/blog' },
   { label: 'publications', to: '/publications' },
   { label: 'lectures', to: '/lectures' },
   { label: 'talks', to: '/talks' }

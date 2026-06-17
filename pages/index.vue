@@ -13,6 +13,7 @@
             </div>
             <div class="link-set" style="padding-top:1rem;" ref="linkSet" @mouseleave="hideIndicator">
                 <a href="about" @mouseenter="moveIndicator">about</a>
+                <a href="blog" @mouseenter="moveIndicator">blog</a>
                 <a href="publications" @mouseenter="moveIndicator">publications</a>
                 <a href="lectures" @mouseenter="moveIndicator">lectures</a>
                 <a href="talks" @mouseenter="moveIndicator">talks</a>
