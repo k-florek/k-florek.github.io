@@ -39,6 +39,23 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 /********************************
 Custom Elements
 ********************************/
+.reveal .slides section .fragment.highlight-on-advance {
+  opacity: 1;
+  visibility: visible;
+}
+
+.reveal .slides section .fragment.highlight-on-advance.visible {
+  background-color: #2a76dd;
+  color: #fff;
+  padding: 0.1em 0.3em; /* optional: gives the highlight some breathing room */
+  border-radius: 0.2em; /* optional: rounded corners */
+}
+
+.paper {
+  box-shadow:4px 4px 12px rgba(0,0,0,0.5); 
+  /*transform:rotate(random(-6deg,6deg));*/
+}
+
 .citation {
   position: absolute;
   bottom: 0;
