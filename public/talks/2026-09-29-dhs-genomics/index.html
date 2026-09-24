@@ -6,7 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>KFlorek - ID Genomics</title>
+    <title>KFlorek - CDD Bioinformatics</title>
 
     <!-- Icons -->
     <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" integrity="sha384-Jx4lvM3f1foL3gcKtEZPpp/IOxYaIOJ+KQRq3vP7Towpgy4bjb6wo5QK5VRtnpLh" crossorigin="anonymous"></script>
@@ -32,13 +32,13 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h2>WSLH CDD Infectious Disease Genomics</h2>
+          <h2>WSLH CDD bioinformatics capabilities and service updates</h2>
           <br>
           <p>
             Kelsey Florek, PhD, MPH<br>
             Senior Genomics and Data Scientist<br>
             Wisconsin State Laboratory of Hygiene<br>
-            July 16, 2025<br>
+            September 29, 2026<br>
           </p>
 
           <div style="position:absolute;width: 100%;text-align:center;">
@@ -71,174 +71,99 @@
         <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
           <h1>Objectives</h1>
           <ul>
-            <li>Describe the function of a bioinformatic workflow</li>
-            <li>Explain the Communicable Disease Division's process for genomic data analysis</li>
-            <li>Summarize the Communicable Disease Division's data reporting planning and strategies</li>
+            <li>Describe the bioinformatics capabilities and services of the Communicable Disease Division</li>
+            <li>Highlight recent updates and improvements in the Communicable Disease Division's bioinformatics services</li>
+            <li>Showcase examples of bioinformatics workflows used by the Communicable Disease Division</li>
           </ul>
         </section>
 
         <section>
-          <h3>Anatomy of a workflow</h3>
-          <div class="columncontainer">
-            <div style="width: 65%;">
-              <h4>Sequencing Reads</h4>
-              <pre><code style="font-size:0.5em;" class="language-yaml" data-trim data-noescape>
-                @M05192:295:000000000-K6N36:1:1101:9502:1212 1:N:0:NAGCGCTC+NCGTAAGA
-                GCGTTACATGAGGCTTATACTGAAACATTGCCTAATCCCGCCCGGTGGAAAGCTAAAAANTCCTNTGAACTGCNGGGCTATTCAGAAGNNNN
-                +
-                CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGFF@@FGGGGGGGGGGGGGGDGGGGFG#:C@F#:@FGGGGG#:C@FFFGGGAFGF?####
-                @M05192:295:000000000-K6N36:1:1101:13064:1213 1:N:0:NAGCGCTC+NCGTAAGA
-                TAGTGGCACTGTTTGACCATCAGCAACGCATTGGTGAACTGATGCCGGAGCGGCGTTTTNACNANGCACGTCGNCAGCAAATGATGGANNNNNNNNNNNN
-                +
-                CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG#:D#:#6CFGGGGG#:DFGGGFGG??FGG############
-                @M05192:295:000000000-K6N36:1:1101:18301:1216 1:N:0:NAGCGCTC+NCGTAAGA
-                GCCCGGTGGTGTAATTTGCGCCCTCCGAACAAAGCCACGCCACCAGGCTGGCAATCTCANACNTNGCGCCAAANCGCCGCAGAGGAATNNNNNNNN
-                +
-                CCCCCGGGGGFGGGGGGGGGGCFCGGGGGGGGGFGGGGGDGGEGGFGGGGGGGGGGGGF#:C#:#::@D@7FE#6CC#FGGGGCFGFE########
-                @M05192:295:000000000-K6N36:1:1102:8809:23354 1:N:0:TAGCGCTC+GCGTAAGA
-                GTGTTATTTGCGTGTCGCGGGCATTATGGCGGAGTACTCTCAGCCTGACGATATGATGGTGGTTTCCGCCGCCGGTAGCACCACTAACCAGTTGAT
-                +
-                CCC#CFGGFGGDECG9@FFGGGGFGG#,,C7::@F@FFGFFGGGGGGFGEEF@C,9EA9C@BBFGEF>FGECFGGF+F#C##BDFGFFFFE,??9,
-                @M05192:295:000000000-K6N36:1:1102:12222:23342 1:N:0:TAGCGCTC+GCGTAAGA
-                AAGCTAACCGATGCGGATAATGCCGCCGATGGCATTTTTTTCCCCGCCCTTGAGCAAAATATGATGGGTGCGGTGTTAATTAACGAAAATGATGAAGT
-                +
-                CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGCFGGGGGGGGGGGGFGCEFGGGGGGGGGGGGGGEF
-                @M05192:295:000000000-K6N36:1:1102:17996:23344 1:N:0:TAGCGCTC+GCGTAAGA
-                GAGCAGGATAAAACCTACAAAATTACAGTTCTGCATACCAATGATCATCATGGGCATTTTTGGCGCAATGAATATGGCGAATATGGTCTGGCG
-                +
-                CCCCCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGDGGGGGGGGGGGGGGGGGGFGGGGGG
-              </code></pre>
-            </div>
-            <div>
-              <h4>General Steps</h4>
-              <ul>
-                <li class="fragment">Sequencing read quality trimming and classification</li>
-                <li class="fragment">Sequencing read mapping or assembly</li>
-                <li class="fragment">Assembly quality control and classification</li>
-                <li class="fragment">Variant identification and classification</li>
-                <li class="fragment">Genome identification and classification</li>
-                <li class="fragment">Result formatting</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+          <h3>Advanced Molecular Detection (AMD)</h3>
+          <p>The AMD program is helping to modernize disease-investigation capabilities by building and integrating laboratory, bioinformatics, and epidemiology technologies across CDC and in state and local public health systems. These modern tools deliver a greater level of detailed information on infectious pathogens than older, slower, and less cost-effective methods.</p>
 
-        <section data-background-image="images/nf-core-viralrecon_metro_map_illumina.png" data-background-size="contain">
-        </section>
+          <p>The AMD program works with experts across CDC to ensure the United States has the infrastructure and technology needed to protect Americans from infectious disease threats. The AMD program collaborates with other CDC programs to facilitate development and pilot testing of next-generation diagnostic tests and protocols. Programs throughout CDC leverage these tools against a variety of infectious pathogens and also help state and local public health agencies tap into them.</p>
 
-        <section data-background-image="images/spriggan.png" data-background-size="contain">
-        </section>
-
-        <section>
-          <h3>Genomic software</h3>
-          <div class="columncontainer">
-            <div style="width:30%">
-              <h4>Spriggan</h4>
-              <ul style="font-size:0.7em;">
-                <li>BBDuk</li>
-                <li>FastQC</li>
-                <li>Kraken2</li>
-                <li>BWA</li>
-                <li>NCBIAMRFinderPlus</li>
-                <li>Samtools</li>
-                <li>QUAST</li>
-                <li>MultiQC</li>
-                <li>MLST</li>
-                <li>Custom Python Scripts</li>
-                <li>Custom Bash Scripts</li>
-              </ul>
-            </div>
-            <div style="width:30%;">
-              <h4>Viralrecon</h4>
-                <ul style="font-size:0.7em;">
-                  <li>FastQC</li>
-                  <li>Fastp</li>
-                  <li>Kraken2</li>
-                  <li>Bowtie2</li>
-                  <li>iVar</li>
-                  <li>Picard</li>
-                  <li>BCFTools</li>
-                  <li>SnpEff</li>
-                  <li>SnpSift</li>
-                  <li>ASCIIGenome</li>
-                  <li>QUAST</li>
-                  <li>Pangolin</li>
-                  <li>Nextclade</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-          <h3>WSLH Bioinformatics Workflows - Nextflow</h3>
-          <img src="images/nf-channel-process_fqc.png">
-          <div class="citation"><a href="https://sateeshperi.github.io/nextflow_varcal/nextflow/">Sateesh Peri - Nextflow</a></div>
-        </section>
-
-        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
-          <h1>Objectives</h1>
-          <ul>
-            <li style="text-decoration: line-through;">Describe the function of a bioinformatic workflow</li>
-            <li>Explain the Communicable Disease Division's process for genomic data analysis</li>
-            <li>Summarize the Communicable Disease Division's data reporting planning and strategies</li>
-          </ul>
-        </section>
-
-        <section data-transition="slide-in fade-out">
-          <h3>Easy Genomics</h3>
-          <img style="width: 60%;" src="images/easy-genomics.png">
-        </section>
-
-        <section data-transition="fade-in slide-out">
-          <h3>Easy Genomics</h3>
-          <img style="width: 70%;" src="images/easy-genomics-runs.png">
-        </section>
-
-        <section>
-          <h3>Running workflows in AWS</h3>
-          <img style="width: 70%;" src="images/aws-health-omics.jpeg">
-        </section>
-
-        <section>
-          <h3>Data in AWS</h3>
-          <img style="width: 70%;" src="images/aws-s3.png">
-        </section>
-
-        <section>
-          <h3>Querying Data in AWS</h3>
-          <img style="width: 70%;" src="images/athena_query.png">
-        </section>
-
-        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
-          <h1>Objectives</h1>
-          <ul>
-            <li style="text-decoration: line-through;">Describe the function of a bioinformatic workflow</li>
-            <li style="text-decoration: line-through;">Explain the Communicable Disease Division's process for genomic data analysis</li>
-            <li>Summarize the Communicable Disease Division's data reporting planning and strategies</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Building a reporting framework</h3>
-          <ul>
-            <li class="fragment">Build genomic analysis capacity <i class="fragment fa-solid fa-check"></i></li>
-            <li class="fragment">Develop post-analysis organization/cataloging <i class="fragment fa-solid fa-check"></i></li>
-            <li class="fragment">Deploy resources for reporting</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Metabase</h3>
-          <p>Lightweight framework for data dashboards and public visualizations</p>
-          <img style="width:50%" src="images/metabase-ar-ex.png">
-        </section>
-
-        <section>
-          <h3>Nextstrain</h3>
-          <p>Working with genomic relatedness</p>
-          <img style="width: 40%;" src="images/nextstrain.png">
           <div class="citation">
-            <a href="https://nextstrain.org/ncov/gisaid/global/6m">nextstrain.org</a>
+            <p><a href="https://www.cdc.gov/advanced-molecular-detection/php/about/index.html" target="_blank">CDC Advanced Molecular Detection (AMD) Program</a></p>
           </div>
+        </section>
+
+        <section>
+          <h3>AMD Key Priorities</h3>
+          <ul>
+            <li><span class="fragment highlight-on-advance">Workforce Development and Training</span></li>
+            <li><span class="fragment highlight-on-advance">Development and Implementation of Bioinformatic Resources and Technical Assistance</span></li>
+            <li>Enhance Sequencing and Bioinformatics Capacity</li>
+            <li>Support AMD Platform Development</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Workforce Development and Training</h3>
+          <img src="/images/logos/carpentries-logo.svg" alt="The Carpentries">
+          <div class="columncontainer">
+            <div><img class="paper" src="images/beginner_genomics_workshop.png"></div>
+            <div><img class="paper"src="images/advanced-amd.png"></div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Workforce Development and Training</h3>
+          <img src="/images/logos/carpentries-logo.svg" alt="The Carpentries">
+          <div><img width="40%" class="paper"src="images/webinar.png"></div>
+        </section>
+
+        <section>
+          <h3>Development and Implementation of Bioinformatic Resources and Technical Assistance</h3>
+          <div class="columncontainer">
+            <div><img src="images/spntypeid_nfmetro.png"></div>
+            <div class="fragment">
+              <ul>
+                <li>SPNtypeID-<i>Streptococcus pneumoniae</i></li>
+                <li>Spriggan-HAI/AR</li>
+                <li>Dryad-Bacterial Outbreaks</li>
+                <li>MycoSNP-Fungal</li>
+                <li>TB-Tester-TB (Not yet public)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Enhance Sequencing and Bioinformatics Capacity</h3>
+          <iframe width="800" height="600" src="https://www.easygenomics.org/" frameborder="0"></iframe>
+        </section>
+
+        <section>
+          <h3>Enhance Sequencing and Bioinformatics Capacity</h3>
+          <img width="800" src="images/easy-g.png">
+        </section>
+
+        <section>
+          <h3>Enhance Sequencing and Bioinformatics Capacity</h3>
+          <div class="columncontainer">
+            <div><img width=700" src="images/metabase-ar.png"></div>
+            <div>
+              <h5>Enhancing Bioinformatic Data for Epidemiological Use</h5>
+              <ul>
+                <li>Standing up databases capable of serving genomic data results for downstream integration</li>
+                <li>Deployment of user-friendly data interfaces</li>
+                <li>Integration of epidemiological incident accession IDs with genomic data</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>AMD Platform: Data Modernization</h3>
+          <h4>Modern Genomic Data Systems</h4>
+          <img class="paper" width="400" src="images/modern-data-systems.png">
+        </section>
+
+        <section>
+          <h3>AMD Platform: Data Modernization</h3>
+          <h4>Genomic Data Governance</h4>
+          <img class="paper" width="400" src="images/data-governance.png">
         </section>
 
         <section>
@@ -266,16 +191,14 @@
               <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/eg_photo.png">
               <span style="margin-left:30px;text-align:left">Eva Gunawan, MS</br></span>
             </div>
+            <div class="aligned" style="margin-left: 80px">
+              <image style="width:70px;border-radius:50%;box-shadow:2px 2px 5px black" src="/resources/images/team/mt_photo.jpg">
+              <span style="margin-left:30px;text-align:left">Madeline Topf, PhD</br></span>
+            </div>
           </div>
           <br>
           <div class="citation">
             <a href="https://revealjs.com/">Reveal.JS</a>
-          </div>
-        </section>
-
-        <section data-background="#0969da">
-          <div id="animate" style="visibility: hidden;">
-            <h1>What questions do you have?</h1>
           </div>
         </section>
 
