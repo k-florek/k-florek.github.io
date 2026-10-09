@@ -14,6 +14,13 @@ export default defineNuxtConfig({
     '~/plugins/fontawesome.js'
   ],
   modules: ['@nuxt/content'],
+  content: {
+    build: {
+      markdown: {
+        highlight: { theme: 'github-dark' }
+      }
+    }
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'en' },

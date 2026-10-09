@@ -11,7 +11,9 @@ export default defineContentConfig({
                 description: z.string(),
                 tags: z.array(z.string()).default([]),
                 draft: z.boolean().default(false),
-                cover: z.string().optional()
+                cover: z.string().optional(),
+                coverCredit: z.string().optional(),
+                coverDarken: z.number().min(0).max(1).default(0)
             })
         }),
         talks: defineCollection({

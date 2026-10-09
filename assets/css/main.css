@@ -77,8 +77,21 @@ h5 {
   font-size: var(--fs-lg);
 }
 
-p {
+p, li {
   font-size: var(--fs-lg);
+}
+
+ul, ol {
+  padding-left: 4rem;
+  margin-left: 4rem;
+  margin: 1rem 0;
+}
+
+ul { list-style: disc; }
+ol { list-style: decimal; }
+
+li ul, li ol {
+  margin: 0.25rem 0;
 }
 
 small {
