@@ -21,7 +21,7 @@ LLM have been advancing rapidly in the pipelines that are used to train them. Ea
 \
 Advances in AI fronter labs led to the application of post-training methods that refine knowledge, improve reasoning, and enhance accuracy. Post-training attempts to build the model into a safe and specialized assistant. Some of the core techniques used in post-training include Supervised Fine-Tuning (SFT), using input-output pairs, Direct Preference Optimization (DPO), optimizing the model to prefer better responses based on human feedback, and Reinforcement Learning (RL), that uses reward signals to refine behavior.
 
-::blog-figure{src="/images/blog/2026-10-09/llm-post-training.png" alt="Description for screen readers"}
+::blog-figure{src="/images/blog/2026-10-09/llm-post-training.png" alt="Taxonomy of post-training approaches for large language models, including supervised fine-tuning, preference optimization, and reinforcement learning."}
 Figure 1. A taxonomy of post-training approaches for LLMs. [Kumar et. al, arXiv, 2025](https://arxiv.org/html/2502.21321)
 ::
 
@@ -39,7 +39,7 @@ Performance can also be increased by through novel and sometimes obvious means. 
 ### Measuring performance and challenges of benchmarks
 Benchmarking LLM performance has been a process of identifying tests and question sets across various areas of knowledge and reasoning. Then testing models until they reach saturation or the ability to answer correctly 100% of the time. Epoch AI, a nonprofit focused on investigating the progress of AI, has created an Epoch Capabilities Index (ECI) that combines scores from different benchmarks into a single "general capability" score. Showing a strong linear growth of model performance and accuracy progress.
 
-::blog-figure{src="/images/blog/2026-10-09/epoch-benchmarks.png" alt="Description for screen readers"}
+::blog-figure{src="/images/blog/2026-10-09/epoch-benchmarks.png" alt="Epoch AI benchmark graph showing the Epoch Capabilities Index rising over time across model generations."}
 Figure 2. Epoch AI, Epoch Capabilities Index (ECI). [https://epoch.ai/benchmarks](https://epoch.ai/benchmarks?view=graph&tab=eci)
 ::
 
@@ -51,7 +51,7 @@ He presents a riddle:
 ```
 A boy and his father are in a car accident and the father is sadly killed. The boy is rushed to the hospital where he is taken to the operating room. Upon seeing him, the surgeon exclaims, I can't operate on him. He's my son. How is this possible?
 ```
-::blog-figure{src="/images/blog/2026-10-09/llm-riddle-01.png" alt="Description for screen readers"}
+::blog-figure{src="/images/blog/2026-10-09/llm-riddle-01.png" alt="ChatGPT reasoning diagram for the classic surgeon riddle, showing the explanation that the surgeon is the boy's mother."}
 Figure 3. LLM correctly reasoning the riddle.
 ::
 \
@@ -59,7 +59,7 @@ Changing the riddle in his lecture demonstrates a flaw but in the current iterat
 ```
 A boy and his mother are in a car accident and the mother is sadly killed. The boy is rushed to the hospital where he is taken to the operating room. Upon seeing him, the surgeon (who is the boy's father) exclaims, I can't operate on him. He's my son. How is this possible?
 ```
-::blog-figure{src="/images/blog/2026-10-09/llm-riddle-02.png" alt="Description for screen readers"}
+::blog-figure{src="/images/blog/2026-10-09/llm-riddle-02.png" alt="ChatGPT reasoning diagram for the modified surgeon riddle where the surgeon is the boy's father, correctly explaining the family relationship."}
 Figure 4. LLM correctly reasoning the altered riddle.
 ::
 \
@@ -67,7 +67,7 @@ However when I tested my own version of this riddle, I found a similar flaw:
 ```
 A boy and his father are in a car accident and the father is sadly killed. The boy is rushed to the hospital where he is taken to the operating room. Upon seeing him, the surgeon (who is the boy's father) exclaims, I can't operate on him. He's my son. How is this possible?
 ```
-::blog-figure{src="/images/blog/2026-10-09/llm-riddle-03.png" alt="Description for screen readers"}
+::blog-figure{src="/images/blog/2026-10-09/llm-riddle-03.png" alt="Example of an incorrect large language model reasoning response to the altered surgeon riddle, showing the model misidentifies the relationship."}
 Figure 5. LLM incorrectly reasoning my variation of the riddle.
 ::
 \
