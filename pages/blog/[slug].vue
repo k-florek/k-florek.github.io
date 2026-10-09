@@ -1,6 +1,8 @@
 <template>
     <div v-if="post">
-        <div v-if="post.cover" class="blog-hero" :style="{ backgroundImage: `url(${post.cover})` }">
+        <div v-if="post.cover" class="blog-hero"
+            :style="{ backgroundImage: `linear-gradient(rgba(0, 0, 0, ${post.coverDarken || 0}), rgba(0, 0, 0, ${post.coverDarken || 0})), url(${post.cover})` }">
+            <p v-if="post.coverCredit" class="blog-hero-credit">{{ post.coverCredit }}</p>
             <div class="blog-hero-frame">
                 <div class="blog-hero-text">
                     <h1 class="blog-hero-title">{{ post.title }}</h1>
@@ -66,6 +68,18 @@ function formatDate(date: string | Date, timeZone = 'UTC') {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.blog-hero-credit {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2.25rem;
+    margin: 0;
+    z-index: 1;
+    font-size: var(--fs-sm);
+    color: #fff;
+    opacity: 0.8;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .blog-hero-frame {
