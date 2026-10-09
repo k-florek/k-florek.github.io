@@ -20,13 +20,19 @@ LLM have been advancing rapidly in the pipelines that are used to train them. Ea
 \
 \
 Advances in AI fronter labs led to the application of post-training methods that refine knowledge, improve reasoning, and enhance accuracy. Post-training attempts to build the model into a safe and specialized assistant. Some of the core techniques used in post-training include Supervised Fine-Tuning (SFT), using input-output pairs, Direct Preference Optimization (DPO), optimizing the model to prefer better responses based on human feedback, and Reinforcement Learning (RL), that uses reward signals to refine behavior.
+\
+\
+Optimizations in computing often come after a resource limit has been reached. Previous generation LLMs were optimized to solve specific tasks and push the bounds of the base models. Those gains however, were eclipsed after the release of the next generation of larger models. As models continue to grow and scale, the landscape of methods to optimize and improve reasoning will shift and change and I imagine when scaling hits its limits we are likely to see greater efforts applied to optimize existing models.
 
 ::blog-figure{src="/images/blog/2026-10-09/llm-post-training.png" alt="Taxonomy of post-training approaches for large language models, including supervised fine-tuning, preference optimization, and reinforcement learning."}
 Figure 1. A taxonomy of post-training approaches for LLMs. [Kumar et. al, arXiv, 2025](https://arxiv.org/html/2502.21321)
 ::
 
 ### Cost of training
-Increasing the scale of training increases the performance. Training compute is measured in Floating-point Operation or FLOP. A FLOP is a single arithmetic calculation, such as addition, subtraction, multiplication, or division, performed on a number with a fractional part. 
+Increasing the size and scale of the model comes with a cost. Training models requires compute that is measured in Floating-point Operation or FLOP. A FLOP is a single arithmetic calculation, such as addition, subtraction, multiplication, or division, performed on a number with a fractional part. However, compute isn't the only cost associated with training large models. Limits of memory and data will continue to put pressure on the advancement of models and will increase the resources needed to advance model scale.
+\
+\
+As a rough metric of cost, Adam presented this method of using moles to measure compute:
 
 * 1 mole (6.022x10^23) of FLOP is ~ $1,000,000
 * GPT3 (2020) ~ 0.5 mol FLOP
@@ -34,10 +40,10 @@ Increasing the scale of training increases the performance. Training compute is 
 * GPT4.5 (2025) ~ 350 mol FLOP
 
 ### Bigger is better but it isn't everything
-Performance can also be increased by through novel and sometimes obvious means. In Adam's lecture he covers methods that have been found to improve performance from including more and better data, asking nicely and "think step by step", having the model reason for longer time, and allowing LLMs to hold conversations and work together. Explaining why prompt engineering and structure have been key. 
+Performance can also be increased by through novel and sometimes obvious means. In Adam's lecture he covers methods that have been found to improve performance from including more and better data, asking nicely and "think step by step", having the model reason for longer time, and allowing LLMs to hold conversations and work together. Explaining why prompt engineering and structure have been key to improving accuracy. The recent gains with Agentic methods and multi-agent workflows also demonstrate that improving accuracy and model performance to follow typical compute approaches and the way that these models are trained and adapted implies a whole new architecture of AI model enhancement must be explored.
 
 ### Measuring performance and challenges of benchmarks
-Benchmarking LLM performance has been a process of identifying tests and question sets across various areas of knowledge and reasoning. Then testing models until they reach saturation or the ability to answer correctly 100% of the time. Epoch AI, a nonprofit focused on investigating the progress of AI, has created an Epoch Capabilities Index (ECI) that combines scores from different benchmarks into a single "general capability" score. Showing a strong linear growth of model performance and accuracy progress.
+Benchmarking LLM performance is an iterative process of identifying tests and question sets across various areas of knowledge and reasoning. Then testing models until they reach saturation or the ability to answer correctly 100% of the time. Then finding or developing new benchmarks. Epoch AI, a nonprofit focused on investigating the progress of AI, has created an Epoch Capabilities Index (ECI) that combines scores from different benchmarks into a single "general capability" score. Showing a strong linear growth of model performance and accuracy progress. The rapid transition from benchmark creation to saturation alone demonstrates the pace at which models are growing and adapting. With Adam pointing out models are learning at a yearly rate of 4x that of a human.
 
 ::blog-figure{src="/images/blog/2026-10-09/epoch-benchmarks.png" alt="Epoch AI benchmark graph showing the Epoch Capabilities Index rising over time across model generations."}
 Figure 2. Epoch AI, Epoch Capabilities Index (ECI). [https://epoch.ai/benchmarks](https://epoch.ai/benchmarks?view=graph&tab=eci)
