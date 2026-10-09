@@ -36,3 +36,37 @@
   padding-bottom: 15px;
   margin-bottom: 5%;
 }
+
+/*
+  Code blocks
+*/
+pre {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  tab-size: 2;
+}
+
+pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: none;
+  padding: 0;
+}
+
+p code, li code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: hsl(from var(--dark) h s l / 0.1);
+}
+
+/* Shiki emits one span per line */
+pre code .line {
+  display: block;
+  min-height: 1.5em;
+}
