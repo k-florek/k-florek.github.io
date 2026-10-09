@@ -2,14 +2,17 @@
     <div class="content-container">
         <div class="content-items">
             <div class="content-title">blogs: an eclectic collection of thoughts and ideas</div>
+            <div class="blog-grid">
             <NuxtLink v-for="post in posts" :key="post.path" :to="`/blog/${resolveSlug(post)}`">
                 <article class="card blog-card">
+                    <img v-if="post.cover" :src="post.cover" :alt="post.title" class="blog-cover">
                     <h4>{{ post.title }}</h4>
                     <p class="blog-date">{{ formatDate(post.date) }}</p>
                     <p>{{ post.description }}</p>
                     <p v-if="post.tags?.length" class="blog-tags">{{ post.tags.join(' • ') }}</p>
                 </article>
             </NuxtLink>
+            </div>
         </div>
     </div>
 </template>
@@ -46,8 +49,28 @@ function formatDate(date: string | Date, timeZone = 'UTC') {
 </script>
 
 <style scoped>
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+    gap: clamp(24px, 4vw, 48px);
+}
+
 .blog-card {
     color: var(--dark);
+    margin: 0;
+    padding: clamp(16px, 3vw, 32px);
+    aspect-ratio: 148 / 210;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-cover {
+    width: 100%;
+    flex: 1 1 0;
+    min-height: 0;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-bottom: 0.8rem;
 }
 
 .blog-date {
