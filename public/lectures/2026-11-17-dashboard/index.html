@@ -90,19 +90,146 @@
         </section>
 
         <section>
-          <h2>Data storytelling and Dashboards</h2>
-          <h3>Dashboards are:</h3>
+          <h2>Fundamental Considerations of Dashboards</h2>
+          <div class="columncontainer">
+            <div style="width:60%">
+              <ul>
+                <li class="fragment">Optimized to provide real-time insights and facilitate data exploration</li>
+                <li class="fragment">Assumes the user has sufficient knowledge to interpret the data</li>
+                <li class="fragment">Designed to answer: "What is happening now?"</li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/chicago-transit.png">
+            </div>
+          </div>
+          <div class="fragment float-overlay">
+            <ul>
+                <li>May not provide a complete narrative</li>
+                <li>Can be overwhelming if too many metrics are displayed</li>
+                <li>Require user expertise to interpret correctly</li>
+              </ul>
+          </div>
+          <div class="citation">
+            <a href="https://www.transitchicago.com/performance/">Transit Chicago Performance</a>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Setting up your data to meet your audience</h2>
+        </section>
+
+        <section>
+          <h3>Audience-Centric Dashboard Questions</h3>
           <ul>
-            <li>optimized to provide real-time insights and facilitate data exploration</li>
-            <li>answer "What is happening now?"</li></li>
-          </ul>
-          <h3>Dashboards are not:</h3>
-          <ul>
-            <li>designed to provide a narrative</li>
-            <li>answer "why it matters?" or "what to do next?"</li>
+            <li class="fragment">Who is going to see this dashboard?</li>
+            <li class="fragment">Are they internal to the organization or external stakeholders?</li>
+            <li class="fragment">What decisions will they make based on this data?</li>
+            <li class="fragment">What parts of the data are most relevant to them?</li>
+            <li class="fragment">What parts of the data are not relevant to them?</li>
+            <li class="fragment">Do they need to interact with the dashboard to gain insights?</li>
           </ul>
         </section>
 
+        <section>
+          <h3>Internal vs External Audiences</h3>
+          <div class="columncontainer">
+            <div>
+              <img src="images/inandout.png">
+            </div>
+            <div>
+              <ul>
+                <li class="fragment">Internal audiences are typically familiar with the organization's context and may expect more detailed data</li>
+                <li class="fragment">External audiences need more context and high-level summaries to understand the data</li>
+                <li class="fragment">Internal audiences may expect more interactive elements to explore the data</li>
+                <li class="fragment">External audiences may prefer a more guided and simplified interaction with the dashboard</li>
+              </ul>
+            </div>
+          </div>
+          <div class="fragment float-overlay">
+            <img src="images/jargon.png">
+            <h3>Terminology and Clarity</h3>
+          </div>
+        </section>
+
+        <section>
+          <h3>Cost of Attention in the Attention Economy</h3>
+          <div class="columncontainer">
+            <div>
+              <ul>
+                <li class="fragment">Attention is a scarce resource in the digital age</li>
+                <li class="fragment">Dashboards need to evaluate the cost and value of a long-lingering vs quick-glancing capture and retain the audience's attention effectively</li>
+                <li class="fragment">Cluttered or overly complex dashboards can lead to cognitive overload</li>
+                <li class="fragment">Focus on the most important metrics and insights for the audience</li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/attention-econ.png">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Building feedback into Dashboard design:<br> focus groups or representative users</h3>
+          <div class="columncontainer">
+            <div>
+              <ul>
+                <li class="fragment">Explain the goal and purpose of the dashboard</li>
+                <li class="fragment">Specify the feedback you are seeking upfront</li>
+                <li class="fragment">Provide a scenario and ask users to find a specific trend or answer a question</li>
+                <li class="fragment">Ask "What stands out in the first 5 seconds can you spot what needs your attention immediately?"</li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/feedback.png">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Building feedback into Dashboard design:<br> telemetry</h3>
+          <div class="columncontainer">
+            <div>
+              <ul>
+                <li><a href="https://github.com/Appsilon/shiny.telemetry">Shiny Telemetry</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-usage-metrics">Power BI Usage Metrics</a></li>
+                <li><a href="https://www.google.com/analytics/">Google Analytics</a></li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/telemetry.png">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Meeting your audience's needs exercise</h3>
+          <p>Examine the following dashboards and consider how well they meet the needs of their intended audience. Take note of what works well and what could be improved.</p>
+          <ul>
+            <li><a href="https://schoolclimatehazards.grit.ucsb.edu/">California Schools Climate Hazards Dashboard</a></li>
+            <li><a href="https://www.cdc.gov/covid/php/variants/variants-and-genomic-surveillance.html">CDC COVID Variants Dashboard</a></li>
+            <li><a href="https://www.chicagopolice.org/statistics-data/data-dashboards/hate-crime-dashboard/">Chicago Police Hate Crime Dashboard</a></li>
+            <li class="fragment"><a href="https://www.chicago.gov/city/en/depts/cdot/dataset/potholetracker.html"><b>Bonus:</b> Chicago Pothole Tracker</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Reflections</h3>
+          <ul>
+            <li>How did the choice of dashboard technology stack impact the effectiveness and usability of the dashboards you examined?</li>
+            <li>What design choices helped or hindered your understanding of the data?</li>
+            <li>Who was the dashboard intended for? Do you think it delivered?</li>
+          </ul>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Evaluating Dashboard Technologies</h2>
+        </section>
+
+        <section>
+          <h3>Visual Vocabulary</h3>
+          <a href="https://public.tableau.com/app/profile/andy.kriebel/viz/VisualVocabulary/VisualVocabulary">Visual Vocabulary Dashboard</a>
+        </section>
 
       </div>
     </div>
