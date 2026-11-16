@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="840" viewBox="0 0 1700 840" font-family="DejaVu Sans, Arial, sans-serif">
+<defs>
+<marker id="arr0" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker>
+<marker id="big0" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker>
+<marker id="arr1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B45309"/></marker>
+<marker id="big1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B45309"/></marker>
+<marker id="arr2" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0F766E"/></marker>
+<marker id="big2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0F766E"/></marker>
+<marker id="arrInk" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1F2937"/></marker>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/></filter>
+</defs>
+<rect width="1700" height="840" fill="#FAFAF7"/>
+<text x="70" y="78" font-size="38" font-weight="bold" fill="#1F2937">Iterative Delivery</text>
+<text x="70" y="112" font-size="20" fill="#6B7280">Each sprint repeats the same short cycle, releases, and feeds what it learns into the next</text>
+<line x1="200" y1="680" x2="1560" y2="680" stroke="#1F2937" stroke-width="4" stroke-linecap="round" marker-end="url(#arrInk)"/>
+<circle cx="400" cy="360" r="200" fill="#FDE7D9"/>
+<path d="M334.9,495.1 A150,150 0 1 1 465.1,495.1" fill="none" stroke="#C2410C" stroke-width="4" opacity="0.55"/>
+<path d="M276.5,445.7 L279.4,463.8 L293.5,452.6 z" fill="#C2410C"/>
+<path d="M256.0,316.9 L243.7,330.5 L261.2,334.5 z" fill="#C2410C"/>
+<path d="M343.9,220.5 L325.6,219.3 L333.4,235.6 z" fill="#C2410C"/>
+<path d="M474.1,229.2 L463.6,214.1 L455.8,230.4 z" fill="#C2410C"/>
+<path d="M548.5,336.4 L553.7,318.8 L536.1,322.8 z" fill="#C2410C"/>
+<path d="M511.0,461.3 L528.1,454.4 L514.0,443.2 z" fill="#C2410C"/>
+<g filter="url(#sh)"><rect x="287.9" y="477.1" width="94" height="36" rx="18" fill="#C2410C" stroke="#C2410C" stroke-width="3"/></g>
+<text x="334.9" y="501.1" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Plan</text>
+<g filter="url(#sh)"><rect x="206.8" y="375.4" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#C2410C" stroke-width="3"/></g>
+<text x="253.8" y="399.4" font-size="16" font-weight="bold" fill="#C2410C" text-anchor="middle">Design</text>
+<g filter="url(#sh)"><rect x="235.7" y="248.5" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#C2410C" stroke-width="3"/></g>
+<text x="282.7" y="272.5" font-size="16" font-weight="bold" fill="#C2410C" text-anchor="middle">Develop</text>
+<g filter="url(#sh)"><rect x="353.0" y="192.0" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#C2410C" stroke-width="3"/></g>
+<text x="400.0" y="216.0" font-size="16" font-weight="bold" fill="#C2410C" text-anchor="middle">Test</text>
+<g filter="url(#sh)"><rect x="470.3" y="248.5" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#C2410C" stroke-width="3"/></g>
+<text x="517.3" y="272.5" font-size="16" font-weight="bold" fill="#C2410C" text-anchor="middle">Deploy</text>
+<g filter="url(#sh)"><rect x="499.2" y="375.4" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#C2410C" stroke-width="3"/></g>
+<text x="546.2" y="399.4" font-size="16" font-weight="bold" fill="#C2410C" text-anchor="middle">Review</text>
+<g filter="url(#sh)"><rect x="418.1" y="477.1" width="94" height="36" rx="18" fill="#C2410C" stroke="#C2410C" stroke-width="3"/></g>
+<text x="465.1" y="501.1" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Launch</text>
+<text x="400" y="352" font-size="20" fill="#6B7280" text-anchor="middle" letter-spacing="3">SPRINT</text>
+<text x="400" y="406" font-size="60" font-weight="bold" fill="#C2410C" text-anchor="middle">1</text>
+<path d="M290,672 C290,590 334.9,605.1 334.9,525.1" fill="none" stroke="#C2410C" stroke-width="9" stroke-linecap="round" marker-end="url(#big0)"/>
+<path d="M465.1,515.1 C465.1,605.1 510,590 510,658" fill="none" stroke="#C2410C" stroke-width="9" stroke-linecap="round" marker-end="url(#big0)"/>
+<circle cx="290" cy="680" r="9" fill="#C2410C" stroke="#FAFAF7" stroke-width="3"/>
+<circle cx="510" cy="680" r="9" fill="#C2410C" stroke="#FAFAF7" stroke-width="3"/>
+<g filter="url(#sh)"><rect x="342" y="622" width="116" height="34" rx="17" fill="#C2410C"/></g>
+<text x="400" y="645" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Release 1</text>
+<path d="M514,692 C570,785 680,785 740,694" fill="none" stroke="#C2410C" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" marker-end="url(#arr0)"/>
+<text x="625" y="788" font-size="16" font-style="italic" fill="#C2410C" text-anchor="middle">Feedback into Sprint 2</text>
+<circle cx="850" cy="360" r="200" fill="#FEF0D5"/>
+<path d="M784.9,495.1 A150,150 0 1 1 915.1,495.1" fill="none" stroke="#B45309" stroke-width="4" opacity="0.55"/>
+<path d="M726.5,445.7 L729.4,463.8 L743.5,452.6 z" fill="#B45309"/>
+<path d="M706.0,316.9 L693.7,330.5 L711.2,334.5 z" fill="#B45309"/>
+<path d="M793.9,220.5 L775.6,219.3 L783.4,235.6 z" fill="#B45309"/>
+<path d="M924.1,229.2 L913.6,214.1 L905.8,230.4 z" fill="#B45309"/>
+<path d="M998.5,336.4 L1003.7,318.8 L986.1,322.8 z" fill="#B45309"/>
+<path d="M961.0,461.3 L978.1,454.4 L964.0,443.2 z" fill="#B45309"/>
+<g filter="url(#sh)"><rect x="737.9" y="477.1" width="94" height="36" rx="18" fill="#B45309" stroke="#B45309" stroke-width="3"/></g>
+<text x="784.9" y="501.1" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Plan</text>
+<g filter="url(#sh)"><rect x="656.8" y="375.4" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#B45309" stroke-width="3"/></g>
+<text x="703.8" y="399.4" font-size="16" font-weight="bold" fill="#B45309" text-anchor="middle">Design</text>
+<g filter="url(#sh)"><rect x="685.7" y="248.5" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#B45309" stroke-width="3"/></g>
+<text x="732.7" y="272.5" font-size="16" font-weight="bold" fill="#B45309" text-anchor="middle">Develop</text>
+<g filter="url(#sh)"><rect x="803.0" y="192.0" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#B45309" stroke-width="3"/></g>
+<text x="850.0" y="216.0" font-size="16" font-weight="bold" fill="#B45309" text-anchor="middle">Test</text>
+<g filter="url(#sh)"><rect x="920.3" y="248.5" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#B45309" stroke-width="3"/></g>
+<text x="967.3" y="272.5" font-size="16" font-weight="bold" fill="#B45309" text-anchor="middle">Deploy</text>
+<g filter="url(#sh)"><rect x="949.2" y="375.4" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#B45309" stroke-width="3"/></g>
+<text x="996.2" y="399.4" font-size="16" font-weight="bold" fill="#B45309" text-anchor="middle">Review</text>
+<g filter="url(#sh)"><rect x="868.1" y="477.1" width="94" height="36" rx="18" fill="#B45309" stroke="#B45309" stroke-width="3"/></g>
+<text x="915.1" y="501.1" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Launch</text>
+<text x="850" y="352" font-size="20" fill="#6B7280" text-anchor="middle" letter-spacing="3">SPRINT</text>
+<text x="850" y="406" font-size="60" font-weight="bold" fill="#B45309" text-anchor="middle">2</text>
+<path d="M740,672 C740,590 784.9,605.1 784.9,525.1" fill="none" stroke="#B45309" stroke-width="9" stroke-linecap="round" marker-end="url(#big1)"/>
+<path d="M915.1,515.1 C915.1,605.1 960,590 960,658" fill="none" stroke="#B45309" stroke-width="9" stroke-linecap="round" marker-end="url(#big1)"/>
+<circle cx="740" cy="680" r="9" fill="#B45309" stroke="#FAFAF7" stroke-width="3"/>
+<circle cx="960" cy="680" r="9" fill="#B45309" stroke="#FAFAF7" stroke-width="3"/>
+<g filter="url(#sh)"><rect x="792" y="622" width="116" height="34" rx="17" fill="#B45309"/></g>
+<text x="850" y="645" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Release 2</text>
+<path d="M964,692 C1020,785 1130,785 1190,694" fill="none" stroke="#B45309" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" marker-end="url(#arr1)"/>
+<text x="1075" y="788" font-size="16" font-style="italic" fill="#B45309" text-anchor="middle">Feedback into Sprint 3</text>
+<circle cx="1300" cy="360" r="200" fill="#D7F2EE"/>
+<path d="M1234.9,495.1 A150,150 0 1 1 1365.1,495.1" fill="none" stroke="#0F766E" stroke-width="4" opacity="0.55"/>
+<path d="M1176.5,445.7 L1179.4,463.8 L1193.5,452.6 z" fill="#0F766E"/>
+<path d="M1156.0,316.9 L1143.7,330.5 L1161.2,334.5 z" fill="#0F766E"/>
+<path d="M1243.9,220.5 L1225.6,219.3 L1233.4,235.6 z" fill="#0F766E"/>
+<path d="M1374.1,229.2 L1363.6,214.1 L1355.8,230.4 z" fill="#0F766E"/>
+<path d="M1448.5,336.4 L1453.7,318.8 L1436.1,322.8 z" fill="#0F766E"/>
+<path d="M1411.0,461.3 L1428.1,454.4 L1414.0,443.2 z" fill="#0F766E"/>
+<g filter="url(#sh)"><rect x="1187.9" y="477.1" width="94" height="36" rx="18" fill="#0F766E" stroke="#0F766E" stroke-width="3"/></g>
+<text x="1234.9" y="501.1" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Plan</text>
+<g filter="url(#sh)"><rect x="1106.8" y="375.4" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#0F766E" stroke-width="3"/></g>
+<text x="1153.8" y="399.4" font-size="16" font-weight="bold" fill="#0F766E" text-anchor="middle">Design</text>
+<g filter="url(#sh)"><rect x="1135.7" y="248.5" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#0F766E" stroke-width="3"/></g>
+<text x="1182.7" y="272.5" font-size="16" font-weight="bold" fill="#0F766E" text-anchor="middle">Develop</text>
+<g filter="url(#sh)"><rect x="1253.0" y="192.0" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#0F766E" stroke-width="3"/></g>
+<text x="1300.0" y="216.0" font-size="16" font-weight="bold" fill="#0F766E" text-anchor="middle">Test</text>
+<g filter="url(#sh)"><rect x="1370.3" y="248.5" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#0F766E" stroke-width="3"/></g>
+<text x="1417.3" y="272.5" font-size="16" font-weight="bold" fill="#0F766E" text-anchor="middle">Deploy</text>
+<g filter="url(#sh)"><rect x="1399.2" y="375.4" width="94" height="36" rx="18" fill="#FFFFFF" stroke="#0F766E" stroke-width="3"/></g>
+<text x="1446.2" y="399.4" font-size="16" font-weight="bold" fill="#0F766E" text-anchor="middle">Review</text>
+<g filter="url(#sh)"><rect x="1318.1" y="477.1" width="94" height="36" rx="18" fill="#0F766E" stroke="#0F766E" stroke-width="3"/></g>
+<text x="1365.1" y="501.1" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Launch</text>
+<text x="1300" y="352" font-size="20" fill="#6B7280" text-anchor="middle" letter-spacing="3">SPRINT</text>
+<text x="1300" y="406" font-size="60" font-weight="bold" fill="#0F766E" text-anchor="middle">3</text>
+<path d="M1190,672 C1190,590 1234.9,605.1 1234.9,525.1" fill="none" stroke="#0F766E" stroke-width="9" stroke-linecap="round" marker-end="url(#big2)"/>
+<path d="M1365.1,515.1 C1365.1,605.1 1410,590 1410,658" fill="none" stroke="#0F766E" stroke-width="9" stroke-linecap="round" marker-end="url(#big2)"/>
+<circle cx="1190" cy="680" r="9" fill="#0F766E" stroke="#FAFAF7" stroke-width="3"/>
+<circle cx="1410" cy="680" r="9" fill="#0F766E" stroke="#FAFAF7" stroke-width="3"/>
+<g filter="url(#sh)"><rect x="1242" y="622" width="116" height="34" rx="17" fill="#0F766E"/></g>
+<text x="1300" y="645" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Release 3</text>
+<path d="M1414,692 C1470,785 1504,785 1564,694" fill="none" stroke="#0F766E" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" marker-end="url(#arr2)"/>
+<text x="1487" y="788" font-size="16" font-style="italic" fill="#0F766E" text-anchor="middle">Feedback into next sprint</text>
+</svg>

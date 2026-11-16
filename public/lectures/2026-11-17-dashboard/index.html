@@ -1,0 +1,489 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kelsey Florek">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>KFlorek - Dashboarding Foundations </title>
+
+    <!-- Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" integrity="sha384-Jx4lvM3f1foL3gcKtEZPpp/IOxYaIOJ+KQRq3vP7Towpgy4bjb6wo5QK5VRtnpLh" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/brands.js" integrity="sha384-wRU6vtIpkIdXnWzp+Hq7CNH527PHkmlZz1n7ITVY0YhEPUcSlz2voGAQfVb3d9xe" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.7.2/js/fontawesome.js" integrity="sha384-dCcP+1ToHaZKWNvVqy4+4ekZYXP73UfD3KsBQ0xg54c0+R0I6zsewwjQiM3JUwg+" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/vendor/reveal/reset.css">
+    <link rel="stylesheet" href="/vendor/reveal/reveal.css">
+    <link rel="stylesheet" href="/resources/css/reveal_theme.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/vendor/reveal-plugins/highlight/monokai.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400|Noto:400,400i,600" rel="stylesheet">
+
+    <!-- Custom QR Code Generator -->
+    <script src="/resources/js/qrcode.js"></script>
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Dashboarding Foundations </h2>
+          <br>
+          <p>
+            Kelsey Florek, PhD, MPH<br>
+            Senior Genomics and Data Scientist<br>
+            Wisconsin State Laboratory of Hygiene<br>
+            <br>
+          </p>
+
+          <div style="position:absolute;width: 100%;text-align:center;">
+            Slides live at:<br> <a href="https://www.k-florek.net/talks">www.k-florek.net/talks</a><br><br>
+            <a href="https://bsky.app/profile/k-florek.net"><span class="fa-brands fa-bluesky"></span>@k-florek.net</a>
+          </div>
+          </br>
+
+          <div style="float:left;width:50%">
+            <img style="width: 40%;display:block;float:left;margin-top:20px" src="/resources/images/logos/wslh_logo_white.png">
+          </div>
+          <div style="float:right;width:50%">
+            <div id="qrcode"></div>
+            <script type="text/javascript">
+              var urlString = window.location.href;
+              urlString = urlString.substring(0, urlString.lastIndexOf("/"));
+              var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: urlString,
+                width: 128,
+                height: 128,
+                colorDark : "#2a76dd",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.Q,
+                imgCSSStyle : "float:right; padding-top:20px;"
+              });
+            </script>
+          </div>
+        </section>
+
+        <section>
+          <h2>Data storytelling and Dashboards</h2>
+          <div style="position:relative; height:520px; width:100%;">
+            <img class="fragment" data-fragment-index="1" style="position:absolute; width:52%; box-shadow:4px 4px 12px rgba(0,0,0,0.5); background-color:white; transform:rotate(-6deg); left:5%; top:42px; z-index:1;" src="images/Sienna-dash.jpg">
+            <img class="fragment" data-fragment-index="2" style="position:absolute; width:52%; box-shadow:4px 4px 12px rgba(0,0,0,0.5); background-color:white; transform:rotate(4deg); left:12%; top:20px; z-index:2;" src="images/tacoma-dash.jpg">
+            <img class="fragment" data-fragment-index="3" style="position:absolute; width:52%; box-shadow:4px 4px 12px rgba(0,0,0,0.5); background-color:white; transform:rotate(-3deg); left:28%; top:60px; z-index:3;" src="images/Volkswagen-dash.jpg">
+            <img class="fragment" data-fragment-index="4" style="position:absolute; width:52%; box-shadow:4px 4px 12px rgba(0,0,0,0.5); background-color:white; transform:rotate(6deg); left:43%; top:30px; z-index:4;" src="images/Dodge-dash.jpg">
+          </div>
+        </section>
+
+        <section>
+          <h2>Data storytelling and Dashboards</h2>
+          <img src="images/flight-dash.jpg">
+        </section>
+
+        <section>
+          <h2>Fundamental Considerations of Dashboards</h2>
+          <div class="columncontainer">
+            <div style="width:60%">
+              <ul>
+                <li class="fragment">Optimized to provide real-time insights and facilitate data exploration</li>
+                <li class="fragment">Assumes the user has sufficient knowledge to interpret the data</li>
+                <li class="fragment">Designed to answer: "What is happening now?"</li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/chicago-transit.png">
+            </div>
+          </div>
+          <div class="fragment float-overlay">
+            <ul>
+                <li>May not provide a complete narrative</li>
+                <li>Can be overwhelming if too many metrics are displayed</li>
+                <li>Require user expertise to interpret correctly</li>
+              </ul>
+          </div>
+          <div class="citation">
+            <a href="https://www.transitchicago.com/performance/">Transit Chicago Performance</a>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Preparing your data to meet your audience</h2>
+        </section>
+
+        <section>
+          <h3>Audience-Centric Dashboard Questions</h3>
+          <ul>
+            <li class="fragment">Who is going to see this dashboard?</li>
+            <li class="fragment">Are they internal to the organization or external stakeholders?</li>
+            <li class="fragment">What decisions will they make based on this data?</li>
+            <li class="fragment">What parts of the data are most relevant to them?</li>
+            <li class="fragment">What parts of the data are not relevant to them?</li>
+            <li class="fragment">Do they need to interact with the dashboard to gain insights?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Internal vs External Audiences</h3>
+          <div class="columncontainer">
+            <div>
+              <img src="images/inandout.png">
+            </div>
+            <div>
+              <ul>
+                <li class="fragment">Internal audiences are typically familiar with the organization's context and may expect more detailed data</li>
+                <li class="fragment">External audiences need more context and high-level summaries to understand the data</li>
+                <li class="fragment">Internal audiences may expect more interactive elements to explore the data</li>
+                <li class="fragment">External audiences may prefer a more guided and simplified interaction with the dashboard</li>
+              </ul>
+            </div>
+          </div>
+          <div class="fragment float-overlay">
+            <img src="images/jargon.png">
+            <h3>Terminology and Clarity</h3>
+          </div>
+        </section>
+
+        <section>
+          <h3>Cost of Attention in the Attention Economy</h3>
+          <div class="columncontainer">
+            <div>
+              <ul>
+                <li class="fragment">Attention is a scarce resource in the digital age</li>
+                <li class="fragment">Dashboards need to evaluate the cost and value of a long-lingering vs quick-glancing capture and retain the audience's attention effectively</li>
+                <li class="fragment">Cluttered or overly complex dashboards can lead to cognitive overload</li>
+                <li class="fragment">Focus on the most important metrics and insights for the audience</li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/attention-econ.png">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <img src="images/iterative-design.svg" alt="Diagram of iterative design">
+        </section>
+
+        <section>
+          <h3>Building feedback into Dashboard design:<br> focus groups or representative users</h3>
+          <div class="columncontainer">
+            <div>
+              <ul>
+                <li class="fragment">Explain the goal and purpose of the dashboard</li>
+                <li class="fragment">Specify the feedback you are seeking upfront</li>
+                <li class="fragment">Provide a scenario and ask users to find a specific trend or answer a question</li>
+                <li class="fragment">Ask "What stands out in the first 5 seconds can you spot what needs your attention immediately?"</li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/feedback.png">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Building feedback into Dashboard design:<br> telemetry</h3>
+          <div class="columncontainer">
+            <div>
+              <ul>
+                <li><a href="https://github.com/Appsilon/shiny.telemetry">Shiny Telemetry</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-usage-metrics">Power BI Usage Metrics</a></li>
+                <li><a href="https://www.google.com/analytics/">Google Analytics</a></li>
+              </ul>
+            </div>
+            <div>
+              <img src="images/telemetry.png">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Meeting your audience's needs exercise</h3>
+          <p>Examine the following dashboards and consider how well they meet the needs of their intended audience. Take note of what works well and what could be improved.</p>
+          <ul>
+            <li><a href="https://schoolclimatehazards.grit.ucsb.edu/">California Schools Climate Hazards Dashboard</a></li>
+            <li><a href="https://www.cdc.gov/covid/php/variants/variants-and-genomic-surveillance.html">CDC COVID Variants Dashboard</a></li>
+            <li><a href="https://www.chicagopolice.org/statistics-data/data-dashboards/hate-crime-dashboard/">Chicago Police Hate Crime Dashboard</a></li>
+            <li class="fragment"><a href="https://www.chicago.gov/city/en/depts/cdot/dataset/potholetracker.html"><b>Bonus:</b> Chicago Pothole Tracker</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Reflections</h3>
+          <ul>
+            <li>How did the choice and implementation of dashboard technology stack impact the effectiveness and usability of the dashboards you examined?</li>
+            <li>What design choices helped or hindered your understanding of the data?</li>
+            <li>Who was the dashboard intended for? Do you think it delivered?</li>
+          </ul>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Evaluating Dashboard Technologies</h2>
+        </section>
+
+        <section>
+          <h3>IT and Software</h3>
+          <div class="columncontainer">
+            <div style="width:50%">
+              <img src="images/fire.gif" alt="IT Crowd fire scene">
+            </div>
+            <div style="width:50%">
+              <p>In reality, IT departments often face challenges such as limited resources and the need to balance security with usability. These constraints push organizations to adopt vendor-provided solutions with support and maintenance contracts included.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>SaaS Dashboard Platforms</h3>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 600px; margin: 0 auto;">
+            <a href="https://www.tableau.com/" style="display: block; text-align: center;">
+              <img src="images/tableau-logo.svg" alt="Tableau Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+            <a href="https://powerbi.microsoft.com/" style="display: block; text-align: center;">
+              <img src="images/power-bi-vector-logo-2022.png" alt="Power BI Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+            <a href="https://looker.com/" style="display: block; text-align: center;">
+              <img src="images/looker-data-sciences-inc-vector-logo-2022.png" alt="Looker Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+            <a href="https://www.metabase.com/" style="display: block; text-align: center;">
+              <img src="images/metabase-logo.svg" alt="Metabase Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h3>SaaS Dashboard Platforms</h3>
+          <div class="columncontainer">
+            <div style="width:50%">
+              <h3>Advantages</h3>
+              <ul>
+                <li>Easy to use and maintain</li>
+                <li>More accessible to non-technical users</li>
+                <li>Catalog of commonly used visualizations</li>
+                <li>Authentication and access control built in</li>
+              </ul>
+            </div>
+            <div class="fragment" style="width:50%">
+              <h3>Disadvantages</h3>
+              <ul>
+                <li>Limited customization and often inflexible visualizations</li>
+                <li>Performance issues with large datasets</li>
+                <li>Generally not suitable for narrative reports</li>
+                <li>Cost</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Genomics Specific Visualization Software</h3>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 600px; margin: 0 auto;">
+            <a href="https://nextstrain.org/" style="display: block; text-align: center;">
+              <img src="images/nextstrain-logo.png" alt="Nextstrain Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+            <a href="https://microbetrace.cdc.gov/MicrobeTrace/" style="display: block; text-align: center;">
+              <img src="images/microbe-trace.png" alt="MicrobeTrace Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+            <a href="https://microreact.org/" style="display: block; text-align: center;">
+              <img src="images/microreact-logo.png" alt="Microreact Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Genomics Specific Visualization Software</h3>
+          <div class="columncontainer">
+            <div style="width:50%">
+              <h3>Advantages</h3>
+              <ul>
+                <li>Purpose built for genomics data visualization</li>
+                <li>Open-source</li>
+                <li>Supports phylogenetic tree visualization</li>
+              </ul>
+            </div>
+            <div class="fragment" style="width:50%">
+              <h3>Disadvantages</h3>
+              <ul>
+                <li>Requires domain-specific knowledge to use effectively</li>
+                <li>Limited customization and often inflexible visualizations</li>
+                <li>Often complex technical implementation with limited support</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Code-based Dashboard Libraries</h3>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 600px; margin: 0 auto;">
+            <a href="https://shiny.posit.co/" style="display: block; text-align: center;">
+              <img src="images/shiny-logo.png" alt="Shiny Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+            <a href="https://plotly.com/" style="display: block; text-align: center;">
+              <img src="images/plotly-logo.png" alt="Plotly Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+            <a href="https://d3js.org/" style="display: block; text-align: center;">
+              <img src="images/d3-logo.svg" alt="D3 Logo" style="display: block; margin: 0; width: 100%; height: 120px; object-fit: contain;">
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h3>Code-based Dashboard Libraries</h3>
+          <div class="columncontainer">
+            <div style="width:50%">
+              <h3>Advantages</h3>
+              <ul>
+                <li>Highly flexible and customizable</li>
+                <li>Open-source</li>
+                <li>Supports a very broad range of visualizations</li>
+              </ul>
+            </div>
+            <div class="fragment" style="width:50%">
+              <h3>Disadvantages</h3>
+              <ul>
+                <li>Limited to no support for deploying and managing dashboards</li>
+                <li>Requires significant coding skills to implement effectively</li>
+                <li>Debugging and maintaining code-based dashboards requires additional expertise and effort</li>
+                <li>Longer development time compared to low-code or no-code solutions</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section style="color: white" data-background-iframe="/resources/gradient_limit_magenta.html" data-background="#0969da">
+          <h2>Visual Vocabulary and Data Storytelling</h2>
+        </section>
+
+        <section>
+          <h3><a href="https://public.tableau.com/app/profile/andy.kriebel/viz/VisualVocabulary/VisualVocabulary">Visual Vocabulary Dashboard</h3>
+          <img src="images/visual-vocab.png" alt="Visual Vocabulary Dashboard explaining different plotting methods and formats." />
+          </a>
+          <div class="citation">
+            <p>Source: <a href="https://public.tableau.com/app/profile/andy.kriebel/viz/VisualVocabulary/VisualVocabulary">Andy Kriebel, Visual Vocabulary Dashboard</a></p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Data Storytelling</h3>
+          <ul>
+            <li>A set of observations/facts/events presented in a specific order to create an emotional reaction in the audience</li>
+            <li>Effective data storytelling requires a clear narrative structure, engaging visuals, and a focus on the audience's needs and interests</li>
+            <li>The flow of tension to resolution is the basis for a narrative arc, common frameworks:
+              <ul>
+                <li>News: Lead - Supporting Details - Resolution</li>
+                <li>Books/Films: Setup - Conflict - Resolution</li>
+                <li>Presentations: Introduction - Key Points - Conclusion</li>
+              </ul>
+            </li>
+          </ul>
+          <div class="citation">
+            <p>Source: <a href="https://clauswilke.com/dataviz/telling-a-story.html">Claus Wilke, Fundamentals of Data Visualization</a></p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Data Storytelling: a figure for the generals</h3>
+          <div class="columncontainer">
+            <div>
+              <p>"Figures should do everything possible to help the reader understand the meaning of the visualization."</p>
+            </div>
+            <div>
+              <ul>
+                <li>Simplify the figure as much as possible.</li>
+                <li>Remove any non-essential elements that do not contribute to the understanding of the figure.</li>
+                <li>Only important points should remain.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+          
+          <section>
+          <h3>Data Storytelling: a figure for the generals</h3>
+          <div class="columncontainer">
+            <div class="fragment">
+              <img src="images/arrival-delay-vs-distance-1.png" alt="Arrival Delay vs Distance bad plot example">
+            </div>
+            <div class="fragment">
+              <img src="images/mean-arrival-delay-nyc-1.png" alt="Mean Arrival Delay NYC good plot example">
+            </div>
+          </div>
+
+          <div class="citation">
+            <p>Source: <a href="https://clauswilke.com/dataviz/telling-a-story.html">Claus Wilke, Fundamentals of Data Visualization</a></p>
+          </div>
+        </section>
+
+
+
+      </div>
+    </div>
+
+    <script src="/vendor/reveal/reveal.js"></script>
+    <script src="/vendor/reveal-plugins/notes/notes.js"></script>
+    <script src="/vendor/reveal-plugins/markdown/markdown.js"></script>
+    <script src="/vendor/reveal-plugins/highlight/highlight.js"></script>
+
+    <!-- Chalkboard & Custom Controls Plugin -->
+    <script src="/vendor/reveal-plugins/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/customcontrols/style.css">
+    <script src="/vendor/reveal-plugins/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="/vendor/reveal-plugins/chalkboard/style.css">
+
+    <script>
+      const pen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>';
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        history: false,
+        controls: true,
+        center: true,
+        progress: true,
+        slideNumber: true,
+        touch: true,
+        viewDistance: 6,
+        preloadIframes: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 5,
+
+        customcontrols: {
+          controls: [
+            //{ icon: '<i class="fa fa-pen-square"></i>',
+            //  title: 'Toggle chalkboard (B)',
+            //  action: 'RevealChalkboard.toggleChalkboard();'
+            //},
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
+        chalkboard: {
+          boardmarkers : [
+                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'}
+          ],
+        },
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, RevealCustomControls  ]
+      });
+    </script>
+  </body>
+</html>
